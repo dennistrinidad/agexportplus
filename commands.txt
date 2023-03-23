@@ -1,3 +1,7 @@
 ssh -i "/Users/tribal/Documents/TRIBAL/ADMIN/AGEXPORT/ssh/agexportplus.pem" ubuntu@ec2-18-216-184-110.us-east-2.compute.amazonaws.com
 cd /var/www/html
 git pull
+
+git add .
+git commit -m "Update"
+git push origin build-dev
