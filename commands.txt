@@ -1,7 +1,12 @@
-ssh -i "/Users/tribal/Documents/TRIBAL/ADMIN/AGEXPORT/ssh/agexportplus.pem" ubuntu@ec2-18-216-184-110.us-east-2.compute.amazonaws.com
-cd /var/www/html
+vpn: D3vel0p$
+ssh consultoria@10.10.0.34
+C0nsult@r1a2022!
+cd /var/www/aplus/agexportplus
 git pull
-
+sudo su
+copy files: cp -r * /var/www/aplus
+----------------------------------
 git add .
-git commit -m "Update"
-git push origin build-dev
+git commit -m " "
+git push origin build-prod
+url: https://aplus-api.export.com.gt:8086/api
