@@ -1,12 +1,46 @@
+https://flixier.com/es/tools/comprimir-video-en-linea/comprimir-mov
+https://drive.google.com/drive/my-drive
+
+ng build -c production
+
 vpn: D3vel0p$
 ssh consultoria@10.10.0.34
 C0nsult@r1a2022!
 cd /var/www/aplus/agexportplus
 git pull
 sudo su
-copy files: cp -r * /var/www/aplus
+//copy files: cp -r * /var/www/aplus
+copy files: cp -r * /var/www/html/backoffice
 ----------------------------------
 git add .
 git commit -m " "
 git push origin build-prod
 url: https://aplus-api.export.com.gt:8086/api
+-----------------------------------
+posible nueva ruta: cd /var/www/html/backoffice
+
+Cambiar propietario: chown www-data:www-data backoffice/ 
+Reiniciar Apache: sudo /etc/init.d/apache2 restart
+sudo /etc/init.d/apache2 restart
+ vim /etc/apache2/apache2.conf 
+
+ chown www-data:www-data html/ 
+ chmod 755 .htaccess 
+ /etc/apache2/sites-available
+
+
+ssh consultoria@10.10.0.34
+sftp consultoria@10.10.0.34
+terminal 1: sudo sftp -i "/Users/tribal/Documents/TRIBAL/ADMIN/AGEXPORT/ssh/agexportplus.pem" ubuntu@ec2-18-216-184-110.us-east-2.compute.amazonaws.com
+terminal 1: put agexportplus.tgz
+Uploading agexportplus.zip to /home/consultoria/agexportplus.zip
+
+
+#Transferir directorio
+1. sftp consultoria@10.10.0.34
+2. sudo su
+3. put -r agexportplus
+4. cp -r agexportplus /var/www/aplus
+
+5. /var/www/aplus
+6.git pull
