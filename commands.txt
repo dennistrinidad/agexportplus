@@ -1,13 +1,14 @@
-/*---------------------------------*/
+/*----------------PROD----------------*/
     vpn: D3vel0p$
     ssh consultoria@10.10.0.34
     C0nsult@r1a2022!
     cd /var/www/aplus/
     sudo git pull
-/*---------------------------------*/
+/*------------------------------------*/
     git add .
     git commit -m ""
     git push origin build-prod
-/*---------------------------------*/
+/*------------------------------------*/
 | BUILD: |  npm start b-p   |   ng build -c production   |
-| URL:   |  https://aplus-api.export.com.gt:8086/api
+| URL:   |  https://aplus-api.export.com.gt:2096
+| URL_2: |  https://aplus-api.export.com.gt:8087
