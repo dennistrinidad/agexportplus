@@ -8534,5 +8534,13 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+/* Error message */
+.err-msg {
+    color: red !important;
+    font-size: 12px !important;
+    margin-top: 6px !important;
+    margin-left: 15px !important;
+    font-family: 'Jost', sans-serif !important;
+}
 
 /*# sourceMappingURL=styles.css.map*/
