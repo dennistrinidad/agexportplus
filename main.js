@@ -4208,7 +4208,7 @@ CalendarioEventosComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngClass", ctx.view == 1 ? "calendar" : "calendar-gray");
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !ctx.disabled);
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.disabled);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](6);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", ctx.filtro);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](6);
@@ -4286,7 +4286,7 @@ function NuevoEventoComponent_app_loading_0_Template(rf, ctx) {
 }
 function NuevoEventoComponent_option_14_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "option", 105);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "option", 106);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
@@ -4299,7 +4299,7 @@ function NuevoEventoComponent_option_14_Template(rf, ctx) {
 }
 function NuevoEventoComponent_option_48_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "option", 105);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "option", 106);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
@@ -4312,7 +4312,7 @@ function NuevoEventoComponent_option_48_Template(rf, ctx) {
 }
 function NuevoEventoComponent_option_53_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "option", 105);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "option", 106);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
@@ -4325,14 +4325,14 @@ function NuevoEventoComponent_option_53_Template(rf, ctx) {
 }
 function NuevoEventoComponent_div_54_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 106);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 107);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1, " Este campo es obligatorio.");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
 }
 function NuevoEventoComponent_option_72_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "option", 105);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "option", 106);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
@@ -4345,35 +4345,35 @@ function NuevoEventoComponent_option_72_Template(rf, ctx) {
 }
 function NuevoEventoComponent_div_113_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 106);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 107);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1, "Este campo es obligatorio.");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
 }
 function NuevoEventoComponent_div_121_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 106);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 107);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1, "Este campo es obligatorio.");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
 }
 function NuevoEventoComponent_div_139_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 106);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 107);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1, "Este campo es obligatorio.");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
 }
 function NuevoEventoComponent_div_145_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 106);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 107);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1, "Este campo es obligatorio.");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
 }
 function NuevoEventoComponent_option_220_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "option", 105);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "option", 106);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
@@ -4778,50 +4778,58 @@ class NuevoEventoComponent {
   submitEvent() {
     var _this4 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      console.log(_this4.form);
-      console.log(_this4.form.valid);
-      console.log(_this4.form.controls);
-      _this4.form.control.markAllAsTouched();
-      // if (this.form.valid && this.dateStart && this.dateEnd) {
-      //   this.eventData.fechaFinal = new Date(this.dateEnd.year, (this.dateEnd.month - 1), this.dateEnd.day);
-      //   this.eventData.fechaInicio = new Date(this.dateStart.year, (this.dateStart.month - 1), this.dateStart.day);
-      //   this.eventDataAux = [];
-      //   if (this.eventData.imageBadgeHeader.data == '' || this.eventData.imageBadgeFooter.data == '') {
-      //     if (this.eventData.imageBadgeHeader.data == '') {
-      //       const { imageBadgeHeader, ...data } = this.eventData;
-      //       this.eventDataAux = data;
-      //     }
-      //     if (this.eventData.imageBadgeFooter.data == '') {
-      //       const { imageBadgeFooter, ...data } = this.eventData;
-      //       this.eventDataAux = data;
-      //     }
-      //     if (this.eventData.imageBadgeHeader.data == '' && this.eventData.imageBadgeFooter.data == '') {
-      //       const { imageBadgeHeader, imageBadgeFooter, ...data } = this.eventData;
-      //       this.eventDataAux = data;
-      //     }
-      //     if(this.eventData.imageEvent .data == '') {
-      //       delete this.eventDataAux.imageEvent;
-      //     }
-      //     if(this.eventData.imageThumbnail.data == '') { 
-      //       delete this.eventDataAux.imageThumbnail;
-      //       delete this.eventDataAux.thumbEvent;
-      //     }
-      //   } else {
-      //     this.eventDataAux = this.eventData;
-      //   }
-      //   if (this.eventID > 0) {
-      //     this.editEvent(this.eventDataAux);
-      //   }
-      //   else {
-      //     this.createEvent(this.eventDataAux);
-      //   }
-      // } else {
-      //   this.form.control.markAllAsTouched();
-      //   this.utilsService.dialog('ERROR', 'Error', 'Por favor llena los campos obligatorios.');
-      // }
+      // console.log(this.form)
+      // console.log(this.form.valid)
+      // console.log(this.form.controls)
+      // this.form.control.markAllAsTouched();
+      if (_this4.form.valid && _this4.dateStart && _this4.dateEnd) {
+        _this4.eventData.fechaFinal = new Date(_this4.dateEnd.year, _this4.dateEnd.month - 1, _this4.dateEnd.day);
+        _this4.eventData.fechaInicio = new Date(_this4.dateStart.year, _this4.dateStart.month - 1, _this4.dateStart.day);
+        _this4.eventDataAux = [];
+        if (_this4.eventData.imageBadgeHeader.data == '' || _this4.eventData.imageBadgeFooter.data == '') {
+          if (_this4.eventData.imageBadgeHeader.data == '') {
+            const {
+              imageBadgeHeader,
+              ...data
+            } = _this4.eventData;
+            _this4.eventDataAux = data;
+          }
+          if (_this4.eventData.imageBadgeFooter.data == '') {
+            const {
+              imageBadgeFooter,
+              ...data
+            } = _this4.eventData;
+            _this4.eventDataAux = data;
+          }
+          if (_this4.eventData.imageBadgeHeader.data == '' && _this4.eventData.imageBadgeFooter.data == '') {
+            const {
+              imageBadgeHeader,
+              imageBadgeFooter,
+              ...data
+            } = _this4.eventData;
+            _this4.eventDataAux = data;
+          }
+          if (_this4.eventData.imageEvent.data == '') {
+            delete _this4.eventDataAux.imageEvent;
+          }
+          if (_this4.eventData.imageThumbnail.data == '') {
+            delete _this4.eventDataAux.imageThumbnail;
+            delete _this4.eventDataAux.thumbEvent;
+          }
+        } else {
+          _this4.eventDataAux = _this4.eventData;
+        }
+        if (_this4.eventID > 0) {
+          _this4.editEvent(_this4.eventDataAux);
+        } else {
+          _this4.createEvent(_this4.eventDataAux);
+        }
+      } else {
+        _this4.form.control.markAllAsTouched();
+        _this4.utilsService.dialog('ERROR', 'Error', 'Por favor llena los campos obligatorios.');
+      }
     })();
   }
-
   createEvent(eventData) {
     this.eventService.createEvent(eventData, this.accessToken).subscribe({
       next: res => {
@@ -4866,7 +4874,7 @@ NuevoEventoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
   },
   decls: 228,
   vars: 89,
-  consts: [[4, "ngIf"], ["href", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css", "rel", "stylesheet"], ["form", "ngForm"], [1, "main"], [1, "top-block"], [1, "top-block-1"], ["id", "back", 1, "back-btn", 3, "click"], [1, "back-label"], [1, "top-block-2"], ["name", "categoria", "id", "category", "required", "", 1, "categoria-evento", "disabled-input", 3, "ngModel", "disabled", "ngModelChange", "change"], [3, "value", 4, "ngFor", "ngForOf"], ["id", "mainEvento", 1, "main-block", "not-visible"], [1, "label-1"], [1, "status-block"], [1, "status-label"], ["name", "status", "id", "status", "required", "", 1, "status-box", 3, "ngModel", "ngModelChange"], ["value", "finished"], ["value", "active"], ["value", "draft"], ["id", "down", 1, "down-arrow"], [1, "row-1"], [1, "col-md-1-form"], [1, "custom-input"], ["type", "text", "name", "_nombreEvento", "id", "_nombreEvento", "placeholder", "Nombre del evento", "required", "", 1, "disabled-input", 3, "ngModel", "readOnly", "ngModelChange"], ["_nombreEvento", "ngModel"], ["name", "Desc", "id", "Desc", "cols", "40", "rows", "5", 1, "disabled-input", 3, "ngModel", "readonly", "ngModelChange"], ["name", "direccion", "id", "direccion", "placeholder", "15 Avenida 14-72, Cdad", 1, "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], [1, "col-md-2-form"], ["name", "dirigido", "id", "dirigido", "required", "", 1, "to-box", "tipo-evento", "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], ["name", "actividad", "id", "actividad", "required", "", 1, "actividad-box", "tipo-evento", 3, "ngModel", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["name", "enlaceSitio", "id", "enlaceSitio", "placeholder", "www.export.com.gt", 3, "ngModel", "ngModelChange"], [1, "col-md-3-form"], [1, "code-form", 2, "text-align", "center"], [2, "text-align", "start"], [3, "qrdata", "width", "errorCorrectionLevel", "qrCodeURL"], ["parent", ""], ["download", "qrcode", 1, "qr-btn", 3, "href"], [1, "row-10"], [1, "custom-input", "modalidad-box"], ["name", "modalidad", "id", "modalidad", "required", "", 1, "modalidad", "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], [1, "mod-box"], ["name", "enlaceEvento", "id", "enlaceEvento", "placeholder", "Enlace del evento", 1, "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], [1, "col-md-4-form"], [1, "custom-input", "datetime-box"], [1, "dt-row"], [1, "row", "row-cols-sm-auto", "cal-form"], [1, "col-12"], [1, "input-group", "disabled-input"], ["name", "dp", "id", "dp", "ngbDatepicker", "", "placeholder", "dd-mm-yyyy", "required", "", 1, "form-control", "disabled-input", 3, "ngModel", "value", "disabled", "ngModelChange"], ["d", "ngbDatepicker"], ["type", "button", 1, "btn", "btn-outline-secondary", "bi", "bi-calendar3", "disabled-input", 3, "disabled", "click"], ["type", "time", "name", "apptF", "id", "apptF", "placeholder", "00:00", "required", "", 1, "form-control-time", "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], ["name", "dp2", "id", "dp2", "ngbDatepicker", "", "placeholder", "dd-mm-yyyy", "required", "", 1, "form-control", "disabled-input", 3, "ngModel", "value", "disabled", "ngModelChange"], ["e", "ngbDatepicker"], ["type", "button", 1, "btn", "btn-outline-secondary", "bi", "bi-calendar3", "disabled-input", 3, "click"], [1, "col-md-5-form"], ["name", "gafete-file", "id", "gafete-file", "readonly", "", "required", "", 1, "custom-input", "file-box", 3, "ngModel", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('fileGaf').click();", 1, "upload-btn"], ["type", "file", "name", "fileGaf", "id", "fileGaf", "accept", "image/*", 2, "display", "none", 3, "change"], ["FileSelectInputDialog", ""], ["name", "thumbnail-file", "id", "thumbnail-file", "readonly", "", "required", "", 1, "custom-input", "file-box", 3, "ngModel", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('thumbnailGafete').click();", 1, "upload-btn"], ["type", "file", "name", "thumbnailGafete", "id", "thumbnailGafete", "accept", "image/*", 2, "display", "none", 3, "change"], [1, "row-10", "quastion"], [1, "custom-input", "top-head"], [1, "gafete-label"], [1, "checkbox-group"], ["name", "groupA", "type", "checkbox", 1, "checkbox-item", 3, "ngModel", "ngModelChange", "change"], ["for", "yes"], ["name", "groupB", "type", "checkbox", 1, "checkbox-item", 3, "ngModel", "ngModelChange", "change"], ["for", "no"], ["name", "gafete-header", "id", "gafete-header", "placeholder", "Subir encabezado.jpg", "readonly", "", 1, "custom-input", "file-box", 3, "ngModel", "required", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('fileheader').click();", 1, "gafete-btn", 3, "disabled"], ["type", "file", "name", "fileheader", "id", "fileheader", 2, "display", "none", 3, "change"], ["name", "gafete-footer", "id", "gafete-footer", "placeholder", "Subir pie..p\u00E1gina.jpg", "readonly", "", 1, "custom-input", "file-box", 3, "ngModel", "required", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('filefooter').click();", 1, "gafete-btn", 3, "disabled"], ["type", "file", "name", "filefooter", "id", "filefooter", 2, "display", "none", 3, "change"], ["name", "md_sector", "id", "md_sector", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], ["name", "md_comison", "id", "md_comison", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], ["name", "md_comite", "id", "md_comite", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], [1, "divider-section"], [1, "header-1", "label-1"], [1, "row-3"], ["name", "userName", "id", "userName", "readonly", "", 1, "disabled-input", 3, "ngModel", "ngModelChange"], ["name", "userPhone", "id", "userPhone", "readonly", "", 1, "disabled-input", 3, "ngModel", "ngModelChange"], ["name", "userAreaO", "id", "userAreaO", "readonly", "", 1, "disabled-input", 3, "ngModel", "ngModelChange"], ["name", "userPuesto", "id", "userPuesto", "readonly", "", 1, "disabled-input", 3, "ngModel", "ngModelChange"], ["name", "userEmail", "id", "userEmail", "type", "email", "readonly", "", 1, "disabled-input", 3, "ngModel", "ngModelChange"], ["name", "userRoles", "id", "userRoles", "readonly", "", 1, "disabled-input", 3, "ngModel", "ngModelChange"], ["name", "userArea", "id", "userArea", "readonly", "", 1, "disabled-input", 3, "ngModel", "ngModelChange"], [1, "col-md-10"], ["placeholder", "50", "name", "cupoLimite", "id", "cupoLimite", 1, "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], [1, "col-md-11"], ["placeholder", "10", "name", "asociadosInvitados", "id", "asociadosInvitados", 1, "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], [1, "col-md-12"], ["placeholder", "20", "name", "noAsociadosInvitados", "id", "noAsociadosInvitados", 1, "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], ["id", "priceBlock", 1, "table-block", "not-visible"], [1, "header-2", "label-1"], [1, "custom-input", "costo-container"], ["name", "costo", "id", "costo", "name", "costTypeId", "id", "costTypeId", "required", "", 1, "costo-box", "tipo-evento", "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], [1, "custom-input", "cart-box"], ["type", "text", "name", "enlaceCarretilla", "id", "enlaceCarretilla", "placeholder", "www.sample.com", 1, "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], [1, "block-bottom"], [1, "next-btn", 3, "click"], [3, "value"], [1, "err-msg"]],
+  consts: [[4, "ngIf"], ["href", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css", "rel", "stylesheet"], ["form", "ngForm"], [1, "main"], [1, "top-block"], [1, "top-block-1"], ["id", "back", 1, "back-btn", 3, "click"], [1, "back-label"], [1, "top-block-2"], [2, "margin-bottom", "10px", "padding-left", "10px"], ["name", "categoria", "id", "category", "required", "", 1, "categoria-evento", "disabled-input", 3, "ngModel", "disabled", "ngModelChange", "change"], [3, "value", 4, "ngFor", "ngForOf"], ["id", "mainEvento", 1, "main-block", "not-visible"], [1, "label-1"], [1, "status-block"], [1, "status-label"], ["name", "status", "id", "status", "required", "", 1, "status-box", 3, "ngModel", "ngModelChange"], ["value", "finished"], ["value", "active"], ["value", "draft"], ["id", "down", 1, "down-arrow"], [1, "row-1"], [1, "col-md-1-form"], [1, "custom-input"], ["type", "text", "name", "_nombreEvento", "id", "_nombreEvento", "placeholder", "Nombre del evento", "required", "", 1, "disabled-input", 3, "ngModel", "readOnly", "ngModelChange"], ["_nombreEvento", "ngModel"], ["name", "Desc", "id", "Desc", "cols", "40", "rows", "5", 1, "disabled-input", 3, "ngModel", "readonly", "ngModelChange"], ["name", "direccion", "id", "direccion", "placeholder", "15 Avenida 14-72, Cdad", 1, "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], [1, "col-md-2-form"], ["name", "dirigido", "id", "dirigido", "required", "", 1, "to-box", "tipo-evento", "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], ["name", "actividad", "id", "actividad", "required", "", 1, "actividad-box", "tipo-evento", 3, "ngModel", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["name", "enlaceSitio", "id", "enlaceSitio", "placeholder", "www.export.com.gt", 3, "ngModel", "ngModelChange"], [1, "col-md-3-form"], [1, "code-form", 2, "text-align", "center"], [2, "text-align", "start"], [3, "qrdata", "width", "errorCorrectionLevel", "qrCodeURL"], ["parent", ""], ["download", "qrcode", 1, "qr-btn", 3, "href"], [1, "row-10"], [1, "custom-input", "modalidad-box"], ["name", "modalidad", "id", "modalidad", "required", "", 1, "modalidad", "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], [1, "mod-box"], ["name", "enlaceEvento", "id", "enlaceEvento", "placeholder", "Enlace del evento", 1, "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], [1, "col-md-4-form"], [1, "custom-input", "datetime-box"], [1, "dt-row"], [1, "row", "row-cols-sm-auto", "cal-form"], [1, "col-12"], [1, "input-group", "disabled-input"], ["name", "dp", "id", "dp", "ngbDatepicker", "", "placeholder", "dd-mm-yyyy", "required", "", 1, "form-control", "disabled-input", 3, "ngModel", "value", "disabled", "ngModelChange"], ["d", "ngbDatepicker"], ["type", "button", 1, "btn", "btn-outline-secondary", "bi", "bi-calendar3", "disabled-input", 3, "disabled", "click"], ["type", "time", "name", "apptF", "id", "apptF", "placeholder", "00:00", "required", "", 1, "form-control-time", "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], ["name", "dp2", "id", "dp2", "ngbDatepicker", "", "placeholder", "dd-mm-yyyy", "required", "", 1, "form-control", "disabled-input", 3, "ngModel", "value", "disabled", "ngModelChange"], ["e", "ngbDatepicker"], ["type", "button", 1, "btn", "btn-outline-secondary", "bi", "bi-calendar3", "disabled-input", 3, "click"], [1, "col-md-5-form"], ["name", "gafete-file", "id", "gafete-file", "readonly", "", "required", "", 1, "custom-input", "file-box", 3, "ngModel", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('fileGaf').click();", 1, "upload-btn"], ["type", "file", "name", "fileGaf", "id", "fileGaf", "accept", "image/*", 2, "display", "none", 3, "change"], ["FileSelectInputDialog", ""], ["name", "thumbnail-file", "id", "thumbnail-file", "readonly", "", "required", "", 1, "custom-input", "file-box", 3, "ngModel", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('thumbnailGafete').click();", 1, "upload-btn"], ["type", "file", "name", "thumbnailGafete", "id", "thumbnailGafete", "accept", "image/*", 2, "display", "none", 3, "change"], [1, "row-10", "quastion"], [1, "custom-input", "top-head"], [1, "gafete-label"], [1, "checkbox-group"], ["name", "groupA", "type", "checkbox", 1, "checkbox-item", 3, "ngModel", "ngModelChange", "change"], ["for", "yes"], ["name", "groupB", "type", "checkbox", 1, "checkbox-item", 3, "ngModel", "ngModelChange", "change"], ["for", "no"], ["name", "gafete-header", "id", "gafete-header", "placeholder", "Subir encabezado.jpg", "readonly", "", 1, "custom-input", "file-box", 3, "ngModel", "required", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('fileheader').click();", 1, "gafete-btn", 3, "disabled"], ["type", "file", "name", "fileheader", "id", "fileheader", 2, "display", "none", 3, "change"], ["name", "gafete-footer", "id", "gafete-footer", "placeholder", "Subir pie..p\u00E1gina.jpg", "readonly", "", 1, "custom-input", "file-box", 3, "ngModel", "required", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('filefooter').click();", 1, "gafete-btn", 3, "disabled"], ["type", "file", "name", "filefooter", "id", "filefooter", 2, "display", "none", 3, "change"], ["name", "md_sector", "id", "md_sector", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], ["name", "md_comison", "id", "md_comison", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], ["name", "md_comite", "id", "md_comite", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], [1, "divider-section"], [1, "header-1", "label-1"], [1, "row-3"], ["name", "userName", "id", "userName", "readonly", "", 1, "disabled-input", 3, "ngModel", "ngModelChange"], ["name", "userPhone", "id", "userPhone", "readonly", "", 1, "disabled-input", 3, "ngModel", "ngModelChange"], ["name", "userAreaO", "id", "userAreaO", "readonly", "", 1, "disabled-input", 3, "ngModel", "ngModelChange"], ["name", "userPuesto", "id", "userPuesto", "readonly", "", 1, "disabled-input", 3, "ngModel", "ngModelChange"], ["name", "userEmail", "id", "userEmail", "type", "email", "readonly", "", 1, "disabled-input", 3, "ngModel", "ngModelChange"], ["name", "userRoles", "id", "userRoles", "readonly", "", 1, "disabled-input", 3, "ngModel", "ngModelChange"], ["name", "userArea", "id", "userArea", "readonly", "", 1, "disabled-input", 3, "ngModel", "ngModelChange"], [1, "col-md-10"], ["placeholder", "50", "name", "cupoLimite", "id", "cupoLimite", 1, "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], [1, "col-md-11"], ["placeholder", "10", "name", "asociadosInvitados", "id", "asociadosInvitados", 1, "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], [1, "col-md-12"], ["placeholder", "20", "name", "noAsociadosInvitados", "id", "noAsociadosInvitados", 1, "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], ["id", "priceBlock", 1, "table-block", "not-visible"], [1, "header-2", "label-1"], [1, "custom-input", "costo-container"], ["name", "costo", "id", "costo", "name", "costTypeId", "id", "costTypeId", "required", "", 1, "costo-box", "tipo-evento", "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], [1, "custom-input", "cart-box"], ["type", "text", "name", "enlaceCarretilla", "id", "enlaceCarretilla", "placeholder", "www.sample.com", 1, "disabled-input", 3, "ngModel", "disabled", "ngModelChange"], [1, "block-bottom"], [1, "next-btn", 3, "click"], [3, "value"], [1, "err-msg"]],
   template: function NuevoEventoComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r25 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
@@ -4880,374 +4888,374 @@ NuevoEventoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](8, "span", 7);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](9, " Atras ");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](10, "div", 8)(11, "span");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](10, "div", 8)(11, "span", 9);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](12, " Seleccione categor\u00EDa de evento");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](13, "select", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](13, "select", 10);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_select_ngModelChange_13_listener($event) {
         return ctx.eventData.eventCategoryId = $event;
       })("change", function NuevoEventoComponent_Template_select_change_13_listener() {
         return ctx.changeCategory();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](14, NuevoEventoComponent_option_14_Template, 2, 2, "option", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](14, NuevoEventoComponent_option_14_Template, 2, 2, "option", 11);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](15, "div", 11)(16, "label", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](15, "div", 12)(16, "label", 13);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](17, " Informaci\u00F3n del evento");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](18, "div", 13);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](19, "span", 14);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](20, "select", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](18, "div", 14);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](19, "span", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](20, "select", 16);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_select_ngModelChange_20_listener($event) {
         return ctx.eventData.status = $event;
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](21, "option", 16);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](21, "option", 17);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](22, "Finalizado");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](23, "option", 17);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](23, "option", 18);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](24, "Activo");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](25, "option", 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](25, "option", 19);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](26, "Borrador");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](27, "i", 19);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](28, "div", 20)(29, "div", 21)(30, "div", 22)(31, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](27, "i", 20);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](28, "div", 21)(29, "div", 22)(30, "div", 23)(31, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](32, "Nombre del evento");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](33, "input", 23, 24);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](33, "input", 24, 25);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_33_listener($event) {
         return ctx.eventData.nombreEvento = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](35, "div", 22)(36, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](35, "div", 23)(36, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](37, "Descripci\u00F3n");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](38, "textarea", 25);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](38, "textarea", 26);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_textarea_ngModelChange_38_listener($event) {
         return ctx.eventData.descripcion = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](39, "div", 22)(40, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](39, "div", 23)(40, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](41, "Direcci\u00F3n del evento");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](42, "input", 26);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](42, "input", 27);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_42_listener($event) {
         return ctx.eventData.direccion = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](43, "div", 27)(44, "div", 22)(45, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](43, "div", 28)(44, "div", 23)(45, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](46, "Dirigido a");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](47, "select", 28);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](47, "select", 29);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_select_ngModelChange_47_listener($event) {
         return ctx.eventData.guestTypeId = $event;
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](48, NuevoEventoComponent_option_48_Template, 2, 2, "option", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](48, NuevoEventoComponent_option_48_Template, 2, 2, "option", 11);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](49, "div", 22)(50, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](49, "div", 23)(50, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](51, "Tipo de actividad");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](52, "select", 29);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](52, "select", 30);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_select_ngModelChange_52_listener($event) {
         return ctx.eventData.eventTypeId = $event;
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](53, NuevoEventoComponent_option_53_Template, 2, 2, "option", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](53, NuevoEventoComponent_option_53_Template, 2, 2, "option", 11);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](54, NuevoEventoComponent_div_54_Template, 2, 0, "div", 30);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](54, NuevoEventoComponent_div_54_Template, 2, 0, "div", 31);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](55, "div", 22)(56, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](55, "div", 23)(56, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](57, "Enlace del sitio");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](58, "input", 31);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](58, "input", 32);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_58_listener($event) {
         return ctx.eventData.enlaceSitio = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](59, "div", 32)(60, "div", 33)(61, "label", 34);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](59, "div", 33)(60, "div", 34)(61, "label", 35);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](62, "C\u00F3digo QR");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](63, "qrcode", 35, 36);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](63, "qrcode", 36, 37);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("qrCodeURL", function NuevoEventoComponent_Template_qrcode_qrCodeURL_63_listener($event) {
         return ctx.onChangeURL($event);
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](65, "a", 37);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](65, "a", 38);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](66, "Descargar QR");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](67, "div", 38)(68, "div", 39)(69, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](67, "div", 39)(68, "div", 40)(69, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](70, "Modalidad");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](71, "select", 40);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](71, "select", 41);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_select_ngModelChange_71_listener($event) {
         return ctx.eventData.modalityId = $event;
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](72, NuevoEventoComponent_option_72_Template, 2, 2, "option", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](72, NuevoEventoComponent_option_72_Template, 2, 2, "option", 11);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](73, "div", 22)(74, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](73, "div", 23)(74, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](75, "Enlace de evento ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](76, "strong", 41);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](76, "strong", 42);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](77, "(modalidad virtual)");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](78, "input", 42);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](78, "input", 43);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_78_listener($event) {
         return ctx.eventData.enlaceEvento = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](79, "div", 38)(80, "div", 43)(81, "div", 44)(82, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](79, "div", 39)(80, "div", 44)(81, "div", 45)(82, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](83, "Fecha y hora de incio");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](84, "div", 45)(85, "form", 46)(86, "div", 47)(87, "div", 48)(88, "input", 49, 50);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](84, "div", 46)(85, "form", 47)(86, "div", 48)(87, "div", 49)(88, "input", 50, 51);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_88_listener($event) {
         return ctx.dateStart = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](90, "customDate");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](91, "button", 51);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](91, "button", 52);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function NuevoEventoComponent_Template_button_click_91_listener() {
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r25);
         const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵreference"](89);
         return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](_r9.toggle());
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](92, "input", 52);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](92, "input", 53);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_92_listener($event) {
         return ctx.eventData.horaInicio = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](93, "div", 44)(94, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](93, "div", 45)(94, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](95, "Fecha y hora fin");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](96, "div", 45)(97, "form", 46)(98, "div", 47)(99, "div", 48)(100, "input", 53, 54);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](96, "div", 46)(97, "form", 47)(98, "div", 48)(99, "div", 49)(100, "input", 54, 55);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_100_listener($event) {
         return ctx.dateEnd = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](102, "customDate");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](103, "button", 55);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](103, "button", 56);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function NuevoEventoComponent_Template_button_click_103_listener() {
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r25);
         const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵreference"](101);
         return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](_r10.toggle());
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](104, "input", 52);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](104, "input", 53);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_104_listener($event) {
         return ctx.eventData.horaFinal = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](105, "div", 56)(106, "div", 22)(107, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](105, "div", 57)(106, "div", 23)(107, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](108, "Imagen del evento");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](109, "input", 57);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](109, "input", 58);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_109_listener($event) {
         return ctx.eventData.imageEvent.name = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](110, "i", 58);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](111, "input", 59, 60);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](110, "i", 59);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](111, "input", 60, 61);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("change", function NuevoEventoComponent_Template_input_change_111_listener($event) {
         return ctx.onFileSelected($event);
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](113, NuevoEventoComponent_div_113_Template, 2, 0, "div", 30);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](113, NuevoEventoComponent_div_113_Template, 2, 0, "div", 31);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](114, "div", 22)(115, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](114, "div", 23)(115, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](116, "Thumbnail del evento");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](117, "input", 61);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](117, "input", 62);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_117_listener($event) {
         return ctx.eventData.imageThumbnail.name = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](118, "i", 62);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](119, "input", 63, 60);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](118, "i", 63);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](119, "input", 64, 61);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("change", function NuevoEventoComponent_Template_input_change_119_listener($event) {
         return ctx.onFileSelected($event);
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](121, NuevoEventoComponent_div_121_Template, 2, 0, "div", 30);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](121, NuevoEventoComponent_div_121_Template, 2, 0, "div", 31);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](122, "div", 64)(123, "div", 65)(124, "label", 66);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](122, "div", 65)(123, "div", 66)(124, "label", 67);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](125, "\u00BFNecesitas gafete para el evento?");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](126, "div", 67)(127, "input", 68);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](126, "div", 68)(127, "input", 69);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_127_listener($event) {
         return ctx.op_yes = $event;
       })("change", function NuevoEventoComponent_Template_input_change_127_listener() {
         return ctx.changeGroup(1);
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](128, "label", 69);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](128, "label", 70);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](129, "Si");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](130, "input", 70);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](130, "input", 71);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_130_listener($event) {
         return ctx.op_not = $event;
       })("change", function NuevoEventoComponent_Template_input_change_130_listener() {
         return ctx.changeGroup(0);
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](131, "label", 71);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](131, "label", 72);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](132, "No");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](133, "div", 38)(134, "div", 22)(135, "input", 72);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](133, "div", 39)(134, "div", 23)(135, "input", 73);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_135_listener($event) {
         return ctx.eventData.imageBadgeHeader.name = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](136, "button", 73);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](137, "input", 74, 60);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](136, "button", 74);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](137, "input", 75, 61);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("change", function NuevoEventoComponent_Template_input_change_137_listener($event) {
         return ctx.onFileSelected($event);
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](139, NuevoEventoComponent_div_139_Template, 2, 0, "div", 30);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](139, NuevoEventoComponent_div_139_Template, 2, 0, "div", 31);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](140, "div", 22)(141, "input", 75);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](140, "div", 23)(141, "input", 76);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_141_listener($event) {
         return ctx.eventData.imageBadgeFooter.name = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](142, "button", 76);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](143, "input", 77, 60);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](142, "button", 77);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](143, "input", 78, 61);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("change", function NuevoEventoComponent_Template_input_change_143_listener($event) {
         return ctx.onFileSelected($event);
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](145, NuevoEventoComponent_div_145_Template, 2, 0, "div", 30);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](145, NuevoEventoComponent_div_145_Template, 2, 0, "div", 31);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](146, "div", 38)(147, "div", 22)(148, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](146, "div", 39)(147, "div", 23)(148, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](149, "Sector");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](150, "ng-multiselect-dropdown", 78);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](150, "ng-multiselect-dropdown", 79);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_ng_multiselect_dropdown_ngModelChange_150_listener($event) {
         return ctx.sectors = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](151, "div", 22)(152, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](151, "div", 23)(152, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](153, "Comisi\u00F3n");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](154, "ng-multiselect-dropdown", 79);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](154, "ng-multiselect-dropdown", 80);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_ng_multiselect_dropdown_ngModelChange_154_listener($event) {
         return ctx.comison = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](155, "div", 22)(156, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](155, "div", 23)(156, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](157, "Comit\u00E9");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](158, "ng-multiselect-dropdown", 80);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](158, "ng-multiselect-dropdown", 81);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_ng_multiselect_dropdown_ngModelChange_158_listener($event) {
         return ctx.comite = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](159, "mat-divider", 81);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](160, "label", 82);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](159, "mat-divider", 82);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](160, "label", 83);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](161, " Datos del creador del evento");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](162, "div", 83)(163, "div", 43)(164, "div", 22)(165, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](162, "div", 84)(163, "div", 44)(164, "div", 23)(165, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](166, "Nombre del organizador");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](167, "input", 84);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](167, "input", 85);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_167_listener($event) {
         return ctx.userFullName = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](168, "div", 22)(169, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](168, "div", 23)(169, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](170, "Tel\u00E9fono");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](171, "input", 85);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](171, "input", 86);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_171_listener($event) {
         return ctx.userData.phone = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](172, "div", 22)(173, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](172, "div", 23)(173, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](174, "\u00C1rea organizacional");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](175, "input", 86);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](175, "input", 87);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_175_listener($event) {
         return ctx.userData.areaOrganizacional = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](176, "div", 22)(177, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](176, "div", 23)(177, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](178, "Cargo");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](179, "input", 87);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](179, "input", 88);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_179_listener($event) {
         return ctx.userData.puesto = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](180, "div", 56)(181, "div", 22)(182, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](180, "div", 57)(181, "div", 23)(182, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](183, "Correo electr\u00F3nico");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](184, "input", 88);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](184, "input", 89);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_184_listener($event) {
         return ctx.userData.email = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](185, "div", 22)(186, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](185, "div", 23)(186, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](187, "Rol");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](188, "input", 89);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](188, "input", 90);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_188_listener($event) {
         return ctx.userData.roles = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](189, "div", 22)(190, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](189, "div", 23)(190, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](191, "Departamento");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](192, "input", 90);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](192, "input", 91);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_192_listener($event) {
         return ctx.userData.area = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](193, "mat-divider", 81);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](194, "label", 82);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](193, "mat-divider", 82);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](194, "label", 83);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](195, " Cupo y Metas");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](196, "div", 83)(197, "div", 91)(198, "div", 22)(199, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](196, "div", 84)(197, "div", 92)(198, "div", 23)(199, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](200, "Cupo Limite de Asistencia");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](201, "input", 92);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](201, "input", 93);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_201_listener($event) {
         return ctx.eventData.cupoLimite = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](202, "div", 93)(203, "div", 22)(204, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](202, "div", 94)(203, "div", 23)(204, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](205, "N\u00FAmero de Asociados");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](206, "input", 94);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](206, "input", 95);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_206_listener($event) {
         return ctx.eventData.asociadosInvitados = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](207, "div", 95)(208, "div", 22)(209, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](207, "div", 96)(208, "div", 23)(209, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](210, "N\u00FAmero de No Asociados");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](211, "input", 96);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](211, "input", 97);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_211_listener($event) {
         return ctx.eventData.noAsociadosInvitados = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](212, "div", 97)(213, "label", 98);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](212, "div", 98)(213, "label", 99);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](214, " Precios del evento");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](215, "div", 38)(216, "div", 99)(217, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](215, "div", 39)(216, "div", 100)(217, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](218, "Costo del evento");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](219, "select", 100);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](219, "select", 101);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_select_ngModelChange_219_listener($event) {
         return ctx.eventData.costTypeId = $event;
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](220, NuevoEventoComponent_option_220_Template, 2, 2, "option", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](220, NuevoEventoComponent_option_220_Template, 2, 2, "option", 11);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](221, "div", 101)(222, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](221, "div", 102)(222, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](223, "Enlace de carretilla");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](224, "input", 102);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](224, "input", 103);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_224_listener($event) {
         return ctx.eventData.enlaceCarretilla = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](225, "div", 103)(226, "button", 104);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](225, "div", 104)(226, "button", 105);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function NuevoEventoComponent_Template_button_click_226_listener() {
         return ctx.submitEvent();
       });
