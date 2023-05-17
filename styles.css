@@ -8542,5 +8542,9 @@ a.text-dark:hover, a.text-dark:focus {
     margin-left: 15px !important;
     font-family: 'Jost', sans-serif !important;
 }
+/* Input disabled */
+.disabled {
+    background-color: #ECECEC !important;
+}
 
 /*# sourceMappingURL=styles.css.map*/
