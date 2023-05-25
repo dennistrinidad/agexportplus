@@ -8543,11 +8543,11 @@ a.text-dark:hover, a.text-dark:focus {
     font-family: 'Jost', sans-serif !important;
 }
 /* Input disabled */
-.disabled {
-    background-color: #ECECEC !important;
-}
 .enabled {
     background-color: none !important;
+}
+.disabled {
+    background-color: #ECECEC !important;
 }
 /* Next / Last Page */
 .left-btn {
