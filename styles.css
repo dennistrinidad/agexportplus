@@ -8554,17 +8554,24 @@ a.text-dark:hover, a.text-dark:focus {
 .disabled {
     background-color: #ECECEC !important;
 }
-/* Next / Last Page */
-.left-btn {
+/* Change Page */
+.btn-arrow-left {
     margin-right: 18px;
     background-image: url('page-left-arrow.png');
 }
-.right-btn {
+.btn-arrow-right {
     margin-left: 18px;
     background-image: url('page-right-arrow.png');
 }
-.left-btn,
-.right-btn {
+.btn-arrow-last {
+    margin-left: 18px;
+    background-image: url('last-page-right-arrow.png');
+}
+.btn-arrow-first {
+    margin-right: 18px;
+    background-image: url('first-page-right-arrow.png');
+}
+.btn-arrow {
     width: 15px;
     height: 15px;
     cursor: pointer;
@@ -8587,6 +8594,37 @@ a.text-dark:hover, a.text-dark:focus {
     vertical-align: middle;
     font-family: 'Jost', sans-serif;
 }
+/* Action Points */
+.actions-icon-gray {
+    background-image: url('actions-icon-gray.svg');
+}
+.actions-icon-white {
+    background-image: url('actions-icon-white.svg');
+}
+.actions {
+    width: 5px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.actions-disble {
+    display: block !important;
+}
+.actions-btn {
+    border: none;
+    display: block;
+    font-size: 12px;
+    color: #000000;
+    font-weight: 400;
+    line-height: 27px;
+    background-color: transparent;
+    font-family: 'Jost', sans-serif;
+}
 /************************************* TEST *************************************/
 /* Table */
 /* PENDIENTE DE REVISAR */
@@ -8597,9 +8635,11 @@ a.text-dark:hover, a.text-dark:focus {
     position: relative;
     background: white;
     margin-bottom: 100px;
-    /* display: flex;
+    /*
+    display: flex;
     margin: 30px 100px;
-    flex-direction: column; */
+    flex-direction: column;
+    */
 }
 .content-table {
     width: 100%;
@@ -8608,12 +8648,13 @@ a.text-dark:hover, a.text-dark:focus {
 }
 table {
     border: none;
-  }
-td, th {
+}
+td,
+th {
     border: none;
     padding: 20px;
     text-align: start;
-  }
+}
 th {
     font-size: 16px;
     font-weight: 700;
@@ -8621,7 +8662,7 @@ th {
     line-height: 18px;
     background-color: #8686f1;
     font-family: "Jost", sans-serif;
-  }
+}
 td {
     font-size: 14px;
     font-weight: 400;
@@ -8629,6 +8670,6 @@ td {
     line-height: 16px;
     font-family: "Jost", sans-serif;
     border-bottom: 0.5px solid #e1e1fb;
-  }
+}
 
 /*# sourceMappingURL=styles.css.map*/
