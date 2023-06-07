@@ -7,7 +7,7 @@
     git pull
 /*------------------------------------*/
     git add .
-    git commit -m ""
+    git commit -m "UPDATE"
     git push origin build-prod
 /*------------------------------------*/
 | BUILD: |  npm start b-p   |   ng build -c production   |
