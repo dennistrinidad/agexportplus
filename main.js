@@ -5087,8 +5087,34 @@ class NuevoEventoComponent {
             delete _this4.eventDataAux.thumbEvent;
           }
         } else {
-          _this4.eventDataAux = _this4.eventData;
+          if (_this4.eventData.imageEvent.data == '') {
+            // delete this.eventDataAux.imageEvent;
+            const {
+              imageEvent,
+              ...data
+            } = _this4.eventData;
+            _this4.eventDataAux = data;
+          }
+          if (_this4.eventData.imageThumbnail.data == '') {
+            // delete this.eventDataAux.imageThumbnail;
+            const {
+              imageThumbnail,
+              ...data
+            } = _this4.eventData;
+            _this4.eventDataAux = data;
+          }
+          if (_this4.eventData.imageEvent.data == '' && _this4.eventData.imageThumbnail.data == '') {
+            const {
+              imageEvent,
+              imageThumbnail,
+              ...data
+            } = _this4.eventData;
+            _this4.eventDataAux = data;
+          }
+          delete _this4.eventDataAux.thumbEvent;
+          // this.eventDataAux = this.eventData;
         }
+
         if (_this4.eventID > 0) {
           _this4.editEvent(_this4.eventDataAux);
         } else {
