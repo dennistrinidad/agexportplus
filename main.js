@@ -5111,10 +5111,11 @@ class NuevoEventoComponent {
             } = _this4.eventData;
             _this4.eventDataAux = data;
           }
-          delete _this4.eventDataAux.thumbEvent;
+          // delete this.eventDataAux.thumbEvent;
           // this.eventDataAux = this.eventData;
         }
 
+        delete _this4.eventDataAux.thumbEvent;
         if (_this4.eventID > 0) {
           _this4.editEvent(_this4.eventDataAux);
         } else {
