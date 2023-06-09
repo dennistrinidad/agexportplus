@@ -8595,12 +8595,6 @@ a.text-dark:hover, a.text-dark:focus {
     font-family: 'Jost', sans-serif;
 }
 /* Action Points */
-.actions-icon-gray {
-    background-image: url('actions-icon-gray.svg');
-}
-.actions-icon-white {
-    background-image: url('actions-icon-white.svg');
-}
 .actions {
     width: 5px;
     height: 20px;
@@ -8612,8 +8606,11 @@ a.text-dark:hover, a.text-dark:focus {
     background-repeat: no-repeat;
     background-color: transparent;
 }
-.actions-disble {
-    display: block !important;
+.actions-icon-gray {
+    background-image: url('actions-icon-gray.svg');
+}
+.actions-icon-white {
+    background-image: url('actions-icon-white.svg');
 }
 .actions-btn {
     border: none;
@@ -8624,6 +8621,65 @@ a.text-dark:hover, a.text-dark:focus {
     line-height: 27px;
     background-color: transparent;
     font-family: 'Jost', sans-serif;
+}
+.actions-disble {
+    display: block !important;
+}
+/************************************* NEW METHOD 5 *************************************/
+.multi_den {
+    width: 100% !important;
+    font-size: inherit !important;
+    position: relative !important;
+}
+.multi_contenedor {
+    display: block !important;
+    box-sizing: border-box !important;
+}
+.multi_list {
+    top: -30px;
+    right: 15px;
+    z-index: 1 !important;
+    height: 68px !important;
+    width: 120px !important;
+    border-radius: 5px !important;
+    position: absolute !important;
+    background: #FFFFFF !important;
+    border: 1px solid #FFFFFF !important;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.25);
+
+}
+.multi_ul {
+    display: block !important;
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+    list-style-type: disc !important;
+    margin-block-end: 1em !important;
+    margin-inline-end: 0px !important;
+    margin-inline-start: 0px !important;
+    margin-block-start: 0.5em !important;
+}
+.multi_ul li {
+    list-style: none !important;
+}
+.multi_li {
+    display: list-item !important;
+    text-align: -webkit-match-parent !important;
+}
+.multi_button {
+    width: 100% !important;
+    border: none !important;
+    font-size: 12px !important;
+    padding: 5px 0px !important;
+    color: #000000 !important;
+    font-weight: 400 !important;
+    background-color: transparent !important;
+    font-family: 'Jost', sans-serif !important;
+}
+.multi_button:hover {
+    font-size: 13px !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    background: #1A44DB !important;
 }
 /************************************* TEST *************************************/
 /* Table */
