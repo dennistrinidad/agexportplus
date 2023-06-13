@@ -8952,12 +8952,12 @@ class AdminParticipantesComponent {
           'nombreEmpresa': '',
           'nit': '',
           'asociado': '',
-          // 'asistencia': '',
+          'asistencia': '',
           'registro': '',
           'email': '',
           'profesion': '',
           'tipoEntrada': '',
-          'fecha': ''
+          'fechaAsistencia': ''
         }];
         _this.utilsService.downloadToExcel(data, 'Datos', 'Agexport_Plantilla_Importar_participantes_Eventos', 'xlsx');
         // this.utilsService.downloadToExcel(data, 'Datos', 'Agexport_Plantilla_Importar_participantes_Eventos', 'csv');
