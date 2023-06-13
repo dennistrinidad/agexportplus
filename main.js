@@ -6468,22 +6468,24 @@ function GafeteDialogComponent_div_0_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](14, "div", 12)(15, "p", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](17, "br");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](18);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](17, "p", 14)(18, "small", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](19, "p", 14)(20, "small", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](21);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](20, "qrcode", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](22, "qrcode", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](21, "div", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](22, "img", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](23, "div", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](24, "img", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](23, "div", 19)(24, "button", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function GafeteDialogComponent_div_0_Template_button_click_24_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](25, "div", 19)(26, "button", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function GafeteDialogComponent_div_0_Template_button_click_26_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r3);
       const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r4.download(ctx_r4.PDF));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](25, "Descargar gafete");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](27, "Descargar gafete");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
@@ -6493,7 +6495,9 @@ function GafeteDialogComponent_div_0_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx_r0.nombreUsuario);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate2"](" ", ctx_r0.nombrePuesto, " ", ctx_r0.nombreEmpresa, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", ctx_r0.nombrePuesto, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", ctx_r0.nombreEmpresa, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx_r0.tipoEntrada);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
@@ -6578,7 +6582,7 @@ GafeteDialogComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
   consts: [["class", "card pt-2 card-rounded", 4, "ngIf"], [1, "card", "pt-2", "card-rounded"], [1, "card-title"], [1, "row"], [1, "col-8"], [1, "modal-title"], [1, "col-4", "pt-3"], [1, "pr-2", 3, "click"], [1, "btn-close"], [1, "img-badge", "mt-2"], ["alt", "Header", 1, "card-img-bottom", 3, "src"], [1, "card-body", "text-center", "mt-4", "pt-4"], [1, "card-text-position"], [1, "card-text"], [1, "mt-3"], [1, "text-guest"], [3, "qrdata", "width", "margin", "errorCorrectionLevel"], [1, "img-badge"], ["alt", "Footer", 1, "card-img-bottom", 3, "src"], [1, "card-footer", "text-center"], ["type", "button", 1, "accept-btn", 3, "click"], [1, "info-btn"], [3, "qrdata", "width", "errorCorrectionLevel"]],
   template: function GafeteDialogComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, GafeteDialogComponent_div_0_Template, 26, 10, "div", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, GafeteDialogComponent_div_0_Template, 28, 10, "div", 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, GafeteDialogComponent_div_1_Template, 12, 3, "div", 0);
     }
     if (rf & 2) {
@@ -8793,7 +8797,7 @@ function AdminParticipantesComponent_tr_35_ng_container_1_Template(rf, ctx) {
   if (rf & 2) {
     const x_r16 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", x_r16.key != "Asistencia" && x_r16.key != "Registro" && x_r16.key != "Fechas");
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", x_r16.key != "Asistencia" && x_r16.key != "Registro" && x_r16.key != "Fechas" && x_r16.key != "Profesion");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", x_r16.key === "Asistencia");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
@@ -8810,7 +8814,7 @@ function AdminParticipantesComponent_tr_35_li_9_Template(rf, ctx) {
       const i_r13 = ctx_r32.index;
       const item_r12 = ctx_r32.$implicit;
       const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵresetView"](ctx_r31.open(i_r13, item_r12, item_r12.id));
+      return _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵresetView"](ctx_r31.getGafete(i_r13, item_r12, item_r12.id));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, "Ver Gafete");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]()();
@@ -8948,7 +8952,7 @@ class AdminParticipantesComponent {
           'nombreEmpresa': '',
           'nit': '',
           'asociado': '',
-          'asistencia': '',
+          // 'asistencia': '',
           'registro': '',
           'email': '',
           'profesion': '',
@@ -9050,19 +9054,20 @@ class AdminParticipantesComponent {
       });
     }
   }
-  open(index, participantData, participant_id) {
+  getGafete(index, participantData, participant_id) {
     var _this5 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const getPDF = yield _this5.participantService.getBadge(_this5.eventData.id, participant_id);
       const participant = yield _this5.list.find(x => x.id === participant_id);
       const ID = participant.id ? participant.id.toString() : 0;
-      const nombrePuesto = participant.puesto ? participant.puesto.toString() : '';
+      const nombrePuesto = participant.Profesion ? participant.Profesion.toString() : '';
       const nombreUsuario = participant['Nombre Usuario'] ? participant['Nombre Usuario'].toString() : '';
       const nombreEmpresa = participant['Nombre Empresa'] ? participant['Nombre Empresa'].toString() : '';
       const tipoEntrada = participant['Tipo de entrada'] ? participant['Tipo de entrada'].toString() : '';
       const imageBadgeHeader = _this5.eventData.imageBadgeHeader ? _this5.eventData.imageBadgeHeader.toString() : '';
       const imageBadgeFooter = _this5.eventData.imageBadgeFooter ? _this5.eventData.imageBadgeFooter.toString() : '';
       const invitadoEspecial = participant.invitadoEspecial ? Boolean(participant.invitadoEspecial.toString()) : '';
+      console.log(participant);
       const modalRef = _this5.modalService.open(src_app_Extra_gafete_dialog_gafete_dialog_component__WEBPACK_IMPORTED_MODULE_2__.GafeteDialogComponent);
       modalRef.componentInstance.ID = ID;
       modalRef.componentInstance.type = 'PARTICIPANTE';
@@ -9083,6 +9088,45 @@ class AdminParticipantesComponent {
         modalRef.close();
       });
     })();
+  }
+  searchParticipantReturn() {
+    if (this.filtro.length === 0) {
+      this.list = this.listAux;
+    }
+  }
+  searchParticipant() {
+    this.loading = true;
+    return this.participantService.getParticipantsByEventSearch(this.pageNumber, this.pageSize, this.eventID, this.filtro).then(response => {
+      this.list = response.result.map(e => {
+        let fechas = '';
+        e.attendances.forEach(i => {
+          fechas += this.utilsService.date_pipe(i.dateAttendance, 'dd-MM-yyy') + ', ';
+        });
+        fechas = fechas.slice(0, -2);
+        return {
+          id: e?.id,
+          Sector: e?.sector,
+          Comision: e?.comision,
+          "Nombre Usuario": e?.nombreUsuario,
+          "Nombre Empresa": e?.nombreEmpresa,
+          "Correo electrónico": e?.email,
+          NIT: e?.nit,
+          Asociado: e?.asociado === true ? 'Si' : 'No',
+          "Rol del usuario": e?.rol,
+          "Tipo de entrada": e?.tipoEntrada,
+          Asistencia: Number(e?.asistencia),
+          Registro: Number(e?.registro),
+          Fechas: fechas,
+          Profesion: e.profesion
+        };
+      });
+      this.totalPages = Math.ceil(response.count / this.pageSize);
+    }, error => {
+      console.log(error);
+      this.utilsService.dialog('ERROR', 'Error', '¡Intente mas tarde!');
+    }).finally(() => {
+      this.loading = false;
+    });
   }
   loadDatabyEvent(event_id) {
     this.loading = true;
@@ -9106,9 +9150,11 @@ class AdminParticipantesComponent {
           "Tipo de entrada": e?.tipoEntrada,
           Asistencia: Number(e?.asistencia),
           Registro: Number(e?.registro),
-          Fechas: fechas
+          Fechas: fechas,
+          Profesion: e.profesion
         };
       });
+      this.listAux = this.list;
       this.totalPages = Math.ceil(response.count / this.pageSize);
     }, error => {
       console.log(error);
@@ -9120,9 +9166,8 @@ class AdminParticipantesComponent {
   updateAttendance($event, index, participant_id) {
     this.loading = true;
     const attendance = Boolean(Number($event.target.value));
-    this.participantService.updateParticipantByEvent(participant_id, {
-      asociado: attendance
-    }).then(response => {
+    // this.participantService.updateParticipantByEvent(participant_id, { asociado: attendance }).then(
+    this.participantService.checkinParticipant(participant_id, this.eventID).then(response => {
       console.log(response);
       this.utilsService.dialog('SUCCESS', 'Exito', 'Participante actualizado.');
     }, error => {
@@ -9197,7 +9242,7 @@ AdminParticipantesComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED
   },
   decls: 48,
   vars: 13,
-  consts: [[4, "ngIf"], [1, "main"], [1, "header"], [1, "top-block-1"], ["id", "back", 1, "back-btn", 3, "click"], [1, "back-label"], ["class", "next-container", 4, "ngIf"], [1, "btn-group"], [1, "agregar", 3, "disabled", "click"], ["onclick", "document.getElementById('file').click();", 1, "importar"], ["type", "file", "id", "file", "name", "file", "accept", "text/csv", 2, "display", "none", 3, "change"], ["file", "", "FileSelectInputDialog", ""], [1, "top-main"], [1, "default-view"], [1, "search-field"], ["id", "search", 1, "search-filter"], ["placeholder", "Buscar usuario...", 1, "search-input", 3, "ngModel", "ngModelChange"], [1, "table-default"], [1, "table-default", 2, "overflow-x", "auto"], [1, "content-table"], [4, "ngFor", "ngForOf"], [1, "multi_den"], [1, "multi_contenedor"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-white", 3, "click"], ["id", "item-1", "hidden", "", 1, "multi_list"], [1, "multi_ul"], [1, "table-pagination"], ["id", "back", 1, "btn-arrow", "btn-arrow-left", 3, "click"], [1, "pagination-text"], ["id", "back", 1, "btn-arrow", "btn-arrow-right", 3, "click"], [1, "block-bottom"], [1, "cancle-btn", 3, "click"], [1, "save-btn", 3, "click"], [1, "save-icon"], [1, "next-container"], ["id", "next", 1, "next-btn", 3, "click"], ["name", "gafete", "id", "edit", 1, "multi_button", 3, "click"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-gray", 3, "click"], ["hidden", "", 1, "multi_list", 3, "id"], ["style", "border-bottom: 1px solid #dee2e6 !important;", 4, "ngIf"], ["name", "delete", "id", "delete", 1, "multi_button", 3, "click"], [3, "hidden", 4, "ngIf"], ["class", "asistencia-group", 4, "ngIf"], ["class", "registro-group", 4, "ngIf"], [3, "hidden"], [1, "asistencia-group"], ["name", "asistance", "id", "asistance", 1, "asistance-drop", 3, "ngClass", "value", "disabled", "change"], ["selects", ""], ["value", "1"], ["value", "0"], [1, "registro-group"], ["name", "registro", "id", "registro", 1, "registro-drop", 3, "ngClass", "value", "disabled", "change"], [2, "border-bottom", "1px solid #dee2e6 !important"]],
+  consts: [[4, "ngIf"], [1, "main"], [1, "header"], [1, "top-block-1"], ["id", "back", 1, "back-btn", 3, "click"], [1, "back-label"], ["class", "next-container", 4, "ngIf"], [1, "btn-group"], [1, "agregar", 3, "disabled", "click"], ["onclick", "document.getElementById('file').click();", 1, "importar"], ["type", "file", "id", "file", "name", "file", "accept", "text/csv", 2, "display", "none", 3, "change"], ["file", "", "FileSelectInputDialog", ""], [1, "top-main"], [1, "default-view"], [1, "search-field"], ["id", "search", 1, "search-filter", 3, "click"], ["placeholder", "Buscar usuario...", 1, "search-input", 2, "width", "90%", 3, "ngModel", "keyup.enter", "keyup", "ngModelChange"], [1, "table-default"], [1, "table-default", 2, "overflow-x", "auto"], [1, "content-table"], [4, "ngFor", "ngForOf"], [1, "multi_den"], [1, "multi_contenedor"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-white", 3, "click"], ["id", "item-1", "hidden", "", 1, "multi_list"], [1, "multi_ul"], [1, "table-pagination"], ["id", "back", 1, "btn-arrow", "btn-arrow-left", 3, "click"], [1, "pagination-text"], ["id", "back", 1, "btn-arrow", "btn-arrow-right", 3, "click"], [1, "block-bottom"], [1, "cancle-btn", 3, "click"], [1, "save-btn", 3, "click"], [1, "save-icon"], [1, "next-container"], ["id", "next", 1, "next-btn", 3, "click"], ["name", "gafete", "id", "edit", 1, "multi_button", 3, "click"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-gray", 3, "click"], ["hidden", "", 1, "multi_list", 3, "id"], ["style", "border-bottom: 1px solid #dee2e6 !important;", 4, "ngIf"], ["name", "delete", "id", "delete", 1, "multi_button", 3, "click"], [3, "hidden", 4, "ngIf"], ["class", "asistencia-group", 4, "ngIf"], ["class", "registro-group", 4, "ngIf"], [3, "hidden"], [1, "asistencia-group"], ["name", "asistance", "id", "asistance", 1, "asistance-drop", 3, "ngClass", "value", "disabled", "change"], ["selects", ""], ["value", "1"], ["value", "0"], [1, "registro-group"], ["name", "registro", "id", "registro", 1, "registro-drop", 3, "ngClass", "value", "disabled", "change"], [2, "border-bottom", "1px solid #dee2e6 !important"]],
   template: function AdminParticipantesComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](0, AdminParticipantesComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
@@ -9227,10 +9272,17 @@ AdminParticipantesComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED
         return ctx.onFileSelected($event);
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](16, "div", 12)(17, "div", 13)(18, "div", 14);
-      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](19, "i", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](16, "div", 12)(17, "div", 13)(18, "div", 14)(19, "i", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function AdminParticipantesComponent_Template_i_click_19_listener() {
+        return ctx.searchParticipant();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](20, "input", 16);
-      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("ngModelChange", function AdminParticipantesComponent_Template_input_ngModelChange_20_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("keyup.enter", function AdminParticipantesComponent_Template_input_keyup_enter_20_listener() {
+        return ctx.searchParticipant();
+      })("keyup", function AdminParticipantesComponent_Template_input_keyup_20_listener() {
+        return ctx.searchParticipantReturn();
+      })("ngModelChange", function AdminParticipantesComponent_Template_input_ngModelChange_20_listener($event) {
         return ctx.filtro = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]()();
@@ -18525,11 +18577,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// const fs = require('fs');
 class ParticipantService {
     constructor(http) {
         this.http = http;
-        this.headers = {};
+        this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.url;
         this.accessToken = sessionStorage.getItem('Token')?.toString();
         this.headers = {
@@ -18540,6 +18591,21 @@ class ParticipantService {
             })
         };
     }
+    getParticipantsByEvent2(page, size, event_id, participant_name) {
+        // const params = new HttpParams();
+        (page) && (this.params.set('page', page));
+        (size) && (this.params.set('size', size));
+        (event_id) && (this.params.set('eventId', event_id));
+        (participant_name) && (this.params.set('userName', participant_name));
+        this.headers.params = this.params;
+        return this.http.get(`${this.url}eventos/participants/all-by-event/`, this.headers).toPromise();
+        // const options = { headers: this.headers, params: params };
+        // return this.http.get(`${this.url}/promo/promo/for-admin`, options).toPromise();
+    }
+    // Obtener participantes del evento     
+    getParticipantsByEventSearch(page, size, event_id, participant_name) {
+        return this.http.get(`${this.url}eventos/participants/all-by-event/?page=${page}&size=${size}&eventId=${event_id}&userName=${participant_name}`, this.headers).toPromise();
+    }
     // Obtener participantes del evento     
     getParticipantsByEvent(page, size, event_id) {
         return this.http.get(`${this.url}eventos/participants/all-by-event/?page=${page}&size=${size}&eventId=${event_id}`, this.headers).toPromise();
@@ -18549,6 +18615,9 @@ class ParticipantService {
         return this.http.post(`${this.url}eventos/participants/back/register-participant/`, data, this.headers).toPromise();
     }
     // Actualiar un participante de un evento (+ asistencia/registro)
+    checkinParticipant(participant_id, event_id) {
+        return this.http.post(`${this.url}eventos/participants/back/checkin-participant/${participant_id}/event/${event_id}`, {}, this.headers).toPromise();
+    }
     updateParticipantByEvent(ID, data) {
         return this.http.put(`${this.url}eventos/participants/${ID}`, data, this.headers).toPromise();
     }
