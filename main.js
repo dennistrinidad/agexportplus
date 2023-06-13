@@ -8737,8 +8737,10 @@ function AdminParticipantesComponent_tr_37_ng_container_1_td_1_Template(rf, ctx)
 function AdminParticipantesComponent_tr_37_ng_container_1_td_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 46)(1, "select", 47, 48);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("change", function AdminParticipantesComponent_tr_37_ng_container_1_td_2_Template_select_change_1_listener($event) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 46);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "select", 47, 48);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("change", function AdminParticipantesComponent_tr_37_ng_container_1_td_2_Template_select_change_2_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r24);
       const ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
       const i_r13 = ctx_r23.index;
@@ -8746,19 +8748,21 @@ function AdminParticipantesComponent_tr_37_ng_container_1_td_2_Template(rf, ctx)
       const ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r22.updateAttendance($event, i_r13, item_r12.id));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](3, "option", 49);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](4, "Confirmado");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "option", 49);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](5, "Confirmado");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](5, "option", 50);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](6, "No Confirmado");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](6, "option", 50);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](7, "No Confirmado");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
     const x_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]().$implicit;
     const i_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]().index;
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate2"](" ", x_r16.value, " | ", x_r16.value === "confirmado", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpropertyInterpolate1"]("name", "asistance_", i_r13, "")("id", "asistance_", i_r13, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngClass", x_r16.value === "no_confirmado" ? "asistance-drop select-disable" : "asistance-drop")("value", x_r16.value)("disabled", x_r16.value == "1");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngClass", x_r16.value === "no_confirmado" ? "asistance-drop select-disable" : "asistance-drop")("value", x_r16.value)("disabled", x_r16.value === "confirmado");
   }
 }
 function AdminParticipantesComponent_tr_37_ng_container_1_td_3_Template(rf, ctx) {
@@ -8792,7 +8796,7 @@ function AdminParticipantesComponent_tr_37_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](1, AdminParticipantesComponent_tr_37_ng_container_1_td_1_Template, 2, 2, "td", 42);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](2, AdminParticipantesComponent_tr_37_ng_container_1_td_2_Template, 7, 5, "td", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](2, AdminParticipantesComponent_tr_37_ng_container_1_td_2_Template, 8, 7, "td", 43);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](3, AdminParticipantesComponent_tr_37_ng_container_1_td_3_Template, 7, 4, "td", 44);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
   }
@@ -9217,6 +9221,7 @@ class AdminParticipantesComponent {
       if (response.result.status === 200) {
         // asistance_{{i}}
         // select-disable
+        this.list[index].Asistencia = 'confirmado'; // '1';
         const element = document.getElementById('asistance_' + index);
         element.classList.remove('select-disable'); // element?.classList.add('actions-disble');
         this.utilsService.dialog('SUCCESS', 'Éxito', response.message.description);
