@@ -8651,9 +8651,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "AdminParticipantesComponent": () => (/* binding */ AdminParticipantesComponent)
 /* harmony export */ });
 /* harmony import */ var _Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 3918);
-/* harmony import */ var src_app_Extra_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/Extra/dialog/dialog.component */ 9713);
-/* harmony import */ var src_app_Extra_gafete_dialog_gafete_dialog_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/Extra/gafete-dialog/gafete-dialog.component */ 7078);
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ 2340);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ 2340);
+/* harmony import */ var src_app_Extra_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/Extra/dialog/dialog.component */ 9713);
+/* harmony import */ var src_app_Extra_gafete_dialog_gafete_dialog_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/Extra/gafete-dialog/gafete-dialog.component */ 7078);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ 4534);
 /* harmony import */ var src_app_services_utils_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/utils.service */ 8270);
@@ -8851,14 +8851,15 @@ class AdminParticipantesComponent {
     this.modalService = modalService;
     this.utilsService = utilsService;
     this.participantService = participantService;
-    this.filtro = '';
+    this.count = 0;
     this.eventID = 0;
     this.pageSize = 20;
     this.pageNumber = 0;
     this.totalPages = 0;
     this.loading = false;
     this.isShowDiv = true;
-    this.env = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__.environment.production;
+    this.filtro = '';
+    this.env = src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.production;
     this.categoriesHeading = [];
     this.list = [{
       "Sector": "",
@@ -8878,123 +8879,36 @@ class AdminParticipantesComponent {
     this.originalOrder = (a, b) => {
       return 0;
     };
-    this.count = 0;
-    this.dropdownSettings = {
-      idField: 'id',
-      itemsShowLimit: 1,
-      singleSelection: true,
-      allowSearchFilter: false,
-      textField: 'nombreComercial',
-      allowRemoteDataSearch: false,
-      closeDropDownOnSelection: true
-    };
-    this.empresas = [{
-      id: null,
-      nombreComercial: 'Seleccione...'
-    }, {
-      id: null,
-      nombreComercial: 'Seleccione...'
-    }, {
-      id: null,
-      nombreComercial: 'Seleccione...'
-    }, {
-      id: null,
-      nombreComercial: 'Seleccione...'
-    }];
     this.categoriesHeading = Object.keys(this.list[0]);
   }
   ngOnInit() {
-    this.eventID = Number(sessionStorage.getItem('EventID'));
-    this.eventData = JSON.parse(sessionStorage.getItem('EventData')) || {};
-    const token = sessionStorage.getItem('Token')?.toString();
-    if (token && this.eventID > 0) {
-      this.loadDatabyEvent(this.eventID);
-    } else if (token && this.eventID === 0) {
-      this.utilsService.dialog('ERROR', 'Error', 'No tienes seleccionado un evento');
-      this.utilsService.goToPage('/admin/events/calendario-eventos');
-    } else {
-      this.utilsService.dialog('ERROR', 'Error', 'No tienes seleccionado un evento');
-      this.utilsService.goToPage('/login');
-    }
-    const eventType = Number(sessionStorage.getItem('EventType'));
-    if (eventType < 4) {
-      this.lastPage = '/admin/events/nuevo-evento?ID=' + this.eventID;
-      this.nextPage = false;
-    } else {
-      this.nextPage = true;
-      this.lastPage = '/admin/events/admin-agenda';
-    }
+    var _this = this;
+    return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      _this.eventID = Number(sessionStorage.getItem('EventID'));
+      _this.eventData = JSON.parse(sessionStorage.getItem('EventData')) || {};
+      const token = sessionStorage.getItem('Token')?.toString();
+      if (token && _this.eventID > 0) {
+        _this.loadDatabyEvent(_this.pageNumber, _this.pageSize, _this.eventID, null);
+      } else if (token && _this.eventID === 0) {
+        _this.utilsService.dialog('ERROR', 'Error', 'No tienes seleccionado un evento');
+        _this.utilsService.goToPage('/admin/events/calendario-eventos');
+      } else {
+        _this.utilsService.dialog('ERROR', 'Error', 'No tienes seleccionado un evento');
+        _this.utilsService.goToPage('/login');
+      }
+      const eventType = Number(sessionStorage.getItem('EventType'));
+      if (eventType < 4) {
+        _this.lastPage = '/admin/events/nuevo-evento?ID=' + _this.eventID;
+        _this.nextPage = false;
+      } else {
+        _this.nextPage = true;
+        _this.lastPage = '/admin/events/admin-agenda';
+      }
+    })();
   }
   goToPage(pageName, params) {
     pageName === 'last' && (pageName = this.lastPage);
     this.utilsService.goToPage(pageName, params);
-  }
-  downloadToExcel(template) {
-    var _this = this;
-    return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      if (template) {
-        const data = [{
-          'sector': '',
-          'comision': '',
-          'nombreUsuario': '',
-          'nombreEmpresa': '',
-          'nit': '',
-          'asociado': '',
-          'asistencia': '',
-          'registro': '',
-          'email': '',
-          'profesion': '',
-          'tipoEntrada': '',
-          'fechaAsistencia': ''
-        }];
-        _this.utilsService.downloadToExcel(data, 'Datos', 'Agexport_Plantilla_Importar_participantes_Eventos', 'xlsx');
-        // this.utilsService.downloadToExcel(data, 'Datos', 'Agexport_Plantilla_Importar_participantes_Eventos', 'csv');
-      } else {
-        _this.loading = true;
-        let list;
-        yield _this.participantService.getParticipantsByEvent(0, _this.count, _this.eventID).then( /*#__PURE__*/function () {
-          var _ref = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (response) {
-            list = yield response.result.map(e => {
-              let fechas = '';
-              e.attendances.forEach(i => {
-                fechas += _this.utilsService.date_pipe(i.dateAttendance, 'dd-MM-yyy') + ', ';
-              });
-              fechas = fechas.slice(0, -2);
-              return {
-                id: e?.id,
-                Sector: e?.sector,
-                Comision: e?.comision,
-                "Nombre Usuario": e?.nombreUsuario,
-                "Nombre Empresa": e?.nombreEmpresa,
-                "Correo electrónico": e?.email,
-                NIT: e?.nit,
-                Profesion: e.profesion,
-                Asociado: e?.asociado === true ? 'Si' : 'No',
-                "Rol del usuario": e?.rol,
-                "Tipo de entrada": e?.tipoEntrada,
-                Asistencia: e?.asistencia ? 'confirmado' : 'no_confirmado',
-                // Asistencia: Number(e?.asistencia),
-                Registro: Number(e?.registro),
-                Fechas: fechas
-              };
-            });
-          });
-          return function (_x) {
-            return _ref.apply(this, arguments);
-          };
-        }(), error => {
-          console.log(error);
-          list = _this.listAux;
-          _this.utilsService.dialog('ERROR', 'Error', '¡Intente mas tarde!');
-        }).finally(() => {
-          _this.loading = false;
-        });
-        const eventData = JSON.parse(sessionStorage.getItem('EventData')) || {};
-        const eventName = eventData.nombreEvento ? eventData.nombreEvento.toString() : '';
-        const reportName = 'PARTICIPANTES ' + eventName + ' ' + (yield _this.utilsService.getDate('dd-MM-yyy'));
-        _this.utilsService.downloadToExcel(list, 'Participantes', reportName, 'xlsx');
-      }
-    })();
   }
   onFileSelected(event) {
     var _this2 = this;
@@ -9013,7 +8927,7 @@ class AdminParticipantesComponent {
           } else {
             _this2.utilsService.dialog('ERROR', 'Lo sentimos', 'No fue posible realizar el registro, revisa e intenta de nuevo.');
           }
-          _this2.loadDatabyEvent(_this2.eventData.id);
+          _this2.loadDatabyEvent(_this2.pageNumber, _this2.pageSize, _this2.eventID, _this2.filtro);
         }, error => {
           console.log(error);
           _this2.utilsService.dialog('ERROR', 'Error', error.message.description);
@@ -9038,7 +8952,7 @@ class AdminParticipantesComponent {
   modalConfirmation() {
     var _this3 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const modalRef = _this3.modalService.open(src_app_Extra_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_1__.DialogComponent, {
+      const modalRef = _this3.modalService.open(src_app_Extra_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_2__.DialogComponent, {
         centered: true
       });
       modalRef.componentInstance.title = '';
@@ -9046,13 +8960,13 @@ class AdminParticipantesComponent {
       modalRef.componentInstance.message = '';
       modalRef.componentInstance.type = 'DIALOG';
       yield modalRef.componentInstance.response.subscribe( /*#__PURE__*/function () {
-        var _ref2 = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (response) {
+        var _ref = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (response) {
           modalRef.closed;
           modalRef.close();
           _this3.sendConfirmation(response);
         });
-        return function (_x2) {
-          return _ref2.apply(this, arguments);
+        return function (_x) {
+          return _ref.apply(this, arguments);
         };
       }());
     })();
@@ -9067,12 +8981,12 @@ class AdminParticipantesComponent {
         "participantsArr": null
       };
       this.participantService.senConfirmationdParticipant(this.eventData.id, data).then( /*#__PURE__*/function () {
-        var _ref3 = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (response) {
+        var _ref2 = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (response) {
           console.log(response);
           _this4.utilsService.dialog('SUCCESS', 'Éxito', response.message.description);
         });
-        return function (_x3) {
-          return _ref3.apply(this, arguments);
+        return function (_x2) {
+          return _ref2.apply(this, arguments);
         };
       }(), error => {
         this.utilsService.dialog('ERROR', 'Error', error.error.message.description);
@@ -9095,7 +9009,7 @@ class AdminParticipantesComponent {
       const imageBadgeFooter = _this5.eventData.imageBadgeFooter ? _this5.eventData.imageBadgeFooter.toString() : '';
       const invitadoEspecial = participant.invitadoEspecial ? Boolean(participant.invitadoEspecial.toString()) : '';
       console.log(participant);
-      const modalRef = _this5.modalService.open(src_app_Extra_gafete_dialog_gafete_dialog_component__WEBPACK_IMPORTED_MODULE_2__.GafeteDialogComponent);
+      const modalRef = _this5.modalService.open(src_app_Extra_gafete_dialog_gafete_dialog_component__WEBPACK_IMPORTED_MODULE_3__.GafeteDialogComponent);
       modalRef.componentInstance.ID = ID;
       modalRef.componentInstance.type = 'PARTICIPANTE';
       modalRef.componentInstance.tipoEntrada = tipoEntrada;
@@ -9116,56 +9030,89 @@ class AdminParticipantesComponent {
       });
     })();
   }
-  searchParticipantReturn() {
-    if (this.filtro.length === 0) {
-      this.list = this.listAux;
-    }
-  }
-  searchParticipant() {
-    this.loading = true;
-    return this.participantService.getParticipantsByEventSearch(this.pageNumber, this.pageSize, this.eventID, this.filtro).then(response => {
-      this.list = response.result.map(e => {
-        let fechas = '';
-        e.attendances.forEach(i => {
-          fechas += this.utilsService.date_pipe(i.dateAttendance, 'dd-MM-yyy') + ', ';
+  downloadToExcel(template) {
+    var _this6 = this;
+    return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      if (template) {
+        const data = [{
+          'sector': '',
+          'comision': '',
+          'nombreUsuario': '',
+          'nombreEmpresa': '',
+          'nit': '',
+          'asociado': '',
+          'asistencia': '',
+          'registro': '',
+          'email': '',
+          'profesion': '',
+          'tipoEntrada': '',
+          'fechaAsistencia': ''
+        }];
+        _this6.utilsService.downloadToExcel(data, 'Datos', 'Agexport_Plantilla_Importar_participantes_Eventos', 'xlsx'); // csv
+      } else {
+        _this6.loading = true;
+        yield _this6.participantService.getParticipantsByEvent(0, _this6.count, _this6.eventID, null).then( /*#__PURE__*/function () {
+          var _ref3 = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (response) {
+            const list = yield response.result.map(e => {
+              let fechas = '';
+              e.attendances.forEach(i => {
+                fechas += _this6.utilsService.date_pipe(i.dateAttendance, 'dd-MM-yyy') + ', ';
+              });
+              fechas = fechas.slice(0, -2);
+              return {
+                id: e?.id,
+                Sector: e?.sector,
+                Comision: e?.comision,
+                "Nombre Usuario": e?.nombreUsuario,
+                "Nombre Empresa": e?.nombreEmpresa,
+                "Correo electrónico": e?.email,
+                NIT: e?.nit,
+                Profesion: e.profesion,
+                Asociado: e?.asociado === true ? 'Si' : 'No',
+                "Rol del usuario": e?.rol,
+                "Tipo de entrada": e?.tipoEntrada,
+                Asistencia: e?.asistencia ? 'confirmado' : 'no_confirmado',
+                Registro: Number(e?.registro),
+                Fechas: fechas
+              };
+            });
+            const eventData = JSON.parse(sessionStorage.getItem('EventData')) || {};
+            const eventName = eventData.nombreEvento ? eventData.nombreEvento.toString() : '';
+            const reportName = 'PARTICIPANTES ' + eventName + ' ' + _this6.utilsService.getDate('dd-MM-yyy');
+            _this6.utilsService.downloadToExcel(list, 'Participantes', reportName, 'xlsx');
+          });
+          return function (_x3) {
+            return _ref3.apply(this, arguments);
+          };
+        }(), error => {
+          console.log(error);
+          _this6.utilsService.dialog('ERROR', 'Error', '¡Intente mas tarde!');
+        }).finally(() => {
+          _this6.loading = false;
         });
-        fechas = fechas.slice(0, -2);
-        return {
-          id: e?.id,
-          Sector: e?.sector,
-          Comision: e?.comision,
-          "Nombre Usuario": e?.nombreUsuario,
-          "Nombre Empresa": e?.nombreEmpresa,
-          "Correo electrónico": e?.email,
-          NIT: e?.nit,
-          Asociado: e?.asociado === true ? 'Si' : 'No',
-          "Rol del usuario": e?.rol,
-          "Tipo de entrada": e?.tipoEntrada,
-          Asistencia: e?.asistencia ? 'confirmado' : 'no_confirmado',
-          // Asistencia: Number(e?.asistencia),
-          Registro: Number(e?.registro),
-          Fechas: fechas,
-          Profesion: e.profesion
-        };
-      });
-      this.totalPages = Math.ceil(response.count / this.pageSize);
-    }, error => {
-      console.log(error);
-      this.utilsService.dialog('ERROR', 'Error', '¡Intente mas tarde!');
-    }).finally(() => {
-      this.loading = false;
-    });
+      }
+    })();
   }
-  loadDatabyEvent(event_id) {
+  searchParticipantReturn() {
+    var _this7 = this;
+    return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      if (_this7.filtro.length === 0) {
+        _this7.filtro = null;
+        _this7.totalPages = 0;
+        _this7.pageNumber = 0;
+        yield _this7.loadDatabyEvent(_this7.pageNumber, _this7.pageSize, _this7.eventID, null);
+      }
+    })();
+  }
+  loadDatabyEvent(page, size, event_id, participant_name, search) {
     this.loading = true;
-    return this.participantService.getParticipantsByEvent(this.pageNumber, this.pageSize, event_id).then(response => {
+    if (search) {
+      page = 0;
+      this.pageNumber = 0;
+    }
+    return this.participantService.getParticipantsByEvent(page, size, event_id, participant_name).then(response => {
       this.count = response.count;
       this.list = response.result.map(e => {
-        let fechas = '';
-        e.attendances.forEach(i => {
-          fechas += this.utilsService.date_pipe(i.dateAttendance, 'dd-MM-yyy') + ', ';
-        });
-        fechas = fechas.slice(0, -2);
         return {
           id: e?.id,
           Sector: e?.sector,
@@ -9180,11 +9127,9 @@ class AdminParticipantesComponent {
           Asistencia: e?.asistencia ? 'confirmado' : 'no_confirmado',
           // Asistencia: Number(e?.asistencia),
           Registro: Number(e?.registro),
-          Fechas: fechas,
           Profesion: e.profesion
         };
       });
-      this.listAux = this.list;
       this.totalPages = Math.ceil(response.count / this.pageSize);
     }, error => {
       console.log(error);
@@ -9196,13 +9141,9 @@ class AdminParticipantesComponent {
   updateAttendance($event, index, participant_id) {
     this.loading = true;
     const attendance = Boolean(Number($event.target.value));
-    // this.participantService.updateParticipantByEvent(participant_id, { asociado: attendance }).then(
     this.participantService.checkinParticipant(participant_id, this.eventID).then(response => {
-      // console.log('response: ', response);
       if (response.result.status === 200) {
-        // asistance_{{i}}
-        // select-disable
-        this.list[index].Asistencia = 'confirmado'; // '1';
+        this.list[index].Asistencia = 'confirmado';
         const element = document.getElementById('asistance_' + index);
         element.classList.remove('select-disable'); // element?.classList.add('actions-disble');
         this.utilsService.dialog('SUCCESS', 'Éxito', response.message.description);
@@ -9241,7 +9182,7 @@ class AdminParticipantesComponent {
       console.log(response.message.title);
       console.log(response.message.description);
       this.utilsService.dialog('SUCCESS', 'Exito', 'Participante eliminado');
-      this.loadDatabyEvent(eventID);
+      this.loadDatabyEvent(this.pageNumber, this.pageSize, this.eventID, this.filtro);
     }, error => {
       console.log(error);
     }).finally(() => {
@@ -9252,14 +9193,14 @@ class AdminParticipantesComponent {
     if (this.pageNumber + 1 != 1) {
       this.pageNumber--;
       this.list.length = 0;
-      this.loadDatabyEvent(this.eventData.id);
+      this.loadDatabyEvent(this.pageNumber, this.pageSize, this.eventID, this.filtro);
     }
   }
   onRight() {
     if (this.pageNumber + 1 != this.totalPages) {
       this.pageNumber++;
       this.list.length = 0;
-      this.loadDatabyEvent(this.eventData.id);
+      this.loadDatabyEvent(this.pageNumber, this.pageSize, this.eventID, this.filtro);
     }
   }
 }
@@ -9280,7 +9221,7 @@ AdminParticipantesComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED
   },
   decls: 53,
   vars: 8,
-  consts: [[4, "ngIf"], [1, "main"], [1, "header"], [1, "top-block-1"], ["id", "back", 1, "back-btn", 3, "click"], [1, "back-label"], ["class", "next-container", 4, "ngIf"], [1, "btn-group"], [1, "agregar", 3, "disabled", "click"], ["onclick", "document.getElementById('file').click();", 1, "importar"], ["type", "file", "id", "file", "name", "file", "accept", "text/csv", 2, "display", "none", 3, "change"], ["file", "", "FileSelectInputDialog", ""], [1, "top-main"], [1, "default-view"], [1, "search-field"], ["id", "search", 1, "search-filter", 3, "click"], ["placeholder", "Buscar usuario...", 1, "search-input", 2, "width", "90%", 3, "ngModel", "keyup.enter", "keyup", "ngModelChange"], [1, "agregar", 2, "margin", "-9px 0", "padding", "13px 20px", "right", "3px", "width", "148px", 3, "click"], [1, "table-default"], [1, "table-default", 2, "overflow-x", "auto"], [1, "content-table"], [4, "ngFor", "ngForOf"], [1, "multi_den"], [1, "multi_contenedor"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-white", 3, "click"], ["id", "item-1", "hidden", "", 1, "multi_list"], [1, "multi_ul"], ["name", "gafete", "id", "edit", 1, "multi_button", 3, "click"], [1, "table-pagination"], ["id", "back", 1, "btn-arrow", "btn-arrow-left", 3, "click"], [1, "pagination-text"], ["id", "back", 1, "btn-arrow", "btn-arrow-right", 3, "click"], [1, "block-bottom"], [1, "cancle-btn", 3, "click"], [1, "save-btn", 3, "click"], [1, "save-icon"], [1, "next-container"], ["id", "next", 1, "next-btn", 3, "click"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-gray", 3, "click"], ["hidden", "", 1, "multi_list", 3, "id"], ["style", "border-bottom: 1px solid #dee2e6 !important;", 4, "ngIf"], ["name", "delete", "id", "delete", 1, "multi_button", 3, "click"], [3, "hidden", 4, "ngIf"], ["class", "asistencia-group", 4, "ngIf"], ["class", "registro-group", 4, "ngIf"], [3, "hidden"], [1, "asistencia-group"], [3, "name", "id", "ngClass", "value", "disabled", "change"], ["selects", ""], ["value", "confirmado"], ["value", "no_confirmado"], [1, "registro-group"], ["disabled", "", 1, "registro-drop", 3, "name", "id", "ngClass", "value", "change"], ["value", "1"], ["value", "0"], [2, "border-bottom", "1px solid #dee2e6 !important"]],
+  consts: [[4, "ngIf"], [1, "main"], [1, "header"], [1, "top-block-1"], ["id", "back", 1, "back-btn", 3, "click"], [1, "back-label"], ["class", "next-container", 4, "ngIf"], [1, "btn-group"], [1, "agregar", 3, "disabled", "click"], ["onclick", "document.getElementById('file').click();", 1, "importar"], ["type", "file", "id", "file", "name", "file", "accept", "text/csv", 2, "display", "none", 3, "change"], ["file", "", "FileSelectInputDialog", ""], [1, "top-main"], [1, "default-view"], [1, "search-field"], ["id", "search", 1, "search-filter", 3, "click"], ["placeholder", "Buscar usuario...", 1, "search-input", 2, "width", "90%", 3, "ngModel", "ngModelChange", "keyup.enter", "keyup"], [1, "agregar", 2, "margin", "-9px 0", "padding", "13px 20px", "right", "3px", "width", "148px", 3, "click"], [1, "table-default"], [1, "table-default", 2, "overflow-x", "auto"], [1, "content-table"], [4, "ngFor", "ngForOf"], [1, "multi_den"], [1, "multi_contenedor"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-white", 3, "click"], ["id", "item-1", "hidden", "", 1, "multi_list"], [1, "multi_ul"], ["name", "gafete", "id", "edit", 1, "multi_button", 3, "click"], [1, "table-pagination"], ["id", "back", 1, "btn-arrow", "btn-arrow-left", 3, "click"], [1, "pagination-text"], ["id", "back", 1, "btn-arrow", "btn-arrow-right", 3, "click"], [1, "block-bottom"], [1, "cancle-btn", 3, "click"], [1, "save-btn", 3, "click"], [1, "save-icon"], [1, "next-container"], ["id", "next", 1, "next-btn", 3, "click"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-gray", 3, "click"], ["hidden", "", 1, "multi_list", 3, "id"], ["style", "border-bottom: 1px solid #dee2e6 !important;", 4, "ngIf"], ["name", "delete", "id", "delete", 1, "multi_button", 3, "click"], [3, "hidden", 4, "ngIf"], ["class", "asistencia-group", 4, "ngIf"], ["class", "registro-group", 4, "ngIf"], [3, "hidden"], [1, "asistencia-group"], [3, "name", "id", "ngClass", "value", "disabled", "change"], ["selects", ""], ["value", "confirmado"], ["value", "no_confirmado"], [1, "registro-group"], ["disabled", "", 1, "registro-drop", 3, "name", "id", "ngClass", "value", "change"], ["value", "1"], ["value", "0"], [2, "border-bottom", "1px solid #dee2e6 !important"]],
   template: function AdminParticipantesComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](0, AdminParticipantesComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
@@ -9312,21 +9253,21 @@ AdminParticipantesComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](16, "div", 12)(17, "div", 13)(18, "div", 14)(19, "i", 15);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function AdminParticipantesComponent_Template_i_click_19_listener() {
-        return ctx.searchParticipant();
+        return ctx.loadDatabyEvent(ctx.pageNumber, ctx.pageSize, ctx.eventID, ctx.filtro, true);
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](20, "input", 16);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("keyup.enter", function AdminParticipantesComponent_Template_input_keyup_enter_20_listener() {
-        return ctx.searchParticipant();
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function AdminParticipantesComponent_Template_input_ngModelChange_20_listener($event) {
+        return ctx.filtro = $event;
+      })("keyup.enter", function AdminParticipantesComponent_Template_input_keyup_enter_20_listener() {
+        return ctx.loadDatabyEvent(ctx.pageNumber, ctx.pageSize, ctx.eventID, ctx.filtro, true);
       })("keyup", function AdminParticipantesComponent_Template_input_keyup_20_listener() {
         return ctx.searchParticipantReturn();
-      })("ngModelChange", function AdminParticipantesComponent_Template_input_ngModelChange_20_listener($event) {
-        return ctx.filtro = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](21, "button", 17);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function AdminParticipantesComponent_Template_button_click_21_listener() {
-        return ctx.searchParticipant();
+        return ctx.loadDatabyEvent(ctx.pageNumber, ctx.pageSize, ctx.eventID, ctx.filtro, true);
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](22, " Buscar ");
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
@@ -18626,68 +18567,65 @@ __webpack_require__.r(__webpack_exports__);
 class ParticipantService {
     constructor(http) {
         this.http = http;
-        this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.url;
-        this.accessToken = sessionStorage.getItem('Token')?.toString();
-        this.headers = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders({
-                'Content-Type': 'application/json',
-                'accept': 'application/json',
-                'x-access-token': this.accessToken
-            })
-        };
+        this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
+        this.accessToken = sessionStorage.getItem('Token').toString();
+        this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders({
+            'Content-Type': 'application/json',
+            'accept': 'application/json',
+            'x-access-token': this.accessToken
+        });
+        // this.params = this.params.delete('size')
+        this.options = { headers: this.headers };
     }
-    getParticipantsByEvent2(page, size, event_id, participant_name) {
-        // const params = new HttpParams();
-        (page) && (this.params.set('page', page));
-        (size) && (this.params.set('size', size));
-        (event_id) && (this.params.set('eventId', event_id));
-        (participant_name) && (this.params.set('userName', participant_name));
-        this.headers.params = this.params;
-        return this.http.get(`${this.url}eventos/participants/all-by-event/`, this.headers).toPromise();
-        // const options = { headers: this.headers, params: params };
-        // return this.http.get(`${this.url}/promo/promo/for-admin`, options).toPromise();
+    getParticipantsByEvent(page, size, event_id, participant_name) {
+        this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
+        (page != null) && (this.params = this.params.set('page', page));
+        (size != null) && (this.params = this.params.set('size', size));
+        (event_id != null) && (this.params = this.params.set('eventId', event_id));
+        (participant_name != null && participant_name.length > 0) && (this.params = this.params.set('userName', participant_name));
+        this.options = { headers: this.headers, params: this.params };
+        return this.http.get(`${this.url}eventos/participants/all-by-event/`, this.options).toPromise();
     }
     // Obtener participantes del evento     
     getParticipantsByEventSearch(page, size, event_id, participant_name) {
-        return this.http.get(`${this.url}eventos/participants/all-by-event/?page=${page}&size=${size}&eventId=${event_id}&userName=${participant_name}`, this.headers).toPromise();
+        return this.http.get(`${this.url}eventos/participants/all-by-event/?page=${page}&size=${size}&eventId=${event_id}&userName=${participant_name}`, this.options).toPromise();
     }
     // Obtener participantes del evento     
-    getParticipantsByEvent(page, size, event_id) {
-        return this.http.get(`${this.url}eventos/participants/all-by-event/?page=${page}&size=${size}&eventId=${event_id}`, this.headers).toPromise();
+    getParticipantsByEventOLD(page, size, event_id) {
+        return this.http.get(`${this.url}eventos/participants/all-by-event/?page=${page}&size=${size}&eventId=${event_id}`, this.options).toPromise();
     }
     // Agregar un participante
     addParticipantToEvent(data) {
-        return this.http.post(`${this.url}eventos/participants/back/register-participant/`, data, this.headers).toPromise();
+        return this.http.post(`${this.url}eventos/participants/back/register-participant/`, data, this.options).toPromise();
     }
     // Actualiar un participante de un evento (+ asistencia/registro)
     checkinParticipant(participant_id, event_id) {
-        return this.http.post(`${this.url}eventos/participants/back/checkin-participant/${participant_id}/event/${event_id}`, {}, this.headers).toPromise();
+        return this.http.post(`${this.url}eventos/participants/back/checkin-participant/${participant_id}/event/${event_id}`, {}, this.options).toPromise();
     }
     updateParticipantByEvent(ID, data) {
-        return this.http.put(`${this.url}eventos/participants/${ID}`, data, this.headers).toPromise();
+        return this.http.put(`${this.url}eventos/participants/${ID}`, data, this.options).toPromise();
     }
     // Eliminar un participante de un evento
     deleteParticipant(ID) {
-        return this.http.delete(`${this.url}eventos/participants/${ID}`, this.headers).toPromise();
+        return this.http.delete(`${this.url}eventos/participants/${ID}`, this.options).toPromise();
     }
     // Gafete
     getBadge(event_id, participant_id) {
-        return this.http.get(`${this.url}eventos/participants/download-badge/${event_id}/${participant_id}`, this.headers).toPromise();
+        return this.http.get(`${this.url}eventos/participants/download-badge/${event_id}/${participant_id}`, this.options).toPromise();
     }
     // Importar participantes
     importParticipant(event_id, formData) {
-        const headers = {
+        this.options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders({
-                'x-access-token': this.accessToken
-                // 'Content-Type': 'multipart/form-data',
+                'x-access-token': this.accessToken // 'Content-Type': 'multipart/form-data',
             })
         };
-        return this.http.put(`${this.url}eventos/participants/import-participants/?eventId=${event_id}`, formData, headers).toPromise();
+        return this.http.put(`${this.url}eventos/participants/import-participants/?eventId=${event_id}`, formData, this.options).toPromise();
     }
     // Envia Confirmar
     senConfirmationdParticipant(event_id, data) {
-        return this.http.post(`${this.url}eventos/participants/confirm-participants/${event_id}`, data, this.headers).toPromise();
+        return this.http.post(`${this.url}eventos/participants/confirm-participants/${event_id}`, data, this.options).toPromise();
     }
 }
 ParticipantService.ɵfac = function ParticipantService_Factory(t) { return new (t || ParticipantService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient)); };
@@ -19382,7 +19320,7 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.productio
 }
 // Mostrar/Ocultar Console log
 (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.debugging === false) && (window.console.log = () => { });
-window.console.log = () => { };
+// window.console.log = () => {}
 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.platformBrowser().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule)
     .catch(err => console.error(err));
 
