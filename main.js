@@ -17069,7 +17069,7 @@ EditPromocionComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](39, EditPromocionComponent_div_39_Template, 2, 1, "div", 26);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](40, "div", 27)(41, "div", 28)(42, "label");
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](43, "Fecha y hora de incio *");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](43, "Fecha y hora de inicio *");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](44, "div", 29)(45, "form", 30)(46, "div", 31)(47, "div", 32)(48, "input", 33, 34);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function EditPromocionComponent_Template_input_ngModelChange_48_listener($event) {
