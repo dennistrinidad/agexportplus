@@ -1,5 +1,13 @@
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 14.3913V4.04348L11.9565 1H1.6087C1.27391 1 1 1.27391 1 1.6087V14.3913C1 14.7261 1.27391 15 1.6087 15H14.3913C14.7261 15 15 14.7261 15 14.3913Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12.5654 15L3.43499 15V10.1548C3.43499 9.80785 3.71498 9.52174 4.06802 9.52174H11.9567C12.2915 9.52174 12.5654 9.79565 12.5654 10.1304V15Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4.65234 1H9.52191V4.65217C9.52191 4.98696 9.248 5.26087 8.91321 5.26087H5.26104C4.92626 5.26087 4.65234 4.98696 4.65234 4.65217V1Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16.4 16.4" style="enable-background:new 0 0 16.4 16.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<path class="st0" d="M15.6,3.9l-3-3c-0.1-0.1-0.2-0.1-0.4-0.1H9.7H4.9h-3c-0.6,0-1.1,0.5-1.1,1.1v12.8c0,0.6,0.5,1.1,1.1,1.1h1.8
+	h9.1h1.8c0.6,0,1.1-0.5,1.1-1.1V4.3C15.7,4.1,15.7,4,15.6,3.9z M9.2,1.7v3.2c0,0.1,0,0.1-0.1,0.1H5.5c-0.1,0-0.1,0-0.1-0.1V1.7H9.2z
+	 M4.2,14.7v-4.3c0-0.1,0.1-0.1,0.1-0.1h7.9c0.1,0,0.1,0.1,0.1,0.1v4.4H4.2z M14.7,14.6c0,0.1-0.1,0.1-0.1,0.1h-1.3v-4.4
+	c0-0.6-0.5-1.1-1.1-1.1H4.3c-0.6,0-1.1,0.5-1.1,1.1v4.3H1.8c-0.1,0-0.1-0.1-0.1-0.1V1.8c0-0.1,0-0.1,0.1-0.1h2.5v3.2
+	C4.4,5.5,4.9,6,5.5,6h3.7c0.6,0,1.1-0.5,1.1-1.1V1.7H12l2.8,2.8V14.6z"/>
 </svg>
