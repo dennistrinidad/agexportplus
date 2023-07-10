@@ -8542,10 +8542,15 @@ a.text-dark:hover, a.text-dark:focus {
 /* Admiration Icon to Tooltip */
 .admiration_icon {
     width: 16px;
-    height: 16px;   
-    display: inline-block; 
+    height: 16px;
+    display: inline-block;
     background-repeat: no-repeat;
     background-image: url('admiration_icon.svg');
+}
+/* Divisor sections */
+.divider-section {
+    color: #C7C7C7;
+    margin-top: 40px;
 }
 /* Error message */
 .err-msg {
@@ -8561,6 +8566,25 @@ a.text-dark:hover, a.text-dark:focus {
 }
 .disabled {
     background-color: #ECECEC !important;
+}
+/* Select enable/disabled */
+.select-enable {
+    font-size: 14px;
+    color: #1A44DB;
+    font-weight: 600;
+    padding: 5px 10px;
+    line-height: 16px;
+    border-radius: 10px;
+    border: 1px solid #C1C1C1;
+    font-family: 'Jost', sans-serif;
+}
+.select-disable {
+    font-size: 13px;
+    color: #939393;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.005em;
 }
 /* Change Page */
 .btn-arrow-left {
