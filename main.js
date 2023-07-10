@@ -10090,7 +10090,7 @@ function ReporteriaComponent_option_10_Template(rf, ctx) {
     const x_r12 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpropertyInterpolate"]("value", x_r12.id);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate2"]("", x_r12.id, " | ", x_r12.name, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](x_r12.name);
   }
 }
 function ReporteriaComponent_option_40_Template(rf, ctx) {
@@ -10265,14 +10265,7 @@ function ReporteriaComponent_div_54_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](16, "div", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](17, "br");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](18, "button", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_div_54_Template_button_click_18_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r32);
-      const ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r34.downloadToExcel());
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](19, "Descargar Reporte");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
     const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
@@ -10510,7 +10503,7 @@ class ReporteriaComponent {
         case 'Encuestas eventos':
           {
             _this4.getSurveyReport();
-            _this4.selectedFilter = 'Nombre del evento';
+            _this4.selectedFilter = 'Nombre de evento';
           }
           break;
         default:
@@ -10678,10 +10671,10 @@ class ReporteriaComponent {
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
         _this9.loading = true;
-        console.log(_this9.filter);
         const response = yield _this9.reportService.getEventSurveys(Number(_this9.filter.id), null, null, _this9.utilsService.formatDate(_this9.start_date), _this9.utilsService.formatDate(_this9.end_date), null,
         // this.filter!.name!,
         Number(_this9.filter.id));
+        console.log(response);
         if (response?.success === true) {
           if (response?.result?.surveys.length > 0) {
             _this9.list = response.result.surveys.map(x => {
@@ -10691,17 +10684,84 @@ class ReporteriaComponent {
                 'Sector': x?.sector,
                 'Comisión': x?.comision,
                 'Nombre del usuario': x?.userName,
-                'Pregunta 1': x?.answers[0].answer,
-                'Pregunta 2': x?.answers[1].answer,
-                'Pregunta 3': x?.answers[2].answer
+                'Pregunta 1': x?.answers[0]?.answer,
+                'Pregunta 2': x?.answers[1]?.answer,
+                'Pregunta 3': x?.answers[2]?.answer
               };
             });
+            // [
+            //   {
+            //       "evenName": "V Congreso Internacional OEA-GT 2023",
+            //       "eventDate": "2023-06-30",
+            //       "userId": 4,
+            //       "userName": "Daniel Aviles",
+            //       "sector": null,
+            //       "comite": null,
+            //       "answers": [
+            //           {
+            //               "id": 12,
+            //               "answer": "chocolate",
+            //               "userId": 4,
+            //               "surveyQuestionId": 21,
+            //               "surveyQuestion": {
+            //                   "id": 21,
+            //                   "text": "En escala de 1 a 10, ¿qué tan probable es, que recomiende con otras empresas este evento?",
+            //                   "type": "stars"
+            //               }
+            //           }
+            //       ]
+            //   },
+            //   {
+            //       "evenName": "V Congreso Internacional OEA-GT 2023",
+            //       "eventDate": "2023-06-30",
+            //       "userId": 42,
+            //       "userName": "Asociado Role",
+            //       "sector": null,
+            //       "comite": null,
+            //       "answers": [
+            //           {
+            //               "id": 13,
+            //               "answer": "azul",
+            //               "userId": 42,
+            //               "surveyQuestionId": 22,
+            //               "surveyQuestion": {
+            //                   "id": 22,
+            //                   "text": "Podría indicarnos ¿qué fue lo que más le gusto del evento?",
+            //                   "type": "open"
+            //               }
+            //           },
+            //           {
+            //               "id": 14,
+            //               "answer": "true",
+            //               "userId": 42,
+            //               "surveyQuestionId": 23,
+            //               "surveyQuestion": {
+            //                   "id": 23,
+            //                   "text": "¿Qué nos recomendaría como a actividades a añadir para este evento?",
+            //                   "type": "open"
+            //               }
+            //           },
+            //           {
+            //               "id": 15,
+            //               "answer": "5.0",
+            //               "userId": 42,
+            //               "surveyQuestionId": 23,
+            //               "surveyQuestion": {
+            //                   "id": 23,
+            //                   "text": "¿Qué nos recomendaría como a actividades a añadir para este evento?",
+            //                   "type": "open"
+            //               }
+            //           }
+            //       ]
+            //   }
+            // ]
+            console.log(_this9.list);
             _this9.count = response?.result?.surveys.length;
             _this9.categoriesHeading = Object.keys(_this9.list[0]);
             _this9.totalPages = Math.ceil(_this9.count / _this9.pageSize);
           } else {
             _this9.categoriesHeading = [];
-            _this9.utilsService.dialog('ERROR', 'Advertencia', 'Sin datos de constancias.');
+            _this9.utilsService.dialog('ERROR', 'Advertencia', 'Sin datos de encuestas.');
           }
         } else {
           console.log('error 1', response);
@@ -10764,7 +10824,7 @@ ReporteriaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
   consts: [[4, "ngIf"], [1, "main"], [1, "main-block"], [1, "label-1"], [1, "row-10"], [1, "custom-input"], ["name", "event", "id", "event", 1, "select-box", 3, "change"], [3, "value", 4, "ngFor", "ngForOf"], [1, "col-5"], [1, "row"], [1, "col"], [1, "custom-input", "datetime-box"], [1, "dt-row"], [1, "row", "row-cols-sm-auto", "cal-form"], [1, "col-10"], [1, "input-group"], ["placeholder", "yyyy-mm-dd", "name", "start_date", "ngbDatepicker", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["d1", "ngbDatepicker"], ["type", "button", 1, "btn", "btn-outline-secondary", "bi", "bi-calendar3", 3, "click"], ["placeholder", "yyyy-mm-dd", "name", "end_date", "ngbDatepicker", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["d2", "ngbDatepicker"], [1, "row-10", "d-flex", "align-items-center"], ["name", "event", "id", "event", 1, "select-box", 3, "ngModel", "change", "ngModelChange"], [4, "ngFor", "ngForOf"], ["name", "event2", "id", "event2", 1, "select-box", 3, "ngModel", "disabled", "ngModelChange"], [1, "col", "custom-input", "d-flex", "align-items-center"], ["class", "save-btn", "disabled", "", 4, "ngIf"], ["class", "save-btn", 3, "click", 4, "ngIf"], ["class", "save-btn", 3, "disabled", "click", 4, "ngIf"], ["class", "main-block", 4, "ngIf"], [3, "value"], ["disabled", "", 1, "save-btn"], [1, "save-btn", 3, "click"], [1, "save-btn", 3, "disabled", "click"], [1, "default-view"], [1, "table-default", 2, "overflow-x", "auto"], ["border", "1", 1, "content-table"], [1, "table-pagination"], ["id", "back", 1, "btn-arrow", "btn-arrow-left", 3, "click"], [1, "pagination-text"], ["id", "next", 1, "btn-arrow", "btn-arrow-right", 3, "click"]],
   template: function ReporteriaComponent_Template(rf, ctx) {
     if (rf & 1) {
-      const _r35 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
+      const _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](0, ReporteriaComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "div", 1)(2, "div", 2)(3, "label", 3);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](4, "Reportes");
@@ -10776,7 +10836,7 @@ ReporteriaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("change", function ReporteriaComponent_Template_select_change_9_listener($event) {
         return ctx.changeFilter($event);
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](10, ReporteriaComponent_option_10_Template, 2, 3, "option", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](10, ReporteriaComponent_option_10_Template, 2, 2, "option", 7);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](11, "div", 8)(12, "div", 9)(13, "div", 10)(14, "div", 11)(15, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](16, "Fecha de inicio");
@@ -10788,7 +10848,7 @@ ReporteriaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](23, "button", 18);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_Template_button_click_23_listener() {
-        _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r35);
+        _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r34);
         const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵreference"](22);
         return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](_r2.toggle());
       });
@@ -10803,7 +10863,7 @@ ReporteriaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](34, "button", 18);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_Template_button_click_34_listener() {
-        _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r35);
+        _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r34);
         const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵreference"](33);
         return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](_r3.toggle());
       });
@@ -10836,7 +10896,7 @@ ReporteriaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](52, ReporteriaComponent_button_52_Template, 2, 1, "button", 28);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](53, ReporteriaComponent_button_53_Template, 2, 1, "button", 28);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](54, ReporteriaComponent_div_54_Template, 20, 8, "div", 29);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](54, ReporteriaComponent_div_54_Template, 18, 8, "div", 29);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
