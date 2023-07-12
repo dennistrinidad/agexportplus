@@ -8587,6 +8587,40 @@ a.text-dark:hover, a.text-dark:focus {
     letter-spacing: 0.005em;
 }
 /* Change Page */
+.back-btn {
+    margin-right: 18px;
+    align-self: center;
+    background-image: url('back.svg');
+}
+.next-btn {
+    margin-left: 18px;
+    background-image: url('next.svg');
+}
+.back-btn,
+.next-btn {
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.next-container {
+    right: 0;
+    align-self: end;
+    position: absolute;
+}
+.change-page-label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 40px;
+    color: #000000;
+    vertical-align: middle;
+}
+/* Change Page On List */
 .btn-arrow-left {
     margin-right: 18px;
     background-image: url('page-left-arrow.png');
