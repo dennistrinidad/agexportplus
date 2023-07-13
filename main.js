@@ -8787,7 +8787,7 @@ class EditNotificacionComponent {
   }
   validate() {
     const $text_string = cheerio__WEBPACK_IMPORTED_MODULE_1__["default"].load(this.notification.message).text();
-    return this.notification.subject.length < 5 || $text_string.length < 5 || $text_string.length > 10 || this.notification.notificationType == 'scheduled' && Object.entries(this.dateStart).length === 0;
+    return this.notification.subject.length < 10 || $text_string.length < 20 || $text_string.length > 160 || this.notification.notificationType == 'scheduled' && Object.entries(this.dateStart).length === 0;
     // RESOLVER ERROR
     // console.log(this.sendHour, typeof this.sendHour)
     // console.log(Object.values(this.sendHour).length === 0)
@@ -19907,7 +19907,7 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.debugging
     window.console.log = () => { };
 }
 ;
-window.console.log = () => { };
+// window.console.log = () => {}
 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.platformBrowser().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule)
     .catch(err => console.error(err));
 
