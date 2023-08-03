@@ -2381,6 +2381,17 @@ function EditConferenciasComponent_div_77_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r14.list);
   }
 }
+// {
+//   "scheduleId": 34,
+//   "eventId": 144,
+//   "nombreActividad": "Conferencia de prueba",
+//   "direccion": "Quetzaltenango",
+//   "modalidadID": 1,
+//   "description": "Conferencia creada para realizar pruebas",
+//   "fechaHoraInicio": "2023-07-13 06:06:06",
+//   "fechaHoraFin": "2023-07-13 06:06:06",
+//   "speakerId": 16
+// }
 class EditConferenciasComponent {
   constructor(utilsService, speakerService, scheduleService, conferenceService) {
     this.utilsService = utilsService;
@@ -6032,12 +6043,10 @@ class NuevoEventoComponent {
     const item = document.getElementById('mainEvento');
     item?.classList.remove('not-visible');
     element?.classList.remove('not-visible');
-    // this.utilsService.emitChange(true, 'eliminar y activar debajo');
-    if (Number(this.eventData.eventCategoryId) < 4) {
-      // this.eventCategory
-      this.utilsService.emitChange(true, false, 'nuevo-evento l146');
+    if (Number(this.eventData.eventCategoryId) == 1 || Number(this.eventData.eventCategoryId) == 3) {
+      this.utilsService.emitChange(true, false, 'nuevo-evento l157');
     } else {
-      this.utilsService.emitChange(true, true, 'nuevo-evento l148');
+      this.utilsService.emitChange(true, true, 'nuevo-evento l160');
     }
     sessionStorage.setItem('EventType', this.eventData.eventCategoryId.toString()); //this.eventCategory
   }
@@ -6274,14 +6283,7 @@ class NuevoEventoComponent {
               month: Number(tempDate[1]),
               year: Number(tempDate[0])
             };
-            // this.changeCostType();
-            //  if(this.eventCategory < 4){
-            //    this.utilsService.emitChange(false, 'nuevo-evento l304');
-            //  }else{
-            //    this.utilsService.emitChange(true, 'nuevo-evento l306');
-            //  }
           }
-
           _this3.comite = res.result?.comites || [];
           _this3.sectors = res.result?.sectors || [];
           _this3.comison = res.result?.comisiones || [];
@@ -8719,7 +8721,16 @@ class EventoMenuComponent {
       //   await this.getMenu();
       // }
       _this.eventType = Number(sessionStorage.getItem('EventType')) || null;
-      _this.eventType > 0 ? (_this.enableFairs = true, _this.enableParticipants = true) : (_this.enableFairs = false, _this.enableParticipants = false);
+      if (_this.eventType == 0) {
+        _this.enableFairs = false;
+        _this.enableParticipants = false;
+      } else if (_this.eventType == 1 || _this.eventType == 3) {
+        _this.enableFairs = false;
+        _this.enableParticipants = true;
+      } else {
+        _this.enableFairs = true;
+        _this.enableParticipants = true;
+      }
     })();
   }
   goToPage(pageName) {
