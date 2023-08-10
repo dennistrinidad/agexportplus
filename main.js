@@ -941,6 +941,7 @@ class AdminAgendaComponent {
     };
     this.categoriesHeading = Object.keys(this.list[0]);
   }
+  // this.scheduleService.getScheduleByEventTest(1);
   ngOnInit() {
     var _this = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
@@ -949,7 +950,6 @@ class AdminAgendaComponent {
       const getModalities = yield _this.utilsService.getModalities();
       _this.modality = getModalities.result.modalities;
       const EventID = Number(sessionStorage.getItem('EventID'));
-      // this.scheduleService.getScheduleByEventTest(1);
       yield _this.loadSchedulebyEvent(EventID);
     })();
   }
@@ -989,15 +989,14 @@ class AdminAgendaComponent {
             data: data
           };
         });
-        console.log(this.dates);
-        sessionStorage.setItem('ScheduleData', JSON.stringify(response.result));
+        // sessionStorage.setItem('ScheduleData', JSON.stringify(response.result));
       } else {
         console.log('error 1', response);
         this.utilsService.dialog('ERROR', 'Alerta', '¡Evento sin datos de agenda!');
       }
     }, error => {
       console.log(error);
-      this.utilsService.dialog('ERROR', 'Error', '¡Error al cargar agenda!');
+      this.utilsService.dialog('ERROR', 'Error', error.error.message.description || '¡Error al cargar agenda!');
     }).finally(() => {
       this.loading = false;
     });
@@ -4905,11 +4904,16 @@ class AdminEncuestasComponent {
         });
       } else {
         console.log(response);
-        this.utilsService.dialog('ERROR', 'Alerta', '¡Evento sin encuesta!');
+        this.utilsService.dialog('ERROR', 'Alerta', response.message.description || '¡Error al cargar encuesta!');
       }
     }, error => {
       console.log(error);
-      this.utilsService.dialog('ERROR', 'Error', 'Error al cargar encuesta!');
+      if (error.error.message.description === 'Encuesta no encontrada') {
+        this.survey.id = 0;
+        this.utilsService.dialog('ERROR', 'Alerta', '¡Encuesta nueva!');
+      } else {
+        this.utilsService.dialog('ERROR', 'Error', error.error.message.description || 'Error al cargar encuesta!');
+      }
     }).finally(() => {
       this.loading = false;
     });
@@ -8308,62 +8312,87 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const _c0 = function () {
-  return ["admin-participantes"];
+  return ["admin-agenda"];
 };
-function EventoMenuComponent_mat_list_item_15_Template(rf, ctx) {
+function EventoMenuComponent_mat_list_item_10_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "p", 4)(3, "strong");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Participantes");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Agenda");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](2, _c0))("ngClass", ctx_r0.routerInit === "admin-participantes" || ctx_r0.routerInit === "user-guide-participantes" ? "is-active" : "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](2, _c0))("ngClass", ctx_r0.routerInit === "admin-agenda" || ctx_r0.routerInit === "edit-agenda" ? "is-active" : "");
   }
 }
-function EventoMenuComponent_mat_list_item_16_Template(rf, ctx) {
+function EventoMenuComponent_mat_list_item_11_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "p", 7)(3, "strong");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Participantes");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "p", 9)(3, "strong");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Agenda");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
   }
 }
 const _c1 = function () {
-  return ["admin-conferencistas"];
+  return ["admin-participantes"];
 };
-function EventoMenuComponent_mat_list_item_17_Template(rf, ctx) {
+function EventoMenuComponent_mat_list_item_12_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "p", 4)(3, "strong");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Participantes");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
+  }
+  if (rf & 2) {
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](2, _c1))("ngClass", ctx_r2.routerInit === "admin-participantes" || ctx_r2.routerInit === "user-guide-participantes" ? "is-active" : "");
+  }
+}
+function EventoMenuComponent_mat_list_item_13_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "p", 9)(3, "strong");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Participantes");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
+  }
+}
+const _c2 = function () {
+  return ["admin-conferencistas"];
+};
+function EventoMenuComponent_mat_list_item_14_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "p", 4)(3, "strong");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Conferencistas");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](2, _c1))("ngClass", ctx_r2.routerInit === "admin-conferencistas" || ctx_r2.routerInit === "user-guide-conferencistas" ? "is-active" : "");
+    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](2, _c2))("ngClass", ctx_r4.routerInit === "admin-conferencistas" || ctx_r4.routerInit === "user-guide-conferencistas" ? "is-active" : "");
   }
 }
-function EventoMenuComponent_mat_list_item_18_Template(rf, ctx) {
+function EventoMenuComponent_mat_list_item_15_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "p", 7)(3, "strong");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "p", 9)(3, "strong");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Conferencistas");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
   }
 }
-const _c2 = function () {
+const _c3 = function () {
   return ["admin-conferencias"];
 };
-function EventoMenuComponent_mat_list_item_19_Template(rf, ctx) {
+function EventoMenuComponent_mat_list_item_16_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "p", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Programa de");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "br");
@@ -8372,15 +8401,15 @@ function EventoMenuComponent_mat_list_item_19_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
-    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](2, _c2))("ngClass", ctx_r4.routerInit === "admin-conferencias" || ctx_r4.routerInit === "edit-conferencias" ? "is-active" : "");
+    const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](2, _c3))("ngClass", ctx_r6.routerInit === "admin-conferencias" || ctx_r6.routerInit === "edit-conferencias" ? "is-active" : "");
   }
 }
-function EventoMenuComponent_mat_list_item_20_Template(rf, ctx) {
+function EventoMenuComponent_mat_list_item_17_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "p", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "p", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Programa de");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "br");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "strong");
@@ -8388,34 +8417,34 @@ function EventoMenuComponent_mat_list_item_20_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
   }
 }
-const _c3 = function () {
+const _c4 = function () {
   return ["admin-encuestas"];
 };
-const _c4 = function () {
+const _c5 = function () {
   return ["is-active"];
 };
-function EventoMenuComponent_mat_list_item_52_Template(rf, ctx) {
+function EventoMenuComponent_mat_list_item_49_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "p", 4)(3, "strong");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Encuestas");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](2, _c3))("routerLinkActive", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](3, _c4));
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](2, _c4))("routerLinkActive", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](3, _c5));
   }
 }
-function EventoMenuComponent_mat_list_item_53_Template(rf, ctx) {
+function EventoMenuComponent_mat_list_item_50_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "p", 7)(3, "strong");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-list-item", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "img", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "p", 9)(3, "strong");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Encuestas");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
   }
 }
-const _c5 = function () {
+const _c6 = function () {
   return ["calendario-eventos"];
 };
 // export class EventoMenuComponent implements OnInit {
@@ -8519,9 +8548,9 @@ EventoMenuComponent.ɵfac = function EventoMenuComponent_Factory(t) {
 EventoMenuComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
   type: EventoMenuComponent,
   selectors: [["app-evento-menu"]],
-  decls: 56,
-  vars: 12,
-  consts: [[1, "main-container"], ["mode", "side", 1, "side-bar-event", 3, "opened"], [1, "menu-item", 3, "routerLink", "ngClass"], ["id", "evento", "src", "..\\..\\assets\\images\\menuEventIcon.svg", "alt", "logo", 1, "menu-icon"], [1, "label-menu"], [1, "menu-item-disabled"], ["id", "agenda", "src", "..\\..\\assets\\images\\menuAgendaIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], [1, "label-menu-disabled"], ["class", "menu-item", 3, "routerLink", "ngClass", 4, "ngIf"], ["class", "menu-item-disabled", 4, "ngIf"], ["id", "mapa", "src", "..\\..\\assets\\images\\MenuStandsIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], ["id", "expositores", "src", "..\\..\\assets\\images\\MenuExpoIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], ["id", "galeria", "src", "..\\..\\assets\\images\\MenugaleryIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], ["id", "ubicaciones", "src", "..\\..\\assets\\images\\MenuLocationIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], ["id", "patrocinadores", "src", "..\\..\\assets\\images\\MenuSponsorIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], ["class", "menu-item", 3, "routerLink", "routerLinkActive", 4, "ngIf"], [1, "content-container"], ["id", "participantes", "src", "..\\..\\assets\\images\\MenuPartIcon.svg", "alt", "logo", 1, "menu-icon"], ["id", "participantes", "src", "..\\..\\assets\\images\\MenuPartIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], ["id", "conferencistas", "src", "..\\..\\assets\\images\\MenuConferencistasIcon.svg", "alt", "logo", 1, "menu-icon"], ["id", "conferencistas", "src", "..\\..\\assets\\images\\MenuConferencistasIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], ["id", "conferencias", "src", "..\\..\\assets\\images\\MenuConfIcon.svg", "alt", "logo", 1, "menu-icon"], ["id", "conferencias", "src", "..\\..\\assets\\images\\MenuConfIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], [1, "menu-item", 3, "routerLink", "routerLinkActive"], ["id", "encuestas", "src", "..\\..\\assets\\images\\MenuEncuestaIcon.svg", "alt", "logo", 1, "menu-icon"], ["id", "encuestas", "src", "..\\..\\assets\\images\\MenuEncuestaIcon.svg", "alt", "logo", 1, "menu-icon-disabled"]],
+  decls: 53,
+  vars: 14,
+  consts: [[1, "main-container"], ["mode", "side", 1, "side-bar-event", 3, "opened"], [1, "menu-item", 3, "routerLink", "ngClass"], ["id", "evento", "src", "..\\..\\assets\\images\\menuEventIcon.svg", "alt", "logo", 1, "menu-icon"], [1, "label-menu"], ["class", "menu-item", 3, "routerLink", "ngClass", 4, "ngIf"], ["class", "menu-item-disabled", 4, "ngIf"], [1, "menu-item-disabled"], ["id", "mapa", "src", "..\\..\\assets\\images\\MenuStandsIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], [1, "label-menu-disabled"], ["id", "expositores", "src", "..\\..\\assets\\images\\MenuExpoIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], ["id", "galeria", "src", "..\\..\\assets\\images\\MenugaleryIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], ["id", "ubicaciones", "src", "..\\..\\assets\\images\\MenuLocationIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], ["id", "patrocinadores", "src", "..\\..\\assets\\images\\MenuSponsorIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], ["class", "menu-item", 3, "routerLink", "routerLinkActive", 4, "ngIf"], [1, "content-container"], ["id", "agenda", "src", "..\\..\\assets\\images\\menuAgendaIcon.svg", "alt", "logo", 1, "menu-icon"], ["id", "agenda", "src", "..\\..\\assets\\images\\menuAgendaIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], ["id", "participantes", "src", "..\\..\\assets\\images\\MenuPartIcon.svg", "alt", "logo", 1, "menu-icon"], ["id", "participantes", "src", "..\\..\\assets\\images\\MenuPartIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], ["id", "conferencistas", "src", "..\\..\\assets\\images\\MenuConferencistasIcon.svg", "alt", "logo", 1, "menu-icon"], ["id", "conferencistas", "src", "..\\..\\assets\\images\\MenuConferencistasIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], ["id", "conferencias", "src", "..\\..\\assets\\images\\MenuConfIcon.svg", "alt", "logo", 1, "menu-icon"], ["id", "conferencias", "src", "..\\..\\assets\\images\\MenuConfIcon.svg", "alt", "logo", 1, "menu-icon-disabled"], [1, "menu-item", 3, "routerLink", "routerLinkActive"], ["id", "encuestas", "src", "..\\..\\assets\\images\\MenuEncuestaIcon.svg", "alt", "logo", 1, "menu-icon"], ["id", "encuestas", "src", "..\\..\\assets\\images\\MenuEncuestaIcon.svg", "alt", "logo", 1, "menu-icon-disabled"]],
   template: function EventoMenuComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-sidenav-container", 0)(1, "mat-sidenav", 1)(2, "mat-action-list")(3, "mat-list-item", 2);
@@ -8532,64 +8561,65 @@ EventoMenuComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "strong");
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9, "Evento");
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "mat-list-item", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](11, "img", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](12, "p", 7)(13, "strong");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](14, "Agenda");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](10, EventoMenuComponent_mat_list_item_10_Template, 5, 3, "mat-list-item", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](11, EventoMenuComponent_mat_list_item_11_Template, 5, 0, "mat-list-item", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](12, EventoMenuComponent_mat_list_item_12_Template, 5, 3, "mat-list-item", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](13, EventoMenuComponent_mat_list_item_13_Template, 5, 0, "mat-list-item", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](14, EventoMenuComponent_mat_list_item_14_Template, 5, 3, "mat-list-item", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](15, EventoMenuComponent_mat_list_item_15_Template, 5, 0, "mat-list-item", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](16, EventoMenuComponent_mat_list_item_16_Template, 7, 3, "mat-list-item", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](17, EventoMenuComponent_mat_list_item_17_Template, 7, 0, "mat-list-item", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "mat-list-item", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](19, "img", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](20, "p", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](21, "Mapa de");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](22, "br");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "strong");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](24, "Exhibici\u00F3n");
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](15, EventoMenuComponent_mat_list_item_15_Template, 5, 3, "mat-list-item", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](16, EventoMenuComponent_mat_list_item_16_Template, 5, 0, "mat-list-item", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](17, EventoMenuComponent_mat_list_item_17_Template, 5, 3, "mat-list-item", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](18, EventoMenuComponent_mat_list_item_18_Template, 5, 0, "mat-list-item", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](19, EventoMenuComponent_mat_list_item_19_Template, 7, 3, "mat-list-item", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](20, EventoMenuComponent_mat_list_item_20_Template, 7, 0, "mat-list-item", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](21, "mat-list-item", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](22, "img", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "p", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](24, "Mapa de");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](25, "br");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](26, "strong");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](27, "Exhibici\u00F3n");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](25, "mat-list-item", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](26, "img", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](27, "p", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](28, "Directorio de");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](29, "br");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](30, "strong");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](31, "Expositores");
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](28, "mat-list-item", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](29, "img", 11);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](30, "p", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](31, "Directorio de");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](32, "br");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](33, "strong");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](34, "Expositores");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](32, "mat-list-item", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](33, "img", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](34, "p", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](35, "Galer\u00EDa de");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](36, "br");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](37, "strong");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](38, "Fotos y videos");
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](35, "mat-list-item", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](36, "img", 12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](37, "p", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](38, "Galer\u00EDa de");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](39, "br");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](40, "strong");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](41, "Fotos y videos");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](39, "mat-list-item", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](40, "img", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](41, "p", 9)(42, "strong");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](43, "Ubicaciones");
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](42, "mat-list-item", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](43, "img", 13);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](44, "p", 7)(45, "strong");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](46, "Ubicaciones");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](44, "mat-list-item", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](45, "img", 13);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](46, "p", 9)(47, "strong");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](48, "Patrocinadores");
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](47, "mat-list-item", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](48, "img", 14);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](49, "p", 7)(50, "strong");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](51, "Patrocinadores");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](52, EventoMenuComponent_mat_list_item_52_Template, 5, 4, "mat-list-item", 15);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](53, EventoMenuComponent_mat_list_item_53_Template, 5, 0, "mat-list-item", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](49, EventoMenuComponent_mat_list_item_49_Template, 5, 4, "mat-list-item", 14);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](50, EventoMenuComponent_mat_list_item_50_Template, 5, 0, "mat-list-item", 6);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](54, "mat-sidenav-content", 16);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](55, "router-outlet");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](51, "mat-sidenav-content", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](52, "router-outlet");
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("opened", true);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](11, _c5))("ngClass", ctx.routerInit === "events" || ctx.routerInit === "nuevo-evento" || ctx.routerInit === "calendario-eventos" ? "is-active" : "");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](13, _c6))("ngClass", ctx.routerInit === "events" || ctx.routerInit === "nuevo-evento" || ctx.routerInit === "calendario-eventos" ? "is-active" : "");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.enableFairs);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", !ctx.enableFairs);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.enableParticipants);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", !ctx.enableParticipants);
@@ -20144,15 +20174,12 @@ class NotificationsService {
     constructor(http) {
         this.http = http;
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.url;
+        this.accessToken = sessionStorage.getItem('Token') || src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.token ? sessionStorage.getItem('Token') || src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.token : '';
         this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
-        this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders;
-        this.accessToken = sessionStorage.getItem('Token').toString() || src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.token;
-        this.accessToken = sessionStorage.getItem('Token').toString() || src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.token;
-        this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders({
-            'Content-Type': 'application/json',
-            'accept': 'application/json',
-            'x-access-token': this.accessToken
-        });
+        this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders();
+        this.headers = this.headers.set('accept', 'application/json');
+        this.headers = this.headers.set('Content-Type', 'application/json');
+        this.headers = this.headers.set('X-Access-Token', this.accessToken);
         this.options = { headers: this.headers };
     }
     getAllNotifications(page, size, subject) {
@@ -20516,46 +20543,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class ScheduleService {
-    // headers2 = {
-    //     headers: new HttpHeaders({
-    //         'Content-Type': 'application/json',
-    //         'accept': 'application/json',
-    //         'x-access-token': sessionStorage.getItem('Token')!.toString() || environment.token
-    //     })
-    // }; 
-    // headers = new HttpHeaders();
     constructor(http) {
         this.http = http;
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.url;
+        this.accessToken = sessionStorage.getItem('Token') || src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.token ? sessionStorage.getItem('Token') || src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.token : '';
         this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
-        this.accessToken = sessionStorage.getItem('Token').toString() || src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.token;
-        this.headers = {};
-        // {   'Content-Type': 'application/json',
-        //     'accept': 'application/json',
-        //     'x-access-token': this.accessToken
-        // });
-        this.headers2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders();
-        this.accessToken = sessionStorage.getItem('Token').toString() || src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.token;
-        // this.accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbjJAYWdleHBvcnQuY29tIiwicm9sZSI6IlJPTEVfU1VQRVJBRE1JTiIsImlhdCI6MTY5MTU5MjY0MiwiZXhwIjoxNjkxNjc5MDQyfQ.qwtf15B1PGHmKCcupbujMt6OmtwQ8f18H9xdJq_J2NY';
-        // console.log('env: ', typeof environment.token, environment.token);
-        // console.log('sessionStoreage: ', typeof sessionStorage.getItem('Token')!.toString(), sessionStorage.getItem('Token')!.toString());
-        // console.log('access: ', typeof this.accessToken, this.accessToken);
-        this.headers = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders({
-                'accept': 'application/json',
-                'Content-Type': 'application/json',
-                'X-Access-Token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbjJAYWdleHBvcnQuY29tIiwicm9sZSI6IlJPTEVfU1VQRVJBRE1JTiIsImlhdCI6MTY5MTU5MjY0MiwiZXhwIjoxNjkxNjc5MDQyfQ.qwtf15B1PGHmKCcupbujMt6OmtwQ8f18H9xdJq_J2NY'
-                // 'x-access-token': this.accessToken || sessionStorage.getItem('Token')!.toString() || environment.token
-            })
-        };
-        this.headers2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders();
-        this.headers2 = this.headers2.set('accept', 'application/json');
-        this.headers2 = this.headers2.set('Content-Type', 'application/json');
-        this.headers2 = this.headers2.set('X-Access-Token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbjJAYWdleHBvcnQuY29tIiwicm9sZSI6IlJPTEVfU1VQRVJBRE1JTiIsImlhdCI6MTY5MTU5MjY0MiwiZXhwIjoxNjkxNjc5MDQyfQ.qwtf15B1PGHmKCcupbujMt6OmtwQ8f18H9xdJq_J2NY');
-        this.options = { headers: this.headers2 };
-        console.log('Options: ', this.options); // <- al inicio no llega el access
-        console.log('Headers 2: ', this.headers2);
-        // console.log('Headers: ', this.headers); // <- nunca llega las opciones
+        this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders();
+        this.headers = this.headers.set('accept', 'application/json');
+        this.headers = this.headers.set('Content-Type', 'application/json');
+        this.headers = this.headers.set('X-Access-Token', this.accessToken);
+        this.options = { headers: this.headers };
     }
     // ACTIVITY    
     getActivityByEvent(event_id) {
@@ -20563,81 +20560,12 @@ class ScheduleService {
     }
     // SCHEDULE
     getScheduleByEvent(event_id) {
-        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders();
-        headers = headers.set('accept', 'application/json');
-        headers = headers.set('Content-Type', 'application/json');
-        headers = headers.set('x-access-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbjJAYWdleHBvcnQuY29tIiwicm9sZSI6IlJPTEVfU1VQRVJBRE1JTiIsImlhdCI6MTY5MTU5MjY0MiwiZXhwIjoxNjkxNjc5MDQyfQ.qwtf15B1PGHmKCcupbujMt6OmtwQ8f18H9xdJq_J2NY');
-        let params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
-        // (if_variable) && (params = params.set('nombrePropiedad', valor_variable));                
-        const options = { headers: headers, params: params };
-        console.log(headers);
-        console.log(options);
-        return this.http.get(`${this.url}eventos/schedules/event/${event_id}`, options).toPromise();
-        // return this.http.get(`${this.url}eventos/schedules/event/${event_id}`, this.options).toPromise();
-        // return this.http.get(`${this.url}eventos/schedules/event/${event_id}`, this.headers).toPromise();
-        // return this.http.get(`${this.url}eventos/schedules/event/${event_id}`, { headers: this.headers2}).toPromise();
-        /*
-        let headers = new HttpHeaders().set('Content-Type', 'application/json');
-        return this._http.get(this.url + 'imerp-company/store/' + company, { headers: headers }).toPromise();
-
-        const openedSession = await this.userService.userGetCurrentSession();
-        const queryParam = '?accessToken=' + openedSession.getAccessToken().getJwtToken();
-        const headers = new HttpHeaders({ Authorization: openedSession.getIdToken().getJwtToken()});
-        return this._http.get(environment.apiUrl + 'imcrm-client/one/' + code + '/' + queryParam,{ headers }).toPromise();
-        */
-    }
-    getScheduleByEventTest(event_id) {
-        /*
-        // console.log(this.accessToken);
-        console.log('Headers 4.1: ', this.headers);
-
-        const headers2 = {
-            headers: new HttpHeaders({
-                'accept': 'application/json',
-                'Content-Type': 'application/json',
-                'x-access-token': this.accessToken
-            })
-        };
-
-        const headers3 = {
-            headers: new HttpHeaders({
-                'accept': 'application/json',
-                'Content-Type': 'application/json',
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbjJAYWdleHBvcnQuY29tIiwicm9sZSI6IlJPTEVfU1VQRVJBRE1JTiIsImlhdCI6MTY5MTU5MjY0MiwiZXhwIjoxNjkxNjc5MDQyfQ.qwtf15B1PGHmKCcupbujMt6OmtwQ8f18H9xdJq_J2NY'
-            })
-        };
-        
-        const headers4 = new HttpHeaders()
-            .set('accept', 'application/json')
-            .set('Content-Type', 'application/json')
-            .set('x-access-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbjJAYWdleHBvcnQuY29tIiwicm9sZSI6IlJPTEVfU1VQRVJBRE1JTiIsImlhdCI6MTY5MTU5MjY0MiwiZXhwIjoxNjkxNjc5MDQyfQ.qwtf15B1PGHmKCcupbujMt6OmtwQ8f18H9xdJq_J2NY');
-
-        // let headers = new HttpHeaders().set('Content-Type', 'application/json');
-        // let params = new HttpParams();
-        // (promotion_id) && (params = params.set('promotionId', promotion_id));
-        // (startDate) && (params = params.set('startDate', startDate));
-        // (endDate) && (params = params.set('endDate', endDate));
-
-        const headers5 = new HttpHeaders();
-        headers5.set('accept', 'application/json');
-        headers5.set('Content-Type', 'application/json');
-        headers5.set('x-access-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbjJAYWdleHBvcnQuY29tIiwicm9sZSI6IlJPTEVfU1VQRVJBRE1JTiIsImlhdCI6MTY5MTU5MjY0MiwiZXhwIjoxNjkxNjc5MDQyfQ.qwtf15B1PGHmKCcupbujMt6OmtwQ8f18H9xdJq_J2NY');
-        
-        
-        let headers6 = new HttpHeaders();
-        headers6 = headers6.set('accept', 'application/json');
-        headers6 = headers6.set('Content-Type', 'application/json');
-        headers6 = headers6.set('x-access-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbjJAYWdleHBvcnQuY29tIiwicm9sZSI6IlJPTEVfU1VQRVJBRE1JTiIsImlhdCI6MTY5MTU5MjY0MiwiZXhwIjoxNjkxNjc5MDQyfQ.qwtf15B1PGHmKCcupbujMt6OmtwQ8f18H9xdJq_J2NY');
-        
-        // let headers6 = new HttpHeaders().set('Content-Type', 'application/json');
-        // return this._http.post(this.url + 'imerp-store', params, { headers: headers }).toPromise();
-
-        console.log('Headers 4.2: ', headers2);
-        console.log('Headers 4.3: ', headers3);
-        console.log('Headers 4.4: ', headers4);
-        console.log('Headers 4.5: ', headers5);
-        console.log('Headers 4.6: ', headers6);
-        */
+        return this.http.get(`${this.url}eventos/schedules/event/${event_id}`, this.options).toPromise();
+        /*************** TEST ****************/
+        // let headers = new HttpHeaders(); // headers = headers.set('accept', 'application/json');
+        // let params = new HttpParams(); // (if_variable) && (params = params.set('nombrePropiedad', valor_variable));
+        // const options = { headers: headers, params: params };
+        // return this.http.get(`${this.url}eventos/schedules/event/${event_id}`, options).toPromise();
     }
     getOneSchedule(schedule_id) {
         return this.http.get(`${this.url}eventos/schedules/${schedule_id}`, this.options).toPromise();
@@ -20798,37 +20726,31 @@ __webpack_require__.r(__webpack_exports__);
 class SurveyService {
     constructor(http) {
         this.http = http;
-        this.headers = {};
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.url;
-        this.accessToken = sessionStorage.getItem('Token')?.toString();
-        this.headers = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders({
-                'Content-Type': 'application/json',
-                'accept': 'application/json',
-                'x-access-token': this.accessToken
-            })
-        };
+        this.accessToken = sessionStorage.getItem('Token') || src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.token ? sessionStorage.getItem('Token') || src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.token : '';
+        this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
+        this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders();
+        this.headers = this.headers.set('accept', 'application/json');
+        this.headers = this.headers.set('Content-Type', 'application/json');
+        this.headers = this.headers.set('X-Access-Token', this.accessToken);
+        this.options = { headers: this.headers };
     }
     // Obtener encuesta de un evento
     getSurveysByEvent(event_id, user_id) {
-        // Get Survey  by EventID
         // Este endpoint tiene una validación entonces puede regresar 2 response dependiendo de la validación si ya se contestó anteriormente 
-        return this.http.get(`${this.url}eventos/surveys/event/${event_id}/${user_id}`, this.headers).toPromise();
+        return this.http.get(`${this.url}eventos/surveys/event/${event_id}/${user_id}`, this.options).toPromise();
     }
     // Crear una encuesta
     createSurveyToEvent(data) {
-        // http://agexportplus.dev.tribalworldwide.gt/api/v1/eventos/surveys
-        return this.http.post(`${this.url}eventos/surveys/`, data, this.headers).toPromise();
+        return this.http.post(`${this.url}eventos/surveys/`, data, this.options).toPromise();
     }
-    // Actualiar una ubicacion  // NO EXISTE
+    // Actualizar una encuesta
     updateSurveyToEvent(survey_id, data) {
-        return this.http.put(`${this.url}eventos/surveys/${survey_id}`, data, this.headers).toPromise();
+        return this.http.put(`${this.url}eventos/surveys/${survey_id}`, data, this.options).toPromise();
     }
     // Crear respuesta de una encuesta
     createSurveyAnswerToEvent(data) {
-        // Create Survey Answer
-        // Survey Answer
-        return this.http.post(`${this.url}eventos/surveys_answer/`, data, this.headers).toPromise();
+        return this.http.post(`${this.url}eventos/surveys_answer/`, data, this.options).toPromise();
     }
 }
 SurveyService.ɵfac = function SurveyService_Factory(t) { return new (t || SurveyService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient)); };
@@ -20961,15 +20883,15 @@ class UtilsService {
     this.pipeDate = new _angular_common__WEBPACK_IMPORTED_MODULE_5__.DatePipe('en-US');
     this.emitChangeSource = new rxjs__WEBPACK_IMPORTED_MODULE_6__.Subject();
     this.changeEmitted$ = this.emitChangeSource.asObservable();
-    this.headers = {};
     this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.url;
-    this.accessToken = sessionStorage.getItem('Token')?.toString();
-    this.headers = {
-      headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpHeaders({
-        'Content-Type': 'application/json',
-        'accept': 'application/json',
-        'x-access-token': this.accessToken
-      })
+    this.accessToken = sessionStorage.getItem('Token') || src_environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.token ? sessionStorage.getItem('Token') || src_environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.token : '';
+    this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpParams();
+    this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpHeaders();
+    this.headers = this.headers.set('accept', 'application/json');
+    this.headers = this.headers.set('Content-Type', 'application/json');
+    this.headers = this.headers.set('X-Access-Token', this.accessToken);
+    this.options = {
+      headers: this.headers
     };
   }
   /////// FUNCTION ///////
@@ -21140,42 +21062,42 @@ class UtilsService {
   /////// APIS ///////
   // Modalidades de Eventos/Actividades
   getModalities() {
-    return this.http.get(`${this.url}eventos/modalities`, this.headers).toPromise();
+    return this.http.get(`${this.url}eventos/modalities`, this.options).toPromise();
   }
   getCommissions() {
-    return this.http.get(`${this.url}registro/comisiones`, this.headers).toPromise();
+    return this.http.get(`${this.url}registro/comisiones`, this.options).toPromise();
   }
   getCommittees() {
-    return this.http.get(`${this.url}registro/comites`, this.headers).toPromise();
+    return this.http.get(`${this.url}registro/comites`, this.options).toPromise();
   }
   getSectors() {
-    return this.http.get(`${this.url}registro/sectors`, this.headers).toPromise();
+    return this.http.get(`${this.url}registro/sectors`, this.options).toPromise();
   }
   getPuestos() {
-    return this.http.get(`${this.url}registro/puestos`, this.headers).toPromise();
+    return this.http.get(`${this.url}registro/puestos`, this.options).toPromise();
   }
   getAreas() {
-    return this.http.get(`${this.url}registro/areas`, this.headers).toPromise();
+    return this.http.get(`${this.url}registro/areas`, this.options).toPromise();
   }
   getRoles() {
-    return this.http.get(`${this.url}registro/roles`, this.headers).toPromise();
+    return this.http.get(`${this.url}registro/roles`, this.options).toPromise();
   }
   getRolesAdmin() {
-    return this.http.get(`${this.url}registro/roles/admins/`, this.headers).toPromise();
+    return this.http.get(`${this.url}registro/roles/admins/`, this.options).toPromise();
   }
   getCountries() {
-    return this.http.get(`${this.url}registro/countries`, this.headers).toPromise();
+    return this.http.get(`${this.url}registro/countries`, this.options).toPromise();
   }
   getCommunicationChannelsByUser(user_id) {
     // Observable<GenericApiResponse<CommunicationChannelsResultModel>> 
     // get<GenericApiResponse<CommunicationChannelsResultModel>>
-    return this.http.get(`${this.url}registro/communication_channel/${user_id}`, this.headers).toPromise();
+    return this.http.get(`${this.url}registro/communication_channel/${user_id}`, this.options).toPromise();
   }
   getAllCompany() {
-    return this.http.get(`${this.url}registro/company`, this.headers).toPromise();
+    return this.http.get(`${this.url}registro/company`, this.options).toPromise();
   }
   getAllPromotions(status) {
-    return this.http.get(`${this.url}/promo/promo/for-admin?status=${status}`, this.headers).toPromise();
+    return this.http.get(`${this.url}/promo/promo/for-admin?status=${status}`, this.options).toPromise();
   }
 }
 UtilsService.ɵfac = function UtilsService_Factory(t) {
