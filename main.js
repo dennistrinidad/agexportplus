@@ -4522,99 +4522,99 @@ function AdminEncuestasComponent_div_18_Template(rf, ctx) {
 }
 function AdminEncuestasComponent_div_19_button_8_Template(rf, ctx) {
   if (rf & 1) {
-    const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 39);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AdminEncuestasComponent_div_19_button_8_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r14);
       const i_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]().index;
-      const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r13.removeQuestion(i_r6));
+      const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r12.removeQuestion(i_r6));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, "X");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
 }
-function AdminEncuestasComponent_div_19_div_23_Template(rf, ctx) {
+function AdminEncuestasComponent_div_19_div_24_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, " Este campo es obligatorio.");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
 }
-function AdminEncuestasComponent_div_19_div_30_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, "Este campo es obligatorio.");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-  }
-}
-function AdminEncuestasComponent_div_19_div_31_div_8_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, "Este campo es obligatorio.");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-  }
-}
 function AdminEncuestasComponent_div_19_div_31_Template(rf, ctx) {
   if (rf & 1) {
-    const _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 35)(1, "label", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "div", 40)(4, "input", 41);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function AdminEncuestasComponent_div_19_div_31_Template_input_ngModelChange_4_listener($event) {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r21);
-      const x_r17 = restoredCtx.index;
-      const e_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]().$implicit;
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](e_r5.options[x_r17][0] = $event);
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "span", 42)(6, "a", 43);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AdminEncuestasComponent_div_19_div_31_Template_a_click_6_listener() {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r21);
-      const x_r17 = restoredCtx.index;
-      const i_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]().index;
-      const ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r22.removeOption(i_r6, x_r17));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](7, "X");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](8, AdminEncuestasComponent_div_19_div_31_div_8_Template, 2, 0, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, "Este campo es obligatorio.");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
-  if (rf & 2) {
-    const x_r17 = ctx.index;
-    const ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    const i_r6 = ctx_r24.index;
-    const e_r5 = ctx_r24.$implicit;
-    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("Respuesta ", x_r17 + 1, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpropertyInterpolate2"]("name", "opcionesPregunta_", i_r6, "_", x_r17, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpropertyInterpolate1"]("placeholder", "Respuesta ", x_r17 + 1, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", e_r5.options[x_r17][0]);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx_r11.validation_msg("opcionesPregunta_" + i_r6 + "_" + x_r17));
+}
+function AdminEncuestasComponent_div_19_div_32_div_8_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, "Este campo es obligatorio.");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
 }
 function AdminEncuestasComponent_div_19_div_32_Template(rf, ctx) {
   if (rf & 1) {
-    const _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 44)(1, "button", 45);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AdminEncuestasComponent_div_19_div_32_Template_button_click_1_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r27);
+    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 35)(1, "label", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "div", 40)(4, "input", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function AdminEncuestasComponent_div_19_div_32_Template_input_ngModelChange_4_listener($event) {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r20);
+      const x_r16 = restoredCtx.index;
+      const e_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]().$implicit;
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](e_r5.options[x_r16][0] = $event);
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "span", 42)(6, "a", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AdminEncuestasComponent_div_19_div_32_Template_a_click_6_listener() {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r20);
+      const x_r16 = restoredCtx.index;
       const i_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]().index;
-      const ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r25.addOption(i_r6));
+      const ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r21.removeOption(i_r6, x_r16));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](7, "X");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](8, AdminEncuestasComponent_div_19_div_32_div_8_Template, 2, 0, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const x_r16 = ctx.index;
+    const ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    const i_r6 = ctx_r23.index;
+    const e_r5 = ctx_r23.$implicit;
+    const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("Respuesta ", x_r16 + 1, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpropertyInterpolate2"]("name", "opcionesPregunta_", i_r6, "_", x_r16, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpropertyInterpolate1"]("placeholder", "Respuesta ", x_r16 + 1, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", e_r5.options[x_r16][0]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx_r10.validation_msg("opcionesPregunta_" + i_r6 + "_" + x_r16));
+  }
+}
+function AdminEncuestasComponent_div_19_div_33_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r26 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 44)(1, "button", 45);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AdminEncuestasComponent_div_19_div_33_Template_button_click_1_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r26);
+      const i_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]().index;
+      const ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r24.addOption(i_r6));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "+ Agregar opci\u00F3n");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    const i_r6 = ctx_r28.index;
-    const e_r5 = ctx_r28.$implicit;
+    const ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    const i_r6 = ctx_r27.index;
+    const e_r5 = ctx_r27.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpropertyInterpolate1"]("id", "btn", i_r6, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngClass", !e_r5.options ? "showBtn" : "")("disabled", e_r5.options.length >= 4);
@@ -4622,7 +4622,7 @@ function AdminEncuestasComponent_div_19_div_32_Template(rf, ctx) {
 }
 function AdminEncuestasComponent_div_19_Template(rf, ctx) {
   if (rf & 1) {
-    const _r30 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    const _r29 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 7)(1, "div", 22)(2, "div", 9)(3, "div", 2)(4, "div", 23)(5, "label", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](6);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
@@ -4632,42 +4632,49 @@ function AdminEncuestasComponent_div_19_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "div", 26)(10, "div", 27)(11, "label", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](12, "Tipo de pregunta*");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "select", 28, 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("change", function AdminEncuestasComponent_div_19_Template_select_change_13_listener($event) {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "select", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function AdminEncuestasComponent_div_19_Template_select_ngModelChange_13_listener($event) {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r29);
+      const e_r5 = restoredCtx.$implicit;
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](e_r5.type = $event);
+    })("change", function AdminEncuestasComponent_div_19_Template_select_change_13_listener($event) {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r29);
       const e_r5 = restoredCtx.$implicit;
       const i_r6 = restoredCtx.index;
-      const ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r29.verifyQuetion($event, e_r5, i_r6));
+      const ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r30.verifyQuetion($event, e_r5, i_r6));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](15, "option", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](16, "Respuesta abierta");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "option", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](15, "Seleccione...");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](17, "option", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](18, "Escala");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](16, "option", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](17, "Respuesta abierta");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](19, "option", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](20, "Si o no");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "option", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](19, "Escala");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](21, "option", 33);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](22, "Opci\u00F3n M\u00FAltiple");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](20, "option", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](21, "Si o no");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](22, "option", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](23, "Opci\u00F3n M\u00FAltiple");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](23, AdminEncuestasComponent_div_19_div_23_Template, 2, 0, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](24, AdminEncuestasComponent_div_19_div_24_Template, 2, 0, "div", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](24, "div", 34)(25, "div", 2)(26, "div", 35)(27, "label", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](28, "\u00A0");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](25, "div", 34)(26, "div", 2)(27, "div", 35)(28, "label", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](29, "\u00A0");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](29, "input", 36);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function AdminEncuestasComponent_div_19_Template_input_ngModelChange_29_listener($event) {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](30, "input", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function AdminEncuestasComponent_div_19_Template_input_ngModelChange_30_listener($event) {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r29);
       const e_r5 = restoredCtx.$implicit;
       return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](e_r5.text = $event);
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](30, AdminEncuestasComponent_div_19_div_30_Template, 2, 0, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](31, AdminEncuestasComponent_div_19_div_31_Template, 2, 0, "div", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](31, AdminEncuestasComponent_div_19_div_31_Template, 9, 6, "div", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](32, AdminEncuestasComponent_div_19_div_32_Template, 3, 3, "div", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](32, AdminEncuestasComponent_div_19_div_32_Template, 9, 6, "div", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](33, AdminEncuestasComponent_div_19_div_33_Template, 3, 3, "div", 38);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()()()();
   }
   if (rf & 2) {
@@ -4680,8 +4687,8 @@ function AdminEncuestasComponent_div_19_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", i_r6 > 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpropertyInterpolate1"]("name", "tipoPregunta_", i_r6, "")("id", "tipoPregunta_", i_r6, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", i_r6 < 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", e_r5.type)("disabled", i_r6 < 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](11);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx_r3.validation_msg("tipoPregunta_" + i_r6));
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](6);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpropertyInterpolate1"]("name", "textoPregunta_", i_r6, "")("id", "textoPregunta_", i_r6, "");
@@ -4731,7 +4738,6 @@ class AdminEncuestasComponent {
       type: 'open',
       text: 'Podría indicarnos ¿qué fue lo que menos le gusto o cambiaria del evento?'
     }];
-    this.removeQuestio2 = false;
   }
   ngOnInit() {
     var _this = this;
@@ -4766,7 +4772,11 @@ class AdminEncuestasComponent {
   }
   validation_msg(name) {
     if (this.form && this.form.controls[name]) {
-      if ((this.form.controls[name].errors || this.form.controls[name].invalid) && (this.form.controls[name].dirty || this.form.controls[name].touched) || this.form.controls[name].value === 'null' && this.form.controls[name].touched) {
+      // console.log(name, typeof this.form.controls[name].value, this.form.controls[name].value);
+      // console.log(name, this.form.controls[name].value == undefined, this.form.controls[name].value == 'undefined');
+      if ((this.form.controls[name].errors || this.form.controls[name].invalid) && (this.form.controls[name].dirty || this.form.controls[name].touched) || this.form.controls[name].value == undefined && this.form.controls[name].touched
+      // (this.form.controls[name].value === 'null' && this.form.controls[name].touched)
+      ) {
         return true;
       } else {
         return false;
@@ -4778,11 +4788,13 @@ class AdminEncuestasComponent {
   addQuestion() {
     if (this.questions.length < 8) {
       this.questions.push({
-        type: 'null',
+        type: undefined,
         text: ''
       });
+      // this.questions.push({ type: 'null', text: '' });
     }
   }
+
   verifyQuetion(event, item, index) {
     // const element = document.getElementById('btn' + index);
     if (event.target.value === 'multiple') {
@@ -4823,17 +4835,20 @@ class AdminEncuestasComponent {
     this.questions[index_one].options.splice(index_two, 1);
   }
   removeQuestion(index) {
-    this.removeQuestio2 = true;
     this.form.control.markAllAsTouched();
     this.questions.splice(index, 1);
   }
   cancel() {
     var _this2 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      // this.questions = [];
-      // this.survey = {} as Survey;
       yield _this2.loadDatabyEvent(_this2.eventID, _this2.userID);
-      _this2.questions = _this2.survey.questions;
+      if (_this2.survey.id > 0) {
+        _this2.survey.eventId = _this2.eventID;
+        _this2.questions = _this2.survey.questions;
+      } else {
+        _this2.survey.eventId = _this2.eventID;
+        _this2.questions = _this2.mandatoryQuestion;
+      }
     })();
   }
   loadDatabyEvent(event_id, user_id) {
@@ -4845,14 +4860,10 @@ class AdminEncuestasComponent {
         this.survey.title = response.result.surveys?.title;
         this.survey.eventId = response.result.surveys?.eventId;
         this.survey.questions = response.result.surveys?.surveyQuestions;
-        this.survey.questions = response.result.surveys.surveyQuestions.map((e, index) => {
-          // this.survey.questions = response.result.surveys.surveyQuestions.map((e: any) => {
-          console.log('tipoPregunta_' + index);
-          const element = document.getElementsByName('tipoPregunta_' + index);
-          // const element = document.getElementById('tipoPregunta_' + index)          
-          // const element = document.getElementById('tipoPregunta_' + index);
-          console.log(element);
-          // element.value = 
+        this.survey.questions = response.result.surveys.surveyQuestions.map(e => {
+          // this.survey.questions = response.result.surveys.surveyQuestions.map((e: any, index: number) => {
+          // const element = document.getElementsByName('tipoPregunta_' + index)
+          // const element = document.getElementById('tipoPregunta_' + index);            
           // element.classList.remove('active'); element?.classList.add('active');
           if (e.type === 'multiple') {
             const options = e.options.map(i => {
@@ -4878,13 +4889,13 @@ class AdminEncuestasComponent {
         });
       } else {
         console.log(response);
-        this.utilsService.dialog('ERROR', 'SUCCESS', response.message.description || '¡Error al cargar encuesta!');
+        this.utilsService.dialog('ERROR', 'Error', response.message.description || '¡Error al cargar encuesta!');
       }
     }, error => {
       console.log(error);
       if (error.error.message.description === 'Encuesta no encontrada') {
         this.survey.id = 0;
-        this.utilsService.dialog('ERROR', 'Alerta', '¡Encuesta nueva!');
+        this.utilsService.dialog('SUCCESS', 'Alerta', '¡Encuesta nueva!');
       } else {
         this.utilsService.dialog('ERROR', 'Error', error.error.message.description || 'Error al cargar encuesta!');
       }
@@ -4895,8 +4906,8 @@ class AdminEncuestasComponent {
   processData() {
     var _this3 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      console.log(_this3.form);
-      const val_select = yield _this3.questions.find(x => x.type === 'null');
+      const val_select = yield _this3.questions.find(x => x.type === undefined || x.type == 'undefined');
+      // const val_select = await this.questions.find(x => x.type === 'null')
       if (_this3.form.valid && !val_select) {
         _this3.survey.eventId = _this3.eventID;
         _this3.survey.questions = _this3.questions.map(e => {
@@ -4916,11 +4927,12 @@ class AdminEncuestasComponent {
             };
           }
         });
-        // if (this.survey.id > 0) {
-        //   this.update()
-        // } else {
-        //   this.create();
-        // }
+        console.log(_this3.survey);
+        if (_this3.survey.id > 0) {
+          _this3.update();
+        } else {
+          _this3.create();
+        }
       } else {
         _this3.form.control.markAllAsTouched();
         _this3.utilsService.dialog('ERROR', 'Error', 'Por favor llena los campos correctamente.');
@@ -4977,9 +4989,9 @@ AdminEncuestasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MOD
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx.form = _t.first);
     }
   },
-  decls: 41,
-  vars: 11,
-  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4", "mb-5"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], ["form", "ngForm"], [1, "col-12"], [1, "card", "mb-5"], [1, "card-body"], [1, "col-12", "px-4"], [1, "form-label", "mb-3"], ["name", "nombreEncuesta", "id", "nombreEncuesta", "required", "", "placeholder", "Nombre de la encuesta", 1, "form-control", 3, "ngModel", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["class", "col-12", 4, "ngFor", "ngForOf"], ["class", "col-12 text-right px-5", 4, "ngIf"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-editagenda", 3, "disabled", "click"], [1, "save-icon"], [1, "err-msg"], [1, "card", "mb-3"], [1, "col-10"], [1, "col-2", "text-right"], ["class", "btn btn-gray", 3, "click", 4, "ngIf"], [1, "row", "px-4", "py-0"], [1, "col-12", "col-md-4", "mb-3"], ["required", "", "placeholder", "Seleccione!", 1, "form-control", 3, "name", "id", "disabled", "change"], ["team{{i}}", ""], ["value", "open"], ["value", "stars"], ["value", "truefalse"], ["value", "multiple"], [1, "col-12", "col-md-8"], [1, "col-12", "mb-3"], ["required", "", "placeholder", "Pregunta", 1, "form-control", 3, "name", "id", "ngModel", "readonly", "ngModelChange"], ["class", "col-12 mb-3", 4, "ngFor", "ngForOf"], ["class", "col-12 mb-3 text-right", 4, "ngIf"], [1, "btn", "btn-gray", 3, "click"], [1, "input-group"], ["required", "", 1, "form-control", 2, "border", "none !important", 3, "name", "ngModel", "placeholder", "ngModelChange"], [1, "input-group-btn"], [1, "btn", "btn-outline-secondary", 3, "click"], [1, "col-12", "mb-3", "text-right"], [1, "btn", "btn-purple", "my-2", 3, "ngClass", "id", "disabled", "click"], ["type", "button", 1, "btn", "btn-purple", "my-2", 3, "click"]],
+  decls: 29,
+  vars: 6,
+  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4", "mb-5"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], ["form", "ngForm"], [1, "col-12"], [1, "card", "mb-5"], [1, "card-body"], [1, "col-12", "px-4"], [1, "form-label", "mb-3"], ["name", "nombreEncuesta", "id", "nombreEncuesta", "required", "", "placeholder", "Nombre de la encuesta", 1, "form-control", 3, "ngModel", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["class", "col-12", 4, "ngFor", "ngForOf"], ["class", "col-12 text-right px-5", 4, "ngIf"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-editagenda", 3, "disabled", "click"], [1, "save-icon"], [1, "err-msg"], [1, "card", "mb-3"], [1, "col-10"], [1, "col-2", "text-right"], ["class", "btn btn-gray", 3, "click", 4, "ngIf"], [1, "row", "px-4", "py-0"], [1, "col-12", "col-md-4", "mb-3"], ["required", "", 1, "form-control", 3, "name", "id", "ngModel", "disabled", "ngModelChange", "change"], ["value", "undefined", "selected", "", "disabled", ""], ["value", "open"], ["value", "stars"], ["value", "truefalse"], ["value", "multiple"], [1, "col-12", "col-md-8"], [1, "col-12", "mb-3"], ["required", "", "placeholder", "Pregunta", 1, "form-control", 3, "name", "id", "ngModel", "readonly", "ngModelChange"], ["class", "col-12 mb-3", 4, "ngFor", "ngForOf"], ["class", "col-12 mb-3 text-right", 4, "ngIf"], [1, "btn", "btn-gray", 3, "click"], [1, "input-group"], ["required", "", 1, "form-control", 2, "border", "none !important", 3, "name", "ngModel", "placeholder", "ngModelChange"], [1, "input-group-btn"], [1, "btn", "btn-outline-secondary", 3, "click"], [1, "col-12", "mb-3", "text-right"], [1, "btn", "btn-purple", "my-2", 3, "ngClass", "id", "disabled", "click"], ["type", "button", 1, "btn", "btn-purple", "my-2", 3, "click"]],
   template: function AdminEncuestasComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](0, AdminEncuestasComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
@@ -5001,7 +5013,7 @@ AdminEncuestasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MOD
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](18, AdminEncuestasComponent_div_18_Template, 2, 0, "div", 13);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](19, AdminEncuestasComponent_div_19_Template, 33, 13, "div", 14);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](19, AdminEncuestasComponent_div_19_Template, 34, 14, "div", 14);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](20, AdminEncuestasComponent_div_20_Template, 4, 0, "div", 15);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](21, "div", 16)(22, "div", 17)(23, "button", 18);
@@ -5017,18 +5029,6 @@ AdminEncuestasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MOD
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](27, "i", 20);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](28, "Guardar");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](29, "div")(30, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](31);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](32, "br");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](33);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](34, "br");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](35);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](36, "br");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](37);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](38, "br");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](39);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](40, "br");
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()()();
     }
     if (rf & 2) {
@@ -5044,19 +5044,9 @@ AdminEncuestasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MOD
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.questions.length < 5);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](6);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", ctx.disabled || !_r1.touched || !_r1.valid);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" disabled: ", ctx.disabled, " ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" touched: ", !_r1.touched, " ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" valid: ", !_r1.valid, " ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" remove: ", ctx.removeQuestio2, " ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" if: ", ctx.disabled || !_r1.touched || !_r1.valid || !ctx.removeQuestio2 && !_r1.valid, " ");
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgModel, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgForm, _core_loading_loading_component__WEBPACK_IMPORTED_MODULE_3__.LoadingComponent],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgModel, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgForm, _core_loading_loading_component__WEBPACK_IMPORTED_MODULE_3__.LoadingComponent],
   styles: [".container-fluid[_ngcontent-%COMP%] {\n  \n  background-color: #EDF0F7;\n}\n.card[_ngcontent-%COMP%] {\n  border-radius: 8px !important;\n  border: 1px solid #dbd7f45b !important;\n}\n.card-title[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  color: #11142D;\n  line-height: 19px;\n  display: inline-block;\n  margin-bottom: 0.5rem;\n  font-family: 'Jost', sans-serif;\n}\n.form-control[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 400;\n  color: #535353;\n  line-height: 20px;\n  border-radius: 8px;\n  height: 41px !important;\n  font-family: 'Jost', sans-serif;\n  border: 1px solid #DBD7F4 !important;\n}\n.form-control[_ngcontent-%COMP%]:focus {  \n  box-shadow: none;\n}\n.form-label[_ngcontent-%COMP%] {\n  font-size: 16px;\n  color: #11142D;\n  font-weight: 700;\n  line-height: 19px;\n  font-family: 'Jost', sans-serif;\n}\n.input-group[_ngcontent-%COMP%] {\n  border-radius: 8px;\n  border: 1px solid #DBD7F4 !important;\n}\n.input-group-btn[_ngcontent-%COMP%] {\n  margin: 0px auto !important;\n  padding-left: 0px !important;\n}\n.btn-outline-secondary[_ngcontent-%COMP%] {\n  border: none;\n  margin: 0px auto;\n  text-align: center;\n  border-radius: 20px;\n  width: auto !important; \n  vertical-align: middle;\n  background-image: none;\n  background-color: white;\n  padding-left: 10px !important;\n}\n.btn-outline-secondary[_ngcontent-%COMP%]:hover {\n  color: #db1a1a;\n  font-weight: bold;\n}\n\n.btn-purple[_ngcontent-%COMP%] {\n  color: #1A44DB;\n  font-weight: bold;\n}\n.btn-save-editagenda[_ngcontent-%COMP%] {\n  border: none;\n  font-weight: 700;\n  border-radius: 8px;\n  background-color: #1A44DB;\n}\n.save-icon[_ngcontent-%COMP%] {\n  width: 15px;\n  height: 15px;\n  cursor: pointer;\n  margin-right: 8px;\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  background-image: url('save-icon.svg');\n}\n.btn-cancel-edituseradmin[_ngcontent-%COMP%] {\n  border: none;\n  color: #A3A3A3;\n  font-weight: 700;\n}\n.btn-cancel-edituseradmin[_ngcontent-%COMP%]:hover {\n  border: none;\n  color: #FFFFFF;\n  font-weight: 700;\n  background-color: #A3A3A3;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkbWluLWVuY3Vlc3Rhcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLHNCQUFzQjtBQUN0QjtFQUNFLG1CQUFtQjtFQUNuQix5QkFBeUI7QUFDM0I7QUFFQTtFQUNFLDZCQUE2QjtFQUM3QixzQ0FBc0M7QUFDeEM7QUFFQTtFQUNFLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIsY0FBYztFQUNkLGlCQUFpQjtFQUNqQixxQkFBcUI7RUFDckIscUJBQXFCO0VBQ3JCLCtCQUErQjtBQUNqQztBQUVBO0VBQ0UsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQixjQUFjO0VBQ2QsaUJBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQix1QkFBdUI7RUFDdkIsK0JBQStCO0VBQy9CLG9DQUFvQztBQUN0QztBQUVBO0VBQ0UsZ0JBQWdCO0FBQ2xCO0FBRUE7RUFDRSxlQUFlO0VBQ2YsY0FBYztFQUNkLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsK0JBQStCO0FBQ2pDO0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsb0NBQW9DO0FBQ3RDO0FBRUE7RUFDRSwyQkFBMkI7RUFDM0IsNEJBQTRCO0FBQzlCO0FBRUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixtQkFBbUI7RUFDbkIsc0JBQXNCO0VBQ3RCLHNCQUFzQjtFQUN0QixzQkFBc0I7RUFDdEIsdUJBQXVCO0VBQ3ZCLDZCQUE2QjtBQUMvQjtBQUVBO0VBQ0UsY0FBYztFQUNkLGlCQUFpQjtBQUNuQjtBQUVBLGVBQWU7QUFDZjtFQUNFLGNBQWM7RUFDZCxpQkFBaUI7QUFDbkI7QUFFQTtFQUNFLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIsa0JBQWtCO0VBQ2xCLHlCQUF5QjtBQUMzQjtBQUVBO0VBQ0UsV0FBVztFQUNYLFlBQVk7RUFDWixlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLHFCQUFxQjtFQUNyQixzQkFBc0I7RUFDdEIsNEJBQTRCO0VBQzVCLHNDQUE2RDtBQUMvRDtBQUVBO0VBQ0UsWUFBWTtFQUNaLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7QUFFQTtFQUNFLFlBQVk7RUFDWixjQUFjO0VBQ2QsZ0JBQWdCO0VBQ2hCLHlCQUF5QjtBQUMzQiIsImZpbGUiOiJhZG1pbi1lbmN1ZXN0YXMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIEN1c3RvbSAgQm9vdHN0cmFwICovXG4uY29udGFpbmVyLWZsdWlkIHtcbiAgLyogaGVpZ2h0OiAxMDB2aDsgKi9cbiAgYmFja2dyb3VuZC1jb2xvcjogI0VERjBGNztcbn1cblxuLmNhcmQge1xuICBib3JkZXItcmFkaXVzOiA4cHggIWltcG9ydGFudDtcbiAgYm9yZGVyOiAxcHggc29saWQgI2RiZDdmNDViICFpbXBvcnRhbnQ7XG59XG5cbi5jYXJkLXRpdGxlIHtcbiAgZm9udC1zaXplOiAxNnB4O1xuICBmb250LXdlaWdodDogNzAwO1xuICBjb2xvcjogIzExMTQyRDtcbiAgbGluZS1oZWlnaHQ6IDE5cHg7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgbWFyZ2luLWJvdHRvbTogMC41cmVtO1xuICBmb250LWZhbWlseTogJ0pvc3QnLCBzYW5zLXNlcmlmO1xufVxuXG4uZm9ybS1jb250cm9sIHtcbiAgZm9udC1zaXplOiAxNnB4O1xuICBmb250LXdlaWdodDogNDAwO1xuICBjb2xvcjogIzUzNTM1MztcbiAgbGluZS1oZWlnaHQ6IDIwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDhweDtcbiAgaGVpZ2h0OiA0MXB4ICFpbXBvcnRhbnQ7XG4gIGZvbnQtZmFtaWx5OiAnSm9zdCcsIHNhbnMtc2VyaWY7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNEQkQ3RjQgIWltcG9ydGFudDtcbn1cblxuLmZvcm0tY29udHJvbDpmb2N1cyB7ICBcbiAgYm94LXNoYWRvdzogbm9uZTtcbn1cblxuLmZvcm0tbGFiZWwge1xuICBmb250LXNpemU6IDE2cHg7XG4gIGNvbG9yOiAjMTExNDJEO1xuICBmb250LXdlaWdodDogNzAwO1xuICBsaW5lLWhlaWdodDogMTlweDtcbiAgZm9udC1mYW1pbHk6ICdKb3N0Jywgc2Fucy1zZXJpZjtcbn1cblxuLmlucHV0LWdyb3VwIHtcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjREJEN0Y0ICFpbXBvcnRhbnQ7XG59XG5cbi5pbnB1dC1ncm91cC1idG4ge1xuICBtYXJnaW46IDBweCBhdXRvICFpbXBvcnRhbnQ7XG4gIHBhZGRpbmctbGVmdDogMHB4ICFpbXBvcnRhbnQ7XG59XG5cbi5idG4tb3V0bGluZS1zZWNvbmRhcnkge1xuICBib3JkZXI6IG5vbmU7XG4gIG1hcmdpbjogMHB4IGF1dG87XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcbiAgd2lkdGg6IGF1dG8gIWltcG9ydGFudDsgXG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gIGJhY2tncm91bmQtaW1hZ2U6IG5vbmU7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBwYWRkaW5nLWxlZnQ6IDEwcHggIWltcG9ydGFudDtcbn1cblxuLmJ0bi1vdXRsaW5lLXNlY29uZGFyeTpob3ZlciB7XG4gIGNvbG9yOiAjZGIxYTFhO1xuICBmb250LXdlaWdodDogYm9sZDtcbn1cblxuLyogQ3VzdG9tIENTUyAqL1xuLmJ0bi1wdXJwbGUge1xuICBjb2xvcjogIzFBNDREQjtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG5cbi5idG4tc2F2ZS1lZGl0YWdlbmRhIHtcbiAgYm9yZGVyOiBub25lO1xuICBmb250LXdlaWdodDogNzAwO1xuICBib3JkZXItcmFkaXVzOiA4cHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICMxQTQ0REI7XG59XG5cbi5zYXZlLWljb24ge1xuICB3aWR0aDogMTVweDtcbiAgaGVpZ2h0OiAxNXB4O1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIG1hcmdpbi1yaWdodDogOHB4O1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnLi5cXC4uXFwuLlxcYXNzZXRzXFxpbWFnZXNcXHNhdmUtaWNvbi5zdmcnKTtcbn1cblxuLmJ0bi1jYW5jZWwtZWRpdHVzZXJhZG1pbiB7XG4gIGJvcmRlcjogbm9uZTtcbiAgY29sb3I6ICNBM0EzQTM7XG4gIGZvbnQtd2VpZ2h0OiA3MDA7XG59XG5cbi5idG4tY2FuY2VsLWVkaXR1c2VyYWRtaW46aG92ZXIge1xuICBib3JkZXI6IG5vbmU7XG4gIGNvbG9yOiAjRkZGRkZGO1xuICBmb250LXdlaWdodDogNzAwO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjQTNBM0EzO1xufSJdfQ== */"]
 });
 
@@ -21374,7 +21364,7 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.debugging
     window.console.log = () => { };
 }
 ;
-// window.console.log = () => {}
+window.console.log = () => { };
 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.platformBrowser().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule)
     .catch(err => console.error(err));
 
