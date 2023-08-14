@@ -8798,7 +8798,24 @@ html {
 }
 /* input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus,
 input:-webkit-autofill:active { -webkit-box-shadow: 0 0 0 0px white inset !important; } */
+/*ajustes resposive TRINO*/
+@media screen and (max-width: 360px) {
+    .main {
+        height: auto;
+        padding: 20px;
+        border-radius: 8px;
+        position: relative;
+        background: white;
+        margin-bottom: 100px;
+        width: 920px;
+        /*
+        display: flex;
+        margin: 30px 100px;
+        flex-direction: column;
+        */
+    }
+    
 
-
+}
 
 /*# sourceMappingURL=styles.css.map*/
