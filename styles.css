@@ -8549,8 +8549,18 @@ a.text-dark:hover, a.text-dark:focus {
 }
 /* Divisor sections */
 .divider-section {
-    color: #C7C7C7;
-    margin-top: 40px;
+    border: 1px solid;
+    margin: 30px 1.5rem;
+    border-color: #C7C7C7;
+}
+/* Error message */
+.note-small {
+    color: #000000;
+    /* line-height: 14px; */
+    font-size: 12px !important;
+    margin-top: 6px !important;
+    margin-left: 15px !important;
+    font-family: 'Jost', sans-serif !important;
 }
 /* Error message */
 .err-msg {
@@ -8691,6 +8701,25 @@ a.text-dark:hover, a.text-dark:focus {
 .actions-disble {
     display: block !important;
 }
+/* Icon for input file */
+.icon-input-file {
+    right: 0 !important;
+    top: 47px !important;
+    width: 100px !important;
+    height: 25px !important;
+    cursor: pointer !important;
+    position: absolute !important;
+    margin-right: 22px !important;
+    display: inline-block !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-image: url('Files-btn.png') !important;
+  }
+/* Input file */
+.input-file-readonly{
+    background-color: white !important;
+}
 /************************************* NEW METHOD 5 *************************************/
 .multi_den {
     width: 100% !important;
@@ -8814,7 +8843,7 @@ input:-webkit-autofill:active { -webkit-box-shadow: 0 0 0 0px white inset !impor
         flex-direction: column;
         */
     }
-    
+
 
 }
 
