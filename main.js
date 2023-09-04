@@ -3939,6 +3939,7 @@ class AdminEmpresasComponent {
     this.totalPages = 0;
     this.loading = false;
     this.filter = '';
+    this.role = undefined;
     this.env = src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.production;
     this.categoriesHeading = [];
     this.list = [{
@@ -3970,6 +3971,7 @@ class AdminEmpresasComponent {
     this.categoriesHeading = Object.keys(this.list[0]);
   }
   ngOnInit() {
+    this.role = sessionStorage.getItem('Role')?.toString();
     this.isShowDiv = true;
     if (sessionStorage.getItem('Token')) {
       this.accessToken = sessionStorage.getItem('Token');
@@ -4101,8 +4103,8 @@ AdminEmpresasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
   type: AdminEmpresasComponent,
   selectors: [["app-admin-empresas"]],
   decls: 30,
-  vars: 8,
-  consts: [[4, "ngIf"], [1, "header"], [1, "agregar", 3, "click"], [1, "main"], [1, "default-view"], [1, "search-field"], ["id", "search", 1, "search-filter", 3, "click"], ["placeholder", "Buscar empresa...", 1, "search-input", 3, "ngModel", "keyup.enter", "keyup", "ngModelChange"], ["id", "filter", 1, "search-icon", 3, "click"], ["class", "row px-2 mt-2", 4, "ngIf"], [1, "table-default"], ["border", "1", 1, "content-table"], [4, "ngFor", "ngForOf"], [1, "table-pagination"], ["id", "back", 1, "btn-arrow", "btn-arrow-first", 3, "click"], ["id", "back", 1, "btn-arrow", "btn-arrow-left", 3, "click"], [1, "pagination-text"], ["id", "back", 1, "btn-arrow", "btn-arrow-right", 3, "click"], ["id", "back", 1, "btn-arrow", "btn-arrow-last", 3, "click"], ["class", "overlay", 4, "ngIf"], [1, "row", "px-2", "mt-2"], ["class", "badge badge-agex mx-2 mt-3 px-3 py-2", 4, "ngIf"], [1, "badge", "badge-agex", "mx-2", "mt-3", "px-3", "py-2"], [1, "m-4"], [1, "mx-4", "my-auto", "text-dark", 3, "click"], [1, "card-filter-btn-close", 3, "click"], [3, "class", 4, "ngFor", "ngForOf"], ["name", "actions", "id", "actions", 1, "actions", 3, "click"], [1, "card", "options-container", "float-end", "position-absolute", "translate-middle-y", "p-2", "m-2", 3, "hidden", "id"], ["name", "edit", "id", "edit", 1, "actions-btn", "w-100", "text-left", 3, "click"], [1, "overlay"], [1, "modal-container"], [1, "modal-content-types"], [1, "close-modal", 3, "click"], [1, "modal-title"], [1, "col-12", "mb-3"], [1, "form-label", "mb-3"], ["for", "codigo"], ["type", "text", "id", "codigo", "placeholder", "C\u00F3digo", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "nit"], ["type", "text", "id", "nit", "placeholder", "NIT", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "card-title", "mb-4"], [1, "form-check", "form-check-inline"], ["type", "radio", "name", "status", "id", "filterActive", 1, "form-check-input", "input-radio-lg", 3, "checked", "click"], ["for", "filterActive", 1, "form-check-label"], ["type", "radio", "name", "status", "id", "filterInactive", 1, "form-check-input", "input-radio-lg", 3, "checked", "click"], ["for", "filterInactive", 1, "form-check-label"], [1, "modal-buttons"], [1, "btn-clear", 3, "click"], [1, "btn-search", 3, "click"]],
+  vars: 9,
+  consts: [[4, "ngIf"], [1, "header"], [1, "agregar", 3, "hidden", "click"], [1, "main"], [1, "default-view"], [1, "search-field"], ["id", "search", 1, "search-filter", 3, "click"], ["placeholder", "Buscar empresa...", 1, "search-input", 3, "ngModel", "keyup.enter", "keyup", "ngModelChange"], ["id", "filter", 1, "search-icon", 3, "click"], ["class", "row px-2 mt-2", 4, "ngIf"], [1, "table-default"], ["border", "1", 1, "content-table"], [4, "ngFor", "ngForOf"], [1, "table-pagination"], ["id", "back", 1, "btn-arrow", "btn-arrow-first", 3, "click"], ["id", "back", 1, "btn-arrow", "btn-arrow-left", 3, "click"], [1, "pagination-text"], ["id", "back", 1, "btn-arrow", "btn-arrow-right", 3, "click"], ["id", "back", 1, "btn-arrow", "btn-arrow-last", 3, "click"], ["class", "overlay", 4, "ngIf"], [1, "row", "px-2", "mt-2"], ["class", "badge badge-agex mx-2 mt-3 px-3 py-2", 4, "ngIf"], [1, "badge", "badge-agex", "mx-2", "mt-3", "px-3", "py-2"], [1, "m-4"], [1, "mx-4", "my-auto", "text-dark", 3, "click"], [1, "card-filter-btn-close", 3, "click"], [3, "class", 4, "ngFor", "ngForOf"], ["name", "actions", "id", "actions", 1, "actions", 3, "click"], [1, "card", "options-container", "float-end", "position-absolute", "translate-middle-y", "p-2", "m-2", 3, "hidden", "id"], ["name", "edit", "id", "edit", 1, "actions-btn", "w-100", "text-left", 3, "click"], [1, "overlay"], [1, "modal-container"], [1, "modal-content-types"], [1, "close-modal", 3, "click"], [1, "modal-title"], [1, "col-12", "mb-3"], [1, "form-label", "mb-3"], ["for", "codigo"], ["type", "text", "id", "codigo", "placeholder", "C\u00F3digo", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "nit"], ["type", "text", "id", "nit", "placeholder", "NIT", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "card-title", "mb-4"], [1, "form-check", "form-check-inline"], ["type", "radio", "name", "status", "id", "filterActive", 1, "form-check-input", "input-radio-lg", 3, "checked", "click"], ["for", "filterActive", 1, "form-check-label"], ["type", "radio", "name", "status", "id", "filterInactive", 1, "form-check-input", "input-radio-lg", 3, "checked", "click"], ["for", "filterInactive", 1, "form-check-label"], [1, "modal-buttons"], [1, "btn-clear", 3, "click"], [1, "btn-search", 3, "click"]],
   template: function AdminEmpresasComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](0, AdminEmpresasComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
@@ -4169,7 +4171,9 @@ AdminEmpresasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.loading);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("hidden", ctx.role == "ROLE_ADMIN");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](6);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.filter);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.isFilter);
@@ -10872,6 +10876,7 @@ class AdminParticipantesComponent {
     this.loading = false;
     this.isShowDiv = true;
     this.filter = '';
+    this.role = undefined;
     this.env = src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.production;
     this.categoriesHeading = [];
     this.list = [{
@@ -10900,6 +10905,7 @@ class AdminParticipantesComponent {
   ngOnInit() {
     var _this = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      _this.role = sessionStorage.getItem('Role')?.toString();
       _this.eventID = Number(sessionStorage.getItem('EventID'));
       _this.eventData = JSON.parse(sessionStorage.getItem('EventData')) || {};
       const token = sessionStorage.getItem('Token')?.toString();
@@ -11270,7 +11276,7 @@ AdminParticipantesComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED
   },
   decls: 55,
   vars: 9,
-  consts: [[4, "ngIf"], [1, "main"], [1, "header"], [1, "top-block-1"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], ["class", "next-container", 4, "ngIf"], [1, "btn-group"], [1, "agregar", 3, "disabled", "click"], ["onclick", "document.getElementById('file').click();", 1, "importar"], ["type", "file", "id", "file", "name", "file", "accept", "text/csv", 2, "display", "none", 3, "change"], ["file", "", "FileSelectInputDialog", ""], [1, "top-main"], [1, "default-view"], [1, "search-field"], ["id", "search", 1, "search-filter", 3, "click"], ["placeholder", "Buscar usuario...", 1, "search-input", 2, "width", "90%", 3, "ngModel", "ngModelChange", "keyup.enter", "keyup"], [1, "agregar", 2, "margin", "-9px 0", "padding", "13px 20px", "right", "3px", "width", "148px", 3, "click"], [1, "table-default"], [1, "table-default", 2, "overflow-x", "auto"], [1, "content-table"], ["type", "checkbox", 1, "checkbox-item", 3, "ngModel", "ngModelChange", "change"], [4, "ngFor", "ngForOf"], [1, "multi_den"], [1, "multi_contenedor"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-white", 3, "click"], ["id", "item-1", "hidden", "", 1, "multi_list"], [1, "multi_ul"], ["name", "gafete", "id", "edit", 1, "multi_button", 3, "click"], [1, "table-pagination"], ["id", "back", 1, "btn-arrow", "btn-arrow-left", 3, "click"], [1, "pagination-text"], ["id", "back", 1, "btn-arrow", "btn-arrow-right", 3, "click"], [1, "block-bottom"], [1, "cancle-btn", 3, "click"], [1, "save-btn", 3, "click"], [1, "save-icon"], [1, "next-container"], ["id", "next", 1, "next-btn", 3, "click"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-gray", 3, "click"], ["hidden", "", 1, "multi_list", 3, "id"], ["style", "border-bottom: 1px solid #dee2e6 !important;", 4, "ngIf"], ["name", "delete", "id", "delete", 1, "multi_button", 3, "click"], [3, "hidden", 4, "ngIf"], ["class", "asistencia-group", 4, "ngIf"], ["class", "registro-group", 4, "ngIf"], ["type", "checkbox", 3, "ngModel", "disabled", "ngModelChange", "change"], [3, "hidden"], [1, "asistencia-group"], [3, "name", "id", "ngClass", "value", "disabled", "change"], ["selects", ""], ["value", "confirmado"], ["value", "no_confirmado"], [1, "registro-group"], ["disabled", "", 1, "registro-drop", 3, "name", "id", "ngClass", "value", "change"], ["value", "1"], ["value", "0"], [2, "border-bottom", "1px solid #dee2e6 !important"]],
+  consts: [[4, "ngIf"], [1, "main"], [1, "header"], [1, "top-block-1"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], ["class", "next-container", 4, "ngIf"], [1, "btn-group"], [1, "agregar", 3, "click"], ["onclick", "document.getElementById('file').click();", 1, "importar", 3, "hidden"], ["type", "file", "id", "file", "name", "file", "accept", "text/csv", 2, "display", "none", 3, "change"], ["file", "", "FileSelectInputDialog", ""], [1, "top-main"], [1, "default-view"], [1, "search-field"], ["id", "search", 1, "search-filter", 3, "click"], ["placeholder", "Buscar usuario...", 1, "search-input", 2, "width", "90%", 3, "ngModel", "ngModelChange", "keyup.enter", "keyup"], [1, "agregar", 2, "margin", "-9px 0", "padding", "13px 20px", "right", "3px", "width", "148px", 3, "click"], [1, "table-default"], [1, "table-default", 2, "overflow-x", "auto"], [1, "content-table"], ["type", "checkbox", 1, "checkbox-item", 3, "ngModel", "ngModelChange", "change"], [4, "ngFor", "ngForOf"], [1, "multi_den"], [1, "multi_contenedor"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-white", 3, "click"], ["id", "item-1", "hidden", "", 1, "multi_list"], [1, "multi_ul"], ["name", "gafete", "id", "edit", 1, "multi_button", 3, "click"], [1, "table-pagination"], ["id", "back", 1, "btn-arrow", "btn-arrow-left", 3, "click"], [1, "pagination-text"], ["id", "back", 1, "btn-arrow", "btn-arrow-right", 3, "click"], [1, "block-bottom"], [1, "cancle-btn", 3, "click"], [1, "save-btn", 3, "click"], [1, "save-icon"], [1, "next-container"], ["id", "next", 1, "next-btn", 3, "click"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-gray", 3, "click"], ["hidden", "", 1, "multi_list", 3, "id"], ["style", "border-bottom: 1px solid #dee2e6 !important;", 4, "ngIf"], ["name", "delete", "id", "delete", 1, "multi_button", 3, "click"], [3, "hidden", 4, "ngIf"], ["class", "asistencia-group", 4, "ngIf"], ["class", "registro-group", 4, "ngIf"], ["type", "checkbox", 3, "ngModel", "disabled", "ngModelChange", "change"], [3, "hidden"], [1, "asistencia-group"], [3, "name", "id", "ngClass", "value", "disabled", "change"], ["selects", ""], ["value", "confirmado"], ["value", "no_confirmado"], [1, "registro-group"], ["disabled", "", 1, "registro-drop", 3, "name", "id", "ngClass", "value", "change"], ["value", "1"], ["value", "0"], [2, "border-bottom", "1px solid #dee2e6 !important"]],
   template: function AdminParticipantesComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](0, AdminParticipantesComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
@@ -11376,9 +11382,9 @@ AdminParticipantesComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.loading);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.nextPage === true);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", ctx.env);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("hidden", ctx.role == "ROLE_ORGANIZADOR_EVENTOS");
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](9);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", ctx.filter);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](9);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", ctx.allParticipant);
@@ -12578,7 +12584,9 @@ class ReporteriaComponent {
         });
         localStorage.setItem('events', JSON.stringify(events));
       }
-      _this.envirement === true ? _this.statisticsList = ['Seleccione', 'Promoción', 'Promoción en especifico', 'Constancia de asociado', 'Certificado de puntos', 'Encuestas eventos'] : _this.statisticsList = ['Seleccione', 'Promoción', 'Promoción en especifico', 'Eventos', 'Constancia de asociado', 'Certificado de puntos', 'Encuestas eventos'];
+      const role = sessionStorage.getItem('Role')?.toString();
+      role == 'ROLE_ORGANIZADOR_EVENTOS' || role == 'ROLE_ALIADO_COMERCIAL' // this.envirement === true
+      ? _this.statisticsList = ['Seleccione', 'Promoción en especifico', 'Eventos', 'Encuestas eventos'] : _this.statisticsList = ['Seleccione', 'Promoción', 'Promoción en especifico', 'Eventos', 'Constancia de asociado', 'Certificado de puntos', 'Encuestas eventos'];
       _this.loading = false;
     })();
   }
@@ -19153,16 +19161,21 @@ class LoginComponent {
       };
       yield _this.backofficeService.login(_this.loginData).then( /*#__PURE__*/function () {
         var _ref = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (response) {
-          src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.token = response.result.accessToken;
-          sessionStorage.setItem('EventID', '0');
-          sessionStorage.setItem('EventType', '0');
-          sessionStorage.setItem('UserID', response.result.id);
-          sessionStorage.setItem('Role', response.result.roles);
-          sessionStorage.setItem('Email', response.result.email);
-          sessionStorage.setItem('Token', response.result.accessToken);
-          sessionStorage.setItem('companyId', response.result.companyId);
-          localStorage.setItem('session', (new Date().getTime() + 86400000).toString()); //1min. = 60000
-          yield _this.loadData();
+          if (_this.val_role(response?.result?.roles)) {
+            _this.utilsService.dialog('ERROR', 'Alerta', 'Tipo de rol sin acceso a la plataforma.');
+            _this.logout();
+          } else {
+            src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.token = response.result.accessToken;
+            sessionStorage.setItem('EventID', '0');
+            sessionStorage.setItem('EventType', '0');
+            sessionStorage.setItem('UserID', response.result.id);
+            sessionStorage.setItem('Role', response.result.roles);
+            sessionStorage.setItem('Email', response.result.email);
+            sessionStorage.setItem('Token', response.result.accessToken);
+            sessionStorage.setItem('companyId', response.result.companyId);
+            localStorage.setItem('session', (new Date().getTime() + 86400000).toString()); //1min. = 60000
+            yield _this.loadData();
+          }
         });
         return function (_x) {
           return _ref.apply(this, arguments);
@@ -19195,6 +19208,34 @@ class LoginComponent {
   }
   passwordVisibility() {
     this.show = !this.show;
+  }
+  val_role(role) {
+    switch (role) {
+      case null:
+        return true;
+        break;
+      case undefined:
+        return true;
+        break;
+      case 'ROLE_NOASOCIADO':
+        return true;
+        break;
+      case 'ROLE_ASOCIADO':
+        return true;
+        break;
+      case 'ROLE_COLABORADOR':
+        return true;
+        break;
+      default:
+        return false;
+        break;
+    }
+  }
+  logout() {
+    sessionStorage.removeItem('Token');
+    sessionStorage.clear();
+    localStorage.clear();
+    this.goToPage('/login');
   }
 }
 LoginComponent.ɵfac = function LoginComponent_Factory(t) {
@@ -19332,6 +19373,36 @@ class MainMenuComponent {
         this.arraw_reflex = '';
         this.class_text = 'd-none';
         this.extended_menu = false;
+        this.opMenuUser = {
+            id: 'users',
+            routerLink: 'users',
+            name: 'Administración de usuarios',
+            src: '../../assets/images/UsersIcon.svg',
+        };
+        this.opMenuEvent = {
+            id: 'evento',
+            name: 'Eventos ',
+            routerLink: 'events',
+            src: '../../assets/images/EventoIcon.svg'
+        };
+        this.opMenuReport = {
+            id: 'reportes',
+            name: 'Estadisticas',
+            routerLink: 'reportes',
+            src: '../../assets/images/ReporteIcon.svg'
+        };
+        this.opMenuNotification = {
+            id: 'notificaciones',
+            name: 'Notificaciones',
+            routerLink: 'notificaciones',
+            src: '../../assets/images/NotificacionIcon.svg'
+        };
+        this.opMenuPromotion = {
+            id: 'promociones',
+            name: 'Beneficios',
+            routerLink: 'admin-promociones',
+            src: '../../assets/images/promotion_icon.svg'
+        };
         router.events.forEach((event) => {
             if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__.NavigationStart) {
                 if (event['url'] == '/login' ||
@@ -19371,93 +19442,20 @@ class MainMenuComponent {
         this.validation();
         const userRole = sessionStorage.getItem('Role') || false;
         if (userRole === 'ROLE_SUPERADMIN' || userRole === 'ROLE_ADMIN') {
-            this.main_menu = [
-                {
-                    id: 'users',
-                    routerLink: 'users',
-                    name: 'Administración de usuarios',
-                    src: '../../assets/images/UsersIcon.svg',
-                },
-                {
-                    id: 'evento',
-                    name: 'Eventos ',
-                    routerLink: 'events',
-                    src: '../../assets/images/EventoIcon.svg'
-                },
-                {
-                    id: 'reportes',
-                    name: 'Estadisticas',
-                    routerLink: 'reportes',
-                    src: '../../assets/images/ReporteIcon.svg'
-                },
-                {
-                    id: 'notificaciones',
-                    name: 'Notificaciones',
-                    routerLink: 'notificaciones',
-                    src: '../../assets/images/NotificacionIcon.svg'
-                },
-                {
-                    id: 'promociones',
-                    name: 'Beneficios',
-                    routerLink: 'admin-promociones',
-                    src: '../../assets/images/promotion_icon.svg'
-                }
-            ];
-        }
-        else if (userRole === 'ROLE_COLABORADOR') {
-            this.main_menu = [
-                {
-                    id: 'users',
-                    routerLink: 'users',
-                    name: 'Administración de usuarios',
-                    src: '../../assets/images/UsersIcon.svg',
-                },
-                {
-                    id: 'evento',
-                    name: 'Eventos ',
-                    routerLink: 'events',
-                    src: '../../assets/images/EventoIcon.svg'
-                },
-                {
-                    id: 'reportes',
-                    name: 'Estadisticas',
-                    routerLink: 'reportes',
-                    src: '../../assets/images/ReporteIcon.svg'
-                },
-                {
-                    id: 'promociones',
-                    name: 'Beneficios',
-                    routerLink: 'admin-promociones',
-                    src: '../../assets/images/promotion_icon.svg'
-                }
-            ];
+            this.main_menu.push(this.opMenuUser);
+            this.main_menu.push(this.opMenuEvent);
+            this.main_menu.push(this.opMenuReport);
+            this.main_menu.push(this.opMenuNotification);
+            this.main_menu.push(this.opMenuPromotion);
         }
         else if (userRole === 'ROLE_ORGANIZADOR_EVENTOS') {
-            this.main_menu = [
-                {
-                    id: 'evento',
-                    routerLink: 'events/calendario-eventos',
-                    name: 'Eventos',
-                    src: '../../assets/images/EventoIcon.svg'
-                },
-                {
-                    id: 'reportes',
-                    routerLink: 'reportes',
-                    name: '',
-                    src: '../../assets/images/ReporteIcon.svg'
-                }
-            ];
+            this.main_menu.push(this.opMenuEvent);
+            this.main_menu.push(this.opMenuNotification);
+            this.main_menu.push(this.opMenuReport);
         }
-        else {
-            // ROLE_ALIADO 
-            this.main_menu = [
-                {
-                    id: 'promociones',
-                    name: 'Beneficios',
-                    routerLink: 'admin-promociones',
-                    src: '../../assets/images/promotion_icon.svg'
-                }
-            ];
+        else if (userRole === 'ROLE_ALIADO_COMERCIAL') {
+            this.main_menu.push(this.opMenuReport);
+            this.main_menu.push(this.opMenuPromotion);
         }
     }
     validation() {
