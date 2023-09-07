@@ -3973,7 +3973,7 @@ class AdminEmpresasComponent {
             "NIT": e?.nit,
             "Teléfono": e?.telefonoGeneral,
             "Correo Empresa": e?.emailEmpresarial,
-            "Estatus": e?.socio == true ? 'Activo' : 'De baja'
+            "Estatus": e?.socio == true ? 'Activo' : 'No Activo'
           };
         });
         this.totalPages = Math.ceil(res.count / this.pageSize);
@@ -4472,6 +4472,7 @@ class EditEmpresaComponent {
     this.companyService.getCompaniesbyID(this.companyId).then( /*#__PURE__*/function () {
       var _ref = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (res) {
         console.log(res.result);
+        //*
         _this.companyData = res.result;
         _this.imageSrc = res.result.image;
         _this.companyData.newImage = {
@@ -4520,6 +4521,7 @@ class EditEmpresaComponent {
             }
           }
         }
+        //*/
       });
       return function (_x) {
         return _ref.apply(this, arguments);
@@ -4600,7 +4602,6 @@ class EditEmpresaComponent {
     var file = event.dataTransfer ? event.dataTransfer.files[0] : event.target.files[0];
     console.log(this.companyData.newImage);
     this.companyData.newImage.extension = file.type.substring(file.type.indexOf('/') + 1);
-    // this.companyData.image!.extension = file.type.substring(file.type.indexOf('/') + 1);
     var reader = new FileReader();
     this.loaded = false;
     reader.onload = this._handleReaderLoaded.bind(this);
@@ -4620,12 +4621,8 @@ class EditEmpresaComponent {
   }
   submitEvent() {
     console.log(this.companyData);
-    // console.log(this.form);
-    // console.log(this.form.valid);
-    // console.log(this.form.controls);
     if (this.form.valid) {
       this.companyId > 0 ? this.editCompany() : this.createCompany();
-      // if (this.companyId != false) { this.editCompany(); } else { this.createCompany(); }
     } else {
       this.form.control.markAllAsTouched();
       this.utilsService.dialog('ERROR', 'Error', 'Por favor llena los campos obligatorios.');
@@ -4658,6 +4655,7 @@ class EditEmpresaComponent {
     if (this.companyData.newImage?.data == '') {
       delete companyData.newImage;
     }
+    delete companyData.image;
     return this.companyService.updateComapny(this.companyId, companyData).then( /*#__PURE__*/function () {
       var _ref3 = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (res) {
         // console.log(res);
@@ -5126,7 +5124,7 @@ function AdminEncuestasComponent_div_19_div_32_Template(rf, ctx) {
       const ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r21.removeOption(i_r6, x_r16));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](7, "X");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "i", 44);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](8, AdminEncuestasComponent_div_19_div_32_div_8_Template, 2, 0, "div", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -5150,7 +5148,7 @@ function AdminEncuestasComponent_div_19_div_32_Template(rf, ctx) {
 function AdminEncuestasComponent_div_19_div_33_Template(rf, ctx) {
   if (rf & 1) {
     const _r26 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 44)(1, "button", 45);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 45)(1, "button", 46);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AdminEncuestasComponent_div_19_div_33_Template_button_click_1_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r26);
       const i_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]().index;
@@ -5253,7 +5251,7 @@ function AdminEncuestasComponent_div_19_Template(rf, ctx) {
 function AdminEncuestasComponent_div_20_Template(rf, ctx) {
   if (rf & 1) {
     const _r33 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 16)(1, "div", 17)(2, "button", 46);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 16)(1, "div", 17)(2, "button", 47);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AdminEncuestasComponent_div_20_Template_button_click_2_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r33);
       const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
@@ -5522,7 +5520,7 @@ AdminEncuestasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MOD
   },
   decls: 29,
   vars: 7,
-  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4", "mb-5"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], ["form", "ngForm"], [1, "col-12"], [1, "card", "mb-5"], [1, "card-body"], [1, "col-12", "px-4"], [1, "form-label", "mb-3"], ["name", "nombreEncuesta", "id", "nombreEncuesta", "required", "", "placeholder", "Nombre de la encuesta", 1, "form-control", 3, "ngModel", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["class", "col-12", 4, "ngFor", "ngForOf"], ["class", "col-12 text-right px-5", 4, "ngIf"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "disabled", "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-editagenda", 3, "disabled", "click"], [1, "save-icon"], [1, "err-msg"], [1, "card", "mb-3"], [1, "col-10"], [1, "col-2", "text-right"], ["class", "btn btn-gray", 3, "click", 4, "ngIf"], [1, "row", "px-4", "py-0"], [1, "col-12", "col-md-4", "mb-3"], ["required", "", 1, "form-control", 3, "name", "id", "ngModel", "disabled", "ngModelChange", "change"], ["value", "undefined", "selected", "", "disabled", ""], ["value", "open"], ["value", "stars"], ["value", "truefalse"], ["value", "multiple"], [1, "col-12", "col-md-8"], [1, "col-12", "mb-3"], ["required", "", "placeholder", "Pregunta", 1, "form-control", 3, "name", "id", "ngModel", "readonly", "ngModelChange"], ["class", "col-12 mb-3", 4, "ngFor", "ngForOf"], ["class", "col-12 mb-3 text-right", 4, "ngIf"], [1, "btn", "btn-gray", 3, "click"], [1, "input-group"], ["required", "", 1, "form-control", 2, "border", "none !important", 3, "name", "ngModel", "placeholder", "ngModelChange"], [1, "input-group-btn"], [1, "btn", "btn-outline-secondary", 3, "click"], [1, "col-12", "mb-3", "text-right"], [1, "btn", "btn-purple", "my-2", 3, "ngClass", "id", "disabled", "click"], ["type", "button", 1, "btn", "btn-purple", "my-2", 3, "click"]],
+  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4", "mb-5"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], ["form", "ngForm"], [1, "col-12"], [1, "card", "mb-5"], [1, "card-body"], [1, "col-6", "px-4"], [1, "form-label", "mb-3"], ["name", "nombreEncuesta", "id", "nombreEncuesta", "required", "", "placeholder", "Nombre de la encuesta", 1, "form-control", 3, "ngModel", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["class", "col-12", 4, "ngFor", "ngForOf"], ["class", "col-12 text-right px-5", 4, "ngIf"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "disabled", "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-editagenda", 3, "disabled", "click"], [1, "save-icon"], [1, "err-msg"], [1, "card", "mb-3"], [1, "col-10"], [1, "col-2", "text-right"], ["class", "btn btn-gray", 3, "click", 4, "ngIf"], [1, "row", "px-4", "py-0"], [1, "col-12", "col-md-4", "mb-3"], ["required", "", 1, "form-control", 3, "name", "id", "ngModel", "disabled", "ngModelChange", "change"], ["value", "undefined", "selected", "", "disabled", ""], ["value", "open"], ["value", "stars"], ["value", "truefalse"], ["value", "multiple"], [1, "col-12", "col-md-8"], [1, "col-12", "mb-3"], ["required", "", "placeholder", "Pregunta", 1, "form-control", 3, "name", "id", "ngModel", "readonly", "ngModelChange"], ["class", "col-12 mb-3", 4, "ngFor", "ngForOf"], ["class", "col-12 mb-3 text-right", 4, "ngIf"], [1, "btn", "btn-gray", 3, "click"], [1, "input-group"], ["required", "", 1, "form-control", 2, "border", "none !important", 3, "name", "ngModel", "placeholder", "ngModelChange"], [1, "input-group-btn"], [1, "btn", "btn-outline-secondary", 3, "click"], [1, "btn-circle-close-icon"], [1, "col-12", "mb-3", "text-right"], [1, "btn", "btn-purple", "my-2", 3, "ngClass", "id", "disabled", "click"], ["type", "button", 1, "btn", "btn-purple", "my-2", 3, "click"]],
   template: function AdminEncuestasComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](0, AdminEncuestasComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
@@ -5580,7 +5578,7 @@ AdminEncuestasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MOD
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgModel, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgForm, _core_loading_loading_component__WEBPACK_IMPORTED_MODULE_3__.LoadingComponent],
-  styles: [".container-fluid[_ngcontent-%COMP%] {\n  \n  background-color: #EDF0F7;\n}\n.card[_ngcontent-%COMP%] {\n  border-radius: 8px !important;\n  border: 1px solid #dbd7f45b !important;\n}\n.card-title[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  color: #11142D;\n  line-height: 19px;\n  display: inline-block;\n  margin-bottom: 0.5rem;\n  font-family: 'Jost', sans-serif;\n}\n.form-control[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 400;\n  color: #535353;\n  line-height: 20px;\n  border-radius: 8px;\n  height: 41px !important;\n  font-family: 'Jost', sans-serif;\n  border: 1px solid #DBD7F4 !important;\n}\n.form-control[_ngcontent-%COMP%]:focus {  \n  box-shadow: none;\n}\n.form-label[_ngcontent-%COMP%] {\n  font-size: 16px;\n  color: #11142D;\n  font-weight: 700;\n  line-height: 19px;\n  font-family: 'Jost', sans-serif;\n}\n.input-group[_ngcontent-%COMP%] {\n  border-radius: 8px;\n  border: 1px solid #DBD7F4 !important;\n}\n.input-group-btn[_ngcontent-%COMP%] {\n  margin: 0px auto !important;\n  padding-left: 0px !important;\n}\n.btn-outline-secondary[_ngcontent-%COMP%] {\n  border: none;\n  margin: 0px auto;\n  text-align: center;\n  border-radius: 20px;\n  width: auto !important; \n  vertical-align: middle;\n  background-image: none;\n  background-color: white;\n  padding-left: 10px !important;\n}\n.btn-outline-secondary[_ngcontent-%COMP%]:hover {\n  color: #db1a1a;\n  font-weight: bold;\n}\n\n.btn-purple[_ngcontent-%COMP%] {\n  color: #1A44DB;\n  font-weight: bold;\n}\n.btn-save-editagenda[_ngcontent-%COMP%] {\n  border: none;\n  font-weight: 700;\n  border-radius: 8px;\n  background-color: #1A44DB;\n}\n.save-icon[_ngcontent-%COMP%] {\n  width: 15px;\n  height: 15px;\n  cursor: pointer;\n  margin-right: 8px;\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  background-image: url('save-icon.svg');\n}\n.btn-cancel-edituseradmin[_ngcontent-%COMP%] {\n  border: none;\n  color: #A3A3A3;\n  font-weight: 700;\n}\n.btn-cancel-edituseradmin[_ngcontent-%COMP%]:hover {\n  border: none;\n  color: #FFFFFF;\n  font-weight: 700;\n  background-color: #A3A3A3;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkbWluLWVuY3Vlc3Rhcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLHNCQUFzQjtBQUN0QjtFQUNFLG1CQUFtQjtFQUNuQix5QkFBeUI7QUFDM0I7QUFFQTtFQUNFLDZCQUE2QjtFQUM3QixzQ0FBc0M7QUFDeEM7QUFFQTtFQUNFLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIsY0FBYztFQUNkLGlCQUFpQjtFQUNqQixxQkFBcUI7RUFDckIscUJBQXFCO0VBQ3JCLCtCQUErQjtBQUNqQztBQUVBO0VBQ0UsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQixjQUFjO0VBQ2QsaUJBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQix1QkFBdUI7RUFDdkIsK0JBQStCO0VBQy9CLG9DQUFvQztBQUN0QztBQUVBO0VBQ0UsZ0JBQWdCO0FBQ2xCO0FBRUE7RUFDRSxlQUFlO0VBQ2YsY0FBYztFQUNkLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsK0JBQStCO0FBQ2pDO0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsb0NBQW9DO0FBQ3RDO0FBRUE7RUFDRSwyQkFBMkI7RUFDM0IsNEJBQTRCO0FBQzlCO0FBRUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixtQkFBbUI7RUFDbkIsc0JBQXNCO0VBQ3RCLHNCQUFzQjtFQUN0QixzQkFBc0I7RUFDdEIsdUJBQXVCO0VBQ3ZCLDZCQUE2QjtBQUMvQjtBQUVBO0VBQ0UsY0FBYztFQUNkLGlCQUFpQjtBQUNuQjtBQUVBLGVBQWU7QUFDZjtFQUNFLGNBQWM7RUFDZCxpQkFBaUI7QUFDbkI7QUFFQTtFQUNFLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIsa0JBQWtCO0VBQ2xCLHlCQUF5QjtBQUMzQjtBQUVBO0VBQ0UsV0FBVztFQUNYLFlBQVk7RUFDWixlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLHFCQUFxQjtFQUNyQixzQkFBc0I7RUFDdEIsNEJBQTRCO0VBQzVCLHNDQUE2RDtBQUMvRDtBQUVBO0VBQ0UsWUFBWTtFQUNaLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7QUFFQTtFQUNFLFlBQVk7RUFDWixjQUFjO0VBQ2QsZ0JBQWdCO0VBQ2hCLHlCQUF5QjtBQUMzQiIsImZpbGUiOiJhZG1pbi1lbmN1ZXN0YXMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIEN1c3RvbSAgQm9vdHN0cmFwICovXG4uY29udGFpbmVyLWZsdWlkIHtcbiAgLyogaGVpZ2h0OiAxMDB2aDsgKi9cbiAgYmFja2dyb3VuZC1jb2xvcjogI0VERjBGNztcbn1cblxuLmNhcmQge1xuICBib3JkZXItcmFkaXVzOiA4cHggIWltcG9ydGFudDtcbiAgYm9yZGVyOiAxcHggc29saWQgI2RiZDdmNDViICFpbXBvcnRhbnQ7XG59XG5cbi5jYXJkLXRpdGxlIHtcbiAgZm9udC1zaXplOiAxNnB4O1xuICBmb250LXdlaWdodDogNzAwO1xuICBjb2xvcjogIzExMTQyRDtcbiAgbGluZS1oZWlnaHQ6IDE5cHg7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgbWFyZ2luLWJvdHRvbTogMC41cmVtO1xuICBmb250LWZhbWlseTogJ0pvc3QnLCBzYW5zLXNlcmlmO1xufVxuXG4uZm9ybS1jb250cm9sIHtcbiAgZm9udC1zaXplOiAxNnB4O1xuICBmb250LXdlaWdodDogNDAwO1xuICBjb2xvcjogIzUzNTM1MztcbiAgbGluZS1oZWlnaHQ6IDIwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDhweDtcbiAgaGVpZ2h0OiA0MXB4ICFpbXBvcnRhbnQ7XG4gIGZvbnQtZmFtaWx5OiAnSm9zdCcsIHNhbnMtc2VyaWY7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNEQkQ3RjQgIWltcG9ydGFudDtcbn1cblxuLmZvcm0tY29udHJvbDpmb2N1cyB7ICBcbiAgYm94LXNoYWRvdzogbm9uZTtcbn1cblxuLmZvcm0tbGFiZWwge1xuICBmb250LXNpemU6IDE2cHg7XG4gIGNvbG9yOiAjMTExNDJEO1xuICBmb250LXdlaWdodDogNzAwO1xuICBsaW5lLWhlaWdodDogMTlweDtcbiAgZm9udC1mYW1pbHk6ICdKb3N0Jywgc2Fucy1zZXJpZjtcbn1cblxuLmlucHV0LWdyb3VwIHtcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjREJEN0Y0ICFpbXBvcnRhbnQ7XG59XG5cbi5pbnB1dC1ncm91cC1idG4ge1xuICBtYXJnaW46IDBweCBhdXRvICFpbXBvcnRhbnQ7XG4gIHBhZGRpbmctbGVmdDogMHB4ICFpbXBvcnRhbnQ7XG59XG5cbi5idG4tb3V0bGluZS1zZWNvbmRhcnkge1xuICBib3JkZXI6IG5vbmU7XG4gIG1hcmdpbjogMHB4IGF1dG87XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcbiAgd2lkdGg6IGF1dG8gIWltcG9ydGFudDsgXG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gIGJhY2tncm91bmQtaW1hZ2U6IG5vbmU7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBwYWRkaW5nLWxlZnQ6IDEwcHggIWltcG9ydGFudDtcbn1cblxuLmJ0bi1vdXRsaW5lLXNlY29uZGFyeTpob3ZlciB7XG4gIGNvbG9yOiAjZGIxYTFhO1xuICBmb250LXdlaWdodDogYm9sZDtcbn1cblxuLyogQ3VzdG9tIENTUyAqL1xuLmJ0bi1wdXJwbGUge1xuICBjb2xvcjogIzFBNDREQjtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG5cbi5idG4tc2F2ZS1lZGl0YWdlbmRhIHtcbiAgYm9yZGVyOiBub25lO1xuICBmb250LXdlaWdodDogNzAwO1xuICBib3JkZXItcmFkaXVzOiA4cHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICMxQTQ0REI7XG59XG5cbi5zYXZlLWljb24ge1xuICB3aWR0aDogMTVweDtcbiAgaGVpZ2h0OiAxNXB4O1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIG1hcmdpbi1yaWdodDogOHB4O1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnLi5cXC4uXFwuLlxcYXNzZXRzXFxpbWFnZXNcXHNhdmUtaWNvbi5zdmcnKTtcbn1cblxuLmJ0bi1jYW5jZWwtZWRpdHVzZXJhZG1pbiB7XG4gIGJvcmRlcjogbm9uZTtcbiAgY29sb3I6ICNBM0EzQTM7XG4gIGZvbnQtd2VpZ2h0OiA3MDA7XG59XG5cbi5idG4tY2FuY2VsLWVkaXR1c2VyYWRtaW46aG92ZXIge1xuICBib3JkZXI6IG5vbmU7XG4gIGNvbG9yOiAjRkZGRkZGO1xuICBmb250LXdlaWdodDogNzAwO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjQTNBM0EzO1xufSJdfQ== */"]
+  styles: [".container-fluid[_ngcontent-%COMP%] {\n  \n  background-color: #EDF0F7;\n}\n.card[_ngcontent-%COMP%] {\n  border-radius: 8px !important;\n  border: 1px solid #dbd7f45b !important;\n}\n.card-title[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 700;\n  color: #11142D;\n  line-height: 19px;\n  display: inline-block;\n  margin-bottom: 0.5rem;\n  font-family: 'Jost', sans-serif;\n}\n.form-control[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 400;\n  color: #535353;\n  line-height: 20px;\n  border-radius: 8px;\n  height: 41px !important;\n  font-family: 'Jost', sans-serif;\n  border: 1px solid #DBD7F4 !important;\n}\n.form-control[_ngcontent-%COMP%]:focus {\n  box-shadow: none;\n}\n.form-label[_ngcontent-%COMP%] {\n  font-size: 16px;\n  color: #11142D;\n  font-weight: 700;\n  line-height: 19px;\n  font-family: 'Jost', sans-serif;\n}\n.input-group[_ngcontent-%COMP%] {\n  border-radius: 8px;\n  border: 1px solid #DBD7F4 !important;\n}\n.input-group-btn[_ngcontent-%COMP%] {\n  margin: 0px auto !important;\n  padding-left: 0px !important;\n}\n.btn-outline-secondary[_ngcontent-%COMP%] {\n  border: none;\n  margin: 0px auto;\n  text-align: center;\n  border-radius: 20px;\n  width: auto !important;\n  vertical-align: middle;\n  background-image: none;\n  background-color: white;\n  padding-left: 10px !important;\n}\n.btn-outline-secondary[_ngcontent-%COMP%]:hover {\n  color: #db1a1a;\n  font-weight: bold;\n}\n\n.btn-purple[_ngcontent-%COMP%] {\n  color: #1A44DB;\n  font-weight: bold;\n}\n.btn-save-editagenda[_ngcontent-%COMP%] {\n  border: none;\n  font-weight: 700;\n  border-radius: 8px;\n  background-color: #1A44DB;\n}\n.save-icon[_ngcontent-%COMP%] {\n  width: 15px;\n  height: 15px;\n  cursor: pointer;\n  margin-right: 8px;\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  background-image: url('save-icon.svg');\n}\n.btn-cancel-edituseradmin[_ngcontent-%COMP%] {\n  border: none;\n  color: #A3A3A3;\n  font-weight: 700;\n}\n.btn-cancel-edituseradmin[_ngcontent-%COMP%]:hover {\n  border: none;\n  color: #FFFFFF;\n  font-weight: 700;\n  background-color: #A3A3A3;\n}\n.btn-circle-close-icon[_ngcontent-%COMP%] {\n  width: 15px;\n  height: 15px;\n  cursor: pointer;\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  background-image: url('circle_close.svg');\n}\n.btn-circle-close-icon[_ngcontent-%COMP%]:hover {\n  background-image: url('circle_close_hover.svg');\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkbWluLWVuY3Vlc3Rhcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLHNCQUFzQjtBQUN0QjtFQUNFLG1CQUFtQjtFQUNuQix5QkFBeUI7QUFDM0I7QUFFQTtFQUNFLDZCQUE2QjtFQUM3QixzQ0FBc0M7QUFDeEM7QUFFQTtFQUNFLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIsY0FBYztFQUNkLGlCQUFpQjtFQUNqQixxQkFBcUI7RUFDckIscUJBQXFCO0VBQ3JCLCtCQUErQjtBQUNqQztBQUVBO0VBQ0UsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQixjQUFjO0VBQ2QsaUJBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQix1QkFBdUI7RUFDdkIsK0JBQStCO0VBQy9CLG9DQUFvQztBQUN0QztBQUVBO0VBQ0UsZ0JBQWdCO0FBQ2xCO0FBRUE7RUFDRSxlQUFlO0VBQ2YsY0FBYztFQUNkLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsK0JBQStCO0FBQ2pDO0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsb0NBQW9DO0FBQ3RDO0FBRUE7RUFDRSwyQkFBMkI7RUFDM0IsNEJBQTRCO0FBQzlCO0FBRUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixtQkFBbUI7RUFDbkIsc0JBQXNCO0VBQ3RCLHNCQUFzQjtFQUN0QixzQkFBc0I7RUFDdEIsdUJBQXVCO0VBQ3ZCLDZCQUE2QjtBQUMvQjtBQUVBO0VBQ0UsY0FBYztFQUNkLGlCQUFpQjtBQUNuQjtBQUVBLGVBQWU7QUFDZjtFQUNFLGNBQWM7RUFDZCxpQkFBaUI7QUFDbkI7QUFFQTtFQUNFLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIsa0JBQWtCO0VBQ2xCLHlCQUF5QjtBQUMzQjtBQUVBO0VBQ0UsV0FBVztFQUNYLFlBQVk7RUFDWixlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLHFCQUFxQjtFQUNyQixzQkFBc0I7RUFDdEIsNEJBQTRCO0VBQzVCLHNDQUE2RDtBQUMvRDtBQUVBO0VBQ0UsWUFBWTtFQUNaLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7QUFFQTtFQUNFLFlBQVk7RUFDWixjQUFjO0VBQ2QsZ0JBQWdCO0VBQ2hCLHlCQUF5QjtBQUMzQjtBQUVBO0VBQ0UsV0FBVztFQUNYLFlBQVk7RUFDWixlQUFlO0VBQ2YscUJBQXFCO0VBQ3JCLHNCQUFzQjtFQUN0Qiw0QkFBNEI7RUFDNUIseUNBQWdFO0FBQ2xFO0FBRUE7RUFDRSwrQ0FBc0U7QUFDeEUiLCJmaWxlIjoiYWRtaW4tZW5jdWVzdGFzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBDdXN0b20gIEJvb3RzdHJhcCAqL1xuLmNvbnRhaW5lci1mbHVpZCB7XG4gIC8qIGhlaWdodDogMTAwdmg7ICovXG4gIGJhY2tncm91bmQtY29sb3I6ICNFREYwRjc7XG59XG5cbi5jYXJkIHtcbiAgYm9yZGVyLXJhZGl1czogOHB4ICFpbXBvcnRhbnQ7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNkYmQ3ZjQ1YiAhaW1wb3J0YW50O1xufVxuXG4uY2FyZC10aXRsZSB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgZm9udC13ZWlnaHQ6IDcwMDtcbiAgY29sb3I6ICMxMTE0MkQ7XG4gIGxpbmUtaGVpZ2h0OiAxOXB4O1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIG1hcmdpbi1ib3R0b206IDAuNXJlbTtcbiAgZm9udC1mYW1pbHk6ICdKb3N0Jywgc2Fucy1zZXJpZjtcbn1cblxuLmZvcm0tY29udHJvbCB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgY29sb3I6ICM1MzUzNTM7XG4gIGxpbmUtaGVpZ2h0OiAyMHB4O1xuICBib3JkZXItcmFkaXVzOiA4cHg7XG4gIGhlaWdodDogNDFweCAhaW1wb3J0YW50O1xuICBmb250LWZhbWlseTogJ0pvc3QnLCBzYW5zLXNlcmlmO1xuICBib3JkZXI6IDFweCBzb2xpZCAjREJEN0Y0ICFpbXBvcnRhbnQ7XG59XG5cbi5mb3JtLWNvbnRyb2w6Zm9jdXMge1xuICBib3gtc2hhZG93OiBub25lO1xufVxuXG4uZm9ybS1sYWJlbCB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgY29sb3I6ICMxMTE0MkQ7XG4gIGZvbnQtd2VpZ2h0OiA3MDA7XG4gIGxpbmUtaGVpZ2h0OiAxOXB4O1xuICBmb250LWZhbWlseTogJ0pvc3QnLCBzYW5zLXNlcmlmO1xufVxuXG4uaW5wdXQtZ3JvdXAge1xuICBib3JkZXItcmFkaXVzOiA4cHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNEQkQ3RjQgIWltcG9ydGFudDtcbn1cblxuLmlucHV0LWdyb3VwLWJ0biB7XG4gIG1hcmdpbjogMHB4IGF1dG8gIWltcG9ydGFudDtcbiAgcGFkZGluZy1sZWZ0OiAwcHggIWltcG9ydGFudDtcbn1cblxuLmJ0bi1vdXRsaW5lLXNlY29uZGFyeSB7XG4gIGJvcmRlcjogbm9uZTtcbiAgbWFyZ2luOiAwcHggYXV0bztcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBib3JkZXItcmFkaXVzOiAyMHB4O1xuICB3aWR0aDogYXV0byAhaW1wb3J0YW50O1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xuICBiYWNrZ3JvdW5kLWltYWdlOiBub25lO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgcGFkZGluZy1sZWZ0OiAxMHB4ICFpbXBvcnRhbnQ7XG59XG5cbi5idG4tb3V0bGluZS1zZWNvbmRhcnk6aG92ZXIge1xuICBjb2xvcjogI2RiMWExYTtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG5cbi8qIEN1c3RvbSBDU1MgKi9cbi5idG4tcHVycGxlIHtcbiAgY29sb3I6ICMxQTQ0REI7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuXG4uYnRuLXNhdmUtZWRpdGFnZW5kYSB7XG4gIGJvcmRlcjogbm9uZTtcbiAgZm9udC13ZWlnaHQ6IDcwMDtcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMUE0NERCO1xufVxuXG4uc2F2ZS1pY29uIHtcbiAgd2lkdGg6IDE1cHg7XG4gIGhlaWdodDogMTVweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBtYXJnaW4tcmlnaHQ6IDhweDtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uXFwuLlxcLi5cXGFzc2V0c1xcaW1hZ2VzXFxzYXZlLWljb24uc3ZnJyk7XG59XG5cbi5idG4tY2FuY2VsLWVkaXR1c2VyYWRtaW4ge1xuICBib3JkZXI6IG5vbmU7XG4gIGNvbG9yOiAjQTNBM0EzO1xuICBmb250LXdlaWdodDogNzAwO1xufVxuXG4uYnRuLWNhbmNlbC1lZGl0dXNlcmFkbWluOmhvdmVyIHtcbiAgYm9yZGVyOiBub25lO1xuICBjb2xvcjogI0ZGRkZGRjtcbiAgZm9udC13ZWlnaHQ6IDcwMDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI0EzQTNBMztcbn1cblxuLmJ0bi1jaXJjbGUtY2xvc2UtaWNvbiB7XG4gIHdpZHRoOiAxNXB4O1xuICBoZWlnaHQ6IDE1cHg7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uXFwuLlxcLi5cXGFzc2V0c1xcaW1hZ2VzXFxjaXJjbGVfY2xvc2Uuc3ZnJyk7XG59XG5cbi5idG4tY2lyY2xlLWNsb3NlLWljb246aG92ZXIge1xuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uXFwuLlxcLi5cXGFzc2V0c1xcaW1hZ2VzXFxjaXJjbGVfY2xvc2VfaG92ZXIuc3ZnJyk7XG59Il19 */"]
 });
 
 /***/ }),
@@ -22260,15 +22258,23 @@ class CompanyService {
         // return this.http.get(`${this.url}registro/company/only-names/?page=${page}&size=${size}`, this.options).toPromise();
     }
     getCompaniesbyID(company_id) {
+        this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
+        this.options = { headers: this.headers, params: this.params };
         return this.http.get(`${this.url}registro/company/${company_id}`, this.options).toPromise();
     }
     createCompany(data) {
+        this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
+        this.options = { headers: this.headers, params: this.params };
         return this.http.post(`${this.url}registro/company/`, data, this.options).toPromise();
     }
     updateComapny(company_id, data) {
+        this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
+        this.options = { headers: this.headers, params: this.params };
         return this.http.put(`${this.url}registro/company/${company_id}`, data, this.options).toPromise();
     }
     getCompaniesbyNIT(data) {
+        this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
+        this.options = { headers: this.headers, params: this.params };
         return this.http.post(`${this.url}registro/company/empresa-asociada/`, data, this.options).toPromise();
     }
 }
@@ -23783,7 +23789,7 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.debugging
     window.console.log = () => { };
 }
 ;
-window.console.log = () => { };
+// window.console.log = () => {}
 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.platformBrowser().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule)
     .catch(err => console.error(err));
 
