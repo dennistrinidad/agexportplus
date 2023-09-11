@@ -8539,6 +8539,12 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+/* CUSTOM BOOTSTRAP */
+.container-fluid {
+    /* height: 100vh; */
+    max-width: 1400px;
+    background-color: #EDF0F7;
+}
 /* Admiration Icon to Tooltip */
 .admiration_icon {
     width: 16px;
@@ -8715,9 +8721,9 @@ a.text-dark:hover, a.text-dark:focus {
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-image: url('Files-btn.png') !important;
-  }
+}
 /* Input file */
-.input-file-readonly{
+.input-file-readonly {
     background-color: white !important;
 }
 /************************************* NEW METHOD 5 *************************************/
@@ -8843,8 +8849,6 @@ input:-webkit-autofill:active { -webkit-box-shadow: 0 0 0 0px white inset !impor
         flex-direction: column;
         */
     }
-
-
 }
 
 /*# sourceMappingURL=styles.css.map*/
