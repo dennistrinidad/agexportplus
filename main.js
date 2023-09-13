@@ -275,7 +275,7 @@ class AdminAdminsComponent {
             id: e?.id,
             'Nombre del usuario': e?.username,
             'Nombre': `${e?.firstName || ''} ${e?.secondName || ''} ${e?.firstLastname || ''} ${e?.secondLastname || ''}`,
-            'Correo electrónico': e.participant?.email,
+            'Correo electrónico': e?.email,
             'Rol de usuario': e?.role ? e.role.slice(5, e.role.length).replace('_', ' ') : ''
           };
         });
@@ -4825,7 +4825,6 @@ class EditEmpresaComponent {
     });
   }
   onFileSelected(event) {
-    this.form.control.markAsTouched();
     if (event.target.files && event.target.files.length > 0) {
       this.fileStr = event.target.files[0].name;
     }
@@ -12225,10 +12224,7 @@ class EditPatrocinadoresComponent {
       const file = event.target.files[0];
       const extension = file.type.split('/');
       const base64 = yield _this2.utilsService.convertBase64(event.target.files.item(0));
-      // const imageType = file.type.substring(file.type.indexOf('/') + 1) // Method #2
-      // const preview = await this.utilsService.previewImage(event.target.files);  
       if (typeof base64 === 'string') {
-        _this2.form.controls['input-images-text'].markAsTouched();
         _this2.sponsor.newLogo = {
           extension: extension[1],
           name: file.name,
@@ -12237,6 +12233,11 @@ class EditPatrocinadoresComponent {
         };
       }
     })();
+  }
+  mark_img(name) {
+    setTimeout(() => {
+      this.form.controls[name].markAsTouched();
+    }, 500);
   }
   getOneSponsor(sponsor_id) {
     var _this3 = this;
@@ -12368,7 +12369,7 @@ EditPatrocinadoresComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED
   },
   decls: 104,
   vars: 24,
-  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], [1, "col-12"], ["form", "ngForm"], [1, "card", "mb-5"], [1, "card-body"], [1, "card-title", "mb-4"], [1, "row", "px-4", "py-0"], [1, "col-12", "col-md-6", "mb-3"], [1, "form-label", "mb-3"], ["name", "nombrePatrocinador", "required", "", "placeholder", "Nombre de patrocinador", 1, "form-control", 3, "ngModel", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["name", "nombreUsuario", "required", "", "placeholder", "Nombre de usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "nit", "placeholder", "0000-0", "required", "", "minlength", "5", "maxlength", "10", "pattern", "[0-9]+[-][0-9 kK]*", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "descripcion", "required", "", "placeholder", "Descripci\u00F3n", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "website", "pattern", "^https?:\\/\\/[\\w\\-]+(\\.[\\w\\-]+)+[/#?]?.*$", "required", "", "placeholder", "http://www.sitio-web.com", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "email", "required", "", "placeholder", "info@mail.com", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "telefono", "required", "", "placeholder", "0000-0000", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "ubicacion", "required", "", "placeholder", "Ubicaci\u00F3n", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "divider-section"], [1, "col-12", "col-lg-6", "mb-3"], [1, "col-12", "col-lg-3", "col-form-label", "form-label"], [1, "col-12", "col-lg-9"], ["name", "facebook", "placeholder", "Facebook", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "twitter", "placeholder", "Twitter", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "instagram", "placeholder", "Instagram", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "linkedIn", "placeholder", "LinkedIn", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "file", "name", "input-images-file", "id", "input-images-file", "required", "", 1, "d-none", 3, "change"], ["name", "input-images-text", "id", "input-images-text", "required", "", "readonly", "", "placeholder", "Seleccione una imagen...", 1, "form-control", "w-100", "input-file-readonly", 3, "ngModel", "ngModelChange"], ["onclick", "document.getElementById('input-images-file').click();", 1, "icon-input-file"], [1, "note-small"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "btn-outline-secondary", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-edituseradmin", 3, "disabled", "click"], [1, "save-icon"], [1, "err-msg"]],
+  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], [1, "col-12"], ["form", "ngForm"], [1, "card", "mb-5"], [1, "card-body"], [1, "card-title", "mb-4"], [1, "row", "px-4", "py-0"], [1, "col-12", "col-md-6", "mb-3"], [1, "form-label", "mb-3"], ["name", "nombrePatrocinador", "required", "", "placeholder", "Nombre de patrocinador", 1, "form-control", 3, "ngModel", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["name", "nombreUsuario", "required", "", "placeholder", "Nombre de usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "nit", "placeholder", "0000-0", "required", "", "minlength", "5", "maxlength", "10", "pattern", "[0-9]+[-][0-9 kK]*", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "descripcion", "required", "", "placeholder", "Descripci\u00F3n", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "website", "pattern", "^https?:\\/\\/[\\w\\-]+(\\.[\\w\\-]+)+[/#?]?.*$", "required", "", "placeholder", "http://www.sitio-web.com", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "email", "required", "", "placeholder", "info@mail.com", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "telefono", "required", "", "placeholder", "0000-0000", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "ubicacion", "required", "", "placeholder", "Ubicaci\u00F3n", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "divider-section"], [1, "col-12", "col-lg-6", "mb-3"], [1, "col-12", "col-lg-3", "col-form-label", "form-label"], [1, "col-12", "col-lg-9"], ["name", "facebook", "placeholder", "Facebook", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "twitter", "placeholder", "Twitter", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "instagram", "placeholder", "Instagram", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "linkedIn", "placeholder", "LinkedIn", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "file", "name", "input-images-file", "id", "input-images-file", "required", "", 1, "d-none", 3, "change", "click"], ["name", "input-images-text", "id", "input-images-text", "required", "", "readonly", "", "placeholder", "Seleccione una imagen...", 1, "form-control", "w-100", "input-file-readonly", 3, "ngModel", "ngModelChange"], ["onclick", "document.getElementById('input-images-file').click();", 1, "icon-input-file"], [1, "note-small"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "btn-outline-secondary", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-edituseradmin", 3, "disabled", "click"], [1, "save-icon"], [1, "err-msg"]],
   template: function EditPatrocinadoresComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](0, EditPatrocinadoresComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
@@ -12509,6 +12510,8 @@ EditPatrocinadoresComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](90, "input", 31);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("change", function EditPatrocinadoresComponent_Template_input_change_90_listener($event) {
         return ctx.addFile($event);
+      })("click", function EditPatrocinadoresComponent_Template_input_click_90_listener() {
+        return ctx.mark_img("input-images-text");
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](91, "input", 32);
@@ -16956,7 +16959,7 @@ class AdminUsuariosComponent {
           return {
             id: e?.id,
             'Nombre del usuario': `${e?.firstName || ''} ${e?.secondName || ''} ${e?.firstLastname || ''} ${e?.secondLastname || ''}`,
-            'Codigo': e?.codigo,
+            'Codigo': e?.accountRelations[0]?.idCrm,
             'Puesto': e?.puesto?.name,
             'NIT': e?.personalNIT,
             'Teléfono': e?.phone,
@@ -18445,11 +18448,16 @@ class UserGuideComponent {
         } else if (_this.typeGuide === 'empresas') {
           _this.list = response.result.map(e => {
             const accountRelations = e.accountRelations.find(e => e.companyId === _this.companyID);
+            let companies = '';
+            e.accountRelations.forEach(i => {
+              i?.company?.nombreComercial && (companies += i.company.nombreComercial + '; ');
+            });
+            companies = companies.slice(0, companies.length - 2);
             return {
               id: e.id,
               'accountRelations': accountRelations?.id,
               'Nombre usuario': `${e.firstName || ''} ${e.secondName || ''} ${e.firstLastname || ''} ${e.secondLastname || ''}`,
-              'Nombre Empresa': e.company?.nombreComercial,
+              'Nombre Empresa': companies,
               'Correo electrónico': e.email,
               exists: accountRelations?.id ? true : false
             };
@@ -24222,10 +24230,10 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.productio
 }
 // Mostrar/Ocultar Console log
 if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.debugging === false) {
-    window.console.log = () => { };
+    // window.console.log = () => {} 
 }
 ;
-window.console.log = () => { };
+// window.console.log = () => {}
 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.platformBrowser().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule)
     .catch(err => console.error(err));
 
