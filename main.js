@@ -2671,7 +2671,7 @@ class EditConferenciasComponent {
     this.loading = true;
     this.conferenceService.getOneActivity(activity_id).then( /*#__PURE__*/function () {
       var _ref = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (response) {
-        console.log(response);
+        console.log('actividad', response.result);
         _this2.getQuestionsByActivity(activity_id);
         // this.getQuestionsBySpeaker(response.result.speakerId)
         _this2.activity.eventId = _this2.eventID;
@@ -2704,13 +2704,13 @@ class EditConferenciasComponent {
       this.utilsService.dialog('ERROR', 'Error', '¡Error al cargar actividad!');
       this.goToPage('/admin/events/admin-agenda');
     }).finally(() => {
-      console.log(this.activity);
+      console.log('modelo: ', this.activity);
       this.loading = false;
     });
   }
   getQuestionsByActivity(activity_id) {
     this.conferenceService.getQuestionsByActivity(activity_id).then(response => {
-      console.log(response.result);
+      console.log('preguntas: ', response.result);
       if (response.result.length > 0) {
         this.listQuestionByActivity = response.result.map(e => {
           return {
@@ -2854,8 +2854,8 @@ EditConferenciasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
     }
   },
   decls: 86,
-  vars: 24,
-  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], [1, "col-12"], [1, "card", "mb-5"], [1, "card-body"], [1, "card-title", "mb-4"], ["form", "ngForm"], [1, "row", "px-4", "py-0"], [1, "col-12", "col-lg-6"], [1, "col-md-12", "mb-3"], [1, "form-label", "mb-3"], ["name", "agenda", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["value", "null", "disabled", ""], [3, "value", 4, "ngFor", "ngForOf"], ["class", "err-msg", 4, "ngIf"], ["name", "nombreActividad", "id", "nombreActividad", "required", "", "placeholder", "Nombre de actividad", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-lg-8", "my-2", "my-lg-0"], ["type", "date", "name", "date_start", "required", "", "disabled", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-lg-4"], ["type", "time", "name", "hour_start", "required", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "date", "name", "date_end", "required", "", "disabled", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "time", "name", "hour_end", "required", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "conferencista", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "modalidad", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "enlace", "id", "enlace", "placeholder", "www.enlace.com", "autocomplete", "OFF", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "lugar", "id", "lugar", "required", "", "placeholder", "Nombre de actividad", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "btn-outline-secondary", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-edituseradmin", 3, "click"], [1, "save-icon"], [3, "value"], [1, "err-msg"], [1, "col-12", "px-4"], [4, "ngFor", "ngForOf"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-gray", 3, "click"], [1, "card", "options-container", "float-end", "position-absolute", "translate-middle-y", "p-2", "m-2", 3, "hidden", "id"], ["name", "edit", "id", "edit", 1, "actions-btn", "w-100", "text-left", 3, "click"], [3, "hidden", 4, "ngIf"], ["class", "", 4, "ngIf"], [3, "hidden"], [1, ""], [3, "name", "id", "ngClass", "value", "change"], ["selects", ""], ["value", "1"], ["value", "0"]],
+  vars: 25,
+  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], [1, "col-12"], [1, "card", "mb-5"], [1, "card-body"], [1, "card-title", "mb-4"], ["form", "ngForm"], [1, "row", "px-4", "py-0"], [1, "col-12", "col-lg-6"], [1, "col-md-12", "mb-3"], [1, "form-label", "mb-3"], ["name", "agenda", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["value", "null", "disabled", ""], [3, "value", 4, "ngFor", "ngForOf"], ["class", "err-msg", 4, "ngIf"], ["name", "nombreActividad", "id", "nombreActividad", "required", "", "placeholder", "Nombre de actividad", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-lg-8", "my-2", "my-lg-0"], ["type", "date", "name", "date_start", "required", "", "disabled", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-lg-4"], ["type", "time", "name", "hour_start", "required", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "date", "name", "date_end", "required", "", "disabled", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "time", "name", "hour_end", "required", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "conferencista", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "modalidad", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "enlace", "id", "enlace", "placeholder", "www.enlace.com", "autocomplete", "OFF", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "lugar", "id", "lugar", "required", "", "placeholder", "Nombre de actividad", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "btn-outline-secondary", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-edituseradmin", 3, "disabled", "click"], [1, "save-icon"], [3, "value"], [1, "err-msg"], [1, "col-12", "px-4"], [4, "ngFor", "ngForOf"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-gray", 3, "click"], [1, "card", "options-container", "float-end", "position-absolute", "translate-middle-y", "p-2", "m-2", 3, "hidden", "id"], ["name", "edit", "id", "edit", 1, "actions-btn", "w-100", "text-left", 3, "click"], [3, "hidden", 4, "ngIf"], ["class", "", 4, "ngIf"], [3, "hidden"], [1, ""], [3, "name", "id", "ngClass", "value", "change"], ["selects", ""], ["value", "1"], ["value", "0"]],
   template: function EditConferenciasComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](0, EditConferenciasComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
@@ -2994,6 +2994,7 @@ EditConferenciasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()()()();
     }
     if (rf & 2) {
+      const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](13);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.loading);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](20);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngModel", ctx.activity.scheduleId);
@@ -3041,6 +3042,8 @@ EditConferenciasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.validation_msg("lugar"));
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.edit && ctx.listQuestionByActivity.length > 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx.disabled || !_r1.touched || !_r1.valid);
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgModel, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgForm, _core_loading_loading_component__WEBPACK_IMPORTED_MODULE_5__.LoadingComponent, _angular_common__WEBPACK_IMPORTED_MODULE_7__.KeyValuePipe],
