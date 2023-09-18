@@ -2521,7 +2521,7 @@ function EditConferenciasComponent_div_77_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](8);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r14.categoriesHeading);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r14.listQuestionByActivity);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r14.listQuestionBySpeaker);
   }
 }
 class EditConferenciasComponent {
@@ -2614,6 +2614,15 @@ class EditConferenciasComponent {
     this.activity.horaInicio = schedule?.horaInicio;
     this.activity.fechaInicio = schedule?.fechaInicio;
   }
+  changeSpeaker($event) {
+    var _this2 = this;
+    return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      _this2.loading = true;
+      const speaker_id = Number($event.target.value);
+      yield _this2.getQuestionsBySpeaker(speaker_id);
+      _this2.loading = false;
+    })();
+  }
   loadSchedules(event_id) {
     return this.scheduleService.getScheduleByEvent(event_id).then(response => {
       if (response.result.schedule_dates.length > 0) {
@@ -2667,34 +2676,35 @@ class EditConferenciasComponent {
     });
   }
   getOneActivity(activity_id) {
-    var _this2 = this;
+    var _this3 = this;
     this.loading = true;
     this.conferenceService.getOneActivity(activity_id).then( /*#__PURE__*/function () {
       var _ref = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (response) {
         console.log('actividad', response.result);
-        _this2.getQuestionsByActivity(activity_id);
-        // this.getQuestionsBySpeaker(response.result.speakerId)
-        _this2.activity.eventId = _this2.eventID;
-        _this2.activity.id = response.result?.id;
-        _this2.activity.lugar = response.result?.direccion;
-        _this2.activity.modalityId = response.result?.modalityId || null;
+        // this.getQuestionsByActivity(activity_id);
+        console.log('speaker', response.result.speakerId);
+        _this3.getQuestionsBySpeaker(response.result.speakerId);
+        _this3.activity.eventId = _this3.eventID;
+        _this3.activity.id = response.result?.id;
+        _this3.activity.lugar = response.result?.direccion;
+        _this3.activity.modalityId = response.result?.modalityId || null;
         // this.activity.modalidadID = response.result.modalityId || null;
-        _this2.activity.enlaceConferencia = response.result?.enlaceConferencia;
-        _this2.activity.nombreActividad = response.result?.nombreActividad;
-        _this2.activity.horaFin = response.result.fechaHoraFin ? response.result.fechaHoraFin.substr(11, 5) : null;
-        _this2.activity.horaInicio = response.result.fechaHoraInicio ? response.result.fechaHoraInicio.substr(11, 5) : null;
-        const valSchedule = _this2.listSchedule.find(x => x.id === Number(response.result.scheduleId || 0));
+        _this3.activity.enlaceConferencia = response.result?.enlaceConferencia;
+        _this3.activity.nombreActividad = response.result?.nombreActividad;
+        _this3.activity.horaFin = response.result.fechaHoraFin ? response.result.fechaHoraFin.substr(11, 5) : null;
+        _this3.activity.horaInicio = response.result.fechaHoraInicio ? response.result.fechaHoraInicio.substr(11, 5) : null;
+        const valSchedule = _this3.listSchedule.find(x => x.id === Number(response.result.scheduleId || 0));
         if (valSchedule) {
-          _this2.activity.scheduleId = valSchedule.id;
-          _this2.activity.fechaFin = valSchedule.fechaFin;
-          _this2.activity.fechaInicio = valSchedule.fechaInicio;
+          _this3.activity.scheduleId = valSchedule.id;
+          _this3.activity.fechaFin = valSchedule.fechaFin;
+          _this3.activity.fechaInicio = valSchedule.fechaInicio;
         } else {
-          _this2.activity.fechaFin = '';
-          _this2.activity.fechaInicio = '';
-          _this2.activity.scheduleId = null;
+          _this3.activity.fechaFin = '';
+          _this3.activity.fechaInicio = '';
+          _this3.activity.scheduleId = null;
         }
-        const valSpeaker = _this2.listSpeaker.find(x => x.id === Number(response.result.speakerId || 0));
-        valSpeaker ? _this2.activity.speakerId = response.result.speakerId : _this2.activity.speakerId = null;
+        const valSpeaker = _this3.listSpeaker.find(x => x.id === Number(response.result.speakerId || 0));
+        valSpeaker ? _this3.activity.speakerId = response.result.speakerId : _this3.activity.speakerId = null;
       });
       return function (_x) {
         return _ref.apply(this, arguments);
@@ -2727,8 +2737,8 @@ class EditConferenciasComponent {
     }, error => console.log(error));
   }
   getQuestionsBySpeaker(speaker_id) {
-    this.conferenceService.getQuestionsBySpeaker(speaker_id).then(response => {
-      console.log(response.result);
+    return this.conferenceService.getQuestionsBySpeaker(speaker_id).then(response => {
+      console.log('speaker: ', response.result);
       if (response.result.length > 0) {
         this.listQuestionBySpeaker = response.result.map(e => {
           return {
@@ -2745,26 +2755,26 @@ class EditConferenciasComponent {
     }, error => console.log(error));
   }
   processData() {
-    var _this3 = this;
+    var _this4 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      if (_this3.form.valid) {
-        _this3.activity.direccion = _this3.activity.lugar;
-        _this3.activity.modalityId = Number(_this3.activity.modalityId); // this.activity.modalidadID = Number(this.activity.modalityId);
-        _this3.activity.fechaHoraFin = _this3.activity.fechaFin + ' ' + _this3.activity.horaFin;
-        _this3.activity.fechaHoraInicio = _this3.activity.fechaInicio + ' ' + _this3.activity.horaInicio;
+      if (_this4.form.valid) {
+        _this4.activity.direccion = _this4.activity.lugar;
+        _this4.activity.modalityId = Number(_this4.activity.modalityId); // this.activity.modalidadID = Number(this.activity.modalityId);
+        _this4.activity.fechaHoraFin = _this4.activity.fechaFin + ' ' + _this4.activity.horaFin;
+        _this4.activity.fechaHoraInicio = _this4.activity.fechaInicio + ' ' + _this4.activity.horaInicio;
         // this.activity.fechaHoraFin = `${this.activity.fechaFin.year}-${this.activity.fechaFin.month}-${this.activity.fechaFin.day} ${this.activity.horaFin}`;
         // this.activity.fechaHoraInicio = `${this.activity.fechaInicio.year}-${this.activity.fechaInicio.month}-${this.activity.fechaInicio.day} ${this.activity.horaInicio}`;
-        if (_this3.activity.id === 0) {
-          yield _this3.save(_this3.activity);
+        if (_this4.activity.id === 0) {
+          yield _this4.save(_this4.activity);
         } else {
           // this.utilsService.dialog('ERROR', 'Advertencia', '¡Método no implementado!');
-          yield _this3.update(_this3.activity);
+          yield _this4.update(_this4.activity);
         }
-        _this3.loading = false;
-        _this3.disabled = false;
+        _this4.loading = false;
+        _this4.disabled = false;
       } else {
-        _this3.form.control.markAllAsTouched();
-        _this3.utilsService.dialog('ERROR', 'Error', 'Por favor llena los campos obligatorios.');
+        _this4.form.control.markAllAsTouched();
+        _this4.utilsService.dialog('ERROR', 'Error', 'Por favor llena los campos obligatorios.');
       }
     })();
   }
@@ -2855,7 +2865,7 @@ EditConferenciasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
   },
   decls: 86,
   vars: 25,
-  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], [1, "col-12"], [1, "card", "mb-5"], [1, "card-body"], [1, "card-title", "mb-4"], ["form", "ngForm"], [1, "row", "px-4", "py-0"], [1, "col-12", "col-lg-6"], [1, "col-md-12", "mb-3"], [1, "form-label", "mb-3"], ["name", "agenda", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["value", "null", "disabled", ""], [3, "value", 4, "ngFor", "ngForOf"], ["class", "err-msg", 4, "ngIf"], ["name", "nombreActividad", "id", "nombreActividad", "required", "", "placeholder", "Nombre de actividad", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-lg-8", "my-2", "my-lg-0"], ["type", "date", "name", "date_start", "required", "", "disabled", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-lg-4"], ["type", "time", "name", "hour_start", "required", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "date", "name", "date_end", "required", "", "disabled", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "time", "name", "hour_end", "required", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "conferencista", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "modalidad", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "enlace", "id", "enlace", "placeholder", "www.enlace.com", "autocomplete", "OFF", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "lugar", "id", "lugar", "required", "", "placeholder", "Nombre de actividad", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "btn-outline-secondary", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-edituseradmin", 3, "disabled", "click"], [1, "save-icon"], [3, "value"], [1, "err-msg"], [1, "col-12", "px-4"], [4, "ngFor", "ngForOf"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-gray", 3, "click"], [1, "card", "options-container", "float-end", "position-absolute", "translate-middle-y", "p-2", "m-2", 3, "hidden", "id"], ["name", "edit", "id", "edit", 1, "actions-btn", "w-100", "text-left", 3, "click"], [3, "hidden", 4, "ngIf"], ["class", "", 4, "ngIf"], [3, "hidden"], [1, ""], [3, "name", "id", "ngClass", "value", "change"], ["selects", ""], ["value", "1"], ["value", "0"]],
+  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], [1, "col-12"], [1, "card", "mb-5"], [1, "card-body"], [1, "card-title", "mb-4"], ["form", "ngForm"], [1, "row", "px-4", "py-0"], [1, "col-12", "col-lg-6"], [1, "col-md-12", "mb-3"], [1, "form-label", "mb-3"], ["name", "agenda", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["value", "null", "disabled", ""], [3, "value", 4, "ngFor", "ngForOf"], ["class", "err-msg", 4, "ngIf"], ["name", "nombreActividad", "id", "nombreActividad", "required", "", "placeholder", "Nombre de actividad", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-lg-8", "my-2", "my-lg-0"], ["type", "date", "name", "date_start", "required", "", "disabled", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-lg-4"], ["type", "time", "name", "hour_start", "required", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "date", "name", "date_end", "required", "", "disabled", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "time", "name", "hour_end", "required", "", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "conferencista", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["name", "modalidad", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "enlace", "id", "enlace", "placeholder", "www.enlace.com", "autocomplete", "OFF", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "lugar", "id", "lugar", "required", "", "placeholder", "Nombre de actividad", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "btn-outline-secondary", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-edituseradmin", 3, "disabled", "click"], [1, "save-icon"], [3, "value"], [1, "err-msg"], [1, "col-12", "px-4"], [4, "ngFor", "ngForOf"], ["name", "actions", "id", "actions", 1, "actions", "actions-icon-gray", 3, "click"], [1, "card", "options-container", "float-end", "position-absolute", "translate-middle-y", "p-2", "m-2", 3, "hidden", "id"], ["name", "edit", "id", "edit", 1, "actions-btn", "w-100", "text-left", 3, "click"], [3, "hidden", 4, "ngIf"], ["class", "", 4, "ngIf"], [3, "hidden"], [1, ""], [3, "name", "id", "ngClass", "value", "change"], ["selects", ""], ["value", "1"], ["value", "0"]],
   template: function EditConferenciasComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](0, EditConferenciasComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
@@ -2936,6 +2946,8 @@ EditConferenciasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](55, "select", 26);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("ngModelChange", function EditConferenciasComponent_Template_select_ngModelChange_55_listener($event) {
         return ctx.activity.speakerId = $event;
+      })("change", function EditConferenciasComponent_Template_select_change_55_listener($event) {
+        return ctx.changeSpeaker($event);
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](56, "option", 16);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](57, "Seleccione...");
@@ -3041,7 +3053,7 @@ EditConferenciasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.validation_msg("lugar"));
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.edit && ctx.listQuestionByActivity.length > 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.edit && ctx.listQuestionBySpeaker.length > 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](6);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx.disabled || !_r1.touched || !_r1.valid);
     }
