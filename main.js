@@ -17746,6 +17746,12 @@ class EditUsuarioComponent {
     this.comisionList = [];
     this.creatingUser = false;
     this.company = {};
+    this.accountRelation = {
+      companyId: null,
+      areaId: null,
+      puestoId: null,
+      ownerContact: false
+    };
     this.permissions = [];
     this.permissionsList = [];
     this.permissionsModel = [];
@@ -17815,7 +17821,7 @@ class EditUsuarioComponent {
         break;
       case 'associated':
         this.user.associated = value;
-        console.log(this.user.associated);
+        // console.log(this.user.associated);
         break;
       default:
         break;
@@ -18003,8 +18009,8 @@ class EditUsuarioComponent {
             }
           }
           // RELACION CON EMPRESA
+          _this2.user.accountRelation = response?.result?.accountRelations.length > 0 ? response?.result?.accountRelations : _this2.user.accountRelation = new Array({});
           _this2.user.companyId = response?.result?.companyId;
-          _this2.user.accountRelation = response?.result?.accountRelations || [];
           _this2.user.areaId = response?.result?.accountRelations[0]?.areaId || null;
           _this2.user.puestoId = response?.result?.accountRelations[0]?.puestoId || null;
           _this2.user.ownerContact = response?.result?.accountRelations[0]?.ownerContact || false;
