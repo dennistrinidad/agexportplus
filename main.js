@@ -569,6 +569,8 @@ class EditAdminsComponent {
         this.user.id = this.userID;
         this.newUser = false;
         this.creatingUser = false;
+      } else {
+        this.user.accountRelation = new Array({});
       }
       this.loadLists();
     } else {
@@ -630,14 +632,12 @@ class EditAdminsComponent {
       this.user.roleId = response.result?.roleId;
       this.user.firstName = response.result?.firstName;
       this.user.secondName = response.result?.secondName;
-      this.user.businessPhone = response.result?.companyPhone;
+      this.user.businessPhone = response.result?.businessPhone;
       this.user.firstLastname = response.result?.firstLastname;
       this.user.secondLastname = response.result?.secondLastname;
-      //this.user.areaId = response.result?.area?.id || null;
+      this.user.accountRelation = response?.result?.accountRelations.length > 0 ? response?.result?.accountRelations : this.user.accountRelation = new Array({});
       this.user.areaId = response.result?.accountRelations[0]?.areaId || null;
-      //this.user.puestoId = response.result?.puesto?.id || null;
       this.user.puestoId = response.result?.accountRelations[0]?.puestoId || null;
-      this.user.accountRelation = response.result.accountRelations || [];
       this.user.roles = [response.result.role.toLowerCase().slice(5)];
     }, error => {
       console.log(error);
@@ -718,17 +718,9 @@ class EditAdminsComponent {
       this.loading = false;
     });
   }
-  onCargoChange($event) {
-    const puestoId = Number($event.target.value);
-    //this.user.puestoId = puestoId
-    this.user.accountRelation[0].puestoId = puestoId;
-    console.log(this.user.accountRelation);
-  }
-  onAreaChange($event) {
-    const areaId = Number($event.target.value);
-    //this.user.areaId = areaId
-    this.user.accountRelation[0].areaId = areaId;
-    console.log(this.user.accountRelation);
+  onChangeJobs($event, name) {
+    const id = Number($event.target.value);
+    this.user.accountRelation[0][name] = id;
   }
 }
 EditAdminsComponent.ɵfac = function EditAdminsComponent_Factory(t) {
@@ -806,7 +798,7 @@ EditAdminsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function EditAdminsComponent_Template_select_ngModelChange_38_listener($event) {
         return ctx.user.puestoId = $event;
       })("change", function EditAdminsComponent_Template_select_change_38_listener($event) {
-        return ctx.onCargoChange($event);
+        return ctx.onChangeJobs($event, "puestoId");
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](39, "option", 22);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](40, "Seleccione...");
@@ -850,7 +842,7 @@ EditAdminsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function EditAdminsComponent_Template_select_ngModelChange_63_listener($event) {
         return ctx.user.areaId = $event;
       })("change", function EditAdminsComponent_Template_select_change_63_listener($event) {
-        return ctx.onAreaChange($event);
+        return ctx.onChangeJobs($event, "areaId");
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](64, "option", 22);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](65, "Seleccione...");
@@ -6896,11 +6888,12 @@ class NuevoEventoComponent {
       extension: '',
       name: ''
     };
-    this.eventData.imageThumbnail = {
+    this.eventData.thumbEvent = {
       data: '',
       extension: '',
       name: ''
     };
+    // this.eventData.imageThumbnail = { data: '', extension: '', name: '' };
     this.eventData.imageBadgeHeader = {
       data: '',
       extension: '',
@@ -6997,11 +6990,12 @@ class NuevoEventoComponent {
           };
           reader.onload = yield _this2._handleReaderLoadedBadge.bind(_this2);
         } else if (event.target.id === "thumbnailGafete") {
-          _this2.eventData.imageThumbnail = {
+          _this2.eventData.thumbEvent = {
             extension: _this2.imageType,
             data: '',
             name: fielName
           };
+          // this.eventData.imageThumbnail = { extension: this.imageType, data: '', name: fielName };
           reader.onload = yield _this2._handleReaderLoadedThumbnail.bind(_this2);
         } else if (event.target.id === "filefooter") {
           _this2.eventData.imageBadgeFooter = {
@@ -7031,8 +7025,10 @@ class NuevoEventoComponent {
     this.loaded = true;
     const reader = e.target;
     this.iamgeSrc = reader.result;
-    this.eventData.imageThumbnail.data = this.iamgeSrc;
+    this.eventData.thumbEvent.data = this.iamgeSrc;
+    // this.eventData.imageThumbnail!.data = this.iamgeSrc;
   }
+
   _handleReaderLoadedFooter(e) {
     this.loaded = true;
     const reader = e.target;
@@ -7139,6 +7135,7 @@ class NuevoEventoComponent {
     return this.eventService.getEventsbyID(this.eventID, this.accessToken).then( /*#__PURE__*/function () {
       var _ref = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (res) {
         if (res.result) {
+          console.log(res.result);
           _this3.eventData = res?.result;
           _this3.listPrices = res?.result?.eventPrices || [];
           sessionStorage.setItem('EventData', JSON.stringify(res.result));
@@ -7156,12 +7153,13 @@ class NuevoEventoComponent {
             name: imageEvent[6],
             url: res.result?.imageEvent
           };
-          _this3.eventData.imageThumbnail = {
+          _this3.eventData.thumbEvent = {
             data: '',
             extension: '',
             name: imageThumbnail[6],
             url: res.result?.thumbEvent
           };
+          // this.eventData.imageThumbnail = { data: '', extension: '', name: imageThumbnail[6], url: res.result?.thumbEvent };
           _this3.eventData.imageBadgeHeader = {
             data: '',
             extension: '',
@@ -7209,85 +7207,48 @@ class NuevoEventoComponent {
       this.loading = false;
     });
   }
-  // https://js.wiki/get-started
-  // https://www.youtube.com/watch?v=VayYpiEIa5M
-  // https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
   submitEvent() {
     var _this4 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      // console.log(this.form)
-      // console.log(this.form.valid)
-      // console.log(this.form.controls)
-      // this.form.control.markAllAsTouched();
       if (_this4.form.valid && _this4.dateStart && _this4.dateEnd) {
         _this4.eventData.fechaFinal = new Date(_this4.dateEnd.year, _this4.dateEnd.month - 1, _this4.dateEnd.day);
         _this4.eventData.fechaInicio = new Date(_this4.dateStart.year, _this4.dateStart.month - 1, _this4.dateStart.day);
-        _this4.eventDataAux = [];
-        if (_this4.eventData.imageBadgeHeader.data == '' || _this4.eventData.imageBadgeFooter.data == '') {
-          if (_this4.eventData.imageBadgeHeader.data == '') {
-            const {
-              imageBadgeHeader,
-              ...data
-            } = _this4.eventData;
-            _this4.eventDataAux = data;
-          }
-          if (_this4.eventData.imageBadgeFooter.data == '') {
-            const {
-              imageBadgeFooter,
-              ...data
-            } = _this4.eventData;
-            _this4.eventDataAux = data;
-          }
-          if (_this4.eventData.imageBadgeHeader.data == '' && _this4.eventData.imageBadgeFooter.data == '') {
-            const {
-              imageBadgeHeader,
-              imageBadgeFooter,
-              ...data
-            } = _this4.eventData;
-            _this4.eventDataAux = data;
-          }
-          if (_this4.eventData.imageEvent.data == '') {
-            delete _this4.eventDataAux.imageEvent;
-          }
-          if (_this4.eventData.imageThumbnail.data == '') {
-            delete _this4.eventDataAux.imageThumbnail;
-            delete _this4.eventDataAux.thumbEvent;
-          }
-        } else {
-          if (_this4.eventData.imageEvent.data == '') {
-            // delete this.eventDataAux.imageEvent;
-            const {
-              imageEvent,
-              ...data
-            } = _this4.eventData;
-            _this4.eventDataAux = data;
-          }
-          if (_this4.eventData.imageThumbnail.data == '') {
-            // delete this.eventDataAux.imageThumbnail;
-            const {
-              imageThumbnail,
-              ...data
-            } = _this4.eventData;
-            _this4.eventDataAux = data;
-          }
-          if (_this4.eventData.imageEvent.data == '' && _this4.eventData.imageThumbnail.data == '') {
-            const {
-              imageEvent,
-              imageThumbnail,
-              ...data
-            } = _this4.eventData;
-            _this4.eventDataAux = data;
-          }
-          // delete this.eventDataAux.thumbEvent;
-          // this.eventDataAux = this.eventData;
-        }
-
-        delete _this4.eventDataAux.thumbEvent;
-        if (_this4.eventID > 0) {
-          _this4.editEvent(_this4.eventDataAux);
-        } else {
-          _this4.createEvent(_this4.eventDataAux);
-        }
+        const event = {
+          id: _this4.eventData?.id,
+          creadorId: _this4.eventData?.creadorId,
+          direccion: _this4.eventData?.direccion,
+          horaFinal: _this4.eventData?.horaFinal,
+          fechaFinal: _this4.eventData?.fechaFinal,
+          cupoLimite: _this4.eventData?.cupoLimite,
+          horaInicio: _this4.eventData?.horaInicio,
+          fechaInicio: _this4.eventData?.fechaInicio,
+          descripcion: _this4.eventData?.descripcion,
+          enlaceSitio: _this4.eventData?.enlaceSitio,
+          nombreEvento: _this4.eventData.nombreEvento,
+          enlaceEvento: _this4.eventData?.enlaceEvento,
+          archivoCalendar: _this4.eventData?.archivoCalendar,
+          enlaceCarretilla: _this4.eventData?.enlaceCarretilla,
+          asociadosInvitados: _this4.eventData?.asociadosInvitados,
+          noAsociadosInvitados: _this4.eventData?.noAsociadosInvitados,
+          //SELECTS
+          status: _this4.eventData?.status,
+          costTypeId: _this4.eventData?.costTypeId,
+          modalityId: _this4.eventData?.modalityId,
+          guestTypeId: _this4.eventData?.guestTypeId,
+          eventTypeId: _this4.eventData?.eventTypeId,
+          eventCategoryId: _this4.eventData?.eventCategoryId,
+          //IMAGE
+          needBadge: _this4.eventData?.needBadge,
+          imageEvent: _this4.eventData?.imageEvent,
+          thumbEvent: _this4.eventData?.thumbEvent,
+          imageBadgeHeader: _this4.eventData?.imageBadgeHeader,
+          imageBadgeFooter: _this4.eventData?.imageBadgeFooter
+        };
+        event.imageEvent.data == '' ? delete event.imageEvent : '';
+        event.thumbEvent.data == '' ? delete event.thumbEvent : '';
+        event.imageBadgeHeader.data == '' ? delete event.imageBadgeHeader : '';
+        event.imageBadgeFooter.data == '' ? delete event.imageBadgeFooter : '';
+        _this4.eventID > 0 ? _this4.editEvent(event) : _this4.createEvent(event);
       } else {
         _this4.form.control.markAllAsTouched();
         _this4.utilsService.dialog('ERROR', 'Error', 'Por favor llena los campos obligatorios.');
@@ -7526,7 +7487,7 @@ NuevoEventoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](117, "input", 63);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function NuevoEventoComponent_Template_input_ngModelChange_117_listener($event) {
-        return ctx.eventData.imageThumbnail.name = $event;
+        return ctx.eventData.thumbEvent.name = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](118, "i", 64);
@@ -7784,7 +7745,7 @@ NuevoEventoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](4);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngIf", ctx.validation_msg("gafete-file"));
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngModel", ctx.eventData.imageThumbnail.name);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngModel", ctx.eventData.thumbEvent.name);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](4);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngIf", ctx.validation_msg("thumbnail-file"));
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](6);
@@ -13128,7 +13089,7 @@ class ReporteriaComponent {
           result: JSON.parse(localStorage.getItem('companies'))
         };
         _this3.setDropdownFilter(response, 'associated&points');
-      } else if (type === 'Encuestas eventos' || type === 'Eventos') {
+      } else if (type === 'Encuestas eventos') {
         response = {
           result: JSON.parse(localStorage.getItem('events'))
         };
@@ -17773,6 +17734,7 @@ class EditUsuarioComponent {
         // NEW
         _this.user.roleId = 1;
         _this.user.areaId = null;
+        _this.creatingUser = true;
         _this.user.puestoId = null;
         _this.user.comiteId = null;
         _this.user.sectorId = null;
@@ -17782,7 +17744,7 @@ class EditUsuarioComponent {
         _this.user.status = 'active';
         _this.user.ownerContact = false;
         _this.user.roles = ['noasociado'];
-        _this.creatingUser = true;
+        _this.user.accountRelation = new Array({});
       } else {
         // NO ACCESS
         _this.utilsService.dialog('ERROR', 'Error', 'No tienes acceso...');
@@ -17804,15 +17766,6 @@ class EditUsuarioComponent {
   goToPage(pageName) {
     this.utilsService.goToPage(pageName);
   }
-  // status(status: string): string {
-  //   status = status.toLowerCase();
-  //   if (status == 'activo' || status == 'active') {
-  //     return 'active';
-  //   }
-  //   else {
-  //     return 'finished';
-  //   }
-  // }
   changeCheck(event, type, value) {
     switch (type) {
       case 'owner':
@@ -17977,17 +17930,6 @@ class EditUsuarioComponent {
           _this2.user.roles = response?.result?.role != null ? [response.result.role.toLowerCase().slice(5)] : [];
           // ASOCIADO SI/NO
           _this2.onChangeRole(null, 'getOne', response?.result?.roleId || null);
-          // if (response.result?.roleId === 2) {
-          //   this.user.associated = true;
-          //   this.user.status = 'active';
-          // } else if (response.result?.roleId === null) {
-          //   this.user.status = 'active';
-          //   this.user.associated = null;
-          // } else {
-          //   this.user.associated = false;
-          //   this.user.status = 'finished';
-          // }
-          // this.user.status = this.status(response?.result?.status);
           // PERMISOS
           _this2.permissions = response?.result?.permissions;
           _this2.user.permissions = response?.result?.permissions;
@@ -19061,136 +19003,145 @@ class UserGuideComponent {
       let json;
       let response;
       _this2.loading = true;
-      switch (_this2.typeGuide) {
-        case "participantes":
-          json = {
-            eventId: _this2.eventID,
-            userId: id
-          };
-          response = yield _this2.participantService.addParticipantToEvent(json);
-          break;
-        case "conferencistas":
-          json = {
-            eventId: _this2.eventID,
-            participantId: id
-          };
-          response = yield _this2.speakerService.addSpeaker(json);
-          break;
-        case "expositores":
-          json = {
-            companyId: id,
-            eventId: _this2.eventID,
-            registered: false
-          };
-          response = yield _this2.exhibitorService.addExhibitor(json);
-          break;
-        case "patrocinadores":
-          json = {
-            eventId: _this2.eventID,
-            companyId: id
-          };
-          response = yield _this2.sponsorService.createSponsorToEvent(json);
-          break;
-        case "empresas":
-          const user = yield _this2.list.find(x => x.id === id);
-          user.type == 'add' ? json = {
-            accountRelation: [{
-              companyId: _this2.companyID
-            }]
-          } : json = {
-            accountRelation: [{
-              id: user.accountRelation,
-              ownerContact: false,
-              companyId: _this2.companyID
-            }]
-          };
-          // json = { accountRelation: [{ companyId: this.companyID }] } // OLD
-          response = yield _this2.userService.addContact(id, json);
-          break;
-        default:
-          response = {
-            error: {
-              message: {
-                title: 'Alerta',
-                description: '¡Método no implementado!'
+      try {
+        switch (_this2.typeGuide) {
+          case "participantes":
+            json = {
+              eventId: _this2.eventID,
+              userId: id
+            };
+            response = yield _this2.participantService.addParticipantToEvent(json);
+            break;
+          case "conferencistas":
+            json = {
+              eventId: _this2.eventID,
+              participantId: id
+            };
+            response = yield _this2.speakerService.addSpeaker(json);
+            break;
+          case "expositores":
+            json = {
+              companyId: id,
+              eventId: _this2.eventID,
+              registered: false
+            };
+            response = yield _this2.exhibitorService.addExhibitor(json);
+            break;
+          case "patrocinadores":
+            json = {
+              eventId: _this2.eventID,
+              companyId: id
+            };
+            response = yield _this2.sponsorService.createSponsorToEvent(json);
+            break;
+          case "empresas":
+            const user = yield _this2.list.find(x => x.id === id);
+            user.type == 'add' ? json = {
+              accountRelation: [{
+                companyId: _this2.companyID
+              }]
+            } : json = {
+              accountRelation: [{
+                id: user.accountRelation,
+                ownerContact: false,
+                companyId: _this2.companyID
+              }]
+            };
+            // json = { accountRelation: [{ companyId: this.companyID }] } // OLD
+            response = yield _this2.userService.addContact(id, json);
+            break;
+          default:
+            response = {
+              error: {
+                message: {
+                  title: 'Alerta',
+                  description: '¡Método no implementado!'
+                }
               }
-            }
-          };
-          break;
-      }
-      //*
-      console.log(response);
-      if (response.success === true) {
+            };
+            break;
+        }
+        if (response.success === true) {
+          _this2.loading = false;
+          _this2.utilsService.dialog('SUCCESS', response?.message?.title, response?.message?.description);
+          _this2.loadData(_this2.typeGuide, false);
+        } else {
+          _this2.loading = false;
+          _this2.utilsService.dialog('ERROR', response.error?.message?.title, response.error?.message?.description);
+        }
+      } catch (error) {
+        console.log(error);
         _this2.loading = false;
-        _this2.utilsService.dialog('SUCCESS', response?.message?.title, response?.message?.description);
-        _this2.loadData(_this2.typeGuide, false);
-      } else {
-        _this2.loading = false;
-        _this2.utilsService.dialog('ERROR', response.error?.message?.title, response.error?.message?.description);
+        _this2.utilsService.dialog('ERROR', 'Error', 'Faltan datos para completar la operación.');
+        // this.utilsService.dialog('ERROR', 'Error', error?.error?.message?.description || 'Error al añadir registro');
       }
-      //*/
     })();
   }
 
   removeAction(type_Guide, id) {
     var _this3 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      let json = {};
+      let json;
       let response;
       _this3.loading = true;
-      switch (_this3.typeGuide) {
-        case "participantes":
-          response = yield _this3.participantService.deleteParticipantByUser(_this3.eventID, id);
-          break;
-        case "conferencistas":
-          response = yield _this3.speakerService.deleteSpeakerByParticipant(_this3.eventID, id);
-          break;
-        case "expositores":
-          const exhibitor = yield _this3.list.find(x => x.id === id);
-          response = yield _this3.exhibitorService.deleteExhibitorsToEvent(exhibitor.exhibitorId);
-          break;
-        case "patrocinadores":
-          const sponsor = yield _this3.list.find(x => x.id === id);
-          response = yield _this3.sponsorService.deleteSponsorToEvent(sponsor.sponsorId);
-          break;
-        case "empresas":
-          const user = yield _this3.list.find(x => x.id === id);
-          console.log(user.type);
-          if (user.type == 'deleted') {
-            response = yield _this3.userService.deletedContact(user.accountRelation);
-          } else {
-            json = {
-              accountRelation: [{
-                id: user.accountRelation,
-                ownerContact: false,
-                companyId: null
-              }]
-            };
-            response = yield _this3.userService.updateContact(id, json);
-          }
-          console.log(json);
-          // const accountRelation = await this.list.find((x: any) => x.id === id); // OLD
-          // json = { accountRelation: [{ id: accountRelation.accountRelations, companyId: null }] } // OLD
-          break;
-        default:
-          response = {
-            error: {
-              message: {
-                title: 'Alerta',
-                description: '¡Método no implementado!'
-              }
+      try {
+        switch (_this3.typeGuide) {
+          case "participantes":
+            response = yield _this3.participantService.deleteParticipantByUser(_this3.eventID, id);
+            break;
+          case "conferencistas":
+            response = yield _this3.speakerService.deleteSpeakerByParticipant(_this3.eventID, id);
+            break;
+          case "expositores":
+            const exhibitor = yield _this3.list.find(x => x.id === id);
+            response = yield _this3.exhibitorService.deleteExhibitorsToEvent(exhibitor.exhibitorId);
+            break;
+          case "patrocinadores":
+            const sponsor = yield _this3.list.find(x => x.id === id);
+            response = yield _this3.sponsorService.deleteSponsorToEvent(sponsor.sponsorId);
+            break;
+          case "empresas":
+            const user = yield _this3.list.find(x => x.id === id);
+            console.log(user.type);
+            if (user.type == 'deleted') {
+              response = yield _this3.userService.deletedContact(user.accountRelation);
+            } else {
+              json = {
+                accountRelation: [{
+                  id: user.accountRelation,
+                  ownerContact: false,
+                  companyId: null
+                }]
+              };
+              response = yield _this3.userService.updateContact(id, json);
             }
-          };
-          break;
-      }
-      console.log(response);
-      if (response?.success === true) {
-        _this3.utilsService.dialog('SUCCESS', response?.message?.title, response?.message?.description);
-        _this3.loadData(_this3.typeGuide, false);
+            console.log(json);
+            // const accountRelation = await this.list.find((x: any) => x.id === id); // OLD
+            // json = { accountRelation: [{ id: accountRelation.accountRelations, companyId: null }] } // OLD
+            break;
+          default:
+            response = {
+              error: {
+                message: {
+                  title: 'Alerta',
+                  description: '¡Método no implementado!'
+                }
+              }
+            };
+            break;
+        }
+        if (response?.success === true) {
+          _this3.utilsService.dialog('SUCCESS', response?.message?.title, response?.message?.description);
+          _this3.loadData(_this3.typeGuide, false);
+          _this3.loading = false;
+        } else {
+          _this3.loading = false;
+          _this3.utilsService.dialog('ERROR', response?.error?.message?.title, response?.error?.message?.description);
+        }
+      } catch (error) {
+        console.log(error);
         _this3.loading = false;
-      } else {
-        _this3.loading = false;
-        _this3.utilsService.dialog('ERROR', response?.error?.message?.title, response?.error?.message?.description);
+        _this3.utilsService.dialog('ERROR', 'Error', error?.error?.message?.description || 'Error al añadir registro');
       }
     })();
   }
@@ -20493,8 +20444,8 @@ class BackServiceEvents {
         // eventType: { id: number, name: string } = { id: 0, name: ''}
         this.eventCategoryId = 0;
         // eventCategory: { id: number, name: string } = { id: 0, name: ''}
-        this.imageEvent = { extension: '', data: '', name: '' };
-        this.imageThumbnail = { extension: '', data: '', name: '' }; //: any;
+        this.thumbEvent = { extension: '', data: '', name: '' };
+        this.imageEvent = { extension: '', data: '', name: '' }; // imageThumbnail
         this.imageBadgeHeader = { extension: '', data: '', name: '' }; //: any;
         this.imageBadgeFooter = { extension: '', data: '', name: '' }; //: any;
     }
@@ -23291,18 +23242,28 @@ class EventService {
         return this.http.get(`${this.url}eventos/events/?page=${page}&size=${size}&eventYear=${eventYear}&eventMonth=${eventMonth}`, this.options);
     }
     getEventsbyID(ID, access) {
+        this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
+        this.options = { headers: this.headers };
         return this.http.get(`${this.url}eventos/events/${ID}`, this.options).toPromise();
     }
     createEvent(data, access) {
+        this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
+        this.options = { headers: this.headers };
         return this.http.post(`${this.url}eventos/events`, data, this.options);
     }
     editEvent(data, ID, access) {
+        this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
+        this.options = { headers: this.headers };
         return this.http.put(`${this.url}eventos/events/${ID}`, data, this.options);
     }
     editStatusEvent(ID, data, access) {
+        this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
+        this.options = { headers: this.headers };
         return this.http.put(`${this.url}eventos/events/${ID}`, data, this.options);
     }
     deleteEvent(ID) {
+        this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
+        this.options = { headers: this.headers };
         return this.http.delete(`${this.url}eventos/events/${ID}`, this.options);
     }
 }
@@ -24761,7 +24722,7 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.debugging
     window.console.log = () => { };
 }
 ;
-// window.console.log = () => {}
+window.console.log = () => { };
 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.platformBrowser().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule)
     .catch(err => console.error(err));
 
