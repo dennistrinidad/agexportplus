@@ -8427,7 +8427,7 @@ function DialogComponent_div_3_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "i", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, " Al momento de \"enviar confirmaci\u00F3n\" se estar\u00E1 compartiendo al usuario un correo la informaci\u00F3n del evento y Gafete si aplica al evento. \u00BFDeseas continuar? ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, " Al momento de \"enviar confirmaci\u00F3n\" se estar\u00E1 compartiendo al usuario un correo con la informaci\u00F3n del evento y Gafete si aplica al evento. \u00BFDeseas continuar? ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 6)(6, "button", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DialogComponent_div_3_Template_button_click_6_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r12); const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r11.cancel()); });
@@ -17739,9 +17739,11 @@ class EditUsuarioComponent {
         _this.user.comiteId = null;
         _this.user.sectorId = null;
         _this.user.gender_id = null;
+        _this.user.companyId = null;
         _this.user.comisionId = null;
         _this.user.country_id = null;
-        _this.user.status = 'active';
+        _this.user.associated = false;
+        _this.user.status = 'finished';
         _this.user.ownerContact = false;
         _this.user.roles = ['noasociado'];
         _this.user.accountRelation = new Array({});
@@ -17774,7 +17776,6 @@ class EditUsuarioComponent {
         break;
       case 'associated':
         this.user.associated = value;
-        // console.log(this.user.associated);
         break;
       default:
         break;
@@ -17914,7 +17915,7 @@ class EditUsuarioComponent {
           _this2.user.sectorId = response?.result?.sector || null;
           _this2.user.comiteId = response?.result?.comite || null;
           _this2.user.username = response?.result?.username || null;
-          _this2.user.aboutMe = response?.response?.aboutMe || null;
+          _this2.user.aboutMe = response?.result?.aboutMe || null;
           _this2.user.comisionId = response?.result?.comision || null;
           _this2.user.firstName = response?.result?.firstName || null;
           _this2.user.secondName = response?.result?.secondName || null;
@@ -17924,9 +17925,8 @@ class EditUsuarioComponent {
           _this2.user.personalNIT = response?.result?.personalNIT || null;
           _this2.user.firstLastname = response?.result?.firstLastname || null;
           _this2.user.secondLastname = response?.result?.secondLastname || null;
-          _this2.user.emailAdditional = response?.result?.emailAdditional || null;
-          _this2.user.addtionalEmail = response?.response?.addtionalEmail || null;
           _this2.user.birthday = response?.result?.birthday?.substring(0, 10) || '';
+          _this2.user.addtionalEmail = response?.result?.addtionalEmail || null;
           _this2.user.roles = response?.result?.role != null ? [response.result.role.toLowerCase().slice(5)] : [];
           // ASOCIADO SI/NO
           _this2.onChangeRole(null, 'getOne', response?.result?.roleId || null);
@@ -17971,144 +17971,49 @@ class EditUsuarioComponent {
       });
     })();
   }
-  loadDatabyIDTrino() {
-    var _this3 = this;
-    return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      _this3.loading = true;
-      yield _this3.userService.getOneUser(_this3.userID).then( /*#__PURE__*/function () {
-        var _ref2 = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (response) {
-          console.log(response.result);
-          _this3.user.id = response.result?.id;
-          _this3.user.phone = response.result?.phone || null;
-          _this3.user.email = response.result?.email || null;
-          _this3.user.roleId = response.result?.roleId || null;
-          if (response.result?.roleId === 2) {
-            _this3.user.associated = true;
-          } else if (response.result?.roleId === null) {
-            _this3.user.associated = null;
-          } else {
-            _this3.user.associated = false;
-          }
-          _this3.user.sectorId = response.result?.sector || null;
-          _this3.user.comiteId = response.result?.comite || null;
-          //this.user.areaId = response.result?.area?.id || null;
-          _this3.user.areaId = response.result?.accountRelations[0]?.areaId || null;
-          _this3.user.username = response?.result?.username || null;
-          _this3.user.comisionId = response.result?.comision || null;
-          //this.user.puestoId = response.result?.puesto?.id || null;
-          _this3.user.puestoId = response.result?.accountRelations[0]?.puestoId || null;
-          _this3.user.firstName = response.result?.firstName || null;
-          _this3.user.secondName = response.result?.secondName || null;
-          _this3.user.gender_id = response.result?.gender?.id || null;
-          _this3.user.country_id = response.result?.country?.id || null;
-          //this.user.associated = response.result?.associated || false;
-          _this3.user.personalNIT = response.result?.personalNIT || null;
-          //this.user.ownerContact = response.result?.ownerContact || false;
-          _this3.user.ownerContact = response.result?.accountRelations[0]?.ownerContact || false;
-          //this.user.accountRelation[0].ownerContact = response.result?.accountRelations[0]?.ownerContact || false;
-          _this3.user.firstLastname = response.result?.firstLastname || null;
-          _this3.user.secondLastname = response.result?.secondLastname || null;
-          _this3.user.emailAdditional = response.result?.emailAdditional || null;
-          _this3.user.birthday = response.result?.birthday.substring(0, 10) || '';
-          _this3.user.status = response?.result?.status; //revisar
-          // this.user.status = this.status(response?.result?.status || 'unknown');
-          _this3.user.roles = response.result.role != null ? [response.result.role.toLowerCase().slice(5)] : [];
-          _this3.user.status = response?.result?.status;
-          _this3.user.phone = response?.result?.phone || null;
-          _this3.user.email = response?.result?.email || null;
-          _this3.user.roleId = response?.result?.roleId || null;
-          _this3.user.sectorId = response?.result?.sector || null;
-          _this3.user.comiteId = response?.result?.comite || null;
-          _this3.user.username = response?.result?.username || null;
-          _this3.user.aboutMe = response?.response?.aboutMe || null;
-          _this3.user.comisionId = response?.result?.comision || null;
-          _this3.user.firstName = response?.result?.firstName || null;
-          _this3.user.secondName = response?.result?.secondName || null;
-          _this3.user.gender_id = response?.result?.gender?.id || null;
-          _this3.user.country_id = response?.result?.country?.id || null;
-          _this3.user.associated = response?.result?.associated || false;
-          _this3.user.personalNIT = response?.result?.personalNIT || null;
-          _this3.user.firstLastname = response?.result?.firstLastname || null;
-          _this3.user.secondLastname = response?.result?.secondLastname || null;
-          _this3.user.emailAdditional = response?.result?.emailAdditional || null;
-          _this3.user.addtionalEmail = response?.response?.addtionalEmail || null;
-          _this3.user.birthday = response?.result?.birthday?.substring(0, 10) || '';
-          _this3.user.areaId = response?.result?.accountRelations[0]?.areaId || null;
-          _this3.user.puestoId = response?.result?.accountRelations[0]?.puestoId || null;
-          _this3.user.ownerContact = response?.result?.accountRelations[0]?.ownerContact || false;
-          _this3.user.roles = response?.result?.role != null ? [response.result.role.toLowerCase().slice(5)] : [];
-          // this.user.accountRelation = response?.result?.accountRelations || [];
-          _this3.permissions = response?.result?.permissions;
-          _this3.user.permissions = response?.result?.permissions;
-          if (response.result.permissions && response?.result?.permissions?.length > 0) {
-            for (let x of _this3.permissionsList) {
-              if (response.result.permissions.includes(x.name)) {
-                _this3.permissionsModel[x.name] = true;
-              }
-            }
-          }
-          _this3.communicationChannels = response?.result?.communicationChannel;
-          _this3.user.communicationChannel = response?.result?.communicationChannel;
-          if (response.result.communicationChannel && response.result?.communicationChannel.length > 0) {
-            for (let x of _this3.communicationChannelsList) {
-              if (response.result.communicationChannel.includes(x.key)) {
-                _this3.communicationChannelsModel[x.key] = true;
-              }
-            }
-          }
-          _this3.user.companyId = response?.result?.companyId;
-          if (response.result.companyId && response.result.companyId > 0) {
-            const company = yield _this3.companyService.getCompaniesbyID(response.result.companyId);
-            _this3.company.nit = company?.result?.nit;
-            _this3.company.nombreComercial = company?.result?.nombreComercial || company?.result?.razonSocial;
-          }
-        });
-        return function (_x2) {
-          return _ref2.apply(this, arguments);
-        };
-      }(), error => {
-        _this3.utilsService.dialog('ERROR', 'Error', error.error.message.description);
-      }).finally(() => {
-        _this3.loading = false;
-      });
-    })();
-  }
   submit() {
-    var _this4 = this;
+    var _this3 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       // validamos el campo personalNIT aquí antes de enviar los datos al servidor
       const regex = /^[a-zA-Z0-9]+$/;
-      if (!regex.test(_this4.user.personalNIT)) {
+      if (!regex.test(_this3.user.personalNIT)) {
         // Mostramos un mensaje de error si la validación falla
-        _this4.utilsService.dialog('ERROR', 'Error', 'El campo personalNIT debe contener solo números y letras.');
+        _this3.utilsService.dialog('ERROR', 'Error', 'El campo personalNIT debe contener solo números y letras.');
         return; // No continuamos con el envío de datos si la validación falla
       }
 
-      _this4.user.permissions = _this4.permissions || [];
-      _this4.user.communicationChannel = _this4.communicationChannels || [];
-      //this.user.accountRelation = [this.accountRelationData];
-      console.log(_this4.user);
-      if (_this4.form.valid) {
-        _this4.loading = true;
-        const role = _this4.roleList.find(x => x.id === Number(_this4.user.roleId));
-        _this4.user.roles = [role.key];
-        _this4.userID > 0 ? _this4.editUser() : _this4.createUser();
-        _this4.loading = false;
+      _this3.user.permissions = _this3.permissions || [];
+      _this3.user.communicationChannel = _this3.communicationChannels || [];
+      console.log(_this3.user);
+      if (_this3.form.valid) {
+        _this3.loading = true;
+        const role = _this3.roleList.find(x => x.id === Number(_this3.user.roleId));
+        _this3.user.roles = [role.key];
+        _this3.userID > 0 ? _this3.editUser() : _this3.createUser();
+        _this3.loading = false;
       } else {
-        _this4.form.control.markAllAsTouched();
-        _this4.utilsService.dialog('ERROR', 'Error', '¡Llena los campos obligatorios!');
+        _this3.form.control.markAllAsTouched();
+        _this3.utilsService.dialog('ERROR', 'Error', '¡Llena los campos obligatorios!');
       }
     })();
   }
   createUser() {
-    this.user.password = 'Aplus123'; // "pass123";
     this.loading = true;
-    this.userService.createUser(this.user).then(response => {
+    this.user.password = 'Aplus123'; // <- "pass123";
+    const user = {
+      ...this.user
+    }; //const { ... user }  = this.user;
+    delete user.comiteId;
+    delete user.sectorId;
+    delete user.comisionId;
+    delete user.accountRelation;
+    user.phone = user.phone.toString();
+    this.userService.createUser(user).then(response => {
       console.log(response);
-      this.utilsService.dialog('SUCCESS', 'Éxito', response.message.description, '/admin/users/admin-usuarios');
+      this.utilsService.dialog('SUCCESS', 'Éxito', response?.message?.description, '/admin/users/admin-usuarios');
     }, error => {
       console.log(error);
-      this.utilsService.dialog('ERROR', 'Error', error.error.message.description);
+      this.utilsService.dialog('ERROR', 'Error', error?.error?.message?.description);
     }).finally(() => {
       this.loading = false;
     });
@@ -18117,10 +18022,10 @@ class EditUsuarioComponent {
     this.loading = true;
     this.userService.updateUser(this.userID, this.user).then(response => {
       console.log(response);
-      this.utilsService.dialog('SUCCESS', 'Éxito', response.message.description, '/admin/users/admin-usuarios');
+      this.utilsService.dialog('SUCCESS', 'Éxito', response?.message?.description, '/admin/users/admin-usuarios');
     }, error => {
       console.log(error);
-      this.utilsService.dialog('ERROR', 'Error', error.error.message.description);
+      this.utilsService.dialog('ERROR', 'Error', error?.error?.message?.description);
     }).finally(() => {
       this.loading = false;
     });
@@ -18137,37 +18042,6 @@ class EditUsuarioComponent {
     }).finally(() => {
       this.loading = false;
     });
-  }
-  searchCompany2(company_nit) {
-    if (this.form && !this.form.controls['companyNit'].errors) {
-      if (company_nit.length > 0) {
-        this.loading = true;
-        this.company.companyNIT = company_nit;
-        this.companyService.getCompaniesbyNIT(this.company).then(response => {
-          console.log(response);
-          if (response.result.idEmpresa === null) {
-            delete this.user.companyId;
-            this.company.nombreComercial = '';
-            throw new Error('Company ID is null');
-          } else {
-            this.user.companyId = response.result.idEmpresa;
-            this.user.accountRelation[0].companyId = response.result.idEmpresa;
-            this.company.nombreComercial = response.result.nombreComercial || response.result.razonSocial;
-          }
-        }, error => {
-          console.log(error);
-          this.utilsService.dialog('ERROR', 'Error', error.error.message.description);
-        }).catch(error => {
-          console.log(error);
-          this.utilsService.dialog('ERROR', 'Error', 'No se encuentra la empresa con ese NIT');
-        }).finally(() => {
-          this.loading = false;
-        });
-      } else {
-        this.user.companyId = undefined;
-        this.user.accountRelation[0].companyId = null;
-      }
-    }
   }
   searchCompany(company_nit) {
     if (this.form && !this.form.controls['companyNit'].errors) {
@@ -18191,6 +18065,7 @@ class EditUsuarioComponent {
             }
           } else {
             this.utilsService.dialog('ERROR', 'Error', response?.error?.message?.description || '¡Empresa no encontrada!');
+            throw new Error(response.message);
           }
         }, error => {
           this.utilsService.dialog('ERROR', 'Error', error.error.message.description);
@@ -18198,7 +18073,7 @@ class EditUsuarioComponent {
           this.loading = false;
         });
       } else {
-        this.user.companyId = undefined;
+        this.user.companyId = null;
         this.user.accountRelation[0].companyId = null;
       }
     }
@@ -18221,7 +18096,7 @@ EditUsuarioComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
   },
   decls: 191,
   vars: 51,
-  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], [1, "col-12"], [1, "card", "mb-5"], [1, "card-body"], [1, "row", "p-4", "p-md-1"], [1, "col-12", "col-lg-8"], [1, "card-title", "mb-4"], [1, "form-label", "mb-3"], [1, "icon-container"], ["src", "./assets/images/icono-i.png", "alt", "Icono de Estado en CRM"], ["name", "Estado en CRM", "content", "valor-del-estado"], [1, "icon-tooltip"], [1, "col-12", "col-lg-2"], ["name", "status", "disabled", "", 1, "form-control", "btn-status_edituser", 3, "ngModel", "ngModelChange"], ["value", "active"], ["value", "finished"], ["form", "ngForm"], [1, "row", "p-4"], [1, "col-md-12", "col-lg-4", "mb-3"], ["name", "companyNit", "placeholder", "000000-0", "minlength", "5", "maxlength", "10", "pattern", "[0-9]+[-][0-9 kK]*", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["class", "err-msg", 4, "ngIf"], [1, "col-md-12", "col-lg-8", "mb-3"], ["name", "companyName", "placeholder", "Nombre comercial", "disabled", "", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-md-6", "col-lg-3", "mb-3"], ["name", "firstName", "required", "", "placeholder", "Nombre del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "secondName", "placeholder", "Segundo nombre del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "firstLastname", "required", "", "placeholder", "Apellido del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "secondLastname", "placeholder", "Segundo apellido del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "number", "name", "phone", "placeholder", "00000000", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "role", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["value", "null", "disabled", ""], [3, "value", 4, "ngFor", "ngForOf"], ["type", "email", "name", "email", "required", "", "placeholder", "Correo electr\u00F3nico", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "email", "name", "emailAdditional", "placeholder", "Correo electr\u00F3nico adicional", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "text", "name", "personalNIT", "placeholder", "000000-0", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "date", "name", "birthday", "required", "", "placeholder", "dd-mm-yyyy", 1, "form-control", "calendario", 3, "ngModel", "ngModelChange"], ["name", "gender_id", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["value", "1"], ["value", "2"], ["value", "3"], ["name", "country_id", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-md-6", "mb-3"], ["name", "area", "placeholder", "Seleccione...", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["name", "puestoId", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], [1, "col-12", "col-lg-4", "mb-3"], ["name", "sector", "readonly", "", 1, "form-control", 3, "ngModel", "disabled", "ngModelChange"], ["disabled", "", 3, "value", 4, "ngFor", "ngForOf"], ["name", "comision", "readonly", "", 1, "form-control", 3, "ngModel", "disabled", "ngModelChange"], ["name", "comite", "readonly", "", 1, "form-control", 3, "ngModel", "disabled", "ngModelChange"], [1, "col-12", "col-lg-2", "mb-3"], [1, "form-check", "form-check-inline"], ["type", "radio", "name", "asociado_selection", "id", "associatedYes", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "associatedYes", 1, "form-check-label"], ["type", "radio", "name", "asociado_selection", "id", "associatedNot", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "associatedNot", 1, "form-check-label"], ["type", "radio", "name", "ownerContact", "id", "ownerContactYes", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "ownerContactYes", 1, "form-check-label"], ["type", "radio", "name", "ownerContact", "id", "ownerContactNot", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "ownerContactNot", 1, "form-check-label"], ["class", "col-12 col-lg-4 mb-3 text-center text-lg-left", 4, "ngIf"], [1, "row", "p-4", "mt-3"], [1, "col-12", "mb-3"], [1, "form-label", "mb-4"], ["class", "col-12 col-lg-auto pr-0 ml-0", 4, "ngFor", "ngForOf"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "btn-outline-secondary", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-edituseradmin", 3, "click"], [1, "save-icon"], [1, "err-msg"], [3, "value"], ["disabled", "", 3, "value"], [1, "col-12", "col-lg-4", "mb-3", "text-center", "text-lg-left"], [1, "d-grid", "gap-2", "mx-auto"], ["type", "button", "name", "recoverPassword", 1, "btn", "btn-secondary", "w-70", "btn-password", 3, "disabled", "click"], [1, "col-12", "col-lg-auto", "pr-0", "ml-0"], ["type", "checkbox", 1, "form-check-input", "mr-2", 3, "name", "ngModel", "ngModelChange", "change"], [1, "form-check-label", "mr-3", "txt-tiny", 3, "for"]],
+  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], [1, "col-12"], [1, "card", "mb-5"], [1, "card-body"], [1, "row", "p-4", "p-md-1"], [1, "col-12", "col-lg-8"], [1, "card-title", "mb-4"], [1, "form-label", "mb-3"], [1, "icon-container"], ["src", "./assets/images/icono-i.png", "alt", "Icono de Estado en CRM"], ["name", "Estado en CRM", "content", "valor-del-estado"], [1, "icon-tooltip"], [1, "col-12", "col-lg-2"], ["name", "status", "disabled", "", 1, "form-control", "btn-status_edituser", 3, "ngModel", "ngModelChange"], ["value", "active"], ["value", "finished"], ["form", "ngForm"], [1, "row", "p-4"], [1, "col-md-12", "col-lg-4", "mb-3"], ["name", "companyNit", "placeholder", "000000-0", "minlength", "5", "maxlength", "10", "pattern", "[0-9]+[-][0-9 kK]*", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["class", "err-msg", 4, "ngIf"], [1, "col-md-12", "col-lg-8", "mb-3"], ["name", "companyName", "placeholder", "Nombre comercial", "disabled", "", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-md-6", "col-lg-3", "mb-3"], ["name", "firstName", "required", "", "placeholder", "Nombre del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "secondName", "placeholder", "Segundo nombre del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "firstLastname", "required", "", "placeholder", "Apellido del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "secondLastname", "placeholder", "Segundo apellido del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "number", "name", "phone", "placeholder", "00000000", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "role", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["value", "null", "disabled", ""], [3, "value", 4, "ngFor", "ngForOf"], ["type", "email", "name", "email", "required", "", "placeholder", "Correo electr\u00F3nico", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "email", "name", "addtionalEmail", "placeholder", "Correo electr\u00F3nico adicional", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "text", "name", "personalNIT", "placeholder", "000000-0", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "date", "name", "birthday", "required", "", "placeholder", "dd-mm-yyyy", 1, "form-control", "calendario", 3, "ngModel", "ngModelChange"], ["name", "gender_id", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["value", "1"], ["value", "2"], ["value", "3"], ["name", "country_id", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-md-6", "mb-3"], ["name", "area", "placeholder", "Seleccione...", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["name", "puestoId", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], [1, "col-12", "col-lg-4", "mb-3"], ["name", "sector", "readonly", "", 1, "form-control", 3, "ngModel", "disabled", "ngModelChange"], ["disabled", "", 3, "value", 4, "ngFor", "ngForOf"], ["name", "comision", "readonly", "", 1, "form-control", 3, "ngModel", "disabled", "ngModelChange"], ["name", "comite", "readonly", "", 1, "form-control", 3, "ngModel", "disabled", "ngModelChange"], [1, "col-12", "col-lg-2", "mb-3"], [1, "form-check", "form-check-inline"], ["type", "radio", "name", "asociado_selection", "id", "associatedYes", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "associatedYes", 1, "form-check-label"], ["type", "radio", "name", "asociado_selection", "id", "associatedNot", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "associatedNot", 1, "form-check-label"], ["type", "radio", "name", "ownerContact", "id", "ownerContactYes", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "ownerContactYes", 1, "form-check-label"], ["type", "radio", "name", "ownerContact", "id", "ownerContactNot", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "ownerContactNot", 1, "form-check-label"], ["class", "col-12 col-lg-4 mb-3 text-center text-lg-left", 4, "ngIf"], [1, "row", "p-4", "mt-3"], [1, "col-12", "mb-3"], [1, "form-label", "mb-4"], ["class", "col-12 col-lg-auto pr-0 ml-0", 4, "ngFor", "ngForOf"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "btn-outline-secondary", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-edituseradmin", 3, "click"], [1, "save-icon"], [1, "err-msg"], [3, "value"], ["disabled", "", 3, "value"], [1, "col-12", "col-lg-4", "mb-3", "text-center", "text-lg-left"], [1, "d-grid", "gap-2", "mx-auto"], ["type", "button", "name", "recoverPassword", 1, "btn", "btn-secondary", "w-70", "btn-password", 3, "disabled", "click"], [1, "col-12", "col-lg-auto", "pr-0", "ml-0"], ["type", "checkbox", 1, "form-check-input", "mr-2", 3, "name", "ngModel", "ngModelChange", "change"], [1, "form-check-label", "mr-3", "txt-tiny", 3, "for"]],
   template: function EditUsuarioComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](0, EditUsuarioComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
@@ -18350,7 +18225,7 @@ EditUsuarioComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](78, "input", 38);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function EditUsuarioComponent_Template_input_ngModelChange_78_listener($event) {
-        return ctx.user.emailAdditional = $event;
+        return ctx.user.addtionalEmail = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](79, "div", 28)(80, "label", 12);
@@ -18576,7 +18451,7 @@ EditUsuarioComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.validation_msg("email"));
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.user.emailAdditional);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.user.addtionalEmail);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.user.personalNIT);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
@@ -18807,7 +18682,7 @@ class UserGuideComponent {
         this.categoriesHeading = ['Nombre usuario', 'Nombre Empresa', 'Correo electrónico'];
         break;
       case "conferencistas":
-        this.nameFilter = 'empresa';
+        this.nameFilter = 'usuario';
         this.categoriesHeading = ['Nombre usuario', 'Nombre Empresa', 'Correo electrónico'];
         this.loadParticipant(this.pageNumber + 1, this.pageSize, this.eventID, this.filter, search);
         // this.loadParticipant(this.pageNumber, this.pageSize, this.eventID!, this.filter, search);
@@ -19070,14 +18945,12 @@ class UserGuideComponent {
           _this2.utilsService.dialog('ERROR', response.error?.message?.title, response.error?.message?.description);
         }
       } catch (error) {
-        console.log(error);
+        // console.log(error)
         _this2.loading = false;
-        _this2.utilsService.dialog('ERROR', 'Error', 'Faltan datos para completar la operación.');
-        // this.utilsService.dialog('ERROR', 'Error', error?.error?.message?.description || 'Error al añadir registro');
+        _this2.utilsService.dialog('ERROR', 'Error', error?.error?.message?.description || 'Faltan datos para completar la operación.');
       }
     })();
   }
-
   removeAction(type_Guide, id) {
     var _this3 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
@@ -19141,7 +19014,7 @@ class UserGuideComponent {
       } catch (error) {
         console.log(error);
         _this3.loading = false;
-        _this3.utilsService.dialog('ERROR', 'Error', error?.error?.message?.description || 'Error al añadir registro');
+        _this3.utilsService.dialog('ERROR', 'Error', error?.error?.message?.description || 'Error al añadir registro.');
       }
     })();
   }
@@ -24722,7 +24595,7 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.debugging
     window.console.log = () => { };
 }
 ;
-window.console.log = () => { };
+// window.console.log = () => {}
 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.platformBrowser().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule)
     .catch(err => console.error(err));
 
