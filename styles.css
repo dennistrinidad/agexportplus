@@ -8859,6 +8859,12 @@ input:-webkit-autofill:active { -webkit-box-shadow: 0 0 0 0px white inset !impor
       background-image: url('clock-svg-ff.svg') !important;
     }
       
+    .form-control-time-mozff {
+        /*flex: 0 0 10%;*/
+        margin-top: 0px !important;
+        width: 170px;
+      }
+
     }
 /* fin prueba icono reloj en navegador firefox */
 
