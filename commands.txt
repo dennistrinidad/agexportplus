@@ -17,7 +17,7 @@ do
     branch=$(git rev-parse --symbolic --abbrev-ref $refname)
     if [ "$branch" == "build-dev" ]; then
         echo "Deploying changes to build-dev branch..."
-        GIT_DIR=/var/www/html/.git git --work-tree=/var/www/html/.git checkout -f
+        GIT_DIR=/var/www/html.git git --work-tree=/var/www/html/ checkout -f
         #GIT_DIR=/var/www/html.git git --work-tree=/var/www/html checkout -f
         # GIT_DIR=root@ip-172-31-32-95:/var/www/html/.git git --work-tree=/var/www/html checkout -f
         # Aquí puedes agregar comandos adicionales para actualizar tu aplicación o reiniciar servicios, si es necesario.
