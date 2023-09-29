@@ -10,6 +10,10 @@
 | BUILD: |  npm start b-d   |   ng build -c development   |
 | URL:   |  http://agexportplus.dev.tribalworldwide.gt/
 
+
+https://gist.github.com/nonbeing/f3441c96d8577a734fa240039b7113db
+https://www.digitalocean.com/community/tutorials/how-to-use-git-hooks-to-automate-development-and-deployment-tasks
+
 Archivo: post-receive
 #!/bin/bash
 while read oldrev newrev refname
