@@ -8726,6 +8726,98 @@ a.text-dark:hover, a.text-dark:focus {
 .input-file-readonly {
     background-color: white !important;
 }
+/**** MODAL FILTERS USER / COMPANY ****/
+.modal-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    position: fixed;
+    margin-left: 198px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-container {
+    top: 0;
+    right: 0;
+    width: 480px;
+    height: 100%;
+    padding: 20px;
+    z-index: 1000;
+    max-width: 90%;
+    position: fixed;
+    background-color: #FAFCFE;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+.modal-content-types {
+    margin-top: 120px;
+}
+.modal-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.modal-btn-close {
+    top: 10px;
+    right: 22px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-top: 120px;
+    position: absolute;
+}
+.modal-buttons {
+    display: flex;
+    margin: 0px auto;
+    justify-content: center;
+}
+.modal-btn-search {
+    border: none;
+    width: 200px;
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: 700;
+    line-height: 20px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px 20px;
+    background: #1A44DB;
+    font-family: 'Jost', sans-serif;
+}
+.modal-btn-clear {
+    border: none;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    background: #8686F1;
+    font-family: 'Jost', sans-serif;
+}
+.badge-agex {
+    font-size: 14px;
+    color: #505B85;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 10px;
+    letter-spacing: 0.005em;
+    font-family: 'Jost', sans-serif;
+    background-color: #D9E1FF;
+}
+.badge-btn-close {
+    cursor: pointer;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.input-radio-lg {
+    width: 20px;
+    height: 20px;
+}
 /************************************* NEW METHOD 5 *************************************/
 .multi_den {
     width: 100% !important;
@@ -8852,20 +8944,44 @@ input:-webkit-autofill:active { -webkit-box-shadow: 0 0 0 0px white inset !impor
 }
 /*prueba icono reloj en navegador firefox*/
 @-moz-document url-prefix() {
-    .clock-mozff{
-      background-size: 25px !important;
-      background-position: right !important;
-      background-repeat: no-repeat !important;
-      background-image: url('clock-svg-ff.svg') !important;
+    .clock-mozff {
+        background-size: 25px !important;
+        background-position: right !important;
+        background-repeat: no-repeat !important;
+        background-image: url('clock-svg-ff.svg') !important;
     }
-      
+
     .form-control-time-mozff {
         /*flex: 0 0 10%;*/
         margin-top: 0px !important;
         width: 170px;
-      }
-
     }
+
+}
 /* fin prueba icono reloj en navegador firefox */
+/*inicio estilos para las barra de scroll*/
+/* Personalización de la barra de desplazamiento en navegadores WebKit (como Chrome y Safari) */
+/* Cambiar el color de fondo de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 7px;
+    /* Grosor de la barra de desplazamiento vertical */
+    height: 7px;
+    /* Grosor de la barra de desplazamiento horizontal */
+}
+::-webkit-scrollbar-thumb {
+    background-color: #c7c7c7;
+    /* Color del "pulgar" de la barra de desplazamiento */
+    border-radius: 6px;
+    /* Radio de esquinas del "pulgar" */
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #606060;
+    /* Color del "pulgar" en estado de hover */
+}
+/* Cambiar el color de fondo de la pista de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+/*fin estilos de barra scroll*/
 
 /*# sourceMappingURL=styles.css.map*/
