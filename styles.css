@@ -8894,6 +8894,11 @@ a.text-dark:hover, a.text-dark:focus {
     margin-top: 20px;
     border-collapse: collapse;
 }
+@media screen and (max-width: 1440px) {
+    .table-default {
+        overflow-x: scroll !important;
+    }
+}
 table {
     border: none;
 }
@@ -8984,7 +8989,7 @@ input:-webkit-autofill:active { -webkit-box-shadow: 0 0 0 0px white inset !impor
 }
 /*fin estilos de barra scroll*/
 /* estilos para mini modal de opciones eliminar etc*/
-.actions-btn:hover{
+.actions-btn:hover {
     background: #1A44DB !important;
     font-weight: 500 !important;
     color: #ffffff !important;
