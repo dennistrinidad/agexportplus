@@ -8983,5 +8983,12 @@ input:-webkit-autofill:active { -webkit-box-shadow: 0 0 0 0px white inset !impor
     background-color: #f1f1f1;
 }
 /*fin estilos de barra scroll*/
+/* estilos para mini modal de opciones eliminar etc*/
+.actions-btn:hover{
+    background: #1A44DB !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+}
+/* */
 
 /*# sourceMappingURL=styles.css.map*/
