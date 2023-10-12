@@ -1582,13 +1582,6 @@ class EditAgendaComponent {
   goToPage(pageName) {
     this.utilsService.goToPage(pageName);
   }
-  loadModality() {
-    this.utilsService.getModalities().then(response => {
-      this.modalitySchedule = response.result.modalities;
-    }, error => {
-      console.log(error);
-    });
-  }
   addSchedule() {
     this.schedules.push({
       id: 0,
@@ -1618,6 +1611,13 @@ class EditAgendaComponent {
       });
     }
   }
+  loadModality() {
+    this.utilsService.getModalities().then(response => {
+      this.modalitySchedule = response.result.modalities;
+    }, error => {
+      console.log(error);
+    });
+  }
   loadSchedulebyEvent() {
     this.loading = true;
     return this.scheduleService.getScheduleByEvent(this.eventID).then(response => {
@@ -1638,8 +1638,6 @@ class EditAgendaComponent {
             });
           }
         }
-        // console.log(this.schedules);
-        // sessionStorage.setItem('schedule', true);
       } else {
         this.addSchedule();
       }
@@ -1653,7 +1651,7 @@ class EditAgendaComponent {
   getOneSchedule(schedule_id) {
     this.loading = true;
     this.scheduleService.getOneSchedule(schedule_id).then(response => {
-      console.log(response);
+      // console.log(response);
       this.schedules.push({
         id: this.scheduleID,
         eventId: this.eventID,
@@ -1665,7 +1663,6 @@ class EditAgendaComponent {
         fechaFin: response.result.fechaHoraFin ? response.result.fechaHoraFin.substr(0, 10) : '',
         fechaInicio: response.result.fechaHoraInicio ? response.result.fechaHoraInicio.substr(0, 10) : ''
       });
-      console.log(this.schedules);
     }, error => {
       console.log(error);
       this.utilsService.dialog('ERROR', 'Error', '¡Error al cargar actividad!');
@@ -1674,51 +1671,86 @@ class EditAgendaComponent {
       this.loading = false;
     });
   }
-  processData() {
+  processOne() {
     var _this2 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      //*
       if (_this2.form.valid && !_this2.date_error.includes(true)) {
+        let response;
         _this2.loading = true;
         _this2.disabled = true;
-        let save = true;
-        let update = true;
-        for (const e of _this2.schedules) {
-          e.modalidadID = Number(e.modalityId);
-          e.fechaHoraFin = e.fechaFin + ' ' + e.horaFin;
-          e.fechaHoraInicio = e.fechaInicio + ' ' + e.horaInicio;
-          if (e.id === 0) {
-            // console.log('save', save, e)
-            save = yield _this2.save(e);
+        try {
+          const schedule = {
+            id: _this2.schedules[0]?.id,
+            lugar: _this2.schedules[0]?.lugar,
+            eventId: _this2.schedules[0]?.eventId,
+            modalityId: _this2.schedules[0]?.modalityId,
+            nombreAgenda: _this2.schedules[0]?.nombreAgenda,
+            modalidadID: Number(_this2.schedules[0]?.modalityId),
+            fechaHoraFin: _this2.schedules[0]?.fechaFin + ' ' + _this2.schedules[0]?.horaFin,
+            fechaHoraInicio: _this2.schedules[0]?.fechaInicio + ' ' + _this2.schedules[0]?.horaInicio
+          };
+          schedule.id === 0 ? response = yield _this2.scheduleService.createSchedule(schedule) : response = yield _this2.scheduleService.editSchedules(schedule.id, schedule);
+          if (response.success === true) {
+            _this2.goToPage('/admin/events/admin-agenda');
+            _this2.utilsService.dialog('SUCCESS', response?.message?.title, response?.message?.description);
           } else {
-            // console.log('update', update, e)
-            update = yield _this2.update(e);
+            _this2.utilsService.dialog('ERROR', response.error?.message?.title, response.error?.message?.description);
           }
-          if (!save || !update) {
-            _this2.loading = false;
-            _this2.disabled = false;
-            _this2.utilsService.dialog('ERROR', 'Error', '¡Hubo un error al guardar!');
-            return;
-          }
+        } catch (error) {
+          _this2.utilsService.dialog('ERROR', 'Error', error?.error?.message?.description || 'Hubo un error, contacte al administrador.');
         }
-        _this2.utilsService.dialog('SUCCESS', 'Éxito', '¡Se guardo la información exitosamente!');
-        _this2.goToPage('/admin/events/admin-agenda');
         _this2.loading = false;
         _this2.disabled = false;
       } else {
         _this2.form.control.markAllAsTouched();
         _this2.utilsService.dialog('ERROR', 'Error', 'Por favor llena los campos correctamente.');
       }
+    })();
+  }
+  // Procesar varias peticiones
+  processData() {
+    var _this3 = this;
+    return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      //*
+      if (_this3.form.valid && !_this3.date_error.includes(true)) {
+        _this3.loading = true;
+        _this3.disabled = true;
+        let save = true;
+        let update = true;
+        for (const e of _this3.schedules) {
+          e.modalidadID = Number(e.modalityId);
+          e.fechaHoraFin = e.fechaFin + ' ' + e.horaFin;
+          e.fechaHoraInicio = e.fechaInicio + ' ' + e.horaInicio;
+          if (e.id === 0) {
+            save = yield _this3.save(e);
+          } else {
+            update = yield _this3.update(e);
+          }
+          if (!save || !update) {
+            _this3.loading = false;
+            _this3.disabled = false;
+            _this3.utilsService.dialog('ERROR', 'Error', '¡Hubo un error al guardar!');
+            return;
+          }
+        }
+        _this3.utilsService.dialog('SUCCESS', 'Éxito', '¡Se guardo la información exitosamente!');
+        _this3.goToPage('/admin/events/admin-agenda');
+        _this3.loading = false;
+        _this3.disabled = false;
+      } else {
+        _this3.form.control.markAllAsTouched();
+        _this3.utilsService.dialog('ERROR', 'Error', 'Por favor llena los campos correctamente.');
+      }
       //*/
     })();
   }
 
   save(schedule) {
-    var _this3 = this;
+    var _this4 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      console.log('SAVE ', schedule);
+      // console.log('SAVE ', schedule);
       let status = true;
-      yield _this3.scheduleService.createSchedule(schedule).then(response => {
+      yield _this4.scheduleService.createSchedule(schedule).then(response => {
         console.log(response);
         status = true;
       }, error => {
@@ -1729,11 +1761,11 @@ class EditAgendaComponent {
     })();
   }
   update(schedule) {
-    var _this4 = this;
+    var _this5 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      console.log('UPDATE ', schedule);
+      // console.log('UPDATE ', schedule);
       let status = true;
-      yield _this4.scheduleService.editSchedules(schedule.id, schedule).then(response => {
+      yield _this5.scheduleService.editSchedules(schedule.id, schedule).then(response => {
         console.log(response);
         status = true;
       }, error => {
@@ -1781,7 +1813,7 @@ EditAgendaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "div", 10)(14, "div", 11)(15, "button", 12);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function EditAgendaComponent_Template_button_click_15_listener() {
-        return ctx.processData();
+        return ctx.processOne();
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](16, "i", 13);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](17, "Guardar");
@@ -24789,7 +24821,6 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     debugging: true,
-    // url: "https://aplus-api.export.com.gt:2087/api/v1/",
     url: "https://agexportplus.dev.tribalworldwide.gt/api/v1/",
     token: ''
     // npm run s-d -> Levantar locar la app con env dev.
