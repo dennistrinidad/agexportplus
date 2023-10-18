@@ -5151,7 +5151,7 @@ class EditEmpresaComponent {
     return this.companyService.createCompany(this.companyData).then( /*#__PURE__*/function () {
       var _ref2 = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (res) {
         // console.log(res);
-        if (res.result === true) {
+        if (res.success === true) {
           _this4.utilsService.dialog('SUCCESS', 'Éxito', res.message.description, '/admin/users/admin-empresas');
         } else {
           _this4.utilsService.dialog('ERROR', 'Error', res.message.description);
@@ -5180,7 +5180,7 @@ class EditEmpresaComponent {
     return this.companyService.updateComapny(this.companyId, companyData).then( /*#__PURE__*/function () {
       var _ref3 = (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (res) {
         // console.log(res);
-        if (res.result === true) {
+        if (res.success === true) {
           _this5.utilsService.dialog('SUCCESS', 'Éxito', res.message.description, '/admin/users/admin-empresas');
         } else {
           _this5.utilsService.dialog('ERROR', 'Error', res.message.description);
@@ -13520,15 +13520,18 @@ class ReporteriaComponent {
         _this3.loading = true;
         _this3.list = [];
         _this3.categoriesHeading = [];
+        _this3.statusSelected = 'active';
         response = yield _this3.promotionsService.getAllPromotions(_this3.statusSelected, null, 0, 1000, null, null);
         _this3.setDropdownFilter(response, 'promotion');
         _this3.loading = false;
       } else if (type === 'Constancia de asociado' || type === 'Certificado de puntos') {
+        _this3.statusSelected = 'active';
         response = {
           result: JSON.parse(localStorage.getItem('companies'))
         };
         _this3.setDropdownFilter(response, 'associated&points');
       } else if (type === 'Encuestas eventos') {
+        _this3.statusSelected = 'active';
         response = {
           result: JSON.parse(localStorage.getItem('events'))
         };
@@ -13548,6 +13551,7 @@ class ReporteriaComponent {
           id: 'finished',
           name: 'Finalizado'
         }];
+        _this3.statusSelected = 'active';
       } else if (type === 'Promoción') {
         _this3.statusList = [{
           id: 'active',
@@ -13669,7 +13673,6 @@ class ReporteriaComponent {
       }
     })();
   }
-  // DONE (Fix Código)
   getPromotions(download) {
     var _this5 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
@@ -13710,7 +13713,6 @@ class ReporteriaComponent {
       _this5.loading = false;
     })();
   }
-  // DONE
   getPromotionsSpecific(download) {
     var _this6 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
@@ -13757,7 +13759,6 @@ class ReporteriaComponent {
       _this6.loading = false;
     })();
   }
-  // need fix. (sector, comisión <- testear con datos que existan)
   getAssociatedConstance(download) {
     var _this7 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
@@ -13804,7 +13805,6 @@ class ReporteriaComponent {
       _this7.loading = false;
     })();
   }
-  // Done
   getPointsCertificate(download) {
     var _this8 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
@@ -13930,14 +13930,15 @@ class ReporteriaComponent {
       _this9.loading = false;
     })();
   }
-  // need fix (Asistencia de asociados y total de empresas)
   getEventReport(download) {
     var _this10 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
         _this10.loading = true;
-        // const response = await this.reportService.getEventReport(0, 20, '2023-01-01', '2023-07-20', 'active', 'JUNTA DIRECTIVA SECTOR DE ACUICULTURA Y PESCA MARZO 2023');
-        const response = yield _this10.reportService.getEventReport(download ? 0 : _this10.pageNumber, download ? _this10.count : _this10.pageSize, _this10.date_start || null, _this10.date_end || null, _this10.statusSelected, _this10.filter?.name || null);
+        // const response = await this.reportService.getEventReport(0, 20, '2023-01-01', '2023-07-20', 'active', null, event_id); // 'JUNTA DIRECTIVA SECTOR DE ACUICULTURA Y PESCA MARZO 2023'
+        const response = yield _this10.reportService.getEventReport(download ? 0 : _this10.pageNumber, download ? _this10.count : _this10.pageSize, _this10.date_start || null, _this10.date_end || null, _this10.statusSelected, null,
+        // || this.filter?.name,
+        Number(_this10.filter.id));
         console.log(response);
         if (response?.success === true) {
           if (response?.count > 0) {
@@ -14120,7 +14121,7 @@ ReporteriaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngForOf", ctx.statisticsList);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngModel", ctx.statusSelected)("disabled", ctx.statisticsSelected === "Constancia de asociado" || ctx.statisticsSelected === "Certificado de puntos" || ctx.statisticsSelected === "Encuestas eventos" || ctx.statisticsSelected === "Promoci\u00F3n en especifico");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngModel", ctx.statusSelected)("disabled", ctx.statisticsSelected === "Constancia de asociado" || ctx.statisticsSelected === "Certificado de puntos" || ctx.statisticsSelected === "Encuestas eventos" || ctx.statisticsSelected === "Promoci\u00F3n en especifico" || ctx.statisticsSelected === "Eventos");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngForOf", ctx.statusList);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
@@ -24197,10 +24198,6 @@ class ReportService {
         (company_id != null) && (this.params = this.params.set('companyId', company_id));
         this.options = { headers: this.headers, params: this.params };
         return this.http.get(`${this.url}registro/users/report/all-certificates`, this.options).toPromise();
-        // TEST SUCCESS
-        // const test = 'https://agexportplus.dev.tribalworldwide.gt/api/v1/registro/users/report/all-certificates?startDate=2023-01-01&endDate=2023-07-31&companyId=10'
-        // const test = 'https://agexportplus.dev.tribalworldwide.gt/api/v1/registro/users/report/all-certificates?startDate=2023-01-01&endDate=2023-07-10'
-        // return this.http.get(test, this.options).toPromise();
     }
     // Certificado de puntos
     getPointsCertificate(page, size, startDate, endDate, company_id, status) {
@@ -24213,10 +24210,6 @@ class ReportService {
         (status != null) && (this.params = this.params.set('status', status));
         this.options = { headers: this.headers, params: this.params };
         return this.http.get(`${this.url}puntos/points/report-certificates/`, this.options).toPromise();
-        // TEST SUCCESS
-        // const test = 'https://agexportplus.dev.tribalworldwide.gt/api/v1/puntos/points/report-certificates?companyId=3&startDate=2023-03-21&endDate=2023-03-31&status=active';
-        // const test = 'https://agexportplus.dev.tribalworldwide.gt/api/v1/puntos/points/report-certificates?companyId=1&startDate=2023-03-01&endDate=2023-07-10';
-        // return this.http.get(test, this.options).toPromise();
     }
     // Encuestas eventos
     getEventSurveys(event_id, page, size, startDate, endDate, title, eventId) {
@@ -24228,12 +24221,9 @@ class ReportService {
         (event_id != null) && (this.params = this.params.set('eventId', event_id));
         this.options = { headers: this.headers, params: this.params };
         return this.http.get(`${this.url}eventos/surveys/report/${event_id}`, this.options).toPromise();
-        // TEST SUCCESS
-        // const test = 'https://agexportplus.dev.tribalworldwide.gt/api/v1/eventos/surveys/report/167?startDate=2023-03-01&endDate=2023-07-10'
-        // return this.http.get(test, this.options).toPromise();
     }
     // Eventos reporte
-    getEventReport(page, size, startDate, endDate, status, name) {
+    getEventReport(page, size, startDate, endDate, status, name, event_id) {
         this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
         (page != null) && (this.params = this.params.set('page', page));
         (size != null) && (this.params = this.params.set('size', size));
@@ -24241,10 +24231,9 @@ class ReportService {
         (endDate != null) && (this.params = this.params.set('endDate', endDate));
         (status != null) && (this.params = this.params.set('status', status));
         (name != null) && (this.params = this.params.set('name', name));
+        (event_id != null) && (this.params = this.params.set('eventId', event_id));
         this.options = { headers: this.headers, params: this.params };
         return this.http.get(`${this.url}eventos/events/report/data`, this.options).toPromise();
-        // const test = 'http://agexportplus.dev.tribalworldwide.gt/api/v1/eventos/events/report?company_id=3&startDate=2023-03-21&endDate=2023-03-31&status=active&name=promo'
-        // return this.http.get(test, this.options).toPromise();
     }
 }
 ReportService.ɵfac = function ReportService_Factory(t) { return new (t || ReportService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient)); };
