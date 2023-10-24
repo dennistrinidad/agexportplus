@@ -758,8 +758,8 @@ EditAdminsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
     }
   },
   decls: 82,
-  vars: 20,
-  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], [1, "col-12"], [1, "card", "mb-5"], [1, "card-body"], [1, "card-title", "mb-4"], ["form", "ngForm"], [1, "row", "p-4"], [1, "col-12", "col-lg-6"], [1, "col-md-12", "col-lg-6", "mb-3"], [1, "form-label", "mb-3"], ["name", "firstName", "required", "", "placeholder", "Nombre del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["name", "secondName", "placeholder", "Segundo nombre del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "firstLastname", "required", "", "placeholder", "Apellido del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "secondLastname", "placeholder", "Segundo apellido del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-md-12", "mb-3"], ["name", "puesto", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["value", "null", "disabled", ""], [3, "value", 4, "ngFor", "ngForOf"], [1, "col-12", "col-md-6", "mb-3"], ["type", "text", "name", "businessPhone", "placeholder", "Tel\u00E9fono Empresa", "pattern", "[+]{0,1}[\\d]+[ ]{0,1}[\\d]+[-]{0,1}[\\d]+", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "text", "name", "phone", "placeholder", "Celular", "pattern", "[+]{0,1}[\\d]+[ ]{0,1}[\\d]+[-]{0,1}[\\d]+", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "mb-3"], ["name", "role", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "area", "placeholder", "Seleccione...", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["type", "email", "name", "email", "required", "", "placeholder", "Correo electr\u00F3nico", 1, "form-control", 3, "ngModel", "ngModelChange"], ["class", "col-12 col-md-6 mb-3", 4, "ngIf"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "btn-outline-secondary", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-edituseradmin", 3, "click"], [1, "save-icon"], [1, "err-msg"], [3, "value"], [1, "d-grid", "gap-2", "mx-auto"], ["type", "button", "name", "recoverPassword", 1, "btn", "btn-secondary", "w-100", "btn-password", 3, "disabled", "click"]],
+  vars: 21,
+  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], [1, "col-12"], [1, "card", "mb-5"], [1, "card-body"], [1, "card-title", "mb-4"], ["form", "ngForm"], [1, "row", "p-4"], [1, "col-12", "col-lg-6"], [1, "col-md-12", "col-lg-6", "mb-3"], [1, "form-label", "mb-3"], ["name", "firstName", "required", "", "placeholder", "Nombre del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["name", "secondName", "placeholder", "Segundo nombre del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "firstLastname", "required", "", "placeholder", "Apellido del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "secondLastname", "placeholder", "Segundo apellido del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-md-12", "mb-3"], ["name", "puesto", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["value", "null", "disabled", ""], [3, "value", 4, "ngFor", "ngForOf"], [1, "col-12", "col-md-6", "mb-3"], ["type", "text", "name", "businessPhone", "placeholder", "Tel\u00E9fono Empresa", "pattern", "[+]{0,1}[\\d]+[ ]{0,1}[\\d]+[-]{0,1}[\\d]+", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "text", "name", "phone", "placeholder", "Celular", "pattern", "[+]{0,1}[\\d]+[ ]{0,1}[\\d]+[-]{0,1}[\\d]+", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "mb-3"], ["name", "role", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "area", "placeholder", "Seleccione...", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["type", "email", "name", "email", "required", "", "placeholder", "Correo electr\u00F3nico", 1, "form-control", 3, "ngModel", "ngModelChange"], ["class", "col-12 col-md-6 mb-3", 4, "ngIf"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "btn-outline-secondary", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-edituseradmin", 3, "disabled", "click"], [1, "save-icon"], [1, "err-msg"], [3, "value"], [1, "d-grid", "gap-2", "mx-auto"], ["type", "button", "name", "recoverPassword", 1, "btn", "btn-secondary", "w-100", "btn-password", 3, "disabled", "click"]],
   template: function EditAdminsComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](0, EditAdminsComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
@@ -898,6 +898,7 @@ EditAdminsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()()();
     }
     if (rf & 2) {
+      const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](13);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.loading);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](20);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx.user.firstName);
@@ -937,6 +938,8 @@ EditAdminsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.validation_msg("email"));
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", !ctx.creatingUser);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", _r1.invalid);
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.PatternValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgModel, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgForm, _core_loading_loading_component__WEBPACK_IMPORTED_MODULE_3__.LoadingComponent],
@@ -12287,7 +12290,7 @@ class AdminPatrocinadoresComponent {
     this.utilsService = utilsService;
     this.sponsorService = sponsorService;
     this.list = [];
-    this.pageSize = 15;
+    this.pageSize = 5;
     this.totalPages = 0;
     this.pageNumber = 0;
     this.eventID = 0;
@@ -13407,14 +13410,19 @@ class ReporteriaComponent {
       _this.loading = true;
       _this.statusSelected = _this.statusList[0].id;
       _this.statisticsSelected = _this.statisticsList[0];
-      const countCompany = yield _this.companyService.getListCompany(0, 0);
+      const countCompany = yield _this.companyService.getListCompany(0, 1000);
       if (countCompany.success) {
-        const companies = yield _this.companyService.getListCompany(0, countCompany?.count || 2000); // (0, countCompany?.count)
-        localStorage.setItem('companies', JSON.stringify(companies?.result));
+        const companies = yield _this.companyService.getListCompany(0, countCompany?.count || 15000); // (0, countCompany?.count)
+        // const companiesArray = companies?.result.map((e: any) => {
+        //   return { id: e.id, name: e.nombreComercial };
+        // });
+        const l = companies.result.length = 5;
+        localStorage.setItem('companies', JSON.stringify(l));
+        localStorage.setItem('companiesAll', JSON.stringify(countCompany?.result));
       }
       const countEvent = yield _this.eventService.getEvents(null, 0, null, null);
       if (countEvent.success) {
-        const events = yield _this.eventService.getEvents(null, countEvent?.count || 1000, null, null);
+        const events = yield _this.eventService.getEvents(null, countEvent?.count || 15000, null, null);
         const eventsArray = events.result.map(e => {
           return {
             id: e.id,
@@ -13422,6 +13430,7 @@ class ReporteriaComponent {
           };
         });
         localStorage.setItem('events', JSON.stringify(eventsArray));
+        localStorage.setItem('eventsAll', JSON.stringify(eventsArray));
       }
       const role = sessionStorage.getItem('Role')?.toString();
       const permissions = yield _this.userService.getCurrentUser(sessionStorage.getItem('Token'));
@@ -13513,7 +13522,7 @@ class ReporteriaComponent {
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       let response;
       const type = event.target.value;
-      _this3.selectedFilterItems = [];
+      _this3.selectedFilterItem = [];
       _this3.dropdownFilterItems = [{
         id: null,
         name: ''
@@ -14019,7 +14028,7 @@ class ReporteriaComponent {
     }
   }
   onDeSelect() {
-    this.selectedFilterItems = [];
+    this.selectedFilterItem = [];
     this.filter = {
       id: null,
       name: null
@@ -25060,7 +25069,7 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.debugging
     window.console.log = () => { };
 }
 ;
-// window.console.log = () => {}
+window.console.log = () => { };
 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.platformBrowser().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule)
     .catch(err => console.error(err));
 
