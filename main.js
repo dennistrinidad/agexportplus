@@ -3111,7 +3111,7 @@ EditConferenciasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](67, EditConferenciasComponent_div_67_Template, 2, 0, "div", 18);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](68, "div", 13)(69, "label", 14);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](70, "Enlace del evento en l\u00EDnea*");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](70, "Enlace del evento en l\u00EDnea");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](71, "input", 28);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("ngModelChange", function EditConferenciasComponent_Template_input_ngModelChange_71_listener($event) {
@@ -4690,7 +4690,7 @@ function EditEmpresaComponent_div_76_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function EditEmpresaComponent_div_76_Template_input_click_4_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r17);
       const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r16.changeTest(true));
+      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r16.changePartner(true));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "label", 75);
@@ -4700,7 +4700,7 @@ function EditEmpresaComponent_div_76_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function EditEmpresaComponent_div_76_Template_input_click_7_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r17);
       const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r18.changeTest(false));
+      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r18.changePartner(false));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](8, "label", 76);
@@ -4924,11 +4924,12 @@ class EditEmpresaComponent {
           _this.companyData.status = 0;
           _this.companyData.socio = false;
         }
-        _this.permission = _this.permissions();
+        _this.permission = yield _this.permissions();
       } else {
         _this.utilsService.dialog('ERROR', 'Error', 'Inicia sesión con un usuario válido.');
         _this.goToPage('/login');
       }
+      _this.setDropdownSettings();
     })();
   }
   permissions() {
@@ -4955,7 +4956,18 @@ class EditEmpresaComponent {
       return false;
     }
   }
-  changeTest(status) {
+  setDropdownSettings() {
+    this.dropdownSettings = {
+      idField: 'id',
+      textField: 'name',
+      itemsShowLimit: 1,
+      enableCheckAll: false,
+      allowSearchFilter: false,
+      closeDropDownOnSelection: true,
+      singleSelection: !this.companyUpdateMode
+    };
+  }
+  changePartner(status) {
     this.companyData.socio = status;
     this.companyData.status = Number(status);
   }
@@ -13158,92 +13170,121 @@ function ReporteriaComponent_app_loading_0_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelement"](0, "app-loading");
   }
 }
-function ReporteriaComponent_div_23_Template(rf, ctx) {
+function ReporteriaComponent_ng_multiselect_dropdown_12_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 28);
+    const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "ng-multiselect-dropdown", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function ReporteriaComponent_ng_multiselect_dropdown_12_Template_ng_multiselect_dropdown_ngModelChange_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r13);
+      const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r12.selectedFilterItem = $event);
+    })("onSelect", function ReporteriaComponent_ng_multiselect_dropdown_12_Template_ng_multiselect_dropdown_onSelect_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r13);
+      const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r14.onItemSelect($event));
+    })("onDeSelect", function ReporteriaComponent_ng_multiselect_dropdown_12_Template_ng_multiselect_dropdown_onDeSelect_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r13);
+      const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r15.onDeSelect());
+    })("onFilterChange", function ReporteriaComponent_ng_multiselect_dropdown_12_Template_ng_multiselect_dropdown_onFilterChange_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r13);
+      const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r16.dropdownFilterItemsAll);
+    })("onDropDownClose", function ReporteriaComponent_ng_multiselect_dropdown_12_Template_ng_multiselect_dropdown_onDropDownClose_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r13);
+      const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r17.onDropDownClose());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("placeholder", "Seleccione...")("settings", ctx_r1.dropdownSettings)("data", ctx_r1.dropdownFilterItems)("ngModel", ctx_r1.selectedFilterItem)("disabled", ctx_r1.dropdownFilterItemsAux.length <= 1 || ctx_r1.statisticsSelected == "Seleccione" || ctx_r1.statisticsSelected == "Promoci\u00F3n");
+  }
+}
+function ReporteriaComponent_ng_multiselect_dropdown_13_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r19 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "ng-multiselect-dropdown", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function ReporteriaComponent_ng_multiselect_dropdown_13_Template_ng_multiselect_dropdown_ngModelChange_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r19);
+      const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r18.selectedFilterItem = $event);
+    })("onSelect", function ReporteriaComponent_ng_multiselect_dropdown_13_Template_ng_multiselect_dropdown_onSelect_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r19);
+      const ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r20.onItemSelect($event));
+    })("onDeSelect", function ReporteriaComponent_ng_multiselect_dropdown_13_Template_ng_multiselect_dropdown_onDeSelect_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r19);
+      const ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r21.onDeSelect());
+    })("onFilterChange", function ReporteriaComponent_ng_multiselect_dropdown_13_Template_ng_multiselect_dropdown_onFilterChange_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r19);
+      const ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r22.onFilterChange($event));
+    })("onDropDownClose", function ReporteriaComponent_ng_multiselect_dropdown_13_Template_ng_multiselect_dropdown_onDropDownClose_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r19);
+      const ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r23.onDropDownClose());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("placeholder", "Seleccione...")("settings", ctx_r2.dropdownSettings)("data", ctx_r2.dropdownFilterItems)("ngModel", ctx_r2.selectedFilterItem)("disabled", ctx_r2.dropdownFilterItemsAux.length <= 1 || ctx_r2.statisticsSelected == "Seleccione" || ctx_r2.statisticsSelected == "Promoci\u00F3n");
+  }
+}
+function ReporteriaComponent_div_24_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1, " La fecha final no puede ser menor a la inicial.");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
 }
-function ReporteriaComponent_option_28_Template(rf, ctx) {
+function ReporteriaComponent_option_29_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "option");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const x_r10 = ctx.$implicit;
+    const x_r24 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](x_r10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](x_r24);
   }
 }
-function ReporteriaComponent_option_33_Template(rf, ctx) {
+function ReporteriaComponent_option_34_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "option", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "option", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const x_r11 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpropertyInterpolate"]("value", x_r11.id);
+    const x_r25 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpropertyInterpolate"]("value", x_r25.id);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](x_r11.name);
-  }
-}
-function ReporteriaComponent_button_35_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "button", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1, "Buscar");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵclassMap"](ctx_r4.css_button);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](x_r25.name);
   }
 }
 function ReporteriaComponent_button_36_Template(rf, ctx) {
   if (rf & 1) {
-    const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "button", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_button_36_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r13);
-      const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r12.searchData(false));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1, "Buscar");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵclassMap"](ctx_r5.css_button);
-  }
-}
-function ReporteriaComponent_button_37_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "button", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_button_37_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r15);
-      const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r14.searchData(false));
-    });
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1, "Buscar");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵclassMap"](ctx_r6.css_button);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("disabled", ctx_r6.date_end == undefined || ctx_r6.date_start == undefined || (ctx_r6.filter == null ? null : ctx_r6.filter.id) === null);
   }
 }
-function ReporteriaComponent_button_38_Template(rf, ctx) {
+function ReporteriaComponent_button_37_Template(rf, ctx) {
   if (rf & 1) {
-    const _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
+    const _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "button", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_button_38_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r17);
-      const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r16.searchData(false));
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_button_37_Template_button_click_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r27);
+      const ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r26.searchData(false));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1, "Buscar");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
@@ -13251,10 +13292,45 @@ function ReporteriaComponent_button_38_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵclassMap"](ctx_r7.css_button);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("disabled", (ctx_r7.filter == null ? null : ctx_r7.filter.id) === null || ctx_r7.date_end == undefined || ctx_r7.date_start == undefined);
   }
 }
-function ReporteriaComponent_div_39_ng_container_9_Template(rf, ctx) {
+function ReporteriaComponent_button_38_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r29 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "button", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_button_38_Template_button_click_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r29);
+      const ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r28.searchData(false));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1, "Buscar");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵclassMap"](ctx_r8.css_button);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("disabled", ctx_r8.date_end == undefined || ctx_r8.date_start == undefined || (ctx_r8.filter == null ? null : ctx_r8.filter.id) === null);
+  }
+}
+function ReporteriaComponent_button_39_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r31 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "button", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_button_39_Template_button_click_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r31);
+      const ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r30.searchData(false));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](1, "Buscar");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵclassMap"](ctx_r9.css_button);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("disabled", (ctx_r9.filter == null ? null : ctx_r9.filter.id) === null || ctx_r9.date_end == undefined || ctx_r9.date_start == undefined);
+  }
+}
+function ReporteriaComponent_div_40_ng_container_9_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "th");
@@ -13263,12 +13339,12 @@ function ReporteriaComponent_div_39_ng_container_9_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const each_r21 = ctx.$implicit;
+    const each_r35 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate1"](" ", each_r21, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate1"](" ", each_r35, " ");
   }
 }
-function ReporteriaComponent_div_39_tr_11_ng_container_1_Template(rf, ctx) {
+function ReporteriaComponent_div_40_tr_11_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "td");
@@ -13277,93 +13353,93 @@ function ReporteriaComponent_div_39_tr_11_ng_container_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const x_r25 = ctx.$implicit;
-    const j_r26 = ctx.index;
+    const x_r39 = ctx.$implicit;
+    const j_r40 = ctx.index;
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵclassMapInterpolate1"]("group", j_r26, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵclassMapInterpolate1"]("group", j_r40, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate1"](" ", x_r25.value, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate1"](" ", x_r39.value, " ");
   }
 }
-function ReporteriaComponent_div_39_tr_11_Template(rf, ctx) {
+function ReporteriaComponent_div_40_tr_11_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "tr");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](1, ReporteriaComponent_div_39_tr_11_ng_container_1_Template, 3, 4, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](1, ReporteriaComponent_div_40_tr_11_ng_container_1_Template, 3, 4, "ng-container", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](2, "keyvalue");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r22 = ctx.$implicit;
-    const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](2);
+    const item_r36 = ctx.$implicit;
+    const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind2"](2, 1, item_r22, ctx_r19.originalOrder));
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind2"](2, 1, item_r36, ctx_r33.originalOrder));
   }
 }
-function ReporteriaComponent_div_39_div_13_Template(rf, ctx) {
+function ReporteriaComponent_div_40_div_13_Template(rf, ctx) {
   if (rf & 1) {
-    const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 39)(1, "i", 40);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_div_39_div_13_Template_i_click_1_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r28);
-      const ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r27.onLeft());
+    const _r42 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 40)(1, "i", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_div_40_div_13_Template_i_click_1_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r42);
+      const ctx_r41 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r41.onLeft());
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](2, "p", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](2, "p", 42);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](4, "i", 42);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_div_39_div_13_Template_i_click_4_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r28);
-      const ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r29.onRight());
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](4, "i", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_div_40_div_13_Template_i_click_4_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r42);
+      const ctx_r43 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r43.onRight());
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](2);
+    const ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate2"]("P\u00E1gina ", ctx_r20.pageNumber + 1, " de ", ctx_r20.totalPages, "");
-  }
-}
-function ReporteriaComponent_div_39_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 33)(1, "div", 3)(2, "div", 4)(3, "div", 5)(4, "div", 34)(5, "div", 35)(6, "table", 36)(7, "thead")(8, "tr");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](9, ReporteriaComponent_div_39_ng_container_9_Template, 3, 1, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](10, "tbody");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](11, ReporteriaComponent_div_39_tr_11_Template, 3, 4, "tr", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](12, "div", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](13, ReporteriaComponent_div_39_div_13_Template, 5, 2, "div", 38);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()()()();
-  }
-  if (rf & 2) {
-    const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngForOf", ctx_r8.categoriesHeading);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngForOf", ctx_r8.list);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngIf", ctx_r8.selectedFilter <= 0 || ctx_r8.selectedFilter == null || ctx_r8.selectedFilter == "null");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate2"]("P\u00E1gina ", ctx_r34.pageNumber + 1, " de ", ctx_r34.totalPages, "");
   }
 }
 function ReporteriaComponent_div_40_Template(rf, ctx) {
   if (rf & 1) {
-    const _r31 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 43)(1, "div", 44)(2, "button", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_div_40_Template_button_click_2_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r31);
-      const ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r30.downloadToExcel());
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 34)(1, "div", 3)(2, "div", 4)(3, "div", 5)(4, "div", 35)(5, "div", 36)(6, "table", 37)(7, "thead")(8, "tr");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](9, ReporteriaComponent_div_40_ng_container_9_Template, 3, 1, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](10, "tbody");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](11, ReporteriaComponent_div_40_tr_11_Template, 3, 4, "tr", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](12, "div", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](13, ReporteriaComponent_div_40_div_13_Template, 5, 2, "div", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()()()();
+  }
+  if (rf & 2) {
+    const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngForOf", ctx_r10.categoriesHeading);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngForOf", ctx_r10.list);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngIf", ctx_r10.selectedFilter <= 0 || ctx_r10.selectedFilter == null || ctx_r10.selectedFilter == "null");
+  }
+}
+function ReporteriaComponent_div_41_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r45 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 44)(1, "div", 45)(2, "button", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function ReporteriaComponent_div_41_Template_button_click_2_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵrestoreView"](_r45);
+      const ctx_r44 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵresetView"](ctx_r44.downloadToExcel());
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](3, "Descargar Reporte");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
-    const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
+    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵclassMap"](ctx_r9.css_button);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵclassMap"](ctx_r11.css_button);
   }
 }
 class ReporteriaComponent {
@@ -13410,7 +13486,7 @@ class ReporteriaComponent {
       singleSelection: true,
       allowSearchFilter: true,
       textField: 'name',
-      allowRemoteDataSearch: false,
+      allowRemoteDataSearch: true,
       closeDropDownOnSelection: true,
       searchPlaceholderText: 'Buscar',
       noDataAvailablePlaceholderText: 'Busqueda sin resultados.'
@@ -14034,9 +14110,16 @@ class ReporteriaComponent {
   onDropDownClose() {
     this.dropdownFilterItems = this.dropdownFilterItemsAux;
   }
+  // https://www.youtube.com/watch?v=jyYLZHGPTG4
+  // https://github.com/NileshPatel17/ng-multiselect-dropdown/pull/185
+  // https://github.com/NileshPatel17/ng-multiselect-dropdown/issues/383
+  // https://primeng.org/multiselect
+  // https://stackoverflow.com/questions/60597819/how-to-show-searchfilter-textbox-even-there-is-no-data-loaded-in-angular-multise
   onFilterChange($event) {
     var _this11 = this;
-    const value = $event.trim().toLowerCase();
+    // const value: string = (($event).trim()).toLowerCase();
+    let value = $event.trim().toLowerCase();
+    value = value.replace(' /g', '');
     setTimeout( /*#__PURE__*/(0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       yield _this11.onFilter(value);
     }), 500);
@@ -14044,7 +14127,8 @@ class ReporteriaComponent {
   onFilter(value) {
     var _this12 = this;
     return (0,_Users_tribal_Documents_TRIBAL_ADMIN_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      if (value.length >= 3 && _this12.dropdownFilterItems.length > 5) {
+      if (value.length >= 2) {
+        //&& this.dropdownFilterItems.length > 5
         _this12.dropdownFilterItems = yield _this12.dropdownFilterItemsAll.filter((d, index) => {
           if (d.name !== null) {
             if (d.name.toLowerCase().indexOf(value) !== -1) {
@@ -14069,83 +14153,75 @@ ReporteriaComponent.ɵfac = function ReporteriaComponent_Factory(t) {
 ReporteriaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineComponent"]({
   type: ReporteriaComponent,
   selectors: [["app-reporteria"]],
-  decls: 41,
-  vars: 20,
-  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "py-5", 2, "max-width", "none"], [1, "row", "mb-3"], [1, "col-12"], [1, "card", "my-5"], [1, "card-body"], [1, "card-title", "mb-4"], [1, "row", "px-4", "py-0"], [1, "col-12", "col-md-5", "mb-3"], [1, "custom-dropdown", 3, "placeholder", "settings", "data", "ngModel", "disabled", "ngModelChange", "onSelect", "onDeSelect", "onFilterChange", "onDropDownClose"], [1, "col-12", "col-md-7", "mb-3"], [1, "row", "justify-content-end"], [1, "col-12", "col-md-6", "col-lg-4"], [1, "form-label", "mb-3"], ["type", "date", "onkeydown", "return false", "name", "date_start", "onkeydown", "return false", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "date", "onkeydown", "return false", "name", "date_end", "onkeydown", "return false", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["class", "err-msg text-right", 4, "ngIf"], ["name", "type", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], [4, "ngFor", "ngForOf"], [1, "col-12", "col-md-4", "col-lg-5", "mb-3"], ["name", "status", 1, "form-control", 3, "ngModel", "disabled", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [1, "col-12", "col-md-3", "col-lg-2", "mb-3", "m-auto", "text-center"], ["disabled", "", 3, "class", 4, "ngIf"], [3, "class", "click", 4, "ngIf"], [3, "class", "disabled", "click", 4, "ngIf"], ["class", "row mb-1", 4, "ngIf"], ["class", "row mb-5 justify-content-end", 4, "ngIf"], [1, "err-msg", "text-right"], [3, "value"], ["disabled", ""], [3, "click"], [3, "disabled", "click"], [1, "row", "mb-1"], [1, "col-12", "mt-5", "mb-2"], [1, "table-default", 2, "overflow-x", "auto"], ["border", "1", 1, "content-table"], [1, "col-12", "mb-4"], ["class", "table-pagination", 4, "ngIf"], [1, "table-pagination"], ["id", "back", 1, "btn-arrow", "btn-arrow-left", 3, "click"], [1, "pagination-text"], ["id", "next", 1, "btn-arrow", "btn-arrow-right", 3, "click"], [1, "row", "mb-5", "justify-content-end"], [1, "col-3"]],
+  decls: 42,
+  vars: 17,
+  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "py-5", 2, "max-width", "none"], [1, "row", "mb-3"], [1, "col-12"], [1, "card", "my-5"], [1, "card-body"], [1, "card-title", "mb-4"], [1, "row", "px-4", "py-0"], [1, "col-12", "col-md-5", "mb-3"], [1, "form-label", "mb-3"], ["class", "custom-dropdown", 3, "placeholder", "settings", "data", "ngModel", "disabled", "ngModelChange", "onSelect", "onDeSelect", "onFilterChange", "onDropDownClose", 4, "ngIf"], [1, "col-12", "col-md-7", "mb-3"], [1, "row", "justify-content-end"], [1, "col-12", "col-md-6", "col-lg-4"], ["type", "date", "onkeydown", "return false", "name", "date_start", "onkeydown", "return false", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "date", "onkeydown", "return false", "name", "date_end", "onkeydown", "return false", "placeholder", "dd-mm-yyyy", 1, "form-control", 3, "ngModel", "ngModelChange"], ["class", "err-msg text-right", 4, "ngIf"], ["name", "type", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], [4, "ngFor", "ngForOf"], [1, "col-12", "col-md-4", "col-lg-5", "mb-3"], ["name", "status", 1, "form-control", 3, "ngModel", "disabled", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [1, "col-12", "col-md-3", "col-lg-2", "mb-3", "m-auto", "text-center"], ["disabled", "", 3, "class", 4, "ngIf"], [3, "class", "click", 4, "ngIf"], [3, "class", "disabled", "click", 4, "ngIf"], ["class", "row mb-1", 4, "ngIf"], ["class", "row mb-5 justify-content-end", 4, "ngIf"], [1, "custom-dropdown", 3, "placeholder", "settings", "data", "ngModel", "disabled", "ngModelChange", "onSelect", "onDeSelect", "onFilterChange", "onDropDownClose"], [1, "err-msg", "text-right"], [3, "value"], ["disabled", ""], [3, "click"], [3, "disabled", "click"], [1, "row", "mb-1"], [1, "col-12", "mt-5", "mb-2"], [1, "table-default", 2, "overflow-x", "auto"], ["border", "1", 1, "content-table"], [1, "col-12", "mb-4"], ["class", "table-pagination", 4, "ngIf"], [1, "table-pagination"], ["id", "back", 1, "btn-arrow", "btn-arrow-left", 3, "click"], [1, "pagination-text"], ["id", "next", 1, "btn-arrow", "btn-arrow-right", 3, "click"], [1, "row", "mb-5", "justify-content-end"], [1, "col-3"]],
   template: function ReporteriaComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](0, ReporteriaComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "div", 4)(5, "div", 5)(6, "h5", 6);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](7, "Reportes");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](8, "div", 7)(9, "div", 8)(10, "label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](8, "div", 7)(9, "div", 8)(10, "label", 9);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](11, "Nombre de la actividad");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](12, "ng-multiselect-dropdown", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function ReporteriaComponent_Template_ng_multiselect_dropdown_ngModelChange_12_listener($event) {
-        return ctx.selectedFilterItem = $event;
-      })("onSelect", function ReporteriaComponent_Template_ng_multiselect_dropdown_onSelect_12_listener($event) {
-        return ctx.onItemSelect($event);
-      })("onDeSelect", function ReporteriaComponent_Template_ng_multiselect_dropdown_onDeSelect_12_listener() {
-        return ctx.onDeSelect();
-      })("onFilterChange", function ReporteriaComponent_Template_ng_multiselect_dropdown_onFilterChange_12_listener($event) {
-        return ctx.onFilterChange($event);
-      })("onDropDownClose", function ReporteriaComponent_Template_ng_multiselect_dropdown_onDropDownClose_12_listener() {
-        return ctx.onDropDownClose();
-      });
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](13, "div", 10)(14, "div", 11)(15, "div", 12)(16, "label", 13);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](17, "Fecha de inicio");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](12, ReporteriaComponent_ng_multiselect_dropdown_12_Template, 1, 5, "ng-multiselect-dropdown", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](13, ReporteriaComponent_ng_multiselect_dropdown_13_Template, 1, 5, "ng-multiselect-dropdown", 10);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](18, "input", 14);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function ReporteriaComponent_Template_input_ngModelChange_18_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](14, "div", 11)(15, "div", 12)(16, "div", 13)(17, "label", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](18, "Fecha de inicio");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](19, "input", 14);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function ReporteriaComponent_Template_input_ngModelChange_19_listener($event) {
         return ctx.date_start = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](19, "div", 12)(20, "label", 13);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](21, "Fecha final");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](20, "div", 13)(21, "label", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](22, "Fecha final");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](22, "input", 15);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function ReporteriaComponent_Template_input_ngModelChange_22_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](23, "input", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function ReporteriaComponent_Template_input_ngModelChange_23_listener($event) {
         return ctx.date_end = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](23, ReporteriaComponent_div_23_Template, 2, 0, "div", 16);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](24, ReporteriaComponent_div_24_Template, 2, 0, "div", 16);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](24, "div", 8)(25, "label", 13);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](26, "Seleccione la estad\u00EDstica");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](25, "div", 8)(26, "label", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](27, "Seleccione la estad\u00EDstica");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](27, "select", 17);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function ReporteriaComponent_Template_select_ngModelChange_27_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](28, "select", 17);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function ReporteriaComponent_Template_select_ngModelChange_28_listener($event) {
         return ctx.statisticsSelected = $event;
-      })("change", function ReporteriaComponent_Template_select_change_27_listener($event) {
+      })("change", function ReporteriaComponent_Template_select_change_28_listener($event) {
         return ctx.statistics($event);
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](28, ReporteriaComponent_option_28_Template, 2, 1, "option", 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](29, ReporteriaComponent_option_29_Template, 2, 1, "option", 18);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](29, "div", 19)(30, "label", 13);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](31, "Estatus");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](30, "div", 19)(31, "label", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](32, "Estatus");
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](32, "select", 20);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function ReporteriaComponent_Template_select_ngModelChange_32_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](33, "select", 20);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("ngModelChange", function ReporteriaComponent_Template_select_ngModelChange_33_listener($event) {
         return ctx.statusSelected = $event;
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](33, ReporteriaComponent_option_33_Template, 2, 2, "option", 21);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](34, ReporteriaComponent_option_34_Template, 2, 2, "option", 21);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](34, "div", 22);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](35, ReporteriaComponent_button_35_Template, 2, 3, "button", 23);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](36, ReporteriaComponent_button_36_Template, 2, 3, "button", 24);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](37, ReporteriaComponent_button_37_Template, 2, 4, "button", 25);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](35, "div", 22);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](36, ReporteriaComponent_button_36_Template, 2, 3, "button", 23);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](37, ReporteriaComponent_button_37_Template, 2, 3, "button", 24);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](38, ReporteriaComponent_button_38_Template, 2, 4, "button", 25);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](39, ReporteriaComponent_button_39_Template, 2, 4, "button", 25);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](39, ReporteriaComponent_div_39_Template, 14, 3, "div", 26);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](40, ReporteriaComponent_div_40_Template, 4, 3, "div", 27);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](40, ReporteriaComponent_div_40_Template, 14, 3, "div", 26);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](41, ReporteriaComponent_div_41_Template, 4, 3, "div", 27);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngIf", ctx.loading);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("placeholder", "Seleccione...")("settings", ctx.dropdownSettings)("data", ctx.dropdownFilterItems)("ngModel", ctx.selectedFilterItem)("disabled", ctx.dropdownFilterItems.length <= 1 || ctx.statisticsSelected == "Seleccione" || ctx.statisticsSelected == "Promoci\u00F3n");
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngIf", ctx.dropdownFilterItemsAll.length <= 999);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngIf", ctx.dropdownFilterItemsAll.length >= 1000);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](6);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngModel", ctx.date_start);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](4);
