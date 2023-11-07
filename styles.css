@@ -8722,6 +8722,20 @@ a.text-dark:hover, a.text-dark:focus {
     background-repeat: no-repeat !important;
     background-image: url('Files-btn.png') !important;
 }
+.icon-input-delete {
+    right: 0 !important;
+    top: 47px !important;
+    width: 100px !important;
+    height: 25px !important;
+    cursor: pointer !important;
+    position: absolute !important;
+    margin-right: 22px !important;
+    display: inline-block !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-image: url('button-delete.svg') !important;
+}
 /* Input file */
 .input-file-readonly {
     background-color: white !important;
