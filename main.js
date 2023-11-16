@@ -27858,8 +27858,8 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     debugging: true,
-    url: "https://aplus-api.export.com.gt:2087/api/v1/",
-    // url: "https://agexportplus.dev.tribalworldwide.gt/api/v1/",
+    // url: "https://aplus-api.export.com.gt:2087/api/v1/", // <- Producción
+    url: "https://agexportplus.dev.tribalworldwide.gt/api/v1/",
     token: ''
     // npm run s-d -> Levantar locar la app con env dev.
     // npm run b-d -> Compilar con env dev la app.
