@@ -13355,24 +13355,24 @@ class AdminParticipantesComponent {
             const list = yield response.result.map(e => {
               let fechas = '';
               e.attendances.forEach(i => {
-                fechas += _this7.utilsService.date_pipe(i.dateAttendance, 'dd-MM-yyy') + ', ';
+                fechas += _this7.utilsService.date_pipe(i?.dateAttendance, 'dd-MM-yyy') + ', ';
               });
               fechas = fechas.slice(0, -2);
               return {
                 id: e?.id,
-                Sector: e?.sector[0]?.name,
-                Comision: e?.comision[0]?.name,
+                Sector: e?.sector != null ? e?.sector[0]?.name : '',
+                Comision: e?.comision != null ? e?.comision[0]?.name : '',
                 "Nombre Usuario": e?.nombreUsuario,
                 "Nombre Empresa": e?.nombreEmpresa,
                 "Correo electrónico": e?.email,
                 NIT: e?.nit,
-                Profesion: e.profesion,
+                Profesion: e?.profesion,
                 Asociado: e?.asociado === true ? 'Si' : 'No',
                 "Rol del usuario": e?.rol,
                 "Tipo de entrada": e?.tipoEntrada,
                 Asistencia: e?.asistencia ? 'confirmado' : 'no_confirmado',
                 Registro: Number(e?.registro),
-                Fechas: fechas
+                Fechas: 'fechas'
               };
             });
             const eventData = JSON.parse(sessionStorage.getItem('EventData')) || {};
