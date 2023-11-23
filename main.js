@@ -13350,7 +13350,7 @@ class AdminParticipantesComponent {
 
       } else {
         _this7.loading = true;
-        yield _this7.participantService.getParticipantsByEvent(0, _this7.count, _this7.eventID, null).then( /*#__PURE__*/function () {
+        yield _this7.participantService.getParticipantsByEvent(1, _this7.count, _this7.eventID, null).then( /*#__PURE__*/function () {
           var _ref3 = (0,_Volumes_Tribal_AGEXPORT_agexport_agexportplus_web_frontend_backoffice_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (response) {
             const list = yield response.result.map(e => {
               let fechas = '';
