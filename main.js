@@ -25150,12 +25150,12 @@ class EditPromocionComponent {
       this.promoData.phone = response.result?.phone;
       this.promoData.status = response.result?.status;
       this.promoData.address = response.result?.address;
+      this.promoData.referral = response.result?.referidos;
       this.promoData.limitUser = response.result?.limitUser;
       this.promoData.companyId = response.result?.companyId;
-      this.promoData.referral = response.result?.restrictions;
       this.promoData.categoryId = response.result?.categoryId;
       this.promoData.description = response.result?.description;
-      this.promoData.description = response.result?.referidos;
+      this.promoData.restrictions = response.result?.restrictions;
       this.promoData.name = response.result?.name.substring(0, 40);
       this.promoData.startHour = response.result?.startHour;
       this.promoData.finishHour = response.result?.finishHour;
@@ -25165,7 +25165,13 @@ class EditPromocionComponent {
       this.ImageThumbnailName = response.result?.thumbPromo;
       this.getQrData(this.promoData.id);
 
-      if (response.result?.roles != null && response.result?.roles != undefined) {
+      if (this.promoData.referral == true) {
+        this.publicoBox = false;
+        this.asociadoBox = false;
+        this.promoData.roles = [];
+        this.noAsociadoBox = false;
+        this.colaboradoresBox = false;
+      } else if (response.result?.roles != null && response.result?.roles != undefined) {
         this.promoData.roles = response.result?.roles.map(e => {
           return e.roleId;
         });
