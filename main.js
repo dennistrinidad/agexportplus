@@ -5695,8 +5695,7 @@ class EditEmpresaComponent {
     this.comite = [];
     this.comison = [];
     this.sectors = [];
-    this.class = ''; // [ngClass]="{'disabled' : !permission }"
-
+    this.class = '';
     this.companyId = 0;
     this.jobsList = [];
     this.loading = false;
@@ -5707,8 +5706,7 @@ class EditEmpresaComponent {
     this.permissionCRM = false;
     this.companyUpdateMode = false;
     this.permissionRole = '';
-    this.companylogo = undefined; // public permissionEnv: boolean = environment.production;
-
+    this.companylogo = undefined;
     this.dropdownSettings = {
       idField: 'id',
       textField: 'name',
@@ -5737,9 +5735,7 @@ class EditEmpresaComponent {
 
     this.originalOrder = (a, b) => {
       return 0;
-    }; // const role = sessionStorage.getItem('Role');
-    // (role === 'ROLE_SUPERADMIN') ? this.permissionRole = true : this.permissionRole = false;
-
+    };
 
     this.companyData.newImage = {
       data: '',
@@ -5753,7 +5749,6 @@ class EditEmpresaComponent {
 
     return (0,_Volumes_Tribal_AGEXPORT_CODE_FRONT_END_agexport_agexportplus_web_frontend_backoffice_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       _this.companyId = _this.utilsService.getParam('ID') || 0;
-      const accessToken = sessionStorage.getItem('Token') || undefined; // if (accessToken) {
 
       _this.loadLists();
 
@@ -5770,10 +5765,7 @@ class EditEmpresaComponent {
         _this.companyData.socio = false;
       }
 
-      _this.permission = yield _this.permissions(); // }1 else {
-      //   this.utilsService.dialog('ERROR', 'Error', 'Inicia sesión con un usuario válido.');
-      //   this.goToPage('/login');
-      // }
+      _this.permission = yield _this.permissions();
 
       _this.setDropdownSettings();
     })();
@@ -14261,16 +14253,17 @@ class EditPatrocinadoresComponent {
     this.sponsorID = 0;
     this.loading = false;
     this.disabled = false;
+    this.permissionCRM = false;
+    this.imageSizeError = false;
     this.sponsorAux = {};
     this.sponsor = {};
-    this.imageSizeError = false;
     this.eventID = Number(sessionStorage.getItem('EventID'));
     this.sponsor.newLogo = {
       data: '',
       extension: '',
       name: '',
       url: ''
-    }; // this.sponsor.logotipo = { data: '', extension: '', name: '', url: '' };
+    };
   }
 
   ngOnInit() {
@@ -14278,25 +14271,18 @@ class EditPatrocinadoresComponent {
 
     return (0,_Volumes_Tribal_AGEXPORT_CODE_FRONT_END_agexport_agexportplus_web_frontend_backoffice_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       _this.sponsorID = Number(_this.utilsService.getParam('ID'));
-      const token = sessionStorage.getItem('Token')?.toString();
 
-      if (token) {
-        if (_this.eventID > 0) {
-          if (_this.sponsorID === 0) {
-            _this.sponsor.id = 0;
-            _this.sponsor.eventId = _this.eventID;
-          } else {
-            yield _this.getOneSponsor(_this.sponsorID);
-          }
+      if (_this.eventID > 0) {
+        if (_this.sponsorID === 0) {
+          _this.sponsor.id = 0;
+          _this.sponsor.eventId = _this.eventID;
         } else {
-          _this.utilsService.dialog('ERROR', 'Alerta', '¡No tienes seleccionado un evento!');
-
-          _this.goToPage('/admin/events/calendario-eventos');
+          yield _this.getOneSponsor(_this.sponsorID);
         }
       } else {
-        _this.utilsService.dialog('ERROR', 'Error', '¡No tienes acceso!');
+        _this.utilsService.dialog('ERROR', 'Alerta', '¡No tienes seleccionado un evento!');
 
-        _this.goToPage('/login');
+        _this.goToPage('/admin/events/calendario-eventos');
       }
     })();
   }
@@ -14372,6 +14358,7 @@ class EditPatrocinadoresComponent {
         _this3.sponsor.descripcion = response?.result?.description;
         _this3.sponsor.nombreUsuario = response?.result?.nombreUsuario;
         _this3.sponsor.nombrePatrocinador = response?.result?.sponsorName;
+        response?.result?.codigoCRM != null && (_this3.permissionCRM = true);
         const phone = yield response?.result?.itemsDescription.find(x => x.title === 'Teléfono');
         const location = yield response?.result?.itemsDescription.find(x => x.title === 'Ubicación');
         const email = yield response?.result?.itemsDescription.find(x => x.title === 'Correo Electrónico');
@@ -14456,11 +14443,9 @@ class EditPatrocinadoresComponent {
     this.loading = true;
     this.disabled = true;
     this.sponsorService.createSponsorToEvent(sponsorData).then(response => {
-      // console.log(response);
       this.utilsService.dialog('SUCCESS', 'Éxito', response?.message?.descriptio || '¡Patrocinador registrado!');
       this.goToPage('/admin/events/admin-patrocinadores');
     }, error => {
-      // console.log(error);
       this.utilsService.dialog('ERROR', 'Error', error?.error?.message?.description || '¡Al registrar patrocinador!');
     }).finally(() => {
       this.loading = false;
@@ -14473,11 +14458,9 @@ class EditPatrocinadoresComponent {
     this.loading = true;
     this.disabled = true;
     this.sponsorService.updateSponsorByEvent(this.sponsorID, sponsorData).then(response => {
-      console.log(response);
       this.utilsService.dialog('SUCCESS', 'Éxito', response?.message?.descriptio || '¡Patrocinador actualizado!');
       this.goToPage('/admin/events/admin-patrocinadores');
     }, error => {
-      console.log(error);
       this.utilsService.dialog('ERROR', 'Error', error?.error?.message?.description || '¡Al actualizar patrocinador!');
     }).finally(() => {
       this.loading = false;
@@ -14506,8 +14489,8 @@ EditPatrocinadoresComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED
     }
   },
   decls: 105,
-  vars: 25,
-  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], [1, "col-12"], ["form", "ngForm"], [1, "card", "mb-5"], [1, "card-body"], [1, "card-title", "mb-4"], [1, "row", "px-4", "py-0"], [1, "col-12", "col-md-6", "mb-3"], [1, "form-label", "mb-3"], ["name", "nombrePatrocinador", "required", "", "placeholder", "Nombre de patrocinador", "disabled", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["name", "nombreUsuario", "required", "", "placeholder", "Nombre de usuario", "disabled", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "nit", "placeholder", "0000-0", "required", "", "minlength", "5", "maxlength", "10", "pattern", "[0-9]+[-][0-9 kK]*", "disabled", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "descripcion", "required", "", "placeholder", "Descripci\u00F3n", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "website", "pattern", "^https?:\\/\\/[\\w\\-]+(\\.[\\w\\-]+)+[/#?]?.*$", "required", "", "placeholder", "https://www.sitio-web.com", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "email", "required", "", "placeholder", "info@mail.com", "disabled", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "telefono", "required", "", "placeholder", "0000-0000", "disabled", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "ubicacion", "required", "", "placeholder", "Ubicaci\u00F3n", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "divider-section"], [1, "col-12", "col-lg-6", "mb-3"], [1, "col-12", "col-lg-3", "col-form-label", "form-label"], [1, "col-12", "col-lg-9"], ["name", "facebook", "placeholder", "Facebook", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "twitter", "placeholder", "Twitter", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "instagram", "placeholder", "Instagram", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "linkedIn", "placeholder", "LinkedIn", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "file", "accept", "image/*", "name", "input-images-file", "id", "input-images-file", "required", "", 1, "d-none", 3, "change", "click"], ["name", "input-images-text", "id", "input-images-text", "required", "", "readonly", "", "placeholder", "Seleccione una imagen...", 1, "form-control", "w-100", "input-file-readonly", 3, "ngModel", "ngModelChange"], ["onclick", "document.getElementById('input-images-file').click();", 1, "icon-input-file"], [1, "note-small"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "btn-outline-secondary", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], [1, "btn", "btn-primary", "px-4", "my-2", "btn-save-edituseradmin", 3, "disabled", "click"], [1, "save-icon"], [1, "err-msg"]],
+  vars: 30,
+  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], [1, "col-12"], ["form", "ngForm"], [1, "card", "mb-5"], [1, "card-body"], [1, "card-title", "mb-4"], [1, "row", "px-4", "py-0"], [1, "col-12", "col-md-6", "mb-3"], [1, "form-label", "mb-3"], ["name", "nombrePatrocinador", "required", "", "placeholder", "Nombre de patrocinador", 1, "form-control", 3, "ngModel", "disabled", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["name", "nombreUsuario", "required", "", "placeholder", "Nombre de usuario", 1, "form-control", 3, "ngModel", "disabled", "ngModelChange"], ["name", "nit", "placeholder", "0000-0", "required", "", "minlength", "5", "maxlength", "10", "pattern", "[0-9]+[-][0-9 kK]*", 1, "form-control", 3, "ngModel", "disabled", "ngModelChange"], ["name", "descripcion", "required", "", "placeholder", "Descripci\u00F3n", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "website", "pattern", "^https?:\\/\\/[\\w\\-]+(\\.[\\w\\-]+)+[/#?]?.*$", "required", "", "placeholder", "https://www.sitio-web.com", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "email", "required", "", "placeholder", "info@mail.com", 1, "form-control", 3, "ngModel", "disabled", "ngModelChange"], ["name", "telefono", "required", "", "placeholder", "0000-0000", 1, "form-control", 3, "ngModel", "disabled", "ngModelChange"], ["name", "ubicacion", "required", "", "placeholder", "Ubicaci\u00F3n", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "divider-section"], [1, "col-12", "col-lg-6", "mb-3"], [1, "col-12", "col-lg-3", "col-form-label", "form-label"], [1, "col-12", "col-lg-9"], ["name", "facebook", "placeholder", "Facebook", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "twitter", "placeholder", "Twitter", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "instagram", "placeholder", "Instagram", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "linkedIn", "placeholder", "LinkedIn", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "file", "accept", "image/*", "name", "input-images-file", "id", "input-images-file", "required", "", 1, "d-none", 3, "change", "click"], ["name", "input-images-text", "id", "input-images-text", "required", "", "readonly", "", "placeholder", "Seleccione una imagen...", 1, "form-control", "w-100", "input-file-readonly", 3, "ngModel", "ngModelChange"], ["onclick", "document.getElementById('input-images-file').click();", 1, "icon-input-file"], [1, "note-small"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "btn-outline-secondary", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], [1, "btn", "btn-primary", "px-4", "my-2", "btn-save-edituseradmin", 3, "disabled", "click"], [1, "save-icon"], [1, "err-msg"]],
   template: function EditPatrocinadoresComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](0, EditPatrocinadoresComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
@@ -14685,15 +14668,15 @@ EditPatrocinadoresComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED
 
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.loading);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](18);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx.sponsor.nombrePatrocinador);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx.sponsor.nombrePatrocinador)("disabled", ctx.permissionCRM);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.validation_msg("nombrePatrocinador"));
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx.sponsor.nombreUsuario);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx.sponsor.nombreUsuario)("disabled", ctx.permissionCRM);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.validation_msg("nombreUsuario"));
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx.sponsor.nit);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx.sponsor.nit)("disabled", ctx.permissionCRM);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.validation_msg("nit"));
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
@@ -14705,11 +14688,11 @@ EditPatrocinadoresComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.validation_msg("website"));
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx.sponsor.email);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx.sponsor.email)("disabled", ctx.permissionCRM);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.validation_msg("email"));
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx.sponsor.telefono);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx.sponsor.telefono)("disabled", ctx.permissionCRM);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.validation_msg("telefono"));
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
@@ -15748,7 +15731,7 @@ class ReporteriaComponent {
               data['Sector'] = e?.sector || undefined;
               data['Comisión'] = e?.comision || undefined;
               data['Nombre de la empresa'] = e?.company || undefined;
-              data['Nombre del contacto principal o asignado'] = e?.userName || undefined;
+              data['Nombre del contacto que recibió certificado'] = e?.userName || undefined;
               data['NIT'] = e?.nit || undefined;
               data['Número de certificado'] = e?.code || undefined;
               data['Puntos acumulados'] = e?.points || undefined;
@@ -15809,7 +15792,7 @@ class ReporteriaComponent {
               data['Sector'] = e?.sector || undefined;
               data['Comisión'] = e?.comision || undefined;
               data['Nombre de la empresa'] = e?.company || undefined;
-              data['Nombre del contacto principal o asignado'] = e?.userName || undefined;
+              data['Nombre del contacto que recibió certificado'] = e?.userName || undefined;
               data['NIT'] = e?.nit || undefined;
               data['Número de certificado'] = e?.code || undefined;
               data['Puntos acumulados'] = e?.points || undefined;
@@ -22494,7 +22477,7 @@ const routes = [
                     { path: "admin-ubicaciones", component: _Ubicaciones_admin_ubicaciones_admin_ubicaciones_component__WEBPACK_IMPORTED_MODULE_28__.AdminUbicacionesComponent },
                     { path: "edit-ubicaciones", component: _Ubicaciones_edit_ubicaciones_edit_ubicaciones_component__WEBPACK_IMPORTED_MODULE_29__.EditUbicacionesComponent },
                     { path: "admin-patrocinadores", component: _Patrocinadores_admin_patrocinadores_admin_patrocinadores_component__WEBPACK_IMPORTED_MODULE_30__.AdminPatrocinadoresComponent },
-                    { path: "edit-patrocinadores", component: _Patrocinadores_edit_patrocinadores_edit_patrocinadores_component__WEBPACK_IMPORTED_MODULE_31__.EditPatrocinadoresComponent },
+                    { path: "edit-patrocinadores", component: _Patrocinadores_edit_patrocinadores_edit_patrocinadores_component__WEBPACK_IMPORTED_MODULE_31__.EditPatrocinadoresComponent, canActivate: [_core_guard_user_guard_guard__WEBPACK_IMPORTED_MODULE_38__.UserGuardGuard] },
                     { path: "admin-encuestas", component: _Encuestas_admin_encuestas_admin_encuestas_component__WEBPACK_IMPORTED_MODULE_32__.AdminEncuestasComponent },
                     { path: '**', component: _Eventos_calendario_eventos_calendario_eventos_component__WEBPACK_IMPORTED_MODULE_4__.CalendarioEventosComponent },
                 ]
@@ -23138,14 +23121,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HomeComponent": () => (/* binding */ HomeComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2560);
-/* harmony import */ var _services_utils_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/utils.service */ 8270);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 2560);
 
-
+// import { UtilsService } from '../services/utils.service';
 class HomeComponent {
-    constructor(utilsService) {
-        this.utilsService = utilsService;
-    }
+    constructor() { }
     ngOnInit() {
         /*
         if (sessionStorage.getItem('Token')) {
@@ -23157,30 +23137,27 @@ class HomeComponent {
           this.goToPage("/login");
         }
         //*/
-        this.accessToken = sessionStorage.getItem('Token');
-        this.username = sessionStorage.getItem('Name');
-    }
-    goToPage(pageName) {
-        this.utilsService.goToPage(pageName);
+        // this.accessToken = sessionStorage.getItem('Token');
+        // this.username = sessionStorage.getItem('Name');
     }
 }
-HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_utils_service__WEBPACK_IMPORTED_MODULE_0__.UtilsService)); };
-HomeComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], decls: 11, vars: 1, consts: [[1, "main", "home-frame"], [1, "row", "pt-sm-5", "w-100", "h-100", "justify-content-end", "custom-image"], [1, "col-12", "col-sm-12", "col-md-6", "align-self-end", "text-end", "float-end", "d-none", "d-sm-none", "d-md-block", "custom-image"], ["name", "hand", "id", "hand", "src", "..\\..\\assets\\images\\home-frame.svg", "alt", "logotipo", 1, "align-bottom", "img-fluid"], [1, "col-12", "col-sm-8", "col-md-6", "align-self-start", "pt-5"], [1, "topHeader", "text-welcome"], [1, "username"], [1, "col-12", "col-sm-12", "col-md-6", "align-self-end", "text-end", "float-end", "d-block", "d-sm-block", "d-md-none"]], template: function HomeComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "img", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 4)(5, "p", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Bienvenido (a)");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "header", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](10, "img", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
+HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(); };
+HomeComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], decls: 11, vars: 1, consts: [[1, "main", "home-frame"], [1, "row", "pt-sm-5", "w-100", "h-100", "justify-content-end", "custom-image"], [1, "col-12", "col-sm-12", "col-md-6", "align-self-end", "text-end", "float-end", "d-none", "d-sm-none", "d-md-block", "custom-image"], ["name", "hand", "id", "hand", "src", "..\\..\\assets\\images\\home-frame.svg", "alt", "logotipo", 1, "align-bottom", "img-fluid"], [1, "col-12", "col-sm-8", "col-md-6", "align-self-start", "pt-5"], [1, "topHeader", "text-welcome"], [1, "username"], [1, "col-12", "col-sm-12", "col-md-6", "align-self-end", "text-end", "float-end", "d-block", "d-sm-block", "d-md-none"]], template: function HomeComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 4)(5, "p", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Bienvenido (a)");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "header", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "img", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx.username);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.username);
     } }, styles: ["@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&family=Mulish&display=swap');\n\nhtml[_ngcontent-%COMP%], body[_ngcontent-%COMP%] {\n    margin: 0;\n    padding: 0;\n}\n.main[_ngcontent-%COMP%] {\n    display: flex;\n    padding: 30px 50px;\n    flex-direction: column;\n    background-color: #EDF0F7;\n    height: 100vh;\n}\nheader[_ngcontent-%COMP%] {\n    font-family: 'Jost', sans-serif;\n    font-weight: 600;\n    font-size: 32px;\n    line-height: 40px;\n    color: #000000;\n    margin-right: 20px;\n}\n.topHeader[_ngcontent-%COMP%] {\n    font-family: 'Jost', sans-serif;\n    font-weight: 400;\n    font-size: 20px;\n    line-height: 40px;\n    color: #000F9F;\n    margin-right: 20px;\n    margin-top: 30px;\n}\n.home-frame[_ngcontent-%COMP%] {\n    background-position: center;\n    background-repeat: no-repeat, repeat;\n    background-image: url('home-frame-background.svg');\n}\n.text-end[_ngcontent-%COMP%] {\n    text-align: end;\n}\n.custom-image[_ngcontent-%COMP%] {\n    overflow:hidden !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhvbWUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0Esb0hBQW9IO0FBRHBILG1CQUFtQjtBQUduQjs7SUFFSSxTQUFTO0lBQ1QsVUFBVTtBQUNkO0FBRUE7SUFDSSxhQUFhO0lBQ2Isa0JBQWtCO0lBQ2xCLHNCQUFzQjtJQUN0Qix5QkFBeUI7SUFDekIsYUFBYTtBQUNqQjtBQUVBO0lBQ0ksK0JBQStCO0lBQy9CLGdCQUFnQjtJQUNoQixlQUFlO0lBQ2YsaUJBQWlCO0lBQ2pCLGNBQWM7SUFDZCxrQkFBa0I7QUFDdEI7QUFFQTtJQUNJLCtCQUErQjtJQUMvQixnQkFBZ0I7SUFDaEIsZUFBZTtJQUNmLGlCQUFpQjtJQUNqQixjQUFjO0lBQ2Qsa0JBQWtCO0lBQ2xCLGdCQUFnQjtBQUNwQjtBQUVBO0lBQ0ksMkJBQTJCO0lBQzNCLG9DQUFvQztJQUNwQyxrREFBc0U7QUFDMUU7QUFFQTtJQUNJLGVBQWU7QUFDbkI7QUFFQTtJQUNJLDBCQUEwQjtBQUM5QiIsImZpbGUiOiJob21lLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBhcHAvc3R5bGVzLmNzcyAqL1xuQGltcG9ydCB1cmwoJ2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9Sm9zdDp3Z2h0QDMwMDs0MDA7NTAwOzYwMDs3MDA7ODAwJmZhbWlseT1NdWxpc2gmZGlzcGxheT1zd2FwJyk7XG5cbmh0bWwsXG5ib2R5IHtcbiAgICBtYXJnaW46IDA7XG4gICAgcGFkZGluZzogMDtcbn1cblxuLm1haW4ge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgcGFkZGluZzogMzBweCA1MHB4O1xuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgYmFja2dyb3VuZC1jb2xvcjogI0VERjBGNztcbiAgICBoZWlnaHQ6IDEwMHZoO1xufVxuXG5oZWFkZXIge1xuICAgIGZvbnQtZmFtaWx5OiAnSm9zdCcsIHNhbnMtc2VyaWY7XG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICBmb250LXNpemU6IDMycHg7XG4gICAgbGluZS1oZWlnaHQ6IDQwcHg7XG4gICAgY29sb3I6ICMwMDAwMDA7XG4gICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xufVxuXG4udG9wSGVhZGVyIHtcbiAgICBmb250LWZhbWlseTogJ0pvc3QnLCBzYW5zLXNlcmlmO1xuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgZm9udC1zaXplOiAyMHB4O1xuICAgIGxpbmUtaGVpZ2h0OiA0MHB4O1xuICAgIGNvbG9yOiAjMDAwRjlGO1xuICAgIG1hcmdpbi1yaWdodDogMjBweDtcbiAgICBtYXJnaW4tdG9wOiAzMHB4O1xufVxuXG4uaG9tZS1mcmFtZSB7XG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyO1xuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQsIHJlcGVhdDtcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCIuLlxcLi5cXGFzc2V0c1xcaW1hZ2VzXFxob21lLWZyYW1lLWJhY2tncm91bmQuc3ZnXCIpO1xufVxuXG4udGV4dC1lbmQge1xuICAgIHRleHQtYWxpZ246IGVuZDtcbn1cblxuLmN1c3RvbS1pbWFnZSB7XG4gICAgb3ZlcmZsb3c6aGlkZGVuICFpbXBvcnRhbnQ7XG59Il19 */"] });
 
 
