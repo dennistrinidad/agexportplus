@@ -14358,7 +14358,7 @@ class EditPatrocinadoresComponent {
         _this3.sponsor.descripcion = response?.result?.description;
         _this3.sponsor.nombreUsuario = response?.result?.nombreUsuario;
         _this3.sponsor.nombrePatrocinador = response?.result?.sponsorName;
-        response?.result?.codigoCRM != null && (_this3.permissionCRM = true);
+        response?.result?.codigoCrm != null && (_this3.permissionCRM = true);
         const phone = yield response?.result?.itemsDescription.find(x => x.title === 'Teléfono');
         const location = yield response?.result?.itemsDescription.find(x => x.title === 'Ubicación');
         const email = yield response?.result?.itemsDescription.find(x => x.title === 'Correo Electrónico');
