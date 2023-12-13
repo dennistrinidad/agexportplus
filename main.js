@@ -297,20 +297,9 @@ class AdminAdminsComponent {
     var _this = this;
 
     return (0,_Volumes_Tribal_AGEXPORT_CODE_FRONT_END_agexport_agexportplus_web_frontend_backoffice_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      _this.loading = true;
-      const roles = yield _this.utilsService.getRoles(); //getRolesAdmin();
+      _this.loading = true; // const roles = await this.utilsService.getRoles(); //getRolesAdmin();
 
-      console.log(roles?.result?.roles); // this.roleList = roles?.result?.roles;
-
-      const token = sessionStorage.getItem('Token')?.toString();
-
-      if (token) {
-        _this.loadData(_this.pageNumber, _this.pageSize, _this.filter, false);
-      } else {
-        _this.utilsService.dialog('ERROR', 'Error', 'No tienes acceso.');
-
-        _this.utilsService.goToPage('/login');
-      }
+      _this.loadData(_this.pageNumber, _this.pageSize, _this.filter, false);
 
       _this.loading = false;
     })();
@@ -805,23 +794,17 @@ class EditAdminsComponent {
 
   ngOnInit() {
     this.userID = Number(this.utilsService.getParam('ID') || null);
-    const token = sessionStorage.getItem('Token')?.toString();
 
-    if (token) {
-      if (this.userID > 0) {
-        this.getOneUser(this.userID);
-        this.user.id = this.userID;
-        this.newUser = false;
-        this.creatingUser = false;
-      } else {
-        this.user.accountRelation = new Array({});
-      }
-
-      this.loadLists();
+    if (this.userID > 0) {
+      this.getOneUser(this.userID);
+      this.user.id = this.userID;
+      this.newUser = false;
+      this.creatingUser = false;
     } else {
-      this.utilsService.dialog('ERROR', 'Error', '¡No tienes acceso!');
-      this.goToPage('/login');
+      this.user.accountRelation = new Array({});
     }
+
+    this.loadLists();
   }
 
   goToPage(pageName) {
@@ -4856,18 +4839,6 @@ class AdminEmpresasComponent {
   }
 
   ngOnInit() {
-    /*
-    this.role = sessionStorage.getItem('Role')?.toString();
-         if (sessionStorage.getItem('Token')) {
-      // this.accessToken = sessionStorage.getItem('Token');
-      this.loadData(this.pageNumber, this.pageSize, this.filter, false, this.filters);
-      this.loadList();
-    }
-    else {
-      this.utilsService.dialog('ERROR', 'Error', 'Inicia sesión con un usuario válido.');
-      this.goToPage('/login');
-    }
-    //*/
     this.loadData(this.pageNumber, this.pageSize, this.filter, false, this.filters);
     this.loadList();
   }
@@ -20153,13 +20124,7 @@ class AdminUsuariosComponent {// listas[] = [];
   }
 
   ngOnInit() {
-    if (sessionStorage.getItem('Token')) {
-      this.accessToken = sessionStorage.getItem('Token');
-      this.loadData(this.pageNumber, this.pageSize, this.filter, false);
-    } else {
-      alert("No tienes acceso...");
-      this.goToPage('/login');
-    }
+    this.loadData(this.pageNumber, this.pageSize, this.filter, false);
   }
 
   onLeft() {
@@ -20808,14 +20773,12 @@ class EditUsuarioComponent {
       yield _this.loadLists();
       _this.userID = _this.utilsService.getParam('ID') || 0;
 
-      if (sessionStorage.getItem('Token') && _this.userID > 0) {
+      if (_this.userID > 0) {
         // EDIT
-        _this.accessToken = sessionStorage.getItem('Token');
-
         _this.loadDatabyID();
 
         _this.creatingUser = false;
-      } else if (sessionStorage.getItem('Token')) {
+      } else {
         // NEW
         _this.user.roleId = 1;
         _this.user.areaId = null;
@@ -20832,11 +20795,6 @@ class EditUsuarioComponent {
         _this.user.ownerContact = false;
         _this.user.roles = ['noasociado'];
         _this.user.accountRelation = new Array({});
-      } else {
-        // NO ACCESS
-        _this.utilsService.dialog('ERROR', 'Error', 'No tienes acceso...');
-
-        _this.goToPage('/login');
       }
 
       _this.setDropdownSettings();
@@ -21834,16 +21792,13 @@ class UserGuideComponent {
     this.typeGuide = this.utilsService.getParam('type');
     this.companyID = Number(this.utilsService.getParam('company_id')) || 0;
     this.eventID = Number(this.utilsService.getParam('event_id')) || 0; // Number(sessionStorage.getItem('EventID'));
-    // const token: string | undefined = sessionStorage.getItem('Token')?.toString();
-    // if (token && (this.eventID > 0 || this.companyID > 0)) {
 
     if (this.eventID > 0 || this.companyID > 0) {
       this.loadData(this.typeGuide, false);
       this.eventID > 0 ? (this.motherRoute = '/admin/events/admin-', this.params = {}) : this.companyID > 0 ? (this.motherRoute = '/admin/users/edit-', this.params = {
         ID: this.companyID
       }) : '';
-    } // else if (token && this.eventID === 0) {
-    else if (this.eventID == 0) {
+    } else if (this.eventID == 0) {
       this.utilsService.dialog('ERROR', 'Error', 'No tienes seleccionado un evento');
       this.utilsService.goToPage('/admin/events/calendario-eventos');
     } else {
@@ -22445,17 +22400,16 @@ const routes = [
     { path: "new-password", component: _new_password_new_password_component__WEBPACK_IMPORTED_MODULE_3__.NewPasswordComponent },
     {
         path: 'admin', component: _main_menu_main_menu_component__WEBPACK_IMPORTED_MODULE_24__.MainMenuComponent, children: [
-            { path: "inicio", component: _home_home_component__WEBPACK_IMPORTED_MODULE_19__.HomeComponent, canActivate: [_core_guard_user_guard_guard__WEBPACK_IMPORTED_MODULE_38__.UserGuardGuard] },
+            { path: "inicio", component: _home_home_component__WEBPACK_IMPORTED_MODULE_19__.HomeComponent },
             {
                 path: 'users', component: _Menu_users_menu_users_menu_component__WEBPACK_IMPORTED_MODULE_25__.UsersMenuComponent, children: [
-                    { path: "admin-usuarios", component: _Usuarios_admin_usuarios_admin_usuarios_component__WEBPACK_IMPORTED_MODULE_6__.AdminUsuariosComponent },
-                    { path: "edit-usuario", component: _Usuarios_edit_usuario_edit_usuario_component__WEBPACK_IMPORTED_MODULE_7__.EditUsuarioComponent },
-                    { path: "admin-administradores", component: _Administradores_admin_admins_admin_admins_component__WEBPACK_IMPORTED_MODULE_8__.AdminAdminsComponent },
-                    { path: "edit-administradores", component: _Administradores_edit_admins_edit_admins_component__WEBPACK_IMPORTED_MODULE_9__.EditAdminsComponent },
+                    { path: "admin-usuarios", component: _Usuarios_admin_usuarios_admin_usuarios_component__WEBPACK_IMPORTED_MODULE_6__.AdminUsuariosComponent, canActivate: [_core_guard_user_guard_guard__WEBPACK_IMPORTED_MODULE_38__.UserGuardGuard] },
+                    { path: "edit-usuario", component: _Usuarios_edit_usuario_edit_usuario_component__WEBPACK_IMPORTED_MODULE_7__.EditUsuarioComponent, canActivate: [_core_guard_user_guard_guard__WEBPACK_IMPORTED_MODULE_38__.UserGuardGuard] },
+                    { path: "admin-administradores", component: _Administradores_admin_admins_admin_admins_component__WEBPACK_IMPORTED_MODULE_8__.AdminAdminsComponent, canActivate: [_core_guard_user_guard_guard__WEBPACK_IMPORTED_MODULE_38__.UserGuardGuard] },
+                    { path: "edit-administradores", component: _Administradores_edit_admins_edit_admins_component__WEBPACK_IMPORTED_MODULE_9__.EditAdminsComponent, canActivate: [_core_guard_user_guard_guard__WEBPACK_IMPORTED_MODULE_38__.UserGuardGuard] },
                     { path: "admin-empresas", component: _Empresas_admin_empresas_admin_empresas_component__WEBPACK_IMPORTED_MODULE_10__.AdminEmpresasComponent, canActivate: [_core_guard_user_guard_guard__WEBPACK_IMPORTED_MODULE_38__.UserGuardGuard] },
                     { path: "edit-empresas", component: _Empresas_edit_empresa_edit_empresa_component__WEBPACK_IMPORTED_MODULE_11__.EditEmpresaComponent, canActivate: [_core_guard_user_guard_guard__WEBPACK_IMPORTED_MODULE_38__.UserGuardGuard] },
                     { path: "user-guide", component: _Usuarios_user_guide_user_guide_component__WEBPACK_IMPORTED_MODULE_20__.UserGuideComponent, canActivate: [_core_guard_user_guard_guard__WEBPACK_IMPORTED_MODULE_38__.UserGuardGuard] },
-                    // { path: "company-guide", component: UserGuideComponent },
                     { path: '**', component: _Empresas_admin_empresas_admin_empresas_component__WEBPACK_IMPORTED_MODULE_10__.AdminEmpresasComponent },
                 ]
             },
@@ -22849,7 +22803,7 @@ class UserGuardGuard {
         const accessToken = sessionStorage.getItem('Token');
         if (!accessToken) {
             // this.router.navigate(['/login']);
-            this.utilsService.goToPage('/login');
+            this.utilsService.goToPage('/admin/inicio');
             this.utilsService.dialog('ERROR', 'Error', 'Tu usuario no tiene acceso a esta ruta, inicia sesión o contacta al administrador.');
         }
         else {
@@ -22895,6 +22849,7 @@ class JwtInterceptor {
         else {
             sessionStorage.removeItem('Token');
             this.logout();
+            throw new Error;
         }
         return next.handle(request);
     }
