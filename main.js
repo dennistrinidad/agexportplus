@@ -8106,39 +8106,42 @@ function NuevoEventoComponent_option_222_Template(rf, ctx) {
   }
 }
 
-function NuevoEventoComponent_div_227_tr_21_Template(rf, ctx) {
+function NuevoEventoComponent_div_227_tr_23_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "tr")(1, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](3, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](5, "titlecase");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](6, "date");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](7, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](9, "titlecase");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](10, "date");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](5, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](7, "titlecase");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](8, "date");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](11, "td", 115);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](13, "number");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](9, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](11, "titlecase");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](12, "date");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](14, "td", 115);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](16, "number");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](13, "td", 115);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](15, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](17, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](16, "td", 115);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](18, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](19, "td", 115);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](19, "td", 116);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](21, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](22, "td", 115);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](24, "number");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](21, "td", 115);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](23, "number");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](24, "td", 115);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipe"](26, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()();
   }
 
@@ -8148,19 +8151,21 @@ function NuevoEventoComponent_div_227_tr_21_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](i_r30 + 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind1"](5, 8, _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind2"](6, 10, item_r29.fechaInicio, "EEEE, MMMM d, y")));
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](item_r29.tipoEntrada);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind1"](7, 9, _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind2"](8, 11, item_r29.fechaInicio, "EEEE, MMMM d, y")));
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind1"](9, 13, _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind2"](10, 15, item_r29.fechaFin, "EEEE, MMMM d, y")));
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind1"](11, 14, _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind2"](12, 16, item_r29.fechaFin, "EEEE, MMMM d, y")));
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate1"]("Q ", _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind3"](13, 18, item_r29.precioAsociado, "1.2-2", "en-US"), "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate1"]("Q ", _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind3"](15, 19, item_r29.precioAsociado, "1.2-2", "en-US"), "");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate1"]("$ ", _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind3"](16, 22, item_r29.precioDolarAsociado, "1.2-2", "en-US"), "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate1"]("$ ", _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind3"](18, 23, item_r29.precioDolarAsociado, "1.2-2", "en-US"), "");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate"](item_r29.equivalentePuntos);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate1"]("Q ", _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind3"](21, 26, item_r29.precioPublico, "1.2-2", "en-US"), "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate1"]("Q ", _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind3"](23, 27, item_r29.precioPublico, "1.2-2", "en-US"), "");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate1"]("$ ", _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind3"](24, 30, item_r29.precioDolarPublico, "1.2-2", "en-US"), "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtextInterpolate1"]("$ ", _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵpipeBind3"](26, 31, item_r29.precioDolarPublico, "1.2-2", "en-US"), "");
   }
 }
 
@@ -8170,34 +8175,37 @@ function NuevoEventoComponent_div_227_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](5, "No.");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](6, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](7, "Fecha de inicio");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](7, "Tipo de Entrada");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](8, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](9, "Fecha de fin");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](9, "Fecha de inicio");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](10, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](11, "Precio Asociado Q");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](11, "Fecha de fin");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](12, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](13, "Precio Asociado $");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](13, "Precio Asociado Q");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](14, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](15, "Equivalente a puntos");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](15, "Precio Asociado $");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](16, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](17, "Precio P\u00FAblico Q");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](17, "Equivalente a puntos");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](18, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](19, "Precio P\u00FAblico $");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](19, "Precio P\u00FAblico Q");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](20, "th");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtext"](21, "Precio P\u00FAblico $");
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](20, "tbody");
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](21, NuevoEventoComponent_div_227_tr_21_Template, 25, 34, "tr", 114);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](22, "tbody");
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](23, NuevoEventoComponent_div_227_tr_23_Template, 27, 35, "tr", 114);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
   }
 
   if (rf & 2) {
     const ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](23);
     _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("ngForOf", ctx_r22.listPrices);
   }
 }
@@ -8741,7 +8749,7 @@ NuevoEventoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
   },
   decls: 231,
   vars: 177,
-  consts: [[4, "ngIf"], ["href", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css", "rel", "stylesheet"], ["form", "ngForm"], [1, "main"], [1, "top-block"], [1, "top-block-1"], ["id", "back", 1, "back-btn", 3, "click"], [1, "back-label"], [1, "top-block-2"], [2, "margin-bottom", "10px", "padding-left", "10px"], ["name", "categoria", "id", "category", "required", "", 1, "categoria-evento", 3, "ngClass", "ngModel", "disabled", "ngModelChange", "change"], [3, "value", 4, "ngFor", "ngForOf"], ["id", "mainEvento", 1, "main-block", "not-visible"], [1, "label-1"], [1, "status-block"], [1, "status-label"], ["name", "status", "id", "status", "required", "", 1, "status-box", 3, "ngModel", "ngModelChange"], ["value", "finished"], ["value", "active"], ["value", "draft"], ["id", "down", 1, "down-arrow"], [1, "row-1"], [1, "col-md-1-form"], [1, "custom-input"], ["type", "text", "name", "_nombreEvento", "id", "_nombreEvento", "placeholder", "Nombre del evento", "required", "", 3, "ngClass", "ngModel", "readOnly", "ngModelChange"], ["_nombreEvento", "ngModel"], ["name", "Desc", "id", "Desc", "cols", "40", "rows", "5", 3, "ngClass", "ngModel", "readonly", "ngModelChange"], ["name", "direccion", "id", "direccion", "placeholder", "15 Avenida 14-72, Cdad", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], [1, "col-md-2-form"], ["name", "dirigido", "id", "dirigido", "required", "", 1, "to-box", "tipo-evento", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], ["name", "actividad", "id", "actividad", "required", "", 1, "actividad-box", "tipo-evento", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["name", "enlaceSitio", "id", "enlaceSitio", "placeholder", "www.export.com.gt", 3, "ngModel", "ngModelChange"], [1, "col-md-3-form"], [1, "code-form", 2, "text-align", "center"], [2, "text-align", "start"], [3, "qrdata", "width", "errorCorrectionLevel", "qrCodeURL"], ["parent", ""], ["download", "qrcode", 1, "qr-btn", 3, "href"], [1, "row-10"], [1, "custom-input", "modalidad-box"], ["name", "modalidad", "id", "modalidad", "required", "", 1, "modalidad", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], [1, "mod-box"], ["name", "enlaceEvento", "id", "enlaceEvento", "placeholder", "Enlace del evento", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], [1, "col-md-4-form"], [1, "custom-input", "datetime-box"], [1, "dt-row"], [1, "row", "row-cols-sm-auto", "cal-form"], [1, "col-12"], [1, "input-group", 3, "ngClass"], ["name", "dp", "id", "dp", "ngbDatepicker", "", "placeholder", "dd-mm-yyyy", "required", "", "onkeydown", "return false", 1, "form-control", 3, "ngClass", "ngModel", "value", "disabled", "ngModelChange"], ["d", "ngbDatepicker"], ["type", "button", 1, "btn", "btn-outline-secondary", "bi", "bi-calendar3", 3, "ngClass", "disabled", "click"], ["type", "time", "id", "apptTI", "name", "appTI", "placeholder", "00:00", "required", "", 1, "form-control-time", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], ["name", "dp2", "id", "dp2", "ngbDatepicker", "", "placeholder", "dd-mm-yyyy", "required", "", "onkeydown", "return false", 1, "form-control", 3, "ngClass", "ngModel", "value", "disabled", "ngModelChange"], ["e", "ngbDatepicker"], ["type", "button", 1, "btn", "btn-outline-secondary", "bi", "bi-calendar3", 3, "ngClass", "click"], ["type", "time", "name", "appTF", "id", "appTF", "placeholder", "00:00", "required", "", 1, "form-control-time", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], ["class", "err-msg text-left", 4, "ngIf"], [1, "col-md-5-form"], ["name", "gafete-file", "id", "gafete-file", "readonly", "", "required", "", 1, "custom-input", "file-box", 3, "ngModel", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('fileGaf').click();", 1, "upload-btn"], ["type", "file", "name", "fileGaf", "id", "fileGaf", "accept", "image/png, image/jpeg", 2, "display", "none", 3, "change"], ["FileSelectInputDialog", ""], ["name", "thumbnail-file", "id", "thumbnail-file", "readonly", "", "required", "", 1, "custom-input", "file-box", 3, "ngModel", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('thumbnailGafete').click();", 1, "upload-btn"], ["type", "file", "name", "thumbnailGafete", "id", "thumbnailGafete", "accept", "image/png, image/jpeg", 2, "display", "none", 3, "change"], [1, "row-10", "quastion"], [1, "custom-input", "top-head"], [1, "gafete-label"], [1, "checkbox-group"], ["name", "groupA", "type", "checkbox", 1, "checkbox-item", 3, "ngModel", "ngModelChange", "change"], ["for", "yes"], ["name", "groupB", "type", "checkbox", 1, "checkbox-item", 3, "ngModel", "ngModelChange", "change"], ["for", "no"], ["name", "gafete-header", "id", "gafete-header", "placeholder", "Subir encabezado.jpg", "readonly", "", 1, "custom-input", "file-box", 3, "ngModel", "required", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('fileheader').click();", 1, "gafete-btn", 3, "disabled"], ["type", "file", "name", "fileheader", "id", "fileheader", 2, "display", "none", 3, "change"], ["name", "gafete-footer", "id", "gafete-footer", "placeholder", "Subir pie..p\u00E1gina.jpg", "readonly", "", 1, "custom-input", "file-box", 3, "ngModel", "required", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('filefooter').click();", 1, "gafete-btn", 3, "disabled"], ["type", "file", "name", "filefooter", "id", "filefooter", 2, "display", "none", 3, "change"], ["name", "md_sector", "id", "md_sector", 1, "enabled", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], ["name", "md_comison", "id", "md_comison", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], ["name", "md_comite", "id", "md_comite", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], [1, "divider-section"], [1, "header-1", "label-1"], [1, "row-3"], ["name", "userName", "id", "userName", "readonly", "", 3, "ngClass", "ngModel", "ngModelChange"], ["name", "userPhone", "id", "userPhone", "readonly", "", 3, "ngClass", "ngModel", "ngModelChange"], ["name", "userAreaO", "id", "userAreaO", "readonly", "", 3, "ngClass", "ngModel", "ngModelChange"], ["name", "userPuesto", "id", "userPuesto", "readonly", "", 3, "ngClass", "ngModel", "ngModelChange"], ["name", "userEmail", "id", "userEmail", "type", "email", "readonly", "", 3, "ngClass", "ngModel", "ngModelChange"], ["name", "userRoles", "id", "userRoles", "readonly", "", 3, "ngClass", "ngModel", "ngModelChange"], ["name", "userArea", "id", "userArea", "readonly", "", 3, "ngClass", "ngModel", "ngModelChange"], [1, "col-md-10"], ["placeholder", "50", "name", "cupoLimite", "id", "cupoLimite", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], [1, "col-md-11"], ["placeholder", "10", "name", "asociadosInvitados", "id", "asociadosInvitados", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], [1, "col-md-12"], ["placeholder", "20", "name", "noAsociadosInvitados", "id", "noAsociadosInvitados", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], ["id", "priceBlock", 1, "table-block", "not-visible"], [1, "header-2", "label-1"], [1, "custom-input", "costo-container"], ["name", "costo", "id", "costo", "name", "costTypeId", "id", "costTypeId", "required", "", 1, "costo-box", "tipo-evento", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], [1, "custom-input", "cart-box"], ["type", "text", "name", "enlaceCarretilla", "id", "enlaceCarretilla", "placeholder", "www.sample.com", 1, "disabled-input", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], ["id", "priceTable", 4, "ngIf"], [1, "block-bottom"], [1, "next-btn-feet", 3, "click"], [3, "value"], [1, "err-msg"], [1, "err-msg", "text-left"], ["id", "priceTable"], ["border", "1", 1, "content-table"], [4, "ngFor", "ngForOf"], [1, "text-right"]],
+  consts: [[4, "ngIf"], ["href", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css", "rel", "stylesheet"], ["form", "ngForm"], [1, "main"], [1, "top-block"], [1, "top-block-1"], ["id", "back", 1, "back-btn", 3, "click"], [1, "back-label"], [1, "top-block-2"], [2, "margin-bottom", "10px", "padding-left", "10px"], ["name", "categoria", "id", "category", "required", "", 1, "categoria-evento", 3, "ngClass", "ngModel", "disabled", "ngModelChange", "change"], [3, "value", 4, "ngFor", "ngForOf"], ["id", "mainEvento", 1, "main-block", "not-visible"], [1, "label-1"], [1, "status-block"], [1, "status-label"], ["name", "status", "id", "status", "required", "", 1, "status-box", 3, "ngModel", "ngModelChange"], ["value", "finished"], ["value", "active"], ["value", "draft"], ["id", "down", 1, "down-arrow"], [1, "row-1"], [1, "col-md-1-form"], [1, "custom-input"], ["type", "text", "name", "_nombreEvento", "id", "_nombreEvento", "placeholder", "Nombre del evento", "required", "", 3, "ngClass", "ngModel", "readOnly", "ngModelChange"], ["_nombreEvento", "ngModel"], ["name", "Desc", "id", "Desc", "cols", "40", "rows", "5", 3, "ngClass", "ngModel", "readonly", "ngModelChange"], ["name", "direccion", "id", "direccion", "placeholder", "15 Avenida 14-72, Cdad", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], [1, "col-md-2-form"], ["name", "dirigido", "id", "dirigido", "required", "", 1, "to-box", "tipo-evento", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], ["name", "actividad", "id", "actividad", "required", "", 1, "actividad-box", "tipo-evento", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["name", "enlaceSitio", "id", "enlaceSitio", "placeholder", "www.export.com.gt", 3, "ngModel", "ngModelChange"], [1, "col-md-3-form"], [1, "code-form", 2, "text-align", "center"], [2, "text-align", "start"], [3, "qrdata", "width", "errorCorrectionLevel", "qrCodeURL"], ["parent", ""], ["download", "qrcode", 1, "qr-btn", 3, "href"], [1, "row-10"], [1, "custom-input", "modalidad-box"], ["name", "modalidad", "id", "modalidad", "required", "", 1, "modalidad", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], [1, "mod-box"], ["name", "enlaceEvento", "id", "enlaceEvento", "placeholder", "Enlace del evento", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], [1, "col-md-4-form"], [1, "custom-input", "datetime-box"], [1, "dt-row"], [1, "row", "row-cols-sm-auto", "cal-form"], [1, "col-12"], [1, "input-group", 3, "ngClass"], ["name", "dp", "id", "dp", "ngbDatepicker", "", "placeholder", "dd-mm-yyyy", "required", "", "onkeydown", "return false", 1, "form-control", 3, "ngClass", "ngModel", "value", "disabled", "ngModelChange"], ["d", "ngbDatepicker"], ["type", "button", 1, "btn", "btn-outline-secondary", "bi", "bi-calendar3", 3, "ngClass", "disabled", "click"], ["type", "time", "id", "apptTI", "name", "appTI", "placeholder", "00:00", "required", "", 1, "form-control-time", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], ["name", "dp2", "id", "dp2", "ngbDatepicker", "", "placeholder", "dd-mm-yyyy", "required", "", "onkeydown", "return false", 1, "form-control", 3, "ngClass", "ngModel", "value", "disabled", "ngModelChange"], ["e", "ngbDatepicker"], ["type", "button", 1, "btn", "btn-outline-secondary", "bi", "bi-calendar3", 3, "ngClass", "click"], ["type", "time", "name", "appTF", "id", "appTF", "placeholder", "00:00", "required", "", 1, "form-control-time", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], ["class", "err-msg text-left", 4, "ngIf"], [1, "col-md-5-form"], ["name", "gafete-file", "id", "gafete-file", "readonly", "", "required", "", 1, "custom-input", "file-box", 3, "ngModel", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('fileGaf').click();", 1, "upload-btn"], ["type", "file", "name", "fileGaf", "id", "fileGaf", "accept", "image/png, image/jpeg", 2, "display", "none", 3, "change"], ["FileSelectInputDialog", ""], ["name", "thumbnail-file", "id", "thumbnail-file", "readonly", "", "required", "", 1, "custom-input", "file-box", 3, "ngModel", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('thumbnailGafete').click();", 1, "upload-btn"], ["type", "file", "name", "thumbnailGafete", "id", "thumbnailGafete", "accept", "image/png, image/jpeg", 2, "display", "none", 3, "change"], [1, "row-10", "quastion"], [1, "custom-input", "top-head"], [1, "gafete-label"], [1, "checkbox-group"], ["name", "groupA", "type", "checkbox", 1, "checkbox-item", 3, "ngModel", "ngModelChange", "change"], ["for", "yes"], ["name", "groupB", "type", "checkbox", 1, "checkbox-item", 3, "ngModel", "ngModelChange", "change"], ["for", "no"], ["name", "gafete-header", "id", "gafete-header", "placeholder", "Subir encabezado.jpg", "readonly", "", 1, "custom-input", "file-box", 3, "ngModel", "required", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('fileheader').click();", 1, "gafete-btn", 3, "disabled"], ["type", "file", "name", "fileheader", "id", "fileheader", 2, "display", "none", 3, "change"], ["name", "gafete-footer", "id", "gafete-footer", "placeholder", "Subir pie..p\u00E1gina.jpg", "readonly", "", 1, "custom-input", "file-box", 3, "ngModel", "required", "ngModelChange"], ["id", "upload-cal", "onclick", "document.getElementById('filefooter').click();", 1, "gafete-btn", 3, "disabled"], ["type", "file", "name", "filefooter", "id", "filefooter", 2, "display", "none", 3, "change"], ["name", "md_sector", "id", "md_sector", 1, "enabled", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], ["name", "md_comison", "id", "md_comison", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], ["name", "md_comite", "id", "md_comite", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], [1, "divider-section"], [1, "header-1", "label-1"], [1, "row-3"], ["name", "userName", "id", "userName", "readonly", "", 3, "ngClass", "ngModel", "ngModelChange"], ["name", "userPhone", "id", "userPhone", "readonly", "", 3, "ngClass", "ngModel", "ngModelChange"], ["name", "userAreaO", "id", "userAreaO", "readonly", "", 3, "ngClass", "ngModel", "ngModelChange"], ["name", "userPuesto", "id", "userPuesto", "readonly", "", 3, "ngClass", "ngModel", "ngModelChange"], ["name", "userEmail", "id", "userEmail", "type", "email", "readonly", "", 3, "ngClass", "ngModel", "ngModelChange"], ["name", "userRoles", "id", "userRoles", "readonly", "", 3, "ngClass", "ngModel", "ngModelChange"], ["name", "userArea", "id", "userArea", "readonly", "", 3, "ngClass", "ngModel", "ngModelChange"], [1, "col-md-10"], ["placeholder", "50", "name", "cupoLimite", "id", "cupoLimite", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], [1, "col-md-11"], ["placeholder", "10", "name", "asociadosInvitados", "id", "asociadosInvitados", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], [1, "col-md-12"], ["placeholder", "20", "name", "noAsociadosInvitados", "id", "noAsociadosInvitados", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], ["id", "priceBlock", 1, "table-block", "not-visible"], [1, "header-2", "label-1"], [1, "custom-input", "costo-container"], ["name", "costo", "id", "costo", "name", "costTypeId", "id", "costTypeId", "required", "", 1, "costo-box", "tipo-evento", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], [1, "custom-input", "cart-box"], ["type", "text", "name", "enlaceCarretilla", "id", "enlaceCarretilla", "placeholder", "www.sample.com", 1, "disabled-input", 3, "ngClass", "ngModel", "disabled", "ngModelChange"], ["id", "priceTable", 4, "ngIf"], [1, "block-bottom"], [1, "next-btn-feet", 3, "click"], [3, "value"], [1, "err-msg"], [1, "err-msg", "text-left"], ["id", "priceTable"], ["border", "1", 1, "content-table"], [4, "ngFor", "ngForOf"], [1, "text-right"], [1, "text-center"]],
   template: function NuevoEventoComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r31 = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵgetCurrentView"]();
@@ -9131,7 +9139,7 @@ NuevoEventoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
         return ctx.eventData.enlaceCarretilla = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](227, NuevoEventoComponent_div_227_Template, 22, 1, "div", 106);
+      _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵtemplate"](227, NuevoEventoComponent_div_227_Template, 24, 1, "div", 106);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](228, "div", 107)(229, "button", 108);
       _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵlistener"]("click", function NuevoEventoComponent_Template_button_click_229_listener() {
@@ -24997,7 +25005,7 @@ function EditPromocionComponent_ng_container_117_Template(rf, ctx) {
   }
 }
 
-function EditPromocionComponent_select_154_option_1_Template(rf, ctx) {
+function EditPromocionComponent_select_154_option_3_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "option", 82);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
@@ -25022,21 +25030,24 @@ function EditPromocionComponent_select_154_Template(rf, ctx) {
       const ctx_r43 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r43.promoData.limitUser = $event);
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, EditPromocionComponent_select_154_option_1_Template, 2, 2, "option", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "option", 90);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "0");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](3, EditPromocionComponent_select_154_option_3_Template, 2, 2, "option", 38);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
 
   if (rf & 2) {
     const ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngModel", ctx_r22.promoData.limitUser)("required", ctx_r22.promoData.referral == false);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r22.limitPerUser);
   }
 }
 
 function EditPromocionComponent_select_155_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "select", 90)(1, "option", 91);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "select", 91)(1, "option", 92);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "--");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
   }
@@ -25079,6 +25090,8 @@ class EditPromocionComponent {
     this.utilsService = utilsService;
     this.promotionService = promotionService;
     this.loading = false;
+    this.countRedeem = 0; // public exchanged: number | undefined = undefined;
+
     this.disabled = false;
     this.original_limit = 0;
     this.dateInvalid = false;
@@ -25101,7 +25114,9 @@ class EditPromocionComponent {
     this.limitPerUser = [];
     this.ImageName = '';
     this.ImageThumbnailName = '';
+    this.promoData.limit = 0;
     this.promoData.name = '';
+    this.promoData.limitUser = 0;
     this.promoData.description = '';
   }
 
@@ -25176,31 +25191,32 @@ class EditPromocionComponent {
   }
 
   validation_limit() {
-    if (this.promoData.limit && this.promoData.limitUser) {
-      if (this.promoData.limit < this.promoData.limitUser) {
-        this.limitInvalid = true;
-        return true;
-      }
-
-      this.limitInvalid = false;
-      return false;
+    // if (Number(this.promoData.limit) && this.promoData.limitUser) {
+    if (Number(this.promoData.limit) < this.promoData.limitUser) {
+      this.limitInvalid = true;
+      return true;
     } else {
       this.limitInvalid = false;
       return false;
-    }
+    } // } else {
+    //   this.limitInvalid = false;
+    //   return false;
+    // }
+
   }
 
   getPromotion(promotion_id) {
     this.loading = true;
     return this.promotionService.getOnePromotions(promotion_id).then(response => {
-      // console.log(response);        
+      console.log(response);
       this.promoData.id = response.result?.id;
       this.promoData.url = response.result?.url;
-      this.original_limit = response.result?.limit;
-      this.promoData.limit = response.result?.limit;
       this.promoData.phone = response.result?.phone;
       this.promoData.status = response.result?.status;
       this.promoData.address = response.result?.address;
+      this.original_limit = response.result?.limit || 0;
+      this.promoData.limit = response.result?.limit || 0;
+      this.countRedeem = response.result?.countRedeem || 0;
       this.promoData.referral = response.result?.referidos;
       this.promoData.limitUser = response.result?.limitUser;
       this.promoData.companyId = response.result?.companyId;
@@ -25317,10 +25333,18 @@ class EditPromocionComponent {
   }
 
   changeLimit() {
-    if (this.promoData.limit > this.original_limit) {
+    // if (Number(this.promoData.limit) > this.original_limit) {
+    //   this.permissionStatus = true;
+    //   this.promoData.status = 'draft';
+    // }
+    // else if (Number(this.promoData.limit) <= this.original_limit) {
+    //   this.permissionStatus = false;
+    //   this.promoData.status = 'soldout';
+    // }
+    if (Number(this.promoData.limit) > this.countRedeem) {
       this.permissionStatus = true;
       this.promoData.status = 'draft';
-    } else if (this.promoData.limit <= this.original_limit) {
+    } else {
       this.permissionStatus = false;
       this.promoData.status = 'soldout';
     }
@@ -25506,12 +25530,11 @@ class EditPromocionComponent {
     var _this7 = this;
 
     return (0,_Volumes_Tribal_AGEXPORT_CODE_FRONT_END_agexport_agexportplus_web_frontend_backoffice_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      // console.log(this.formulario);
-      // console.log(this.promoData);
       //*
       if (_this7.formulario.valid) {
         const startDate = _this7.promoData.startDate;
         const finishDate = _this7.promoData.finishDate;
+        _this7.promoData.limit = Number(_this7.promoData.limit);
         _this7.promoData.limitUser = Number(_this7.promoData.limitUser);
         _this7.promoData.categoryId = Number(_this7.promoData.categoryId);
         _this7.promoData.roles.length == 0 && (_this7.promoData.roles = [0], _this7.publicoBox = true);
@@ -25521,14 +25544,11 @@ class EditPromocionComponent {
           _this7.disabled = true;
 
           if (_this7.promoData.id != undefined) {
-            // console.log('Update: ', this.promoData);
             var response = yield _this7.promotionService.updatePromotion(_this7.promoData);
           } else {
             if (_this7.isAdmin) {
-              // console.log('Create Admin: ', this.promoData);
               var response = yield _this7.promotionService.createPromotionByAdminRole(_this7.promoData);
             } else {
-              // console.log('Create Comercial: ', this.promoData);
               var response = yield _this7.promotionService.createPromotionByComercialRole(_this7.promoData);
             }
           }
@@ -25541,23 +25561,18 @@ class EditPromocionComponent {
               companyId: _this7.promoData.companyId
             });
           } else {
-            // this.loading = false;
-            // this.disabled = false;
             _this7.utilsService.dialog('ERROR', 'Error', response?.message.description || 'Intentar más tarde.');
           }
         } catch (error) {
           _this7.promoData.startDate = startDate;
           _this7.promoData.finishDate = finishDate;
 
-          _this7.utilsService.dialog('ERROR', 'Error', error.error.message.description || 'Intentar más tarde.'); // this.utilsService.dialog('ERROR', 'Error', 'No es posible crear la promoción, revisa los datos ingresados y vuelve a intentar');
-
+          _this7.utilsService.dialog('ERROR', 'Error', error.error.message.description || 'Intentar más tarde.');
         }
 
         _this7.loading = false;
         _this7.disabled = false;
       } else {
-        // console.log(this.formulario);      
-        // let message = 'Por favor llena los campos obligatorios.';
         _this7.formulario.control.markAllAsTouched();
 
         _this7.utilsService.dialog('ERROR', 'Error', 'Por favor llena los campos obligatorios.');
@@ -25588,7 +25603,7 @@ EditPromocionComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
   },
   decls: 169,
   vars: 51,
-  consts: [[4, "ngIf"], ["href", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css", "rel", "stylesheet"], ["AGForm", "ngForm"], [1, "main"], [1, "top-block"], [1, "top-block-1"], ["id", "back", 1, "back-btn", 3, "click"], [1, "back-label"], ["id", "mainEvento", 1, "main-block", "not-visible"], [1, "label-1"], [1, "status-block"], [1, "status-label"], ["name", "status", "id", "status", "required", "", 1, "status-box", 3, "ngModel", "disabled", "ngModelChange"], ["value", "finished"], ["value", "active"], ["value", "draft"], ["value", "soldout", "disabled", ""], ["value", "inactive"], ["id", "down", 1, "down-arrow"], [1, "row-1"], [1, "col-md-1-form"], [1, "col-md-2-form"], [1, "custom-input"], ["name", "nombrePromocion", "id", "nombrePromocion", "placeholder", "Nombre de promoci\u00F3n", "required", "", "minlength", "5", "maxlength", "40", 3, "ngModel", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["name", "descripcion", "id", "descripcion", "minlength", "40", "maxlength", "500", "placeholder", "Descripci\u00F3n", "required", "", 3, "ngModel", "ngModelChange"], ["descripcion", "ngModel"], [1, "col-md-4-form"], [1, "custom-input", "datetime-box"], [1, "dt-row"], [1, "row", "row-cols-sm-auto", "cal-form"], [1, "col-12"], [1, "input-group"], ["type", "date", "onkeydown", "return false", "name", "dp", "required", "", "max", "31-12-9999", 1, "form-control", "fecha-input", "calendar-mozff", 3, "ngModel", "ngModelChange"], ["type", "time", "id", "appt", "name", "appt", "placeholder", "00:00", "required", "", 1, "form-control-time", "clock-mozff", "form-control-time-mozff", 3, "ngModel", "ngModelChange"], ["type", "date", "onkeydown", "return false", "name", "dp2", "placeholder", "dd-mm-yyyy", "required", "", 1, "form-control", "fecha-input", "calendar-mozff", 3, "ngModel", "ngModelChange"], ["type", "time", "name", "apptF", "id", "apptF", "placeholder", "00:00", "required", "", 1, "form-control-time", "clock-mozff", "form-control-time-mozff", 3, "ngModel", "ngModelChange"], ["name", "dirigido", "id", "dirigido", "required", "", 1, "categoria", 3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], ["name", "phone", "id", "phone", "placeholder", "Tel\u00E9fono", "minlength", "6", "required", "", "pattern", "[+]{0,1}[\\d]+[ ]{0,1}[\\d]+[-]{0,1}[\\d]+", "oninput", "value = value.replace(/[^\\-\\+0-9 ]/g,'')", 3, "ngModel", "ngModelChange"], ["phone", "ngModel"], ["name", "ubicacionCanje", "id", "ubicacionCanje", "minlength", "10", "required", "", "placeholder", "ubicaci\u00F3n para canje", 3, "ngModel", "ngModelChange"], ["ubicacionCanje", "ngModel"], [1, "col-md-3-form"], [1, "code-form"], [3, "width", "src"], [3, "qrdata", "width", "errorCorrectionLevel", "qrCodeURL", 4, "ngIf"], [1, "qr-btn", 3, "ngClass", "click"], [1, "row-10"], ["name", "restricciones", "id", "restricciones", "placeholder", "Restricciones...", "maxlength", "200", 3, "ngModel", "ngModelChange"], ["name", "enlaceSitioWeb", "id", "enlaceSitioWeb", "placeholder", "www.sitio.com", 3, "ngModel", "ngModelChange"], ["enlaceSitioWeb", "ngModel"], ["id", "admiration_icon", "ngbTooltip", "La dimensi\u00F3n de la portada es de 960x540 pixeles", 1, "admiration_icon"], ["id", "upload-cal", "onclick", "document.getElementById('fileIMG').click();", 1, "upload-btn"], ["type", "file", "name", "fileIMG", "id", "fileIMG", "accept", "image/png,image/jpeg", 2, "display", "none", 3, "change"], ["FileSelectInputDialog", ""], ["id", "admiration_icon", "ngbTooltip", "Las dimensiones del thumbnail ser\u00E1n de 200x200 pixeles", 1, "admiration_icon"], ["id", "upload-cal", "onclick", "document.getElementById('fileThumbnail').click();", 1, "upload-btn"], ["type", "file", "name", "fileThumbnail", "id", "fileThumbnail", "accept", "image/png,image/jpeg", 2, "display", "none", 3, "change"], [1, "row", "px-4"], [1, "col-12", "col-md-6"], [1, "form-label", "mb-3"], [1, "row"], [1, "col-12", "col-lg-auto", "pr-0", "ml-0"], [1, "form-check", "form-check-inline"], ["type", "checkbox", "name", "asociado", 1, "mr-1", 3, "ngModel", "disabled", "ngModelChange", "change"], ["for", "escanear", 1, "form-check-label", "mr-auto", "txt-tiny"], ["type", "checkbox", "name", "noAsociado", 1, "mr-1", 3, "ngModel", "disabled", "ngModelChange", "change"], ["for", "subir", 1, "form-check-label", "mr-auto", "txt-tiny"], ["type", "checkbox", "name", "colaboradores", 1, "mr-1", 3, "ngModel", "disabled", "ngModelChange", "change"], ["for", "descargar", 1, "form-check-label", "mr-auto", "txt-tiny"], ["type", "checkbox", "name", "referido", 1, "mr-1", 3, "ngModel", "disabled", "ngModelChange", "change"], ["type", "checkbox", "name", "publico", 1, "mr-1", 3, "ngModel", "disabled", "ngModelChange", "change"], [1, "col-12", "col-md-3", "mb-3"], ["name", "numeroDeCanjes", "id", "numeroDeCanjes", "class", "form-control bfc w-25", 3, "ngModel", "required", "ngModelChange", 4, "ngIf"], ["class", "form-control", "disabled", "", 4, "ngIf"], ["name", "maxDeCanjes", "id", "maxDeCanjes", "type", "text", "placeholder", "0", "maxlength", "5", "size", "4", "required", "", "oninput", "value = value.replace(/[^0-9]/g,'')", 1, "form-control", "bfc", "w-25", 3, "ngModel", "ngModelChange", "change"], [1, "block-bottom"], [1, "cancle-btn", 3, "click"], [1, "save-btn", 3, "disabled", "click"], [1, "save-icon"], [1, "err-msg"], [3, "value"], [3, "qrdata", "width", "errorCorrectionLevel", "qrCodeURL"], ["parent", ""], ["target", "_blank", 3, "href"], ["name", "image-file-front", "id", "image-file-front", "readonly", "", "required", "", 1, "custom-input", "file-box", 3, "ngModel", "ngModelChange"], ["name", "image-file-thumbnail", "id", "image-file-thumbnail", "readonly", "", 1, "custom-input", "file-box", 3, "ngModel", "ngModelChange"], ["name", "image-file-thumbnail", "id", "image-file-thumbnail", "required", "", "readonly", "", 1, "custom-input", "file-box", 3, "ngModel", "ngModelChange"], ["name", "numeroDeCanjes", "id", "numeroDeCanjes", 1, "form-control", "bfc", "w-25", 3, "ngModel", "required", "ngModelChange"], ["disabled", "", 1, "form-control"], ["selected", ""]],
+  consts: [[4, "ngIf"], ["href", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css", "rel", "stylesheet"], ["AGForm", "ngForm"], [1, "main"], [1, "top-block"], [1, "top-block-1"], ["id", "back", 1, "back-btn", 3, "click"], [1, "back-label"], ["id", "mainEvento", 1, "main-block", "not-visible"], [1, "label-1"], [1, "status-block"], [1, "status-label"], ["name", "status", "id", "status", "required", "", 1, "status-box", 3, "ngModel", "disabled", "ngModelChange", "change"], ["value", "finished"], ["value", "active"], ["value", "draft"], ["value", "soldout", "disabled", ""], ["value", "inactive"], ["id", "down", 1, "down-arrow"], [1, "row-1"], [1, "col-md-1-form"], [1, "col-md-2-form"], [1, "custom-input"], ["name", "nombrePromocion", "id", "nombrePromocion", "placeholder", "Nombre de promoci\u00F3n", "required", "", "minlength", "5", "maxlength", "40", 3, "ngModel", "ngModelChange"], ["class", "err-msg", 4, "ngIf"], ["name", "descripcion", "id", "descripcion", "minlength", "40", "maxlength", "500", "placeholder", "Descripci\u00F3n", "required", "", 3, "ngModel", "ngModelChange"], ["descripcion", "ngModel"], [1, "col-md-4-form"], [1, "custom-input", "datetime-box"], [1, "dt-row"], [1, "row", "row-cols-sm-auto", "cal-form"], [1, "col-12"], [1, "input-group"], ["type", "date", "onkeydown", "return false", "name", "dp", "required", "", "max", "31-12-9999", 1, "form-control", "fecha-input", "calendar-mozff", 3, "ngModel", "ngModelChange", "change"], ["type", "time", "id", "appt", "name", "appt", "placeholder", "00:00", "required", "", 1, "form-control-time", "clock-mozff", "form-control-time-mozff", 3, "ngModel", "ngModelChange"], ["type", "date", "onkeydown", "return false", "name", "dp2", "placeholder", "dd-mm-yyyy", "required", "", 1, "form-control", "fecha-input", "calendar-mozff", 3, "ngModel", "ngModelChange", "change"], ["type", "time", "name", "apptF", "id", "apptF", "placeholder", "00:00", "required", "", 1, "form-control-time", "clock-mozff", "form-control-time-mozff", 3, "ngModel", "ngModelChange"], ["name", "dirigido", "id", "dirigido", "required", "", 1, "categoria", 3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], ["name", "phone", "id", "phone", "placeholder", "Tel\u00E9fono", "minlength", "6", "required", "", "pattern", "[+]{0,1}[\\d]+[ ]{0,1}[\\d]+[-]{0,1}[\\d]+", "oninput", "value = value.replace(/[^\\-\\+0-9 ]/g,'')", 3, "ngModel", "ngModelChange"], ["phone", "ngModel"], ["name", "ubicacionCanje", "id", "ubicacionCanje", "minlength", "10", "required", "", "placeholder", "ubicaci\u00F3n para canje", 3, "ngModel", "ngModelChange"], ["ubicacionCanje", "ngModel"], [1, "col-md-3-form"], [1, "code-form"], [3, "width", "src"], [3, "qrdata", "width", "errorCorrectionLevel", "qrCodeURL", 4, "ngIf"], [1, "qr-btn", 3, "ngClass", "click"], [1, "row-10"], ["name", "restricciones", "id", "restricciones", "placeholder", "Restricciones...", "maxlength", "200", 3, "ngModel", "ngModelChange"], ["name", "enlaceSitioWeb", "id", "enlaceSitioWeb", "placeholder", "www.sitio.com", 3, "ngModel", "ngModelChange"], ["enlaceSitioWeb", "ngModel"], ["id", "admiration_icon", "ngbTooltip", "La dimensi\u00F3n de la portada es de 960x540 pixeles", 1, "admiration_icon"], ["id", "upload-cal", "onclick", "document.getElementById('fileIMG').click();", 1, "upload-btn"], ["type", "file", "name", "fileIMG", "id", "fileIMG", "accept", "image/png,image/jpeg", 2, "display", "none", 3, "change"], ["FileSelectInputDialog", ""], ["id", "admiration_icon", "ngbTooltip", "Las dimensiones del thumbnail ser\u00E1n de 200x200 pixeles", 1, "admiration_icon"], ["id", "upload-cal", "onclick", "document.getElementById('fileThumbnail').click();", 1, "upload-btn"], ["type", "file", "name", "fileThumbnail", "id", "fileThumbnail", "accept", "image/png,image/jpeg", 2, "display", "none", 3, "change"], [1, "row", "px-4"], [1, "col-12", "col-md-6"], [1, "form-label", "mb-3"], [1, "row"], [1, "col-12", "col-lg-auto", "pr-0", "ml-0"], [1, "form-check", "form-check-inline"], ["type", "checkbox", "name", "asociado", 1, "mr-1", 3, "ngModel", "disabled", "ngModelChange", "change"], ["for", "escanear", 1, "form-check-label", "mr-auto", "txt-tiny"], ["type", "checkbox", "name", "noAsociado", 1, "mr-1", 3, "ngModel", "disabled", "ngModelChange", "change"], ["for", "subir", 1, "form-check-label", "mr-auto", "txt-tiny"], ["type", "checkbox", "name", "colaboradores", 1, "mr-1", 3, "ngModel", "disabled", "ngModelChange", "change"], ["for", "descargar", 1, "form-check-label", "mr-auto", "txt-tiny"], ["type", "checkbox", "name", "referido", 1, "mr-1", 3, "ngModel", "disabled", "ngModelChange", "change"], ["type", "checkbox", "name", "publico", 1, "mr-1", 3, "ngModel", "disabled", "ngModelChange", "change"], [1, "col-12", "col-md-3", "mb-3"], ["name", "numeroDeCanjes", "id", "numeroDeCanjes", "class", "form-control bfc w-25", 3, "ngModel", "required", "ngModelChange", 4, "ngIf"], ["class", "form-control", "disabled", "", 4, "ngIf"], ["name", "maxDeCanjes", "id", "maxDeCanjes", "type", "text", "placeholder", "0", "maxlength", "5", "size", "4", "required", "", "oninput", "value = value.replace(/[^0-9]/g,'')", 1, "form-control", "bfc", "w-25", 3, "ngModel", "ngModelChange", "change"], [1, "block-bottom"], [1, "cancle-btn", 3, "click"], [1, "save-btn", 3, "disabled", "click"], [1, "save-icon"], [1, "err-msg"], [3, "value"], [3, "qrdata", "width", "errorCorrectionLevel", "qrCodeURL"], ["parent", ""], ["target", "_blank", 3, "href"], ["name", "image-file-front", "id", "image-file-front", "readonly", "", "required", "", 1, "custom-input", "file-box", 3, "ngModel", "ngModelChange"], ["name", "image-file-thumbnail", "id", "image-file-thumbnail", "readonly", "", 1, "custom-input", "file-box", 3, "ngModel", "ngModelChange"], ["name", "image-file-thumbnail", "id", "image-file-thumbnail", "required", "", "readonly", "", 1, "custom-input", "file-box", 3, "ngModel", "ngModelChange"], ["name", "numeroDeCanjes", "id", "numeroDeCanjes", 1, "form-control", "bfc", "w-25", 3, "ngModel", "required", "ngModelChange"], ["value", "0", "disabled", ""], ["disabled", "", 1, "form-control"], ["selected", ""]],
   template: function EditPromocionComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](0, EditPromocionComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
@@ -25612,6 +25627,8 @@ EditPromocionComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](16, "select", 12);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("ngModelChange", function EditPromocionComponent_Template_select_ngModelChange_16_listener($event) {
         return ctx.promoData.status = $event;
+      })("change", function EditPromocionComponent_Template_select_change_16_listener() {
+        return ctx.formulario.control.markAllAsTouched();
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](17, "option", 13);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](18, "Finalizado");
@@ -25655,6 +25672,8 @@ EditPromocionComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](46, "div", 29)(47, "div", 30)(48, "div", 31)(49, "div", 32)(50, "input", 33);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("ngModelChange", function EditPromocionComponent_Template_input_ngModelChange_50_listener($event) {
         return ctx.promoData.startDate = $event;
+      })("change", function EditPromocionComponent_Template_input_change_50_listener() {
+        return ctx.formulario.control.markAllAsTouched();
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](51, "input", 34);
@@ -25670,6 +25689,8 @@ EditPromocionComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](56, "div", 29)(57, "div", 30)(58, "div", 31)(59, "div", 32)(60, "input", 35);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("ngModelChange", function EditPromocionComponent_Template_input_ngModelChange_60_listener($event) {
         return ctx.promoData.finishDate = $event;
+      })("change", function EditPromocionComponent_Template_input_change_60_listener() {
+        return ctx.formulario.control.markAllAsTouched();
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](61, "input", 36);
@@ -25818,7 +25839,7 @@ EditPromocionComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](151, "div", 73)(152, "label", 61);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](153, "N\u00FAmero de canjes por usuario *");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](154, EditPromocionComponent_select_154_Template, 2, 3, "select", 74);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](154, EditPromocionComponent_select_154_Template, 4, 3, "select", 74);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](155, EditPromocionComponent_select_155_Template, 3, 0, "select", 75);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](156, EditPromocionComponent_div_156_Template, 2, 0, "div", 24);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
@@ -25933,7 +25954,7 @@ EditPromocionComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.validation_limit());
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx.disabled || ctx.dateInvalid || ctx.limitInvalid || ctx.formulario && (!ctx.formulario.touched || !ctx.formulario.valid));
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx.disabled || ctx.dateInvalid || ctx.limitInvalid || ctx.formulario && (!ctx.formulario.valid || !ctx.formulario.touched));
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.CheckboxControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.MinLengthValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.MaxLengthValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.PatternValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgModel, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgForm, angularx_qrcode__WEBPACK_IMPORTED_MODULE_9__.QRCodeComponent, _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_10__.NgbTooltip, _core_loading_loading_component__WEBPACK_IMPORTED_MODULE_5__.LoadingComponent],
