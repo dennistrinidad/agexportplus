@@ -22895,7 +22895,7 @@ class JwtInterceptor {
         sessionStorage.clear();
         localStorage.clear();
         this.router.navigate([`/login`]);
-        this.utilsService.dialog('ERROR', 'Alerta', 'Sesión expirada, inica sesión de nuevo.');
+        this.utilsService.dialog('ERROR', 'Alerta', 'Sesión expirada, inicia sesión de nuevo.');
     }
 }
 JwtInterceptor.ɵfac = function JwtInterceptor_Factory(t) { return new (t || JwtInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](src_app_services_utils_service__WEBPACK_IMPORTED_MODULE_1__.UtilsService)); };
@@ -27683,7 +27683,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class SurveyService {
-    // private accessToken: string = sessionStorage.getItem('Token') || environment.token != '' ? sessionStorage.getItem('Token') || environment.token : '';
     constructor(http) {
         this.http = http;
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.url;
@@ -27691,7 +27690,6 @@ class SurveyService {
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders();
         this.headers = this.headers.set('accept', 'application/json');
         this.headers = this.headers.set('Content-Type', 'application/json');
-        // this.headers = this.headers.set('X-Access-Token', this.accessToken);
         this.options = { headers: this.headers };
     }
     // Obtener encuesta de un evento
@@ -27748,7 +27746,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class UserService {
-    // private accessToken: string = sessionStorage.getItem('Token') || environment.token != '' ? sessionStorage.getItem('Token') || environment.token : '';
     constructor(http) {
         this.http = http;
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.url;
@@ -27756,7 +27753,6 @@ class UserService {
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders();
         this.headers = this.headers.set('accept', 'application/json');
         this.headers = this.headers.set('Content-Type', 'application/json');
-        // this.headers = this.headers.set('X-Access-Token', this.accessToken);
         this.options = { headers: this.headers };
     }
     login(data) {
@@ -27815,7 +27811,6 @@ class UserService {
         this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders();
         this.headers = this.headers.set('accept', 'application/json');
-        // this.headers = this.headers.set('X-Access-Token', token || '');
         this.headers = this.headers.set('Content-Type', 'application/json');
         this.options = { headers: this.headers };
         return this.http.get(`${this.url}registro/users/current`, this.options).toPromise();
@@ -27907,7 +27902,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class UtilsService {
-  // private accessToken: string = sessionStorage.getItem('Token') || environment.token != '' ? sessionStorage.getItem('Token') || environment.token : '';
   constructor(router, http, modalService, pipeNumber, Activatedroute) {
     this.router = router;
     this.http = http;
@@ -27921,8 +27915,7 @@ class UtilsService {
     this.params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpParams();
     this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpHeaders();
     this.headers = this.headers.set('accept', 'application/json');
-    this.headers = this.headers.set('Content-Type', 'application/json'); // this.headers = this.headers.set('X-Access-Token', this.accessToken);
-
+    this.headers = this.headers.set('Content-Type', 'application/json');
     this.options = {
       headers: this.headers
     };
@@ -28217,10 +28210,6 @@ class UtilsService {
   }
 
   getAllCompany() {
-    // this.headers = new HttpHeaders();
-    // this.headers = this.headers.set('accept', 'application/json');
-    // this.headers = this.headers.set('Content-Type', 'application/json');
-    // this.headers = this.headers.set('X-Access-Token', this.accessToken);
     this.options = {
       headers: this.headers
     };
@@ -28228,10 +28217,6 @@ class UtilsService {
   }
 
   getAllPromotions(status) {
-    // this.headers = new HttpHeaders();
-    // this.headers = this.headers.set('accept', 'application/json');
-    // this.headers = this.headers.set('Content-Type', 'application/json');
-    // this.headers = this.headers.set('X-Access-Token', this.accessToken);
     this.options = {
       headers: this.headers
     };
