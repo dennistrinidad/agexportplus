@@ -17979,7 +17979,7 @@ function ReporteriaComponent_ng_multiselect_dropdown_28_Template(rf, ctx) {
 
   if (rf & 2) {
     const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("placeholder", "Seleccione...")("settings", ctx_r3.dropdownSettings)("data", ctx_r3.dropdownFilterItems)("ngModel", ctx_r3.selectedFilterItem)("disabled", ctx_r3.dropdownFilterItemsAux.length <= 1 || ctx_r3.statisticsSelected == "Seleccione" || ctx_r3.statisticsSelected == "Promoci\u00F3n" || ctx_r3.statisticsSelected === "Certificados de puntos cierre");
+    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("placeholder", "Seleccione...")("settings", ctx_r3.dropdownSettings)("data", ctx_r3.dropdownFilterItems)("ngModel", ctx_r3.selectedFilterItem)("disabled", ctx_r3.dropdownFilterItemsAux.length <= 0 || ctx_r3.statisticsSelected == "Seleccione" || ctx_r3.statisticsSelected == "Promoci\u00F3n" || ctx_r3.statisticsSelected === "Certificados de puntos cierre");
   }
 }
 
@@ -18014,7 +18014,7 @@ function ReporteriaComponent_ng_multiselect_dropdown_29_Template(rf, ctx) {
 
   if (rf & 2) {
     const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("placeholder", "Seleccione...")("settings", ctx_r4.dropdownSettings)("data", ctx_r4.dropdownFilterItems)("ngModel", ctx_r4.selectedFilterItem)("disabled", ctx_r4.dropdownFilterItemsAux.length <= 1 || ctx_r4.statisticsSelected == "Seleccione" || ctx_r4.statisticsSelected == "Promoci\u00F3n" || ctx_r4.statisticsSelected === "Certificados de puntos cierre");
+    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("placeholder", "Seleccione...")("settings", ctx_r4.dropdownSettings)("data", ctx_r4.dropdownFilterItems)("ngModel", ctx_r4.selectedFilterItem)("disabled", ctx_r4.dropdownFilterItemsAux.length <= 0 || ctx_r4.statisticsSelected == "Seleccione" || ctx_r4.statisticsSelected == "Promoci\u00F3n" || ctx_r4.statisticsSelected === "Certificados de puntos cierre");
   }
 }
 
@@ -25639,16 +25639,17 @@ class AdminUsuariosComponent {// listas[] = [];
           sectorId: null
         };
       } else {
-        console.log(filters);
-        let roleName = filters?.roleName || null;
+        console.log(filters); // let roleName = filters?.roleName || null;
+        // if (filters?.status != null) {
+        //   filters.status == 'Activo' && filters?.roleName == null
+        //     ? roleName = 'asociado'
+        //     : filters.status == 'Inactivo' && filters?.roleName == null
+        //       ? roleName = 'noasociado'
+        //       : roleName = filters.roleName || null;
+        // }
 
-        if (filters?.status != null) {
-          filters.status == 'Activo' && filters?.roleName == null ? roleName = 'asociado' : filters.status == 'Inactivo' && filters?.roleName == null ? roleName = 'noasociado' : roleName = filters.roleName || null;
-        } // parametro status = true/false
-
-
-        response = yield _this2.userService.getAllUsers(_this2.pageNumber, _this2.pageSize, null, // filters ? filters.status : null,
-        roleName, // filters ? filters.roleName : null,
+        response = yield _this2.userService.getAllUsers(_this2.pageNumber, _this2.pageSize, filters ? filters.status : null, // null,
+        filters ? filters.roleName : null, // roleName, 
         'users', filters ? filters.codigoCRM : null, filters ? filters.personalNIT : null);
       }
 
