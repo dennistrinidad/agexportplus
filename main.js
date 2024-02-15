@@ -8593,7 +8593,7 @@ class NuevoEventoComponent {
     item?.classList.remove('not-visible');
     element?.classList.remove('not-visible');
 
-    if (Number(this.eventData.eventCategoryId) == 1 || Number(this.eventData.eventCategoryId) == 3) {
+    if (Number(this.eventData.eventCategoryId) == 1 || Number(this.eventData.eventCategoryId) == 3 || Number(this.eventData.eventCategoryId) == 10) {
       this.utilsService.emitChange(true, false, 'nuevo-evento l157');
     } else {
       this.utilsService.emitChange(true, true, 'nuevo-evento l160');
@@ -8806,9 +8806,9 @@ class NuevoEventoComponent {
           _this3.listPrices = res?.result?.eventPrices || [];
           sessionStorage.setItem('EventData', JSON.stringify(res?.result));
           sessionStorage.setItem('EventType', JSON.stringify(res?.result?.eventCategory?.id));
-          _this3.eventData.needBadge === 1 ? yield _this3.changeGroup(1) : yield _this3.changeGroup(0);
-          typeof res.result.imageBadgeHeader === 'string' && (yield _this3.changeGroup(1));
-          typeof res.result.imageBadgeFooter === 'string' && (yield _this3.changeGroup(1));
+          _this3.eventData.needBadge === 1 ? yield _this3.changeGroup(1) : yield _this3.changeGroup(0); // (typeof (res.result.imageBadgeHeader) === 'string') && (await this.changeGroup(1));
+          // (typeof (res.result.imageBadgeFooter) === 'string') && (await this.changeGroup(1));
+
           const imageEvent = typeof res.result.imageEvent === 'string' ? res.result?.imageEvent.split('/') : '';
           const imageThumbnail = typeof res.result.thumbEvent == 'string' ? res.result?.thumbEvent.split('/') : '';
           const imageBadgeHeader = typeof res.result.imageBadgeHeader == 'string' ? res.result?.imageBadgeHeader.split('/') : '';
@@ -12275,7 +12275,7 @@ GafeteDialogComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
   },
   decls: 2,
   vars: 2,
-  consts: [["class", "card pt-2 card-rounded", 4, "ngIf"], [1, "card", "pt-2", "card-rounded"], [1, "card-title"], [1, "row"], [1, "col-8"], [1, "modal-title"], [1, "col-4", "pt-3"], [1, "pr-2", 3, "click"], [1, "btn-close"], [1, "img-badge", "mt-2"], ["alt", "Header", 1, "card-img-bottom", 3, "src"], [1, "card-body", "text-center", "mt-4", "pt-4"], [1, "card-text-position"], [1, "card-text"], [1, "mt-3"], [1, "text-guest"], [3, "qrdata", "width", "margin", "errorCorrectionLevel"], [1, "img-badge"], ["alt", "Footer", 1, "card-img-bottom", 3, "src"], [1, "card-footer", "text-center"], ["type", "button", 1, "accept-btn", 3, "click"], [1, "info-btn"], [3, "qrdata", "width", "errorCorrectionLevel"]],
+  consts: [["class", "card pt-2 card-rounded", 4, "ngIf"], [1, "card", "pt-2", "card-rounded"], [1, "card-title"], [1, "row"], [1, "col-8"], [1, "modal-title"], [1, "col-4", "pt-3"], [1, "pr-2", 3, "click"], [1, "btn-close"], [1, "img-badge", "mt-2"], ["alt", "Header", "crossorigin", "anonymous", 1, "card-img-bottom", 3, "src"], [1, "card-body", "text-center", "mt-4", "pt-4"], [1, "card-text-position"], [1, "card-text"], [1, "mt-3"], [1, "text-guest"], [3, "qrdata", "width", "margin", "errorCorrectionLevel"], [1, "img-badge"], ["alt", "Footer", "crossorigin", "anonymous", 1, "card-img-bottom", 3, "src"], [1, "card-footer", "text-center"], ["type", "button", 1, "accept-btn", 3, "click"], [1, "info-btn"], [3, "qrdata", "width", "errorCorrectionLevel"]],
   template: function GafeteDialogComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, GafeteDialogComponent_div_0_Template, 28, 10, "div", 0);
@@ -14484,7 +14484,7 @@ class AdminParticipantesComponent {
     }
 
     return this.participantService.getParticipantsByEvent(page, size, event_id, participant_name).then(response => {
-      console.log(response.result);
+      // console.log(response.result)
       this.count = response.count;
       this.list = response.result.map(e => {
         return {
@@ -14505,8 +14505,8 @@ class AdminParticipantesComponent {
           Registro: Number(e?.registro),
           Profesion: e.profesion
         };
-      });
-      console.log(this.list);
+      }); // console.log(this.list);
+
       this.totalPages = response.totalPages; // this.totalPages = Math.ceil(response.count / this.pageSize);
     }, error => {
       console.log(error);
@@ -25494,8 +25494,7 @@ function AdminUsuariosComponent_div_27_Template(rf, ctx) {
   }
 }
 
-class AdminUsuariosComponent {// listas[] = [];
-
+class AdminUsuariosComponent {
   constructor(userService, utilsService) {
     this.userService = userService;
     this.utilsService = utilsService;
@@ -25504,29 +25503,6 @@ class AdminUsuariosComponent {// listas[] = [];
     this.pageNumber = 0;
     this.loading = false;
     this.filter = null;
-    this.list = [{
-      "Nombre del usuario": "",
-      "Código": "",
-      "Puesto": "",
-      "NIT": "",
-      "Teléfono": "",
-      "Correo electrónico": ""
-    }];
-    this.categoriesHeading = [];
-
-    this.originalOrder = (a, b) => {
-      return 0;
-    }; // FILTROS
-
-
-    this.isFilter = false;
-    this.showFilterModal = false;
-    this.filters = {
-      personalNIT: null,
-      codigoCRM: null,
-      status: null,
-      roleName: null
-    };
     this.role = [];
     this.roleList = [{
       "id": 1,
@@ -25558,6 +25534,29 @@ class AdminUsuariosComponent {// listas[] = [];
       allowSearchFilter: false,
       closeDropDownOnSelection: true
     };
+    this.list = [{
+      "Nombre del usuario": "",
+      "Código": "",
+      "Puesto": "",
+      "NIT": "",
+      "Teléfono": "",
+      "Correo electrónico": ""
+    }];
+    this.categoriesHeading = []; // FILTROS
+
+    this.isFilter = false;
+    this.showFilterModal = false;
+    this.filters = {
+      personalNIT: null,
+      codigoCRM: null,
+      status: null,
+      roleName: null
+    };
+
+    this.originalOrder = (a, b) => {
+      return 0;
+    };
+
     this.categoriesHeading = Object.keys(this.list[0]);
   }
 
@@ -25639,18 +25638,7 @@ class AdminUsuariosComponent {// listas[] = [];
           sectorId: null
         };
       } else {
-        console.log(filters); // let roleName = filters?.roleName || null;
-        // if (filters?.status != null) {
-        //   filters.status == 'Activo' && filters?.roleName == null
-        //     ? roleName = 'asociado'
-        //     : filters.status == 'Inactivo' && filters?.roleName == null
-        //       ? roleName = 'noasociado'
-        //       : roleName = filters.roleName || null;
-        // }
-
-        response = yield _this2.userService.getAllUsers(_this2.pageNumber, _this2.pageSize, filters ? filters.status : null, // null,
-        filters ? filters.roleName : null, // roleName, 
-        'users', filters ? filters.codigoCRM : null, filters ? filters.personalNIT : null);
+        response = yield _this2.userService.getAllUsers(_this2.pageNumber, _this2.pageSize, filters ? filters.status : null, filters ? filters.roleName : null, 'users', filters ? filters.codigoCRM : null, filters ? filters.personalNIT : null);
       }
 
       if (response.success && response.success == true) {
@@ -25765,10 +25753,6 @@ class AdminUsuariosComponent {// listas[] = [];
         this.filters.roleName = null;
         this.loadData(this.pageNumber, this.pageSize, null, true);
         break;
-      // case 'roleName':
-      //   this.role = [];
-      //   this.filters.roleName = null;
-      //   break;
 
       case 'all':
         this.role = [];
@@ -25797,7 +25781,7 @@ class AdminUsuariosComponent {// listas[] = [];
   }
 
   closeFilterModal() {
-    this.showFilterModal = false; // Cambia el valor a false para ocultar el modal
+    this.showFilterModal = false;
   }
 
 }
@@ -26322,7 +26306,6 @@ class EditUsuarioComponent {
 
   loadLists() {
     this.utilsService.getCountries().then(response => {
-      // console.log('countries: ', response);
       this.countryList = response.result.countries.map(e => {
         return {
           id: e?.id,
@@ -26331,7 +26314,6 @@ class EditUsuarioComponent {
       });
     }, error => this.utilsService.dialog('ERROR', 'Error', error.error.message.description));
     this.utilsService.getPuestos().then(response => {
-      // console.log('puesto: ', response);
       this.jobList = response.result.puestos.map(e => {
         return {
           id: e?.id,
@@ -26340,7 +26322,6 @@ class EditUsuarioComponent {
       });
     }, error => this.utilsService.dialog('ERROR', 'Error', error.error.message.description));
     this.utilsService.getAreas().then(response => {
-      // console.log('area: ', response);
       this.areaList = response.result.areas.map(e => {
         return {
           id: e?.id,
@@ -26349,7 +26330,6 @@ class EditUsuarioComponent {
       });
     }, error => this.utilsService.dialog('ERROR', 'Error', error.error.message.description));
     this.utilsService.getRoles().then(response => {
-      // console.log('role: ', response);
       this.roleList = response.result.roles.map(e => {
         return {
           id: e?.id,
@@ -26359,31 +26339,28 @@ class EditUsuarioComponent {
       });
     }, error => this.utilsService.dialog('ERROR', 'Error', error.error.message.description));
     this.utilsService.getSectors().then(response => {
-      // console.log('sectors: ', response, response.result.sectors.length);
       this.sectorList = response.result.sectors.map(e => {
         return {
           id: e?.id,
           name: e?.name
         };
-      }); // console.log(this.sectorList);
+      });
     }, error => this.utilsService.dialog('ERROR', 'Error', error.error.message.description));
     this.utilsService.getCommissions().then(response => {
-      // console.log('commission: ', response, response.result.comisiones.length);
       this.comisionList = response.result.comisiones.map(e => {
         return {
           id: e?.id,
           name: e?.name
         };
-      }); // console.log(this.comisionList);
+      });
     }, error => this.utilsService.dialog('ERROR', 'Error', error.error.message.description));
     this.utilsService.getCommittees().then(response => {
-      // console.log('committees: ', response, response.result.comites.length);
       this.comiteList = response.result.comites.map(e => {
         return {
           id: e?.id,
           name: e?.name
         };
-      }); // console.log(this.comiteList);
+      });
     }, error => this.utilsService.dialog('ERROR', 'Error', error.error.message.description));
     this.utilsService.getCommunicationChannels().then(response => {
       this.communicationChannelsList = response.result.map(e => {
@@ -26392,7 +26369,7 @@ class EditUsuarioComponent {
           name: e?.name,
           key: e?.channelValue
         };
-      }); // console.log(this.communicationChannelsList);
+      });
     }, error => this.utilsService.dialog('ERROR', 'Error', error.error.message.description));
     this.utilsService.getPermissions().then(response => {
       this.permissionsList = response.result.permissions.map(e => {
@@ -26401,7 +26378,7 @@ class EditUsuarioComponent {
           name: e?.name,
           label: e?.label
         };
-      }); // console.log(this.permissionsList);
+      });
     }, error => this.utilsService.dialog('ERROR', 'Error', error.error.message.description));
   }
 
@@ -26520,7 +26497,6 @@ class EditUsuarioComponent {
     var _this3 = this;
 
     return (0,_Volumes_Tribal_AGEXPORT_CODE_FRONT_END_agexport_agexportplus_web_frontend_backoffice_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      // validamos el campo personalNIT aquí antes de enviar los datos al servidor
       const regex = /^[a-zA-Z0-9]+$/;
 
       if (_this3.user.personalNIT && _this3.user.personalNIT != '') {
@@ -26553,14 +26529,9 @@ class EditUsuarioComponent {
 
   createUser() {
     this.loading = true;
-    this.user.password = 'Aplus123'; // <- "pass123";
-
+    this.user.password = '';
     const user = { ...this.user
-    }; //const { ... user }  = this.user;
-    // delete user.comiteId;
-    // delete user.sectorId;
-    // delete user.comisionId;
-
+    };
     delete user.accountRelation;
     user.phone ? user.phone = user.phone.toString() : user.phone = '';
     this.userService.createUser(user).then(response => {
@@ -26588,7 +26559,6 @@ class EditUsuarioComponent {
   }
 
   recoverPassword() {
-    //this.utilsService.dialog('SUCCESS', 'Test', 'Link enviado al correo.');
     this.loading = true;
     this.userService.recoverPassword(this.userID, this.user).then(response => {
       console.log(response);
@@ -26661,8 +26631,8 @@ EditUsuarioComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
     }
   },
   decls: 182,
-  vars: 66,
-  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], [1, "col-12"], [1, "card", "mb-5"], [1, "card-body"], [1, "row", "p-4", "p-md-1"], [1, "col-12", "col-lg-8"], [1, "card-title", "mb-4"], [1, "form-label", "mb-3"], [1, "icon-container"], ["src", "./assets/images/icono-i.png", "alt", "Icono de Estado en CRM"], ["name", "Estado en CRM", "content", "valor-del-estado"], [1, "icon-tooltip"], [1, "col-12", "col-lg-2"], ["name", "status", "disabled", "", 1, "form-control", "btn-status_edituser", 3, "ngModel", "ngModelChange"], ["value", "Activo"], ["value", "Inactivo"], ["form", "ngForm"], [1, "row", "p-4"], [1, "col-md-12", "col-lg-4", "mb-3"], ["name", "companyNit", "placeholder", "000000-0", "minlength", "2", "maxlength", "10", "pattern", "([0-9]+[-][0-9kK])|(CF)", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["class", "err-msg", 4, "ngIf"], [1, "col-md-12", "col-lg-8", "mb-3"], ["name", "companyName", "placeholder", "Nombre comercial", "disabled", "", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-md-6", "col-lg-3", "mb-3"], ["name", "firstName", "required", "", "placeholder", "Nombre del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "secondName", "placeholder", "Segundo nombre del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "firstLastname", "required", "", "placeholder", "Apellido del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "secondLastname", "placeholder", "Segundo apellido del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "text", "name", "phone", "placeholder", "00000000", "required", "", "pattern", "[+]{0,1}[\\d]+[ ]{0,1}[\\d]+[-]{0,1}[\\d]+", "oninput", "value = value.replace(/[^\\-\\+0-9 ]/g,'')", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "role", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["value", "null", "disabled", ""], [3, "value", 4, "ngFor", "ngForOf"], ["type", "email", "name", "email", "required", "", "placeholder", "Correo electr\u00F3nico", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "email", "name", "addtionalEmail", "placeholder", "Correo electr\u00F3nico adicional", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "text", "name", "personalNIT", "placeholder", "000000-0", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "date", "onkeydown", "return false", "name", "birthday", "onkeydown", "return false", "required", "", "placeholder", "dd-mm-yyyy", 1, "form-control", "calendario", 3, "ngModel", "ngModelChange"], ["name", "gender_id", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["value", "1"], ["value", "2"], ["value", "3"], ["name", "country_id", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-md-6", "mb-3"], ["name", "area", "placeholder", "Seleccione...", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["name", "puestoId", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], [1, "col-12", "col-lg-4", "mb-3"], ["name", "md_sector", "id", "md_sector", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], ["name", "md_comision", "id", "md_comision", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], ["name", "md_comite", "id", "md_comite", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], [1, "col-12", "col-lg-2", "mb-3"], [1, "form-check", "form-check-inline"], ["type", "radio", "name", "asociado_selection", "id", "associatedYes", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "associatedYes", 1, "form-check-label"], ["type", "radio", "name", "asociado_selection", "id", "associatedNot", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "associatedNot", 1, "form-check-label"], ["type", "radio", "name", "ownerContact", "id", "ownerContactYes", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "ownerContactYes", 1, "form-check-label"], ["type", "radio", "name", "ownerContact", "id", "ownerContactNot", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "ownerContactNot", 1, "form-check-label"], ["class", "col-12 col-lg-4 mb-3 text-center text-lg-left", 4, "ngIf"], [1, "row", "p-4", "mt-3"], [1, "col-12", "mb-3"], [1, "form-label", "mb-4"], ["class", "col-12 col-lg-auto pr-0 ml-0", 4, "ngFor", "ngForOf"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "btn-outline-secondary", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-edituseradmin", 3, "click"], [1, "save-icon"], [1, "err-msg"], [3, "value"], [1, "col-12", "col-lg-4", "mb-3", "text-center", "text-lg-left"], [1, "d-grid", "gap-2", "mx-auto"], ["type", "button", "name", "recoverPassword", 1, "btn", "btn-secondary", "w-70", "btn-password", 3, "disabled", "click"], [1, "col-12", "col-lg-auto", "pr-0", "ml-0"], ["type", "checkbox", 1, "form-check-input", "mr-2", 3, "name", "ngModel", "ngModelChange", "change"], [1, "form-check-label", "mr-3", "txt-tiny", 3, "for"]],
+  vars: 67,
+  consts: [[4, "ngIf"], [1, "container-fluid", "px-5", "pt-4"], [1, "row"], [1, "col-12", "mb-4"], ["id", "back", 1, "back-btn", 3, "click"], [1, "change-page-label"], [1, "col-12"], [1, "card", "mb-5"], [1, "card-body"], [1, "row", "p-4", "p-md-1"], [1, "col-12", "col-lg-8"], [1, "card-title", "mb-4"], [1, "form-label", "mb-3"], [1, "icon-container"], ["src", "./assets/images/icono-i.png", "alt", "Icono de Estado en CRM"], ["name", "Estado en CRM", "content", "valor-del-estado"], [1, "icon-tooltip"], [1, "col-12", "col-lg-2"], ["name", "status", "disabled", "", 1, "form-control", "btn-status_edituser", 3, "ngModel", "ngModelChange"], ["value", "Activo"], ["value", "Inactivo"], ["form", "ngForm"], [1, "row", "p-4"], [1, "col-md-12", "col-lg-4", "mb-3"], ["name", "companyNit", "placeholder", "000000-0", "minlength", "2", "maxlength", "10", "pattern", "([0-9]+[-][0-9kK])|(CF)", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["class", "err-msg", 4, "ngIf"], [1, "col-md-12", "col-lg-8", "mb-3"], ["name", "companyName", "placeholder", "Nombre comercial", "disabled", "", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-md-6", "col-lg-3", "mb-3"], ["name", "firstName", "required", "", "placeholder", "Nombre del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "secondName", "placeholder", "Segundo nombre del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "firstLastname", "required", "", "placeholder", "Apellido del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "secondLastname", "placeholder", "Segundo apellido del usuario", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "text", "name", "phone", "placeholder", "00000000", "required", "", "pattern", "[+]{0,1}[\\d]+[ ]{0,1}[\\d]+[-]{0,1}[\\d]+", "oninput", "value = value.replace(/[^\\-\\+0-9 ]/g,'')", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "role", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["value", "null", "disabled", ""], [3, "value", 4, "ngFor", "ngForOf"], ["type", "email", "name", "email", "required", "", "placeholder", "Correo electr\u00F3nico", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "email", "name", "addtionalEmail", "placeholder", "Correo electr\u00F3nico adicional", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "text", "name", "personalNIT", "placeholder", "000000-0", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "date", "onkeydown", "return false", "name", "birthday", "onkeydown", "return false", "required", "", "placeholder", "dd-mm-yyyy", 1, "form-control", "calendario", 3, "ngModel", "ngModelChange"], ["name", "gender_id", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["value", "1"], ["value", "2"], ["value", "3"], ["name", "country_id", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "col-12", "col-md-6", "mb-3"], ["name", "area", "placeholder", "Seleccione...", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], ["name", "puestoId", 1, "form-control", 3, "ngModel", "ngModelChange", "change"], [1, "col-12", "col-lg-4", "mb-3"], ["name", "md_sector", "id", "md_sector", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], ["name", "md_comision", "id", "md_comision", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], ["name", "md_comite", "id", "md_comite", 3, "placeholder", "settings", "data", "disabled", "ngModel", "ngModelChange"], [1, "col-12", "col-lg-2", "mb-3"], [1, "form-check", "form-check-inline"], ["type", "radio", "name", "asociado_selection", "id", "associatedYes", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "associatedYes", 1, "form-check-label"], ["type", "radio", "name", "asociado_selection", "id", "associatedNot", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "associatedNot", 1, "form-check-label"], ["type", "radio", "name", "ownerContact", "id", "ownerContactYes", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "ownerContactYes", 1, "form-check-label"], ["type", "radio", "name", "ownerContact", "id", "ownerContactNot", 1, "form-check-input", 3, "checked", "disabled", "click"], ["for", "ownerContactNot", 1, "form-check-label"], ["class", "col-12 col-lg-4 mb-3 text-center text-lg-left", 4, "ngIf"], [1, "row", "p-4", "mt-3"], [1, "col-12", "mb-3"], [1, "form-label", "mb-4"], ["class", "col-12 col-lg-auto pr-0 ml-0", 4, "ngFor", "ngForOf"], [1, "col-12", "text-right", "px-5"], [1, "d-grid", "gap-2"], ["type", "button", 1, "btn", "btn-outline-secondary", "px-4", "my-2", "btn-cancel-edituseradmin", 3, "click"], ["type", "button", 1, "btn", "btn-primary", "px-4", "my-2", "btn-save-edituseradmin", 3, "disabled", "click"], [1, "save-icon"], [1, "err-msg"], [3, "value"], [1, "col-12", "col-lg-4", "mb-3", "text-center", "text-lg-left"], [1, "d-grid", "gap-2", "mx-auto"], ["type", "button", "name", "recoverPassword", 1, "btn", "btn-secondary", "w-70", "btn-password", 3, "disabled", "click"], [1, "col-12", "col-lg-auto", "pr-0", "ml-0"], ["type", "checkbox", 1, "form-check-input", "mr-2", 3, "name", "ngModel", "ngModelChange", "change"], [1, "form-check-label", "mr-3", "txt-tiny", 3, "for"]],
   template: function EditUsuarioComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](0, EditUsuarioComponent_app_loading_0_Template, 1, 0, "app-loading", 0);
@@ -26970,6 +26940,8 @@ EditUsuarioComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
     }
 
     if (rf & 2) {
+      const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](28);
+
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.loading);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](22);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.user.status);
@@ -27054,6 +27026,8 @@ EditUsuarioComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.permissionsList);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](7);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.communicationChannelsList);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !_r1.touched || !_r1.valid);
     }
   },
   dependencies: [ng_multiselect_dropdown__WEBPACK_IMPORTED_MODULE_6__.MultiSelectComponent, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.CheckboxControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.MinLengthValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.MaxLengthValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.PatternValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgModel, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgForm, _Core_loading_loading_component__WEBPACK_IMPORTED_MODULE_4__.LoadingComponent],
@@ -28232,11 +28206,7 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     debugging: true,
-    // url: "https://aplus-api.export.com.gt:2087/api/v1/", // <- Producción
     url: "https://agexportplus.dev.tribalworldwide.gt/api/v1/",
-    // token: ''
-    // npm run s-d -> Levantar locar la app con env dev.
-    // npm run b-d -> Compilar con env dev la app.
 };
 
 
@@ -28265,7 +28235,6 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.debugging
     window.console.log = () => { };
 }
 ;
-window.console.log = () => { };
 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.platformBrowser().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule)
     .catch(err => console.error(err));
 
