@@ -11009,7 +11009,7 @@ class EventoMenuComponent {
       if (_this.eventType === 0) {
         _this.enableFairs = false;
         _this.enableParticipants = false;
-      } else if (_this.eventType === 1 || _this.eventType === 3) {
+      } else if (_this.eventType === 1 || _this.eventType === 3 || _this.eventType === 10) {
         _this.enableFairs = false;
         _this.enableParticipants = true;
       } else {
@@ -28235,6 +28235,7 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.debugging
     window.console.log = () => { };
 }
 ;
+window.console.log = () => { };
 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.platformBrowser().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule)
     .catch(err => console.error(err));
 
