@@ -14437,7 +14437,7 @@ class AdminParticipantesComponent {
                 "Tipo de entrada": e?.tipoEntrada,
                 Asistencia: e?.asistencia ? 'confirmado' : 'no_confirmado',
                 Registro: Number(e?.registro),
-                Fechas: 'fechas'
+                Fechas: fechas
               };
             });
             const eventData = JSON.parse(sessionStorage.getItem('EventData')) || {};
