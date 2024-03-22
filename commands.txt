@@ -2,6 +2,12 @@
     vpn: D3vel0p$
     ssh consultoria@10.10.0.34
     C0nsult@r1a2022!
+/*----------------NEW PROD----------------*/
+    IP: 10.10.0.34 y 10.10.0.36
+    SO: Linux / Ubuntu 22.04.1
+    Usuario: consultoria
+    Clave: C0nsult@r1a2022!
+
     sudo su
     cd /var/www/aplus/
     git pull
